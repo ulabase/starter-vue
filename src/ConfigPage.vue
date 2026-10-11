@@ -35,10 +35,12 @@ defineProps<{ apiUrl: string }>();
         </li>
         <li>
           <div>
-            <strong>Copy its URL into your environment file</strong>
+            <strong>Set it up from this folder</strong>
+            <p>In a terminal, in this folder:</p>
+            <pre class="config-command">npx ulabase login
+npx ulabase setup --srv &lt;your service id&gt;</pre>
             <p>
-              Edit <code>src/environments/environment.ts</code> and set
-              <code>apiUrl</code> to your Ulabase service URL.
+              It configures the service for this app and writes its URL into <code>src/environments/environment.ts</code>.
             </p>
           </div>
         </li>
