@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:8dd24df8d7b84219d48adf512b75fa49c1a88333e521d67642b600f2b4b305b5",
+  "claims": [
+    {
+      "id": "claim_cdd98e6665eb48f7a4db279053c279ff",
+      "statement": "Feature flags are defined in the `features` object of `src/environments/environment.ts` and control both client-side routing/UI and server-side service configuration.",
+      "evidence": [
+        {
+          "resource": "repo://src/environments/environment.ts#L10-L16",
+          "version": "repo-lines-v1:sha256:e0c09c50abf5287407f3a473d775c4b3d6aa5796cb202935980d529c1b428e51:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjRjNjE5ZmZkNmI5MjFjNTI3OTExZWRlMTQ3MWM5MTQ5YTFkZTg2NTUzNDE4NWIwOWY2Nzg1MGRjMzMwZDU2MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQwM2NhYjc3MGI2NjA0MzQ5Njg4YzAwNTk1ZmVmNWU0NjcwN2M1ZWVjZTU5NGMzYWIxM2RjMzY0NWRlMTdmMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L59-L65",
+          "version": "repo-lines-v1:sha256:685bf55d5cec1e11a0d85675b9f565d6cda8136fbbf7e0adaf0efd9c168f9e6b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQ4MmE4YTU3Mzk5ZjI1NjVkMzNmZWUwNjE1NmE1OTI4ZmRmMGMyNjQzNTMyZDg5ZDdjYTJjMTBhMWQ0MGJlMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmUwYjdjNjAyNTliNDVlOWZlOGZlNDczZDA0ZDM2OWY0MjU3NmQ4MTkyYWEyOGY5YWZhNDM1MTk4OGM3YmE3MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTIyYzFkNDI0YzhiZTNhNjU5MDQzNjIwZTQ3Nzg2Y2U0NDE5MjQ1NWYzMjZhNTI1MWViZjdmZGI2MDQ0MTQ3ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a1a28b1239bb4f3c933276e5a1ceadc1",
+      "statement": "The five feature flags are `emailRegistration`, `passwordReset`, `oauthLogin`, `oauthProviders`, and `teamInvitations`.",
+      "evidence": [
+        {
+          "resource": "repo://src/environments/environment.ts#L11-L15",
+          "version": "repo-lines-v1:sha256:881b58c0e58eea44f70ea21233fc4d884d6e13e517809c5c66d010b1ee143398:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2NjY2M0MjQ0NmI4OTAyM2MwYzA0NmUxOTNmZTAxYjRjODZmOTRiMzI2NjQ5ZTViNWE3NjJmZmM2MGJiMWUyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmMzNjI5NzgwNDgzMmJkZDg3NTRhMDU2ZTljZThmYTg0MjlhYTQxOTljZjc4ODY1NGMzMDM0NDQwYjkwZTJhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODlkYzE0NjhkMmEyY2M3NDQ0ODA3OTE0Y2IyMTQ0NDk5YTYzMzNlNmUxNzFmZmY5YjcyZjZhNDRhMmQzMTUwMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTliMWJhMjNmOTI2MjU5OTg3MTFlODhmZDViMjkwNWRmYzUzZmIyOGM3NWQ1Y2FlZTI3NGQwNWUzYTU1Nzk0ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f0d59322163e4d839f34b9df50e10225",
+      "statement": "When client and server flags drift, the symptom is a HTTP 403 on a button the client rendered but the server rejects.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L17-L29",
+          "version": "repo-lines-v1:sha256:ea045ef599a55edd0e85f6aa4be197c9b8da2084c0916fb00641221cef8da1b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhMGY1ZjkzODZiMzdhYmYxYWRiOTdkZjFlMWE2NzdkYzk1NGI4Mzk0ZDJkN2M1ODgyNjdhMGIzMDA0ZmY3MDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4NzY2OTk2YWM5ZDkyZjdkMjlkNzQxZGViYzA1ZDZiMDA5NmU1YjViZWY3OWJmZDgzYmVjYTQ5Yjg3YmIyNGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5YTRjNTdiNmU3Y2UyYTQxY2M0ODFjNWQ2ODJmOTc0MTE2OTViOWE1Njc4ODA2MTE5NDMyYjQ0MGE1Mjc4MjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2NmUzYzA0ZjY4NTFiYzQ5OTYyZWMyNzVkMjNhYzU5M2NiNmFiZmFkMGYyN2ZhNDZjYTUzMWQ4ZDYxZGE3MWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bda2ed9157004893b8c8718dc7a6d9e6",
+      "statement": "`ulabase.setup.ts` imports the same `environment.ts` as the client and derives server feature toggles from it, creating a bidirectional contract that prevents drift.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L35-L36",
+          "version": "repo-lines-v1:sha256:4729d32c20d6b55b781aed2e394385c9590db86873c8c17076c9751e4c813716:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODUyMzY5MWI3YWIxYmRhZmM0ODM4ODc3MzVkMDNiMzg1NDU4MTQzZWU2NzVmNTA4NTc1YWVmMGZjNjg2YzMxYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjU2ZTFjMDk2MDNlNmVhMTkxZGRkMDQ4ZGVkYzcxYzYxOTY5OWU1NmVhN2YzY2RiZTdhYWJmZTg1NDA1NDNkYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQ3NTEyNWFiNDMxMTc2MDVlZjM5ODM1MGI5YWEwYWJjMDUwYzM0MmI5MGM0OWRhNjQ2YWE5MTdjYjdlMzc0YSJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L43-L65",
+          "version": "repo-lines-v1:sha256:e0b68f36e86e6a4614edad6e3216a35a5a0cda3a5b466a701b2daf6731b75b8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3MGU0ZDk0MmJkYjRkYzg4Y2ZmNzFjM2ZjZTQ5YWM1MDliYTg5MTQzMmU1NWE2YWI2MTAzYmEwYzYxMWQ1NzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhNjlhZjNhZTQwMmZjNzI5Njg1NjczZjA5ZjVlMjNjODhiZjFkM2U3NGFmZGZiN2VkZGFjYzFmNzA2MzA0ZWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMmMxZDQyNGM4YmUzYTY1OTA0MzYyMGU0Nzc4NmNlNDQxOTI0NTVmMzI2YTUyNTFlYmY3ZmRiNjA0NDE0N2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_80af7c17fdf24f42ae8590c09ffa028d",
+      "statement": "Routes are conditionally included in `src/routes.ts` using the spread operator on arrays, so disabled features do not register their routes.",
+      "evidence": [
+        {
+          "resource": "repo://src/routes.ts#L24-L38",
+          "version": "repo-lines-v1:sha256:7fd12ba704cbadd936059236810ecaa1e476ad32b5df508340c10a742230be03:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkYTU4MWRkZWUxZGY2ZmY4OGI4NTI0MmI4NjUyMWNjOTc0NWZmODZkYzAyZmVjYWNmMGVjZTAxZTg2OGNmNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhNmExNmNjZGJiYmUyN2ZmM2M3NmE5YWM2ZmNlZDY2ZDk4ZThkNWMyNTMyMzAyYjdiZjM5MGNlZjczMzQ5N2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzZjcyNGZkMmUyYTYzOWY0MmNjZmNjZGJkNTc3MjQyYWEwNTJjYzU4OGQxMDNiN2I3YjY0NmQ5YzFhY2NkOWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxZWFkZGRmMjFjN2ZhOWQ4ZDllN2RlOGZkODNlNmFmMDQyMTQ4ZWU3YzMwZmJmNTY4OTg2OGI4YWEyNzc3MWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a49e1729763a4e919afecf074702ef97",
+      "statement": "Vue components (`Login.vue`, `Signup.vue`, `Home.vue`) conditionally render UI elements based on the same `environment.features` flags.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/auth/login/Login.vue#L56-L59",
+          "version": "repo-lines-v1:sha256:1806294ea7989419ca376ffa506b40d8288c839543d590c3d5b9012f3faa87ad:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFiYWE5ZWExMWUyYmIyYTJlNDU1ODJjZmI1MmQyMmRhZjhkMzE3MzhiZjU5NjBkNTRhZWNjZTE4OGY0MmUyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2M3YWYzYTIwNGIzNzZlMWE0Y2Q2YTNmOWY2ZDc2OTBlNTExYjVlZDBlMGM3YTNmOGE2OWRhZmIxMjM2ODhlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWEwNmNmYzY5NTYwMWU0OTIzMTZhMDdmZjgyYThmYjYxNzYwYmVmYzA0YzMxNDk3NzZkY2I0ODc4NmM1MDAzMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTAyYWM5NzE3OGRmNTNiZTE1MTg4MWI2YmVjMGM2NTZlMWU5YjU2YmE0NjY3ZGY1ZmM1NmI1MGUzNjhjODkwNiJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/signup/Signup.vue#L77-L82",
+          "version": "repo-lines-v1:sha256:bd9c9d1365454329e77aba02ee60e8b147bda1b9b77de530018a37670065809b:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFiYWE5ZWExMWUyYmIyYTJlNDU1ODJjZmI1MmQyMmRhZjhkMzE3MzhiZjU5NjBkNTRhZWNjZTE4OGY0MmUyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjhhODA5Zjc4ODhmZTVkN2M1OWVhZThkN2ZmNjU0ZTdkZWYxMjMzMmIyZjUzZGY4N2MwZTFhZTExZDE5OTdjOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWEwNmNmYzY5NTYwMWU0OTIzMTZhMDdmZjgyYThmYjYxNzYwYmVmYzA0YzMxNDk3NzZkY2I0ODc4NmM1MDAzMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTRmOGJlMzJhNWUwMDNjZGI0NDQzN2Y5YmJkMWExOTQzODQ5MTg1NDkxNzFiZjU5MTVkODFmYTBmODRhNTQ0NyJ9"
+        },
+        {
+          "resource": "repo://src/pages/home/Home.vue#L38-L72",
+          "version": "repo-lines-v1:sha256:161a8e29f08dcdb05726c72d8e2278f3d97b67bb718a84aef9025a4a1b1bee8a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkYzI0MTViNjk1N2RjMDhiN2JmM2ExOGYwYjg1MTM2YmU1YWQ1YmQ1OTkwZmE4MzY5NTE5OTk4YTk5N2UwMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwMmQyYzBkNmRjNWU3NGQ5MmZhMTRiOTFkYmVhMjY0MDkwYmViMzVmZGI5MTg4ZDliMzQxMTgxZGNlOWY0Y2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0N2NlNThlMTNjNDAzZGY0ODUzM2U5M2U3NjE3MjY3YmY3NTU0Y2U2NDk0ODFhMzJjNTE5MDYyMTMyYjhhMjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3e01fc3c90ca43e9a2bbde64d5a089b3",
+      "statement": "The server-side mapping in `ulabase.setup.ts` translates client flags to server keys: `emailRegistration` → `registration` and `verification`, `passwordReset` → `password-reset`, `teamInvitations` → `invitations`, `oauthLogin` → `oauth`.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L59-L65",
+          "version": "repo-lines-v1:sha256:685bf55d5cec1e11a0d85675b9f565d6cda8136fbbf7e0adaf0efd9c168f9e6b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQ4MmE4YTU3Mzk5ZjI1NjVkMzNmZWUwNjE1NmE1OTI4ZmRmMGMyNjQzNTMyZDg5ZDdjYTJjMTBhMWQ0MGJlMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmUwYjdjNjAyNTliNDVlOWZlOGZlNDczZDA0ZDM2OWY0MjU3NmQ4MTkyYWEyOGY5YWZhNDM1MTk4OGM3YmE3MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTIyYzFkNDI0YzhiZTNhNjU5MDQzNjIwZTQ3Nzg2Y2U0NDE5MjQ1NWYzMjZhNTI1MWViZjdmZGI2MDQ0MTQ3ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_576c50e8d3774f448493c9dfa8dbd0fe",
+      "statement": "When `oauthLogin` is true and `'google'` is in `oauthProviders`, the setup script checks for Google OAuth credentials and writes them from environment variables if missing.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L153-L191",
+          "version": "repo-lines-v1:sha256:7a42d20be64ddb20adda339b6c911f6137027bd3510c465b3b302fc9610743cc:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ODU4ODM2MjU4YmYzMzkyOWQwNjMwYWU0YWVkM2YwMTYyNGU1NzkxZWRhYzE2ZmVhZmE2ZWViMzUxN2I2MTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTFlMDg5MDA4OGYzMThmZTMzMGFiOGE2MThlYjRlOTI5NmNhN2RkYzA4NDY0NzFmM2I2ZTVkZjc2MWI4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjYTlmMDA4ZDMxNjA1NzVjZTg2ZjE3MTYxMDMzOTNjMDg5MjE0N2IxMDc0YTZkNTg0MGFiMTNkZDQ0YjA3MTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiNGI2MTAwNDcwMTgxOTY3MDM0NTAzMTNkZTdjZmNkMDNhNjIxZTA4NTQ4YjVhMGI0M2JhZmE2M2ZkN2Y4ZTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ec520f73039949debc540f8c9d53e101",
+      "statement": "To toggle flags, edit `src/environments/environment.ts` and re-run `ulabase setup` if the flag affects the server; the dev server must be restarted to pick up new values.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L1-L10",
+          "version": "repo-lines-v1:sha256:ca1d2dd032ad4f5083fb21afae6d392c29a6cd1c56e4d2b68ae3b901c67bcb23:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkZDZkZjU0NjhkYzNkNDAwNTAwN2U5NDFhYjgyNmIyZWQ5ZTQxNzRmYjg4ODlkODQ0NzY1NzA4NWRkNjY0NDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1MTgzN2JjZDIzMDMwOTU3ODA3YTI0ODdjYTMyMzc4Nzc0OTg2ZWRmMmQ1OWE1ZmVmNzRjNWUwMzU0NmVkMzcifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-12T10:21:41.724Z"
+  }
+}

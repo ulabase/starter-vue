@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:74ed540a27c6f611b96d4ddd0562a8d67dd71f9282a91d851d079861f60754ad",
+  "claims": [
+    {
+      "id": "claim_3e2309d2d09e4bad844a4750b5d64f64",
+      "statement": "The No Service URL workflow prevents real service URLs from being committed to the main branch of the starter repository.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/no-service-url.yml#L1-L31",
+          "version": "repo-lines-v1:sha256:3ba0f32760d8070c3ac7f74d8bd9f7169b7b4f21517dc51ed0c81420ebb46dfa:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZjUwMWFkMTY3NzJmYjY4OWVhMWQwZTBhZWFlMGNmZTQ2OGExOTg1MWQwN2FjY2YzYjExODk3YTk0NzJhYmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiYmEzMGE4M2NiMzk1MjgxOTgxMGI1OTMyNjg5ODMxYzdlYjAxM2ZiYmUwNTUyZmY2OWQxZmI4YmUyNzdkMWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c6240868250f4da48892678fb41c7ee1",
+      "statement": "The workflow only runs in the ulabase/starter-vue repository, skipping forks and copies.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/no-service-url.yml#L18-L18",
+          "version": "repo-lines-v1:sha256:cc354c3c0e0d0c2eda1e903ca0430a9a9788e35e76286e58086e68e64c7e5316:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2MzNTRjM2MwZTBkMGMyZWRhMWU5MDNjYTA0MzBhOWE5Nzg4ZTM1ZTc2Mjg2ZTU4MDg2ZTY4ZTY0YzdlNTMxNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2MzNTRjM2MwZTBkMGMyZWRhMWU5MDNjYTA0MzBhOWE5Nzg4ZTM1ZTc2Mjg2ZTU4MDg2ZTY4ZTY0YzdlNTMxNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDE5M2ZjYzJmMTg3YTkzMDk3YTk1MTlkNGI5MjEwM2NkYzU0MDBiZWVmNjMyYzc5NTY4OTRhYmEzZTgxMDc3ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzU4MmVhYjhhNTk3YTg3MDg0YzY0MTEyMTgxM2IwZGU2ZjYyODdkOGQ1ZWIxNzhmMzM0N2Y4MDBjNDk4NzllZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a61a056fe594d729690b230b812d122",
+      "statement": "The workflow greps all TypeScript environment files in src/environments/ for non-empty apiUrl values using the pattern ^\\s*apiUrl:\\s*'[^']+'.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/no-service-url.yml#L24-L24",
+          "version": "repo-lines-v1:sha256:398f9952295257faa9c9a12799b88f7a3c88fbb18f920cb9a864d57de227135a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzk4Zjk5NTIyOTUyNTdmYWE5YzlhMTI3OTliODhmN2EzYzg4ZmJiMThmOTIwY2I5YTg2NGQ1N2RlMjI3MTM1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzk4Zjk5NTIyOTUyNTdmYWE5YzlhMTI3OTliODhmN2EzYzg4ZmJiMThmOTIwY2I5YTg2NGQ1N2RlMjI3MTM1YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGZlZGUyMWMwY2E1OGU4MWE4OThmY2FlNzQ4NjM4Y2M1NGY5MWVhZWU1NmZkODg3ZjY4MzU3ZTNjYWIxNDA1YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjIwMjBlMDJiNjBjZDViNjRiOTE1YjcyZWYzM2E4NThhYjZiMzBjNWY0NGNlZmVmZjY2NTNiMjUxMWU3NDQ5ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c18379bb2fcf425d943061f979275602",
+      "statement": "The OpenWiki Update workflow triggers on nightly schedule (03:00 UTC), release tags matching [0-9]+.[0-9]+.[0-9]+, and manual dispatch.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L5-L16",
+          "version": "repo-lines-v1:sha256:100a526dc1df248b32ac87429a95aa6aba09441243f383d9627a4857d0b05e92:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NmRjNDgxNDlmNWE4M2QxZWQ2ZGJiMzliYmM3ZTJiOTAyYWEzZDM0ZDZiZDVhZTRiMjkxYjY4ZGYwY2E3OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxYmQ1YWYyOGQ3MWUyNGM0OWMyOTU0NGFlZjU0MjkzODAxMGIwN2I1ZTAzNjI0OTM5YTg5NTJmODgyMjJkOTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwZmU3M2MyYmNlMjI1MGJiZWZlOGRmNmU0Mzc5NzZlMjE1YzMyYjdhODE4MmUzNTI0YmE1ZmRiMzVkYWMxOTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM5NDYyZDVmMmMyMDdlNmI0ZjgyODQzZDkxNTRmZjBiYmFkMDM0MzkyNGIyYzNjNGJhYmQ5OWI4N2NjZDRiODIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_27e0a3d17159405ba525ef828974b151",
+      "statement": "The workflow skips scheduled runs when no source files have changed since the last wiki update, comparing git log of last openwiki commit against current HEAD.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L40-L52",
+          "version": "repo-lines-v1:sha256:7bc5d0e3d46a2ed3037230a42fb5a5b58eaf55cc4da39b4e9d1b9dc2263c80d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3NDRlZWQ4YzQ1Zjk4ZjQyZDM1NjQ0ZWNmN2I4YzFhNmI2NTA4MDQ0MDVjZTBlMjlmNjA0MDY2OGQxMGFhOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1YTUyMTIwYjJhNTY5NjIzZjdmOTIwMjY3NmM2ZThhNjBmZWIxZjNkOWU1YjMxZTkzMWFhYTk1ZjU4YzE0ZjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4ZmVlNjMyNWI0ZjhlMjY3OTgxOWFhMjM3ZDgxMDkzZmU1OGI1Mjc3ZjM0YmM0ZDQwM2RlZDMyM2UzNmNiNTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFlNWVjNWJkNGRiY2QxMDY2YzU4MDljNTBkYjAxN2Y1ZmVjMTJkOWY5MzNkMDUyOTZiMTRlOGU5Y2M0NzVmZDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a9598fe67966484f8cee8edbe8c39731",
+      "statement": "Change detection excludes openwiki/, AGENTS.md, and CLAUDE.md directories/files from the diff.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L50-L50",
+          "version": "repo-lines-v1:sha256:e441dfc58a4c4531de827853df79364fef63dd66df814cdaa6aa5132816af3b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTQ0MWRmYzU4YTRjNDUzMWRlODI3ODUzZGY3OTM2NGZlZjYzZGQ2NmRmODE0Y2RhYTZhYTUxMzI4MTZhZjNiNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTQ0MWRmYzU4YTRjNDUzMWRlODI3ODUzZGY3OTM2NGZlZjYzZGQ2NmRmODE0Y2RhYTZhYTUxMzI4MTZhZjNiNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzI1OTFiNDdmN2FlOTM4NzdiZGM4ZWU5MzQ2MTEwOTFkOWYyNWI0MmE5ZWYwNjIzZDk4NzhlNzg3YzE3NDc5YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDMyY2FiMWRkMmZhNTI4MGFlMDIwODc3ZmQ4MGRjOWU3NWMwYTY5MTFiNzYyNDIzZTQ3YWUxZDgzNjliNTUzNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ffaab13b2d944b959e1ba53be52bc3a9",
+      "statement": "The workflow uses concurrency group 'openwiki-update' with cancel-in-progress: false to prevent parallel wiki updates.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L22-L24",
+          "version": "repo-lines-v1:sha256:5b5128337484d378a11aaf08aebe2a5a395c7c36614ed7b4626c44a8a44083f7:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODRhZmUyNGRhZjM0ZDFiNWNmODNmY2FhM2Y1NmFhNGMxMDdjMDU4MDM5Yzg1N2JjYjZkNTE2ZDYyMTk0N2YwNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjRhMDFmMjhiNmIwNGQ0NWNhZDBmZTZiODYyZDFhODAyZDdjMWJjNWU3N2ViODg1ODAwYjhkOTFjZjdmNDQ4MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTZmN2QzN2ZiMjk3Mzk5ZmVhMmE1Y2VmMWNjNDAyOGM4OTk3OWE5MDUwYTkyODU2ZjBkOTZlMWMxOGJhMTlhNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2JhNWFmZmQ4MjMxYzBlODFiYmNkNDIxNTRhMWNjOTBlODZlZmY2NjM1NWMwNDhjZTU1YjMyMzdiZGFjM2ExZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b1137552f94e4d2b9d5e455ee8b671cb",
+      "statement": "The workflow runs openwiki code --update (or --init if no wiki exists) and creates a pull request that auto-merges.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L64-L70",
+          "version": "repo-lines-v1:sha256:c6e12e5921c91d1ea9243a459a43286e0f6eb3dbd1824f3b071a78da7341a371:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzBlOGY5ZmE0MGU3YmQwNDk5ZDFjMGQ4M2ZkNzU4YWE4NWIzMDg0MmRiZDYxZjBlYTZiN2FlMTBlZmVjNzZkMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTFiZGUwNGI3NGViNjRkZjM5Nzg4ZmRmYTBjZmM1NDU4YWZlYjAwNjYzYjc2N2ZmZTU4ZjVkY2U1MmU1ODQzNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDZlMGY0Y2JhZTQ1OGQyYjIwYzU0NGRmNzVkNWU4MGY0Y2FhZDRhMTU0MTRlODMyMjBjM2UxZDc4NmZhZTA0MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDljZmY0MGJkMmM2YzE0OTU5ZDQwYmQ2MmJiZDAxZGJiMzQzNTg0MzY0NWUwNDE4NDBiYTMzMWUzNGU4ZjYyYiJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L78-L105",
+          "version": "repo-lines-v1:sha256:dc1a4e6c371de65fe669669c0f42887bb38033dde9ea424b8f63aa03c828b922:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxY2ZmNGFkMzNiYTkxYjE0OGUxYjFiODI5MGI4ZmZmMjdiMjAzZmFiZmVlNTg3MDI4MmRlMzY3MzgzYjFiZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmM2QxYjFiMzAyOGYwYTQ5NTM0YzBmMTcyYjkxY2VmYTAxZmQ3MjMyZmY2NDM0ZTU3NWVjZDUzOWUzMGM2MDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU5MGFkOTI3N2FjMGYxZWU2ZmEyNjdhMzA4Zjc0ZTUyZTJhY2RkZGI1ODBkZTczMDJhY2Q1OWRhNjM3MTI4ZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_63795a201150476c947b42f8d5a101f2",
+      "statement": "Generated files include openwiki/ directory, AGENTS.md, and CLAUDE.md.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L83-L86",
+          "version": "repo-lines-v1:sha256:6fb26052ecdb1328b0f2647b304c0dee86c5f53e719409c6febe6b5b27711a08:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmE5NjJlN2U5YjhhZjcxZDU0OGM5NmFkMjY1NmZlYTg1YzQ0ODUyNDYwOWU1NTBhZjVjZWIwOWVkOTJkYWZhMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWMyOTJhY2RkN2FlMGIxYWFhNmUwNDZkOWYzMmFmMDQwZWQ2MDBhMjQ2ZDQ5NWE2Y2FkMWE0M2I3NDk1MmIwYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTMzYWFlZWZmY2M1N2UyZWI3MzI3YzIxY2ZiZWQwYTRlZmQ2ZWIzMWU4OGUyYjg5MjFhZGE1MjM3N2U4MDJlYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDVjZmI5YjNjYmE1MjgxNTZlZjFmMmJlZGE0YWMzZTUxODYxZjViOWM5NmE4OTE0OWVkNTQ4YmYyMDU5MWFiNiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-12T10:21:41.724Z"
+  }
+}

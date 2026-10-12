@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:9c52d3de698ad3bc14a722ee716e91dbc1e8d597cb91e434b5a1c1d52f908c70",
+  "claims": [
+    {
+      "id": "claim_702abf73a7be40798af1182959a3d39f",
+      "statement": "Routes are defined in src/routes.ts with feature-flag gating using conditional spreads based on environment.features flags.",
+      "evidence": [
+        {
+          "resource": "repo://src/routes.ts#L1-L53",
+          "version": "repo-lines-v1:sha256:96dfe6b67b8bfcf65f304f975d21c672d9aa3a21944cf58a987d7a07d5bcbff3:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5YjgzOWYzOWRlZDJhYzFiNjk1ZWYzYmQ0OWZjMGE4NjcwYjQzMjM5YTlmMTFiZGQyODNhYTZiYWQ3MmQ2ZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwMmQyYzBkNmRjNWU3NGQ5MmZhMTRiOTFkYmVhMjY0MDkwYmViMzVmZGI5MTg4ZDliMzQxMTgxZGNlOWY0Y2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_179e067e24814aef8bee05922c066582",
+      "statement": "All page components use lazy loading with dynamic imports for code splitting.",
+      "evidence": [
+        {
+          "resource": "repo://src/routes.ts#L5-L16",
+          "version": "repo-lines-v1:sha256:d57d8d09574a142ffefd0e8aa18548c7fbe6b88b049b0d8400e7b4253e1b6c19:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4OWMwY2RiZDJhY2U2ZTUyZGIyOGE3N2U3YTk0NTdhOGM5ZGM2ODk0ZTEwMWEyNjVjYTliOGZjMWFmOGFiMjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhMzBmY2VmN2FkYTFjZTg1YmJiYjc1ZGM3YmQwMWNmZmJiMjQwM2NlOWZhNTE1NGExZWM3NmY3MDE1NTIyOGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5ZjgzN2U5OTUyODNhZjhmNjMwMTk0YmVkMWE0YWUxMzlmNjU0MGQ5OGUxMjRkMmU0MTkxZWY0YzU4ZmE1ZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4ZDhiNjIxNGYzNzBiYTI2MzRjYWU1ODEwMWRjYTk5YTkzN2EzYjg4ODc1OTExYWI0YWM0M2YyNWZkMWZmNjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aff1699edf934de8abbf3e112d7363d5",
+      "statement": "A single global beforeEach guard in src/main.ts reads to.meta.guard and dispatches to rhAuth.authGuard or rhAuth.publicGuard based on the guard value.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.ts#L59-L63",
+          "version": "repo-lines-v1:sha256:c2a8aeed5c895fb26b38562053aea558af552172fa2a9573a86275b8eadc0535:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzgxNDMzMDNiMzVjODQ0NWJmMDhkZDUyZDE3ZDc4YmExM2JkZDI4ZDNhNzAxNGU5NDkyMmUzM2FkOTM1ZjFiYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzZTQ2Zjk0Mjc2YjZmNmY0ZWQxZjAyYWY3OGJlZjZhMmVlMWM0MzlkZDU1ODRiOTczOTQ4MzEzMjE0ZDJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDU0OGFmNDMxNjM1ZjQ0MGFiM2Q4Mzg2MGE1MzU3YTU2MmM4M2I5NjYxZTg2OTc0YzYxOWZhOTMwNzI5MmI3OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQ5NjM2MDJkNGY2NGNkMDVkYmY1M2VhMTIzYjAyZmZmYzdmMmRjYjJhZWMxZjZmZmY4NjNjNGQ0OTQyYmE3YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5c5163c46c524435aac1e9dbe1e2379d",
+      "statement": "The auth guard redirects unauthenticated users to /auth/login, while the public guard redirects authenticated users to /.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.ts#L59-L63",
+          "version": "repo-lines-v1:sha256:c2a8aeed5c895fb26b38562053aea558af552172fa2a9573a86275b8eadc0535:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzgxNDMzMDNiMzVjODQ0NWJmMDhkZDUyZDE3ZDc4YmExM2JkZDI4ZDNhNzAxNGU5NDkyMmUzM2FkOTM1ZjFiYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzZTQ2Zjk0Mjc2YjZmNmY0ZWQxZjAyYWY3OGJlZjZhMmVlMWM0MzlkZDU1ODRiOTczOTQ4MzEzMjE0ZDJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDU0OGFmNDMxNjM1ZjQ0MGFiM2Q4Mzg2MGE1MzU3YTU2MmM4M2I5NjYxZTg2OTc0YzYxOWZhOTMwNzI5MmI3OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQ5NjM2MDJkNGY2NGNkMDVkYmY1M2VhMTIzYjAyZmZmYzdmMmRjYjJhZWMxZjZmZmY4NjNjNGQ0OTQyYmE3YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f619451a4e4e4fd7ae10c490ecdc09e9",
+      "statement": "The /invitations/accept route has no guard and must work for signed-out invitees, signed-in users, and people without accounts.",
+      "evidence": [
+        {
+          "resource": "repo://src/routes.ts#L36-L38",
+          "version": "repo-lines-v1:sha256:2b81caab8f0d4af489af605aa46453dd625a497bf2279375994812eac0a723e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjVkMmY4ZTY1YjQzMDg5NjA0MGM4MDQ1ZTM0NGJlZWFmMGQ5M2E2M2JlYmVmZDc5OTNiNjIxODhiYTM3YzhjMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWE2YTE2Y2NkYmJiZTI3ZmYzYzc2YTlhYzZmY2VkNjZkOThlOGQ1YzI1MzIzMDJiN2JmMzkwY2VmNzMzNDk3ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDEzZjdlNjcwMGE0NzQyYjQyODk2ODNhNTk2ODA2ZmU3ODFiZDM4YzE3MzVhM2ZkMzliNzNlNTQzYTk1MGI1MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzFlYWRkZGYyMWM3ZmE5ZDhkOWU3ZGU4ZmQ4M2U2YWYwNDIxNDhlZTdjMzBmYmY1Njg5ODY4YjhhYTI3NzcxYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cb6fa4700dc74caab5769297083283bf",
+      "statement": "The Shell component provides the authenticated layout with skip-link, header navigation, user menu dropdown, theme toggle, welcome banner, and navigation progress bar.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shell/Shell.vue#L1-L196",
+          "version": "repo-lines-v1:sha256:0f7ac065f1b6d7d78f644936c7295bb89fc73acd6778870fdfb06fc54d863b4d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTk2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJjZjQzMzU2MTQyYTFhMjM0YjFhMDMxOWZiMjc2M2JlN2VkMTA4ZmI4MWFjOWMzZTZkMjQ0OTZmOTJlYWI5NmFjIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwNTIyODQwZWQ1ZWM1OGEzNjJmMjBiNzFiOGFlYjY3NWQ3ZWZiOTc0MzljOTBjM2Y2MTU1YWZlYzY1Mjg1OTQzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_15905a02c2f04822b37de8df6263ad26",
+      "statement": "Theme preference is persisted in localStorage with key 'rh-theme' and toggles the 'dark' class on document.documentElement.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shell/Shell.vue#L10-L23",
+          "version": "repo-lines-v1:sha256:cbb9254683ef2bc2c51882da39baae2004ef0e0928cbe3b0194a835baacc27db:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5OTk1YjE0OGNhYjExYjY1ZjNiZmE2NWFjNDRhMGExYzY3ZjUxMDA2ZjBmYzk1NWI4ZDI0ZjdmNWQ0MTQ3YjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiMGZiMGE5NjkxYjE2YjVmODExNjhlNWJkMmI3NWU4NDJkZTQ4ZDA1YTVkNTc3OThmYjQ0MGM0ZmFlNzBkMTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5MDY0NjdhNmZlMjRjOWQyOTRiMzcyNDQ1MDEyMmUzOTFlNjFkNmRjOGEyM2Y0YWVjY2E4MWRkNzM0NmZlZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f56ba1e74a8646dd9ca819796ba9ab3c",
+      "statement": "The navigation progress bar is driven by a navigating ref that tracks router state during transitions.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shell/Shell.vue#L36-L46",
+          "version": "repo-lines-v1:sha256:458d6b1239472171d64e551f74df59a549d33cffe4c68a93e4f5effc7d39a769:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4MDk0NjRlMjU5MWE1OTBkNzUyODcwZDk1OTc4MzYxZWQ1NTU2OGMwZGU5YmRjOGQ5YTIyM2JlOGUwYmMxMmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkYWQwZDYxY2M4NjY4ZGEyYmQwZjM2MGVmNDI4Y2IwYTVkZGMzNmI5MmIzNjk1MzJjYzI5OThhMWM1ZmU4OWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiNzdjYzZiZDgwZGZkZTMxYzAzZTYxZGQxMWJkMzI5MThiNTA1MDg2Y2NiN2EzYjhmYTQ4MWE5OGQ5ODE1MjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5be0600325b84907bc9e64d245031b0b",
+      "statement": "Child routes of the Shell inherit the auth guard from their parent route.",
+      "evidence": [
+        {
+          "resource": "repo://src/routes.ts#L39-L51",
+          "version": "repo-lines-v1:sha256:0dcff6446d055697fd425d26638578291efda84e54e4d7ef25096062eccb28ef:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxMTFmMjM5YWM2NWM5ZmVjZDRmNzk3NWQ0ZWUwYzY3N2I1OGE4ZWE2Nzg1MmVhMjVkMjc5MjM5MjUxOGQyZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiODFjYWFiOGYwZDRhZjQ4OWFmNjA1YWE0NjQ1M2RkNjI1YTQ5N2JmMjI3OTM3NTk5NDgxMmVhYzBhNzIzZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1ODA2Njc4YTFjNDZjZTkwY2ExMDI4MTc5NjhiMzc5ZjlmNTEyZWVmOGUxZTc3OTZlNGUzODA2NzVlYTIzODIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_049d076f245d4437b2e34ec606da1a41",
+      "statement": "A catch-all route redirects any unmatched paths to the Home component without a guard.",
+      "evidence": [
+        {
+          "resource": "repo://src/routes.ts#L52-L52",
+          "version": "repo-lines-v1:sha256:32d7ce9a88ac02b67f47e0dacf0511752550b6ca253308b204aeac2f4ad52886:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJkN2NlOWE4OGFjMDJiNjdmNDdlMGRhY2YwNTExNzUyNTUwYjZjYTI1MzMwOGIyMDRhZWFjMmY0YWQ1Mjg4NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJkN2NlOWE4OGFjMDJiNjdmNDdlMGRhY2YwNTExNzUyNTUwYjZjYTI1MzMwOGIyMDRhZWFjMmY0YWQ1Mjg4NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGM1MWVmYWNmMTBiNzYxYzgzMmYzZGIzY2ZmNGE1YTZkYjRjNDNmMzk5MDI5ZDMzOTExMzhiOGJlNWVjZjQwYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjAyZDJjMGQ2ZGM1ZTc0ZDkyZmExNGI5MWRiZWEyNjQwOTBiZWIzNWZkYjkxODhkOWIzNDExODFkY2U5ZjRjZSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-12T10:21:41.724Z"
+  }
+}

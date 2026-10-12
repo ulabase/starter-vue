@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ea80c6d94e2bd32c0af6228650ed2caea89baf9e1b36c2b13dd0e593ba02591f",
+  "claims": [
+    {
+      "id": "claim_e0b83b78550c40b2b63dd1d0d107ea3d",
+      "statement": "Pages in the Ulabase Vue starter are created as Vue components in the src/pages/ directory with each page in its own subdirectory (e.g., src/pages/your-page-name/YourPage.vue).",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/home/Home.vue",
+          "version": "repo-file-v1:sha256:0500ea71e796912e855d0d24c220b0e03e5e95a880084ec45349ed82b9f56540"
+        },
+        {
+          "resource": "repo://src/pages/shell/Shell.vue",
+          "version": "repo-file-v1:sha256:0f7ac065f1b6d7d78f644936c7295bb89fc73acd6778870fdfb06fc54d863b4d"
+        },
+        {
+          "resource": "repo://src/pages/teams/Teams.vue",
+          "version": "repo-file-v1:sha256:32f1e0783c7b9225f45970730e141b460dd35743306e0b637ca01b443ab1ae48"
+        }
+      ]
+    },
+    {
+      "id": "claim_a40a4053000d410ca017580a997d4b53",
+      "statement": "Routes are registered in src/routes.ts using lazy loading with the pattern `const Component = () => import('./path/to/Component.vue')` for code splitting.",
+      "evidence": [
+        {
+          "resource": "repo://src/routes.ts#L5-L16",
+          "version": "repo-lines-v1:sha256:d57d8d09574a142ffefd0e8aa18548c7fbe6b88b049b0d8400e7b4253e1b6c19:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4OWMwY2RiZDJhY2U2ZTUyZGIyOGE3N2U3YTk0NTdhOGM5ZGM2ODk0ZTEwMWEyNjVjYTliOGZjMWFmOGFiMjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhMzBmY2VmN2FkYTFjZTg1YmJiYjc1ZGM3YmQwMWNmZmJiMjQwM2NlOWZhNTE1NGExZWM3NmY3MDE1NTIyOGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5ZjgzN2U5OTUyODNhZjhmNjMwMTk0YmVkMWE0YWUxMzlmNjU0MGQ5OGUxMjRkMmU0MTkxZWY0YzU4ZmE1ZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4ZDhiNjIxNGYzNzBiYTI2MzRjYWU1ODEwMWRjYTk5YTkzN2EzYjg4ODc1OTExYWI0YWM0M2YyNWZkMWZmNjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_636a29b3def5411fa80dff2b4516b7a0",
+      "statement": "Authenticated pages should be added as children of the Shell route in src/routes.ts, which automatically inherits the 'auth' guard from the parent.",
+      "evidence": [
+        {
+          "resource": "repo://src/routes.ts#L39-L51",
+          "version": "repo-lines-v1:sha256:0dcff6446d055697fd425d26638578291efda84e54e4d7ef25096062eccb28ef:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxMTFmMjM5YWM2NWM5ZmVjZDRmNzk3NWQ0ZWUwYzY3N2I1OGE4ZWE2Nzg1MmVhMjVkMjc5MjM5MjUxOGQyZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiODFjYWFiOGYwZDRhZjQ4OWFmNjA1YWE0NjQ1M2RkNjI1YTQ5N2JmMjI3OTM3NTk5NDgxMmVhYzBhNzIzZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1ODA2Njc4YTFjNDZjZTkwY2ExMDI4MTc5NjhiMzc5ZjlmNTEyZWVmOGUxZTc3OTZlNGUzODA2NzVlYTIzODIifQ"
+        },
+        {
+          "resource": "repo://src/routes.ts#L42-L42",
+          "version": "repo-lines-v1:sha256:47d90890db1d26318c2591e1801c543a5eab87edeaaa7ec0f6ddf0be750ac550:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdkOTA4OTBkYjFkMjYzMThjMjU5MWUxODAxYzU0M2E1ZWFiODdlZGVhYWE3ZWMwZjZkZGYwYmU3NTBhYzU1MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdkOTA4OTBkYjFkMjYzMThjMjU5MWUxODAxYzU0M2E1ZWFiODdlZGVhYWE3ZWMwZjZkZGYwYmU3NTBhYzU1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzFlYWRkZGYyMWM3ZmE5ZDhkOWU3ZGU4ZmQ4M2U2YWYwNDIxNDhlZTdjMzBmYmY1Njg5ODY4YjhhYTI3NzcxYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjBhY2U1NmIxZGM0M2ZmZWZiMjdiMzNmMmYzMjM1MWY1MTAzZWFkNTAwOTlmYzJhNjIxNDkwOTgzMWQyNzAyNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_75f250c6ade34193a43ed4f0669776f0",
+      "statement": "Public pages should be added at the top level of the routes array with `meta: { guard: 'public' }` to redirect authenticated users away.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.ts#L59-L62",
+          "version": "repo-lines-v1:sha256:f31a61dfaa53627be78d0348a00c43bd59728fa2872674d39c0fdd8bd82697ce:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzgxNDMzMDNiMzVjODQ0NWJmMDhkZDUyZDE3ZDc4YmExM2JkZDI4ZDNhNzAxNGU5NDkyMmUzM2FkOTM1ZjFiYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGZhYzRlNDM2MzBhYmY2OGMzYTRhNzU3M2ZkNGM0MzAwOGJhNzk4ZGQ3NmMzNzU5ZWVlZjUzZTZjZmY4ZDJlNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDU0OGFmNDMxNjM1ZjQ0MGFiM2Q4Mzg2MGE1MzU3YTU2MmM4M2I5NjYxZTg2OTc0YzYxOWZhOTMwNzI5MmI3OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGMwMTUyOTRkOTliNzY2OWE5ZjBmODI3ZTliMTJhNDNjZTBlNDYyYmFhOWEyMjZhOTUxMjE3OTQ3MWZkMDBkYyJ9"
+        },
+        {
+          "resource": "repo://src/routes.ts#L22-L38",
+          "version": "repo-lines-v1:sha256:5b43a648b3b81ff6fa38223718938d11533f247ce0741fac24e8437e0a4061c3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhMjkzNTc0NWFiN2E3N2Y1NmY5ZTA0OTc3Zjg0YjI2YTIzYmRhZmNkODViYzU0MmQ3MDgxM2ZmZWFmMGQ1YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhNmExNmNjZGJiYmUyN2ZmM2M3NmE5YWM2ZmNlZDY2ZDk4ZThkNWMyNTMyMzAyYjdiZjM5MGNlZjczMzQ5N2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1OWNmODFiOTAyZGRjOTJlYzgyMWViNDI1YTdlZGVlYWE5MDM4MGI1YWE3NWFlZjEwZGJiOTFlNDlhZWMwZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxZWFkZGRmMjFjN2ZhOWQ4ZDllN2RlOGZkODNlNmFmMDQyMTQ4ZWU3YzMwZmJmNTY4OTg2OGI4YWEyNzc3MWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_abb3378d5fc64c31bd43930928443ccd",
+      "statement": "Feature-flagged routes use conditional spreads like `...(featureFlag ? [{ path: '/path', component: Component }] : [])` to conditionally include routes based on environment features.",
+      "evidence": [
+        {
+          "resource": "repo://src/environments/environment.ts#L10-L16",
+          "version": "repo-lines-v1:sha256:e0c09c50abf5287407f3a473d775c4b3d6aa5796cb202935980d529c1b428e51:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjRjNjE5ZmZkNmI5MjFjNTI3OTExZWRlMTQ3MWM5MTQ5YTFkZTg2NTUzNDE4NWIwOWY2Nzg1MGRjMzMwZDU2MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQwM2NhYjc3MGI2NjA0MzQ5Njg4YzAwNTk1ZmVmNWU0NjcwN2M1ZWVjZTU5NGMzYWIxM2RjMzY0NWRlMTdmMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCJ9"
+        },
+        {
+          "resource": "repo://src/routes.ts#L24-L38",
+          "version": "repo-lines-v1:sha256:7fd12ba704cbadd936059236810ecaa1e476ad32b5df508340c10a742230be03:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkYTU4MWRkZWUxZGY2ZmY4OGI4NTI0MmI4NjUyMWNjOTc0NWZmODZkYzAyZmVjYWNmMGVjZTAxZTg2OGNmNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhNmExNmNjZGJiYmUyN2ZmM2M3NmE5YWM2ZmNlZDY2ZDk4ZThkNWMyNTMyMzAyYjdiZjM5MGNlZjczMzQ5N2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzZjcyNGZkMmUyYTYzOWY0MmNjZmNjZGJkNTc3MjQyYWEwNTJjYzU4OGQxMDNiN2I3YjY0NmQ5YzFhY2NkOWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxZWFkZGRmMjFjN2ZhOWQ4ZDllN2RlOGZkODNlNmFmMDQyMTQ4ZWU3YzMwZmJmNTY4OTg2OGI4YWEyNzc3MWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8f9865b9530f4e8bad2835d36695fea3",
+      "statement": "Navigation links for authenticated pages are added in the Shell.vue template's nav section using RouterLink with the `isActive()` function for active state highlighting.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shell/Shell.vue#L133-L137",
+          "version": "repo-lines-v1:sha256:96840d161e7c3e2615462ad0ebda8d7e41b37daf943d79e759c10e0c82e074ff:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTA4ZDQ3OTg2ZWI5ZTUwM2MyMDY0OWYyMWRkYmVjOGNhNWMwZmNkZGZkNjRmOGJiNDg1NGRhNGU1Mzg0Y2U3YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzZhZmFlNjI1OGE1ZmM0NTRiOTg5MmNhOWI2MmQ1NjY0ZmExNGE2M2VkZTY3M2Q3OTExYjc4MTc2NTgzNTZkNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTA5NmQ3MTkxNTc1ZDM3MDgwZjNhMWY0NWNhM2IwODMxOGM3M2ZhZDJhMDk3Y2E3ZGQ0MDk0NWJiMWI3YzhiOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTkwYzc2MDBkNWNmMzRkM2U2YWRmZmIwN2E3NTc5Mzk4YTlkNzg4ZjUyYmQwYTIyMTNkYWE1ZDRlMGFkNDhjMCJ9"
+        },
+        {
+          "resource": "repo://src/pages/shell/Shell.vue#L77-L80",
+          "version": "repo-lines-v1:sha256:28dc239878586dfaf05e0b30021445fd1afec448e8302a4e28514f29f8937c30:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjUzYWI3YTA0NzhjMzE3YzRjMDdhMWU2ZjVjNDhiYzBhM2U4ZDBlMDE3MDgwNjE0MmE4Y2NhODU0ODZjNDFlMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmNjZWQ0MjEyZWE2NTZjMGVlM2VjOWQxOTlhYzdhZTdlZTIwZDBkMGY4MzUyZDhlY2ZmZTdkOTMzYmJhZjA1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDAwNTZjODVjMjQzZTRmOWEzZTU1ZDY1YmY0ZjkxNmJhYzY2ZmM4NjhjNGYzZGNhYzcxYTI2NjUzYzVhZDMwMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ed5ee0bbd22d437496526d3f3c9dcd65",
+      "statement": "The global beforeEach guard in main.ts reads `to.meta.guard` and dispatches to authGuard or publicGuard from @ulabase/kit-vue based on the guard value.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.ts#L58-L63",
+          "version": "repo-lines-v1:sha256:b975674350a8680fbe03eeb38135c5c64fc7a62363421725589e6969ebccb56c:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGZhYjgyYzNjM2YwMjkwZjIzMDgxZTM2N2I2ZGE5ZDM1YTZhY2ZlZGZhZWVjZTkzYzg3ZDliN2U3ZDM0YTg0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzZTQ2Zjk0Mjc2YjZmNmY0ZWQxZjAyYWY3OGJlZjZhMmVlMWM0MzlkZDU1ODRiOTczOTQ4MzEzMjE0ZDJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjAzYWRjNDdiMmM3YmM5NTVhNWQzY2U0ZDAyYjZjY2JlMDc0NDQzNGVmNjE5Y2Q4MWExYTgwNmRkNjYyYjgwNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQ5NjM2MDJkNGY2NGNkMDVkYmY1M2VhMTIzYjAyZmZmYzdmMmRjYjJhZWMxZjZmZmY4NjNjNGQ0OTQyYmE3YiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-12T10:21:41.724Z"
+  }
+}

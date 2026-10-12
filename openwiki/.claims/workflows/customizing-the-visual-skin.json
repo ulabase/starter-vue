@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:9ff55e6401c20367718856253f859f766bccba171de59b0361e816706a22c18c",
+  "claims": [
+    {
+      "id": "claim_b2cc1396123147edb776304577dfb3a5",
+      "statement": "The visual skin uses a two-layer CSS architecture: design tokens in section 1 of styles.css and disposable skin classes in sections 3-5.",
+      "evidence": [
+        {
+          "resource": "repo://src/styles.css#L1-L20",
+          "version": "repo-lines-v1:sha256:aa7e2dfb419b4f9f3cae8ae279f420e3c06a03d54873eab04e6f0476092ef498:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViMzAzZjcwZTI1MWE0MjZmNzZjMzVlYzdhM2M0OGM0YjRlNzVjYTNlZTEyMjI1MGMxYTEyMWFkZjQ1NzUxM2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1NTI0NzJjZTQ1ZWQ4ZTQ5YTUwZDc4ODVkMmQxMDFkZDMyZmZlYzA5MWNlNWYyODZiZjc5ZjllMjI4Y2ZmM2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI5N2UyOWU5Yjc0YjdjNDY5MmEzYjQyMDcyNTVmNjkwMjgxMmQ1NzZiOWI5MDk4MDI4NWRhYmViZGFkZTVlYWQifQ"
+        },
+        {
+          "resource": "repo://src/styles.css#L274-L280",
+          "version": "repo-lines-v1:sha256:37d4be31b1a9efff265b1d849714bbe0f1c55ee1a39ff66eb36c2ec9ba435420:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWIzMDNmNzBlMjUxYTQyNmY3NmMzNWVjN2EzYzQ4YzRiNGU3NWNhM2VlMTIyMjUwYzFhMTIxYWRmNDU3NTEzYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDdhNjA2ZTVhNDM0Zjk5NDQwNDA0YjVmMzY0M2RmZmNkYTYwYmY3OGM4Y2MxMDFiZWM2ZDM1NDFmNTZiN2ZmMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWM1NDQ5NWI3Mjk0NWZkZTc3ZWYzMzNhMjJmNDFlNjZhZDBjMDhmYTE1ZjNiZjRkNjEwMzZiYWViMzliMTk5NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_db830c7628dd4e988509d30ef6d1987d",
+      "statement": "Dark mode is implemented by adding a 'dark' class to the root element, which overrides all design tokens defined in the :root selector.",
+      "evidence": [
+        {
+          "resource": "repo://src/styles.css#L130-L158",
+          "version": "repo-lines-v1:sha256:e3ad3e1eea88f336cac5f91b1581249f40e3d2ad34851fbc2cb0893ee1f90661:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhZGFjZTY0N2Q1OWMzYTk0NDMxMzM1YWYyYjBlMjkwMzY5ZTc2Y2UyNTQyNDk5ODhhOThhNGQ4ODMyYmMwN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5YWM4NTA2N2M1MjMwMDM5ODMwNDc3YzcwNDlmMTUwOTg0NGIxNGE5NzE3NDAyYjFiZjYwYmQyY2YzN2YyY2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmYjBlODY3ODYxMTdiOGMwYmI2YzEwNTMxNTUzMTRjOGJhZmY4MTZlODk4Y2RkZWQwYWVhZDg4NjQwMTM3YmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b4825939697d4812ad582cec00d2c1b9",
+      "statement": "The useTheme composable in Shell.vue toggles dark mode by adding/removing the 'dark' class on document.documentElement and persists the preference to localStorage under the key 'rh-theme'.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shell/Shell.vue#L8-L23",
+          "version": "repo-lines-v1:sha256:90d097dd6eacdc6c395a5e0237f83369d501791fa7701d20ef697c2df674e84b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhZGVhNWZkYTlhMmY3MDlhNWViNzNhODBjZjkwMTQzYjJiNDY3NjM4MDQ4NDBhZTE0Y2UwMjEwYWM3MTk3YjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0M2VmMDMyZjU4YzZiNzA4NGZhYTZhYWRlMzQyNGNlMDQxZjNlNGQxZTQ4M2I2YzZlZWQxYjEzOWJmNDJhOGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5MDY0NjdhNmZlMjRjOWQyOTRiMzcyNDQ1MDEyMmUzOTFlNjFkNmRjOGEyM2Y0YWVjY2E4MWRkNzM0NmZlZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_04aa51aa7feb441eb57ecad444ca9430",
+      "statement": "Alert.vue carries no styles of its own — only the .success-msg and .form-error hooks plus ARIA roles, so swapping it changes all feedback messages.",
+      "evidence": [
+        {
+          "resource": "repo://src/ui/alert/Alert.vue#L1-L53",
+          "version": "repo-lines-v1:sha256:51ef4b9bdbf90842d01337c23d2f1244cc3ba4c2929f400dc9c90a60a3f69c8f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmNDMzNTYxNDJhMWEyMzRiMWEwMzE5ZmIyNzYzYmU3ZWQxMDhmYjgxYWM5YzNlNmQyNDQ5NmY5MmVhYjk2YWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1MjI4NDBlZDVlYzU4YTM2MmYyMGI3MWI4YWViNjc1ZDdlZmI5NzQzOWM5MGMzZjYxNTVhZmVjNjUyODU5NDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f9964e159a464a6bb1fe8f0dcbc87668",
+      "statement": "Components reference a stable vocabulary of semantic class hooks (.card, .btn-primary, .form-field, .password-field, .form-error, .success-msg, etc.) that can be replaced with framework-specific components using the swap map.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L77-L104",
+          "version": "repo-lines-v1:sha256:ef07081fac8edd32161b7957f952434f3c6ef02617335c4cdf5c7ef9bec510bb:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxNzQ3ODJlNTJkOWVkYzA1YzZkZWFlMmJjYTNlYWMxMGU2NjgyZjdmMzZmOTE2NjY0OTJmMTlmZTgyNTJjNWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3N2Q2MzY2ZDhmMjYzZjk3MjQ1OTIyNzY2ZGY0YTljNGJhMTdkOTk2MmJlMjJkNDY4MzIyOGI5YTUxZDY5YjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3ZjM3MTBjOWNiYjkwODNjMDYzODg1M2Y3ZjFlZGQxMmY3M2I2OTRlNjRlMzg5ZmEwNDQ2YTVlMDJjZTIwODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNlZDg3NGZkYWUwZDFhMDdjZGE5ZTcxZDUzM2RlYjk0NGU4NDU0MzQ0ZTk3ZTg1OTNkY2Q5ZTZiOGVjMGFmMWYifQ"
+        },
+        {
+          "resource": "repo://src/styles.css#L283-L596",
+          "version": "repo-lines-v1:sha256:12d9c87a006b00a963165af45a1e021ea5d42b8bf1c5020f5bcd2cc8cde91f16:eyJzZWxlY3RlZExpbmVDb3VudCI6MzE0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJiYTU2NjBjMjljNWI3NDFjOGE4YjQxYTRmYzhjOTA2NzdmYmYxOGQ4MjQ1NDViYmVlMzUyNmRmNDUzNGEyYzdjIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiZGEzZjBjOTU0NjE3YWMwNGFmMGRjZmQwMGQxZjYzM2RiNzdiYzBjNWRkMTI5OGVjNmU5ZGE1ODE4N2Q3OTFhIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJhOGE1MjQ2MWRhODllMmZmMDE2NzVmNjAzMGZjZDg4MWRkYmZkOGMxZDBhOWVjNTMyNTgxZGJmMjE4ZTE2ZGE0In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd04a06dbdff45429d7722e2a207ff35",
+      "statement": "Page-specific layout classes (.team-row, .member-row, .feature-grid) stay in component CSS files and are not part of the semantic contract for theming.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L103-L104",
+          "version": "repo-lines-v1:sha256:4702cda0800cd5b146c03d8859c7279717410711a761afd36548b8eebe6bfb7e:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmRhZGUzNmM1NDRkNjNhYjhlMWZhZTYwMjQ1NzYyYjAyNGJmYzVlMTYyMzI5OTMyZjY3YmY3OGVhNDkwZmRjMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTc3ZDYzNjZkOGYyNjNmOTcyNDU5MjI3NjZkZjRhOWM0YmExN2Q5OTYyYmUyMmQ0NjgzMjI4YjlhNTFkNjliOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmQzMDgwZDVmMmI2NjEwMzljYWU2ZjFjZWI4MzdlNjg4NTVlNGM1ZDFhN2FlY2Y0YTZjZDNiYjdmNzIyNjExMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2VkODc0ZmRhZTBkMWEwN2NkYTllNzFkNTMzZGViOTQ0ZTg0NTQzNDRlOTdlODU5M2RjZDllNmI4ZWMwYWYxZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cece2687af5e4061b0f22113306aa0eb",
+      "statement": "The design language uses a 'blueprint' motif with flat surfaces, squared-off radii, a faint dot grid, and UI chrome in small uppercase monospace.",
+      "evidence": [
+        {
+          "resource": "repo://src/styles.css#L22-L33",
+          "version": "repo-lines-v1:sha256:c3cfb7ef8071684b9666f38b02e0592920eaf16304d719e5c2653532d58b66ac:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2MzA5NzcwYmYyZGM2ZjIyZTViM2M3NmFkZGU5MWFjMDI0MGY1YzJmZjZiNDJiMzdiNGM2MDFiMjM5NThjYzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhOWRjMjNjNmUyNDAyNmI4YzViNmFkZGYwZjQ4M2NlODc1OWJmOWY0OWFkMGI5ZGMyZTIyYjI2MGNhODc1NWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxOTkxMDI5MDE0MTU5ZmFjNTM1ZjUxYTkwNjcyMDMwNTAzYWE3NDQ1NjdjZDYzNDQwYmUzZmIxNmZmY2UxMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyYWQzYjM1MTZmNWUwMDYyNjZjODI5Y2VkY2U2N2JhZWFlMDBiZDdmMjg2ZmE4ZDkxMzdiMWMxNWE1ZWUwM2MifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-12T10:21:41.724Z"
+  }
+}

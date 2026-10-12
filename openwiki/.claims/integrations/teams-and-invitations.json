@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a1445532b5d7f172144ed8ce24d8157255f4dbec840efe9e21c724af59e5b046",
+  "claims": [
+    {
+      "id": "claim_ca23267697b74729bb460fb8ff2d39b4",
+      "statement": "The TeamDetail component uses a watch on route.params.id to reload data when navigating between teams, reusing the same component instance",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/teams/detail/TeamDetail.vue#L87-L93",
+          "version": "repo-lines-v1:sha256:2cde68dea578099765896cdbc08a322dcf9d69525396214df3a38a3b855bd7f0:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTVjZjNlMzE2NTg4ZmQ1ZTcxMDk3MWNhYTlmMzE3NDE0NDJlOWQ2Nzg5YTMxNzJmNDlmZmFmNjFlYTYzNWIzZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk5NjdlYzFlZDM4MzZmOGViMTdhZmYxNzJiNWJmZWY3ZGU2MDQ4NWE0MzljNmNhMTFjNTkxZTE3NTU3MzlhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODhkOWFlZjdlNDE0NGI4MGRmNWM4M2U0YTE1N2M5M2MzYTllMWZiYmMyOTYxZWMxNGQ0MWEwMzJlMjU5MDk0MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzkxMjU4NzhkOTA4NWRiMjVhZTViNDAxNmU2MDAzZDkwMTUxNjU2ZmJhMGZkZTIwNzVlZmZkZGQwNDQ2MTVmYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b5370552bcc14cfca1c53443f8627060",
+      "statement": "The resend cooldown for invitations is 5 minutes (RESEND_COOLDOWN_MS = 5 * 60 * 1000) with UI showing remaining time in minutes",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/teams/detail/TeamDetail.vue#L9-L10",
+          "version": "repo-lines-v1:sha256:a878b3c3b8b52c2dd4bc8185332959e9dc43487e23ad9fb3a0bfc9acecee544d:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWM0Yjc2NjQ3OGVhZWQwMzBiNzM0ZjIwMGU3ZGYwMzAzYWMyODY5MTZhMzljNzc0MGFkNDBhOGY0M2JjZWJmZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmQ5Nzk5NDQ2ZmQ1ZmE1NzExNWRhYmM5ZTQ5MDRmZmZmODgyZTdlZThhNDA3ZGNkMzU5NWRjNTYzZjcyYjE5NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWE5M2JlYTVkNzVlMGFhZjY2ZjFlMzJmNjQ0ZjE5OTY4OThiMGM2NjU1M2ExMDhmOWNlMTE5ZTg5NTAxZTgwMyJ9"
+        },
+        {
+          "resource": "repo://src/pages/teams/detail/TeamDetail.vue#L95-L108",
+          "version": "repo-lines-v1:sha256:74fe7ce7a291d6592b5881d12c60bd7935b094a8253574d3ebe54263ccc4b29b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmM2E1ZWNiMzA2MGQyMDY0ZjBjNGYyNWYyMzdiMmNkM2UwNmQxZmZhMTdiNTJmMDE5ODdiMTEwNWZhYTA3YzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU5MjQ1MWQwMzk4YTBlODY3ODRlNDU0MzJiNzJlNDI1ZGZiZDQ1YzM1YjhhMjNjNTI3MjRkZWJkM2ZhMjZkOTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdlNjBkMTQ0MjVkYjA0NWNmNzQ5YmMxMjk0ZWEzMjIxYTQ3YzBmN2ViMjJjNWJlODMwOTMzNGE5YWMzZWRmZTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8e18732724fb4e39ab549fdf17245e8a",
+      "statement": "The invitation acceptance page (/invitations/accept) has no navigation guard and must work for all authentication states: signed-out invitees, signed-in users, and people without an account",
+      "evidence": [
+        {
+          "resource": "repo://src/routes.ts#L36-L38",
+          "version": "repo-lines-v1:sha256:2b81caab8f0d4af489af605aa46453dd625a497bf2279375994812eac0a723e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjVkMmY4ZTY1YjQzMDg5NjA0MGM4MDQ1ZTM0NGJlZWFmMGQ5M2E2M2JlYmVmZDc5OTNiNjIxODhiYTM3YzhjMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWE2YTE2Y2NkYmJiZTI3ZmYzYzc2YTlhYzZmY2VkNjZkOThlOGQ1YzI1MzIzMDJiN2JmMzkwY2VmNzMzNDk3ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDEzZjdlNjcwMGE0NzQyYjQyODk2ODNhNTk2ODA2ZmU3ODFiZDM4YzE3MzVhM2ZkMzliNzNlNTQzYTk1MGI1MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzFlYWRkZGYyMWM3ZmE5ZDhkOWU3ZGU4ZmQ4M2U2YWYwNDIxNDhlZTdjMzBmYmY1Njg5ODY4YjhhYTI3NzcxYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_11839770cada497faeb9fcda88aa395a",
+      "statement": "The Accept.vue component implements three distinct flows: new users set password and activate account, logged-in users accept directly, and existing non-logged-in users login then accept",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/invitations/accept/Accept.vue#L107-L179",
+          "version": "repo-lines-v1:sha256:5e516e69d9df5aeb96d7cb823dc57d3b0ea0c5567b702b82c86a33e209bfbc69:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiN2Y4MTQwMjFlZjBmMTFmYjRhOWUxYmJlNjliNWE0OTM5NzYxY2U5OTY1NmQ2YzhkY2ViZDdkNzUwOGViM2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1MjI4NDBlZDVlYzU4YTM2MmYyMGI3MWI4YWViNjc1ZDdlZmI5NzQzOWM5MGMzZjYxNTVhZmVjNjUyODU5NDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmOWI3MmM0MGZlOWY1ZGJiODU3MjZjYWI3ZGMzM2Y4ZjU0NWQ4NWY4Y2IwMDhkMzdmNDEzODRhNDVkZjcwYjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/pages/invitations/accept/Accept.vue#L54-L83",
+          "version": "repo-lines-v1:sha256:be545c6e677709c3db348d4bedbb00c93a4ea98a3509b2c939d0946b0aeba0ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyYzE3ZGZkN2ZjMzYxOTYxNTNlNTUwOGM4ZDBjMGI5NjFkOTM2YWRlMDZmZmYzY2IyOTRlNzE5OWE3NmY2YzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1OTljNDYwODc4NzgyYTk1MmM4ZWE1MmJiZmUzNmFlZjMzOTFlNWNhMzY5YjAzYTFlYWVjNDNiMzEzOWIwMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0ZTdhNjZlNTRkNjUwYmQwNzJhOGFkNDk0YjgwNTVlNzIyYmMxMmRhYjJhYzRkMDJiZDE3OTBiYTM4YmU4NDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_37f3222e84ae4d8083306e0525787589",
+      "statement": "Team list page displays auth.teams with active team indicator and switches team context via auth.switchTeam() before navigating to team detail",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/teams/Teams.vue#L20-L27",
+          "version": "repo-lines-v1:sha256:f24e8a453905992f1b53f7bae0cfdc591f781914b4cae5455a882c27df2f9e5a:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGFjYzg1NjczNGY5YWRhMzk3MWEyNTgwNWNjODRkNWNiN2Y4OWZjMzYzOTYwZTBmNDM1YzkyYzcyZDI3MjMzYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjgwZDJkZDRmMjg5ZDI2ZGM3NTdjMmI2NWEwNmMzOTIyN2E2NzE3YzRiNDhiNWEzOTc5MmM5ZjExZTQxYWVhNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjRlN2E2NmU1NGQ2NTBiZDA3MmE4YWQ0OTRiODA1NWU3MjJiYzEyZGFiMmFjNGQwMmJkMTc5MGJhMzhiZTg0NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d2a0713954da42f0bae758ad08d1dab3",
+      "statement": "The teamInvitations feature flag controls registration of the /invitations/accept route and related invitation UI components",
+      "evidence": [
+        {
+          "resource": "repo://src/environments/environment.ts#L10-L16",
+          "version": "repo-lines-v1:sha256:e0c09c50abf5287407f3a473d775c4b3d6aa5796cb202935980d529c1b428e51:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjRjNjE5ZmZkNmI5MjFjNTI3OTExZWRlMTQ3MWM5MTQ5YTFkZTg2NTUzNDE4NWIwOWY2Nzg1MGRjMzMwZDU2MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQwM2NhYjc3MGI2NjA0MzQ5Njg4YzAwNTk1ZmVmNWU0NjcwN2M1ZWVjZTU5NGMzYWIxM2RjMzY0NWRlMTdmMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCJ9"
+        },
+        {
+          "resource": "repo://src/routes.ts#L18-L18",
+          "version": "repo-lines-v1:sha256:94653facfa422aa108ac31aa5a02a920779a3603b928ebb70024c9ecc54aa65a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQ2NTNmYWNmYTQyMmFhMTA4YWMzMWFhNWEwMmE5MjA3NzlhMzYwM2I5MjhlYmI3MDAyNGM5ZWNjNTRhYTY1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQ2NTNmYWNmYTQyMmFhMTA4YWMzMWFhNWEwMmE5MjA3NzlhMzYwM2I5MjhlYmI3MDAyNGM5ZWNjNTRhYTY1YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWJmYzNkZjQyZmNmMGFjYzM5YTA3NTIzYzk4YWNhMmEyMzNmYTBjYmYyMDNjMTU5NWYwYTU4NzBkY2NlODYyZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjU5Y2Y4MWI5MDJkZGM5MmVjODIxZWI0MjVhN2VkZWVhYTkwMzgwYjVhYTc1YWVmMTBkYmI5MWU0OWFlYzBkMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9176c684feb44852b8c69a51341cc585",
+      "statement": "Team deletion is only possible when no other members remain, enforced by backend, with two-step confirmation and automatic team switching after deletion",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/teams/detail/TeamDetail.vue#L200-L216",
+          "version": "repo-lines-v1:sha256:5d5bc027170c71fff64ebf871261d6b38024d1cf59da096b3959424152bfedb6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzMTljNDMyNGY1ZGQzMGRjMDk0NDg2MTBlYTYwZTE2MDhjZTZiYTI5MGM1N2ZiZDM5MDQ0NzRkNzA0MGI0YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwNzI1NzY0MzZlZjMzOWRjNDQ1MDlmYjNiYjgyYzU5NjJiYTAxNGI3MzYxOTQ2NzhlYmIwZDFhYjU0Y2NmMDkifQ"
+        },
+        {
+          "resource": "repo://src/pages/teams/detail/TeamDetail.vue#L393-L409",
+          "version": "repo-lines-v1:sha256:9eca5b2136b06cf6f0c75a40ed7fc03b97e86da7889dede2ee6c19ef0d760053:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxOWZiN2NjZjNkNWY5MDMwZjFiNmQ5MTY2NzYwOGUwOTk1Y2ZkODEzYjRhYTY2ZjkxMzExNTgzZTk1NzE2ZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyZjNjZmQxMWRhNjE1MDE5N2FjZWVkMDg0MDZhYzY0YjA1MDM0MGRlN2JjMDQxMjRhNGNiN2VmYTY3MTM0MGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViNzI5MGQwOWUyNDlmNmExZDI5N2M1ODg3OWUwOWU2NWU0NTk0MzY2ZGVhODM4YTdkOTUxNmZlZDUxYTg5N2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxOTdiODVmZTk5MDI1ZmZlMTM4MzE2YmYyZjJiMTlmMzhmMDg1MTk5MmYwYTEwN2JiMjRiZjYzZjI5ZTQzNzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b2ab110f8cc446cf891added1e8a57f5",
+      "statement": "Role-based visibility in TeamDetail shows member management, invitation management, and team settings only to owners (isOwner computed from team.role === 'owner')",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/teams/detail/TeamDetail.vue#L16-L17",
+          "version": "repo-lines-v1:sha256:cb82c8aee057f79addabf2aed30a1f98cd8ef2410fe4fa3527c36a89334284f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmI2MGViOWJhMjIzNmZhNmI0NDZkZmY1YzdkNTNkYTk3MWZlNGJkMWM1NGYwMjc5MWI1MTg3NTRhYTgyOWNjMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmI2MWMyMmFkMTg1M2FhZGFjNzJlNzFjMWVlZjRlMjRkYzZiNGU3ZmQwNDViNjMwN2ExYWRiZWI2OWU0YTlmZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDdkZGFmODg1NWY1ODMwMTU4OTMzMTAxNzBkNzNiY2ExODUwMWJiZWMyNmUxY2Q4NzM4ZmM5ZjRmYTg4MmQyZSJ9"
+        },
+        {
+          "resource": "repo://src/pages/teams/detail/TeamDetail.vue#L250-L285",
+          "version": "repo-lines-v1:sha256:c29600e580fd3e844ea7446e24d16679d7bcf534e9b818d26b03285504fc5d27:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiNjY2MzhjNzU3YjcwMGYyNTk3YTFkNjczNTk4MzBhNjgxYzVlOWJkNjYxMzQxYWNjMjY2MjY3NzMxYzAxOTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3ZTcyNTIzYWI4ZTM5ZmMzMGY3MTA5YWExMmExMDgwMTU3NTM0OGM3NzczZDg1MGM5NzY3OWYxMDY4NjgxNTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyOTQyM2M4NTM2ZGJhNWJlNjllM2RhOGRhZTgyNTM1ODQ4N2I5OThhZmI2NTc0NmJjMDIzNzE1NmE0YmYwZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4NmNiNTkxODZkMjBiZWMwYjNhZTM1ZGJmNjcwYzk4NzYyMzBiODAzNzJmZThkMWY4ZTBkNzc4MjI3ZDkxMjAifQ"
+        },
+        {
+          "resource": "repo://src/pages/teams/detail/TeamDetail.vue#L290-L412",
+          "version": "repo-lines-v1:sha256:1a56d621cf8db34f5389e93fb95ef9e8ddbc9180ceb9e963c5bb0264eb6d5dae:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhODEwZGViOGIzNjcyYzZlNzUwMzE2YTU2MWUxNmZkODM3OWE0NDI3ZDMxMzAyYzIyOThkZGViZTcyOWYzMmYyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwNTIyODQwZWQ1ZWM1OGEzNjJmMjBiNzFiOGFlYjY3NWQ3ZWZiOTc0MzljOTBjM2Y2MTU1YWZlYzY1Mjg1OTQzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJjOWYxMzZlMTc0YTdhNzgwNWE0MDkwNTAwNTJmYWRhZTA1ODllNzA0NTM4OTU5NTIzMzBjNzJkZjU3Njc2Mjk4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-12T10:21:41.724Z"
+  }
+}

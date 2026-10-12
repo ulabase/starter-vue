@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:883ec99ec10b22eea05ebfbd458fed935c415d400d2173e371b8aa74164347cf",
+  "claims": [
+    {
+      "id": "claim_355488a250104592a2cb4b370edfc948",
+      "statement": "The Ulabase Vue starter uses a declarative setup file (ulabase.setup.ts) that configures an Ulabase service with an idempotent step/check/apply pattern, where each step has a check that returns true when the service already matches the desired state and an apply that makes the change only when check returned false.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts",
+          "version": "repo-file-v1:sha256:4d24da794263a32455ba6414c6a261185d3aabf549b7d57a31609a160addff67"
+        }
+      ]
+    },
+    {
+      "id": "claim_4963f8757cea4ebc92f0467fcee28ea3",
+      "statement": "The ulabase.setup.ts file imports the app's environment.ts and derives server-side feature toggles from it, eliminating drift between client and server configurations by declaring flags once in a single source of truth.",
+      "evidence": [
+        {
+          "resource": "repo://src/environments/environment.ts",
+          "version": "repo-file-v1:sha256:1b204f759fe7369e819eb57989e6edc9273f7724d5a1bb7563d63a7587944b52"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L35-L36",
+          "version": "repo-lines-v1:sha256:4729d32c20d6b55b781aed2e394385c9590db86873c8c17076c9751e4c813716:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODUyMzY5MWI3YWIxYmRhZmM0ODM4ODc3MzVkMDNiMzg1NDU4MTQzZWU2NzVmNTA4NTc1YWVmMGZjNjg2YzMxYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjU2ZTFjMDk2MDNlNmVhMTkxZGRkMDQ4ZGVkYzcxYzYxOTY5OWU1NmVhN2YzY2RiZTdhYWJmZTg1NDA1NDNkYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQ3NTEyNWFiNDMxMTc2MDVlZjM5ODM1MGI5YWEwYWJjMDUwYzM0MmI5MGM0OWRhNjQ2YWE5MTdjYjdlMzc0YSJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L43-L65",
+          "version": "repo-lines-v1:sha256:e0b68f36e86e6a4614edad6e3216a35a5a0cda3a5b466a701b2daf6731b75b8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3MGU0ZDk0MmJkYjRkYzg4Y2ZmNzFjM2ZjZTQ5YWM1MDliYTg5MTQzMmU1NWE2YWI2MTAzYmEwYzYxMWQ1NzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhNjlhZjNhZTQwMmZjNzI5Njg1NjczZjA5ZjVlMjNjODhiZjFkM2U3NGFmZGZiN2VkZGFjYzFmNzA2MzA0ZWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMmMxZDQyNGM4YmUzYTY1OTA0MzYyMGU0Nzc4NmNlNDQxOTI0NTVmMzI2YTUyNTFlYmY3ZmRiNjA0NDE0N2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ac13788750914ab198ed73da35922c5a",
+      "statement": "The setup performs five ordered steps: install accounts feature, configure accounts to match the app, conditionally configure Google OAuth credentials, add the app origin to the allowlist, and write the service URL into environment.ts's apiUrl field (placed last so partial setup leaves the config screen visible).",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L112-L220",
+          "version": "repo-lines-v1:sha256:488a9040644c0c845df8c22e628ca635c03f7683493755bfcc0727dc7b8fd00a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0ZmE2ZmQ2YTc5MGM4NDc3OGY1NzRiYTQxYzQzNGIxODcwOWY5NWZmNTNkZDUxNWI0MmZlZDRlMjlkMjNiMDkzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1NWUyNmNkOTIzNjZmNjBkOGVkOTJkMDIzOWYwN2ZlZjc0Y2FjMTRhYTY5YWRkZjljMmNjMGQxMWViMDBhNDYzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxMzgzYWMxOTk4YWQ4ODI4ODQ1YzcwZWRmZjlkMjVmY2M3ODk1N2Y1NTMwYTc5ODM4ZDUxODRhMWUxNzBmZTQyIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_9f58dc6309db44a6a8a1b05f82647ec5",
+      "statement": "The --dry-run flag runs only the checks without applying changes, answering 'what is this service missing?' without touching the service configuration.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L46-L47",
+          "version": "repo-lines-v1:sha256:73c45447d05e590d7124a6ebce3a69910cc6be17d4b08f0c1c1be1966576c90b:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjhkMjA0ZjRhZmY4NmY4N2I5MDg0ZWEzZWEyZWI5ZmZkNmNmZTQwMjhmYjUzMGEwZTJiMGM4ZTkxY2RkMTEzMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjE3MjM1NjFjZjVmNGIxMTYwZWE0NDA1Njc1YjM4YTZiNTVhMWRiNjdjOWRhNTU4MGE3Yzg0NDIyY2RiNjBhMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2M3NTU1OTNjZjYyZjcwYjQ1NjQ2NGNhYmRjZTg1YTY3YTE5MDJhNjc5NDM5Mzg2NDUxZTE4NGE0NTg1YjY5NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTZhM2I0NjQ5NmI2OGMyNWYzNTMyZGE5NDRjOWYzMTcyNTM5NjZiNzhmNjEzNGZhNzA2ZmMxYWM4ZWU1Y2JjZiJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L6-L7",
+          "version": "repo-lines-v1:sha256:37e816c2cb83891e3c6a83286668a2a361963c29a6ffebd5d543d3c71bce6c38:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTk0NDNhMDQyMzMwMzQ5NDA0OWYyOTY3MDgwMTc4NDQ4ZTI5MmFhOTEzOWM1NmIzZTBhNTdiYTFlNDY0YzIwYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDczYzVjMTlkNGU1ZWY3ODhmNWZjZTJhMGNkOWQ4NWJiYmVjMDg4MTUwNmRhMzkyMGE5MTUxOTgwZWE0ZTdlNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTVhNmQxYzk2ZTA1Nzc0MjA0ZTZlNGUxODY3NjhiY2YyMzNiOTY1OWM5MjJhZGZlMDFmZGJmODQ2YTRmYjU4YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjU4ODQ4OGU4NmQzNTU0YmNkMjkwZTAxOTZhZjQwYjBlZWQ3MDBlNjc1ZTM2YTU4ODU1YzA5MzVmZGI5NmI2YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a7f4f415a7cf452db4cbd328cbcaeca1",
+      "statement": "The --file flag allows using ulabase.setup.consents.ts instead of the default ulabase.setup.ts to configure the service with a consents gate that blocks users who haven't accepted current Terms of Service and Privacy Policy versions.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L49-L58",
+          "version": "repo-lines-v1:sha256:e6becad4d1efcb0693c3449519a220cfe29ef8f405df5837a9ebb377b8c9e92f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3Y2ExYTg0YzdkNDg4NzgxYjJjODk2MjViYWVlZTcwM2JiYjgwOTY4NjNjNzYxZGFlMjk5YTgyM2U1ZDUzMjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2Njk5NTYzZWYwMDA1ZTM5MzY2YmZhMDk0Y2E0MzRiZjRiMmFiNzZkYzI5YWZlYTgzZjMxNmM1YTQwMjM2YmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY0MWJlZGVlNGY2NDhhMmIwNmI3YjUxNTkwY2M1ZmU0OTIxZTU5ODU2YjY1OTI2MTBkMjczZWNiZjA3Y2YzMjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI2ZGI4ZmM0ZjczZmUxMzNiYjk2NThiOTI2NTkyZGU1OTk4ZjJjOGMxNWI5MzkxYTcyNmY0OTRkMzczNjZjMzkifQ"
+        },
+        {
+          "resource": "repo://ulabase.setup.consents.ts",
+          "version": "repo-file-v1:sha256:7c913a77000a5fa11d5721ec3a6fa90763c9edff43e794efe0d902268275e494"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc14a2d87b48422c8df3cb9c0063c193",
+      "statement": "The apiUrl field in environment.ts must stay empty on the main branch (CI enforces this in the no-service-url workflow), and the appPointsAtService step writes the service URL into this field using regex replacement that preserves comments and other lines.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L42-L43",
+          "version": "repo-lines-v1:sha256:4c3154c90e240f3dbbdea2fb2cdebd48e7e30f7841d98a71517bba985f23b939:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGEwZjU5MzVmOWIxN2UyNmI1MmQ2NjBhMTQ3MTk2MzQzYzI1ZGViMGI3MmIyNGViYmQxYzlhMmY1MDA4MjIxMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2FhOWNjYjEzMjM3YzI3OWU4MTY1YWUzOThhNDVlYTljOGRmYjQzYmM3YTdmNzY1MmFiN2NiZWUyNGU1MTExZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWRlMGQ4NmI2NmQ4Y2ViNDc0OTFkOWIwYTUyNjZmYTc5NDU4YWU2OTI3N2JmNmYwOTMyMjE0OWVhNjRmN2MxZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjJmMmRlNGRjNDViYTA2NTBjNzllMGVjMjA1NjYwY2ZjZDQ3M2MyMGRhOTg2MzYyYzFmNmVkMjE2OTA5MWU2OSJ9"
+        },
+        {
+          "resource": "repo://src/environments/environment.ts#L2-L9",
+          "version": "repo-lines-v1:sha256:250ab671a0c15b5d661ea53dfc65bd34cd822a80b681e9811bbab0849e23abd9:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk3NjMzNWZkNjhjNmJjN2E2NDQyYTcyZDlhNzczN2Q4NTUxNDc1MGQxYTk0YmVkNTEwZTY2Zjg4ZjU0YWU0NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjk2N2M0OTZmMGE5NjQ4NGI1NWUwMTE1ZGU5ZWQ5MWIyYTZmZGJjYTEwMGIyYzJiODE1NmQwOGU5MTQ2ZTA4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjEsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTMyMzhkMTJiNGRkZmU5ODY2Yjc3YzRlNzhlZTc1YjhjZDNmOGVmYzYyNmIxMjZmZjQ3MzY5NTU0ZmVjY2U5OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzcyMmJjYTNjOGRiMjQ2NTAyOGY4YTRiODI3OTRmNjA0NThiZjMyNDI4NDNiYWQzN2YyODBjMzI5NjNhMWZmMCJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L87-L110",
+          "version": "repo-lines-v1:sha256:d295565eb1d80997fcfcf13e9dc7d9bd54646edfab1bd60f90252657aab4c8b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmNWFkM2RlNjRkNjk0ZWE1MjU2NTViZjBjZTM5NmRlMTE2YWRlMDgxOTI3NmEzYTkyYzdlZGZkNzBlOGJmZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjYTgxZWI0ODk0MjhiM2VlNzBhYjZkMTRhODY3MjAzODI0MmQ3NjIxN2ExZTBjNGUyNmNmMzZmNTMwNWJjMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiMzE4ZTU1NGJhY2Y1NDU0ZjQ3MTAzYjNiMjA5N2ViYzE4MzgxMDhjN2JlOGJjOWY0YTZiYjk2M2Y4MmZhZjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7d96ad4421ad4ce1a6cef10e87c72aea",
+      "statement": "The first-run setup process requires Node.js 22.18 or later, a free Ulabase service account, and follows four steps: clone/install, create service, run ulabase setup --srv <srvId>, and start the dev server with npm run dev.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L14-L80",
+          "version": "repo-lines-v1:sha256:e804384d2b242925eaaf83a3848bba7f2a6fa16545f687ff265faf0fe752e5cb:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0Njk4ZDliMGFkZjA5ZmQ0N2U1MDM0Nzg5ZjYyNTEzNTI0OTlmMTQ5ZTI4NGE5ODI3NmZhOGQyZjgzNjhjZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5MmEzZmYxMjdiMDYwYjgwYzNiMDljOTdjOTBiODFlZjNjNGVmNmI4N2M1ZDA1MGFhMzYxMjAxNzRjYTVkNWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdjZjNlMWU2NmY1MDc4NjJjZDZlZTI1Y2U5ZmFhMWNkMzViZWM5NGJhMmEzYzA5MjNiZTdmMmQxYTc1Y2ExYmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1ZjM3OWYwOTBmYjM5NjM3ZmEyZWFhNGVjMWM5MzQ3NDVkMzQ5ZmZlZTc0OGQyYzExM2NlZjc0YTk2ZTQ0NTkifQ"
+        },
+        {
+          "resource": "repo://package.json",
+          "version": "repo-file-v1:sha256:231c70fd3dccfa0500271cc70745ab62579adb3698cb397ba4a665449515cec7"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-12T10:21:41.724Z"
+  }
+}
