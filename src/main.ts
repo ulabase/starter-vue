@@ -1,4 +1,4 @@
-import { createApp } from 'vue';
+import { createApp, watch } from 'vue';
 import { createRouter, createWebHistory, type NavigationGuardNext } from 'vue-router';
 import { createRhAuth, isValidApiBaseUrl, setToken, scheduleRefresh } from '@ulabase/kit-vue';
 import App from './App.vue';
@@ -60,6 +60,13 @@ if (!apiConfigured) {
     if (to.meta.guard === 'auth') return rhAuth.authGuard.call(undefined, to, from, noNext);
     if (to.meta.guard === 'public') return rhAuth.publicGuard.call(undefined, to, from, noNext);
     return true;
+  });
+
+  // Vue Router checks the session only on navigation: when it ends while a signed-in page is open
+  // (logout, an expired or refused token), go to the login page now rather than at the next click.
+  watch(rhAuth.store.user, (user, previous) => {
+    if (user || !previous) return;
+    if (router.currentRoute.value.matched.some(r => r.meta.guard === 'auth')) void router.push('/auth/login');
   });
 
   createApp(App).use(rhAuth).use(router).mount('#app');

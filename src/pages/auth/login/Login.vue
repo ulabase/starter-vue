@@ -88,7 +88,7 @@ async function submit(): Promise<void> {
         </div>
         <p v-if="passwordInvalid" id="error-password" class="field-error">Password is required.</p>
 
-        <button type="submit" :disabled="loading || !email || !password">
+        <button type="submit" :disabled="loading">
           {{ loading ? 'Logging in…' : 'Log in' }}
         </button>
       </form>
