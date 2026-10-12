@@ -104,6 +104,14 @@ async function acceptForLoggedInUser(): Promise<void> {
     </div>
   </main>
 
+  <!-- the service did not recognise the link: say so, rather than offer a login to join nothing -->
+  <main v-else-if="!invitation" class="auth-page">
+    <div class="auth-card">
+      <h1>Invalid invitation link</h1>
+      <p>{{ error ?? 'This invitation is invalid or has expired.' }}</p>
+    </div>
+  </main>
+
   <main v-else-if="invitation?.isNewUser" class="auth-page">
     <form class="auth-card" novalidate @submit.prevent="submitNewUser">
       <h1>Join {{ invitation.teamName }}</h1>
