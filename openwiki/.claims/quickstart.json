@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:7651c8abb94bafd9c27f837a712b95fc74ceb23a079fd3316e4fcc68d2ad9628",
+  "claims": [
+    {
+      "id": "claim_0a88731b786b4c77ab6a19db288a6448",
+      "statement": "The Ulabase Vue starter is a ready-made Vue application with authentication, teams, and invitations already implemented, requiring no custom server code.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L1-L8",
+          "version": "repo-lines-v1:sha256:209c0ba7a17d9d412dc3d7ef3daf4f877e78c6dc47b84883a285e3201016fd3b:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTNjMWYzNDkwZjAwMjk0ZTQzODI2NDNjMDdmMTA4NmE4ZmQwYTdjOTBmNTE1MDg0MTI0MmM1M2FhYjU2NDUyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTdkMWNiNmM2Y2RkZjBjYWMzYWNmM2QyZjYzZjRmZTUyODdjZWY4YTEyYjE3NTZiMTBmNzQyMzZiMzE5Njc4OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjA3ZjU4YjQ1Yzg0YTM2ZTFkYTRlYzgyYjFiM2M3YzhmMWM3YzdiZjA5NDlhM2JmYzkwY2ZlMGQ0NGZlYmVlZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1d5507e13837465f922724e1580f8cb0",
+      "statement": "The starter uses @ulabase/kit-vue for authentication and routing, with createRhAuth initializing the auth store and router guards.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L13-L15",
+          "version": "repo-lines-v1:sha256:9e742c57fb2179e7c5afeea232cdcca77d35eab4dacbf09bec3465e16163d37f:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWNjMDNmNDIyYWJlNTU2MDJlNTA1YmNhMWZiZTI3YjE5ZDFlYTY3Njc4YjMyOTkyNjM5OWZkMWJlMWY5NGNkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGU3MGY2ZjY0ZWVjZjZmZWUwMjJhMjQ0MzBiNTRhM2ZjZTBiZjI5OWZmNjdiYWIzZmMzNWM4NDk5Mjk4ZGZhOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTUzZTgyM2Y0NTI5YmY0NTRhOTkyMDQyODRmZTk0NWRmZGE5OWM5NzIyYzBlZDI4NzM0MzAxZDA3OWMwNjMwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGIxYWI1ODI1NGI5Y2IwYTEyNzIyMGQ5M2Q3Mjc4MzJkOTA3MzRjNzY0MjkxYjU3MmI3ZTUxMTg3Nzc5YTZlOSJ9"
+        },
+        {
+          "resource": "repo://src/main.ts#L52-L65",
+          "version": "repo-lines-v1:sha256:13b069a0e6ba1f4eecb73486a5a9e75207e6e2393f7f8ca770e31c7816b6af5e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliMGU4ODFhMGZmNDRkZDUxZGU1YjQ3MzA2M2QyYTc3NzRmNzhjNjVjY2M1YTcyNjIxODk2Y2VhZGE5MTU0NDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyMzcxOTg1MmIxYmI3NGE4NDdlYTczZDNjODNkN2VjODkxZjRiYmU0YTkwNzE5M2JmODVjZjdjMjhjMjNmYjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiMDA3NGUzNTBhZTFlNzRjOGJkNzRmNDgzNjdiMTAwMTI4ZDY4NzI0ZGUzNTgyMGQ3ZmY3MTI3MTNiOGQ3YjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a926ff04d2014dbcb94d7f55ef439146",
+      "statement": "Feature flags in src/environments/environment.ts control which authentication and team features are enabled, with routes conditionally included based on these flags.",
+      "evidence": [
+        {
+          "resource": "repo://src/environments/environment.ts#L10-L16",
+          "version": "repo-lines-v1:sha256:e0c09c50abf5287407f3a473d775c4b3d6aa5796cb202935980d529c1b428e51:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjRjNjE5ZmZkNmI5MjFjNTI3OTExZWRlMTQ3MWM5MTQ5YTFkZTg2NTUzNDE4NWIwOWY2Nzg1MGRjMzMwZDU2MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQwM2NhYjc3MGI2NjA0MzQ5Njg4YzAwNTk1ZmVmNWU0NjcwN2M1ZWVjZTU5NGMzYWIxM2RjMzY0NWRlMTdmMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCJ9"
+        },
+        {
+          "resource": "repo://src/routes.ts#L18-L38",
+          "version": "repo-lines-v1:sha256:8d7b0c70efa9f718d0f6846264b0cd049a156536b54112e0ea506599f1f6459e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0NjUzZmFjZmE0MjJhYTEwOGFjMzFhYTVhMDJhOTIwNzc5YTM2MDNiOTI4ZWJiNzAwMjRjOWVjYzU0YWE2NWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhNmExNmNjZGJiYmUyN2ZmM2M3NmE5YWM2ZmNlZDY2ZDk4ZThkNWMyNTMyMzAyYjdiZjM5MGNlZjczMzQ5N2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViZmMzZGY0MmZjZjBhY2MzOWEwNzUyM2M5OGFjYTJhMjMzZmEwY2JmMjAzYzE1OTVmMGE1ODcwZGNjZTg2MmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxZWFkZGRmMjFjN2ZhOWQ4ZDllN2RlOGZkODNlNmFmMDQyMTQ4ZWU3YzMwZmJmNTY4OTg2OGI4YWEyNzc3MWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_66917e115c214f8ca2764561227e25dc",
+      "statement": "The app has two bootstrap paths: if apiUrl is empty or invalid, only ConfigPage is mounted with no router or auth; if valid, the full app initializes with token capture, createRhAuth, router creation, and guard wiring.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.ts#L36-L65",
+          "version": "repo-lines-v1:sha256:8c0a009caabf3aed8342a06baecc6938e51339816a6bba053b1a5faacbba8bca:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MWM0YjllYzZkNTY0MzFiM2JkNDZjYjE3YTg5NTJjNGI1M2EwNjc2NzVjOTcwMjYyNjRkMzUyMTUwNzVmZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyMzcxOTg1MmIxYmI3NGE4NDdlYTczZDNjODNkN2VjODkxZjRiYmU0YTkwNzE5M2JmODVjZjdjMjhjMjNmYjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2YzA3NGFkYTcyODEzZTIwM2Y4NjQwYjcyZmU1NWU0MTE3OThhNDE5MjVjODQ3M2VlYjE4YWU0YmQ1ZWJjNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_294ddf263f0b426ba9d31c05ed7cfa0a",
+      "statement": "The consents gate blocks users who have not accepted current Terms of Service and Privacy Policy, enforced server-side via a Guards rule returning HTTP 451.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L139-L175",
+          "version": "repo-lines-v1:sha256:e2cfc15de92bfa1c7bd96fcdba817864bf2f1eb364cd75d9621bfc418d434912:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyOTAyYWExY2VkNDMxNzM2YjE5MGY3OTAzMDM0NWJmODFmOTdjNjc1ZmI0YWRmZWMzZWIwODRiNjRjMjMwMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4ZDNjNTI4ZjBiY2IwMmQwODFmNWU5ODg5NzJhOTM0OGNiNjQ0ZDNmZTRiMjhhZGY5ZDFkYjVjMTgyZWNkYmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU5MDZmMzliMGZkOGIxZjEyZmEyYmNmZWMwNDA4ZjZiZmU0OTFhMGExMGQwMDMwNTcxNzVkMThhMjFmZWU1YzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkNmYwMmVjYzc4MzE1MzM2MmE5YWE3OWZjZmE0ZWYyMzk4ZTdjZTZlNzg0MmQyNjZkMTI0YTdkMGEwMWZkY2EifQ"
+        },
+        {
+          "resource": "repo://ulabase.setup.consents.ts#L1-L20",
+          "version": "repo-lines-v1:sha256:46dbcb5a911ad6c00f77f08e1404ad0a7cb79394aae6f38b9b3effa21ccf01b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5ODcyMjI4N2Q1ZTBkYjA5Mzc2MWI5MDM0NjQzYWFhM2Y0ZGYzZjQ0OTJmODdiYjliZDZkOGE2NDIyZDkxNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyYjAwODRkY2U0NzRjOTA2ZDc2N2JkOGZiODk4NGExYTIxYWFiMmUzMjUwYjNiZmFhNzdjYzIxMTY0MWNmMGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_004a88fbaa1e48a8be19e3714983a90e",
+      "statement": "The default visual skin in src/styles.css is a disposable scaffold; developers can tweak design tokens to re-theme or adopt a UI framework using the documented swap map.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L52-L101",
+          "version": "repo-lines-v1:sha256:20d967b0992c08a7f41a3ebed66813d9db1cf20a2e67f88999e44ae47ab39c7c:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0NDIyZjM2MDljYWY0MGIwNGE5NGM5NTAzZWJhMzM0OGMyOGY4MzgxZDM3ZDM4ZTk4NmQ0YzQ0N2UxMDAyN2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3MGNiZjMyMmFiNTllNmNkZDAwOGFmZmU3N2YyMjg2NjYxZTBhODMwZmJhN2ZiM2Q3NDNlZmNhYTAxZTIwMWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhYTY1YjM5YjM2ZGY5ZGRkZWNlNTk4MDU0OWJjNWM4YzA1NTcxMTkxOGM5NWQwNDRlMDgxNTRiZmE3M2JlODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlM2Y5MzUwZjQwYjQ0NWQ3Y2Q3MTFmMWVjMDI4ZGNhZDM1NDcwMDZmMmI2YmFlZjFhNzFiMTY2MDE1MmNjN2IifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-12T10:21:41.724Z"
+  }
+}

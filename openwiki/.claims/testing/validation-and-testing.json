@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d909f764ba12768d1d2f30d12c2b86ac6a8bb7cbd5096ed004a8e4e45058ed8a",
+  "claims": [
+    {
+      "id": "claim_08d54f1a08924cb589e8ec035a8b5d8d",
+      "statement": "The TypeScript configuration in tsconfig.json enables strict mode along with noUnusedLocals, noUnusedParameters, and noFallthroughCasesInSwitch.",
+      "evidence": [
+        {
+          "resource": "repo://tsconfig.json#L14-L17",
+          "version": "repo-lines-v1:sha256:6d3d4391cb8e22fd6c8cc76f1dbc00afe373f156ebae64a7fc2014e1a6a6cd9c:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWI1YjNiY2MxYWMxNDYwNGNiMjI5MDk4ZTkxMDViZGI5NzM2YTAyMTRjZGE5ZDE0MjA5ZTc1YTM2YTU2YjFjMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODlkYmM0NjYxZGM1NmU3YmRkMGQ4MjgxMDQ3OWNlMGM2ZWM0MWNlMTI5ZTM3NDdmYTUyZmJmNjMyNmM5NTdhMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDlhZGI1NWM4M2Q4NjRkZDEyZmFlYTQ5Njc3ODgxNzJiNmNmY2RlNTNiYmNiOGNhNTA3NTVjNzkyY2ZhY2ZlYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTE1OTRkOGEyNzE4ZjI1OWNiYmU0ZjFkMzEzNDEyZGNkMzcxNzUyODVjY2Y0MDdhYzRhMzY4NWY4MTc2NWQzMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c9df7d072ac74b658e64b156d8df5fa2",
+      "statement": "The build script runs vue-tsc -b before vite build, performing Vue-aware type checking across both .ts and .vue files before bundling.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L7-L7",
+          "version": "repo-lines-v1:sha256:a5847a0b212e2edce3488c9ec767c05a84707b9cbb748c82f442768e7ff5880d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTU4NDdhMGIyMTJlMmVkY2UzNDg4YzllYzc2N2MwNWE4NDcwN2I5Y2JiNzQ4YzgyZjQ0Mjc2OGU3ZmY1ODgwZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTU4NDdhMGIyMTJlMmVkY2UzNDg4YzllYzc2N2MwNWE4NDcwN2I5Y2JiNzQ4YzgyZjQ0Mjc2OGU3ZmY1ODgwZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzY4MjlmNDAyYjVmODk3NGVlMzNkYjdhNzQwZWU1NWQxNTVjOTRjZjUwYjI3YjE1Njc3M2Q4MmM4ZmYzNzFlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDRkZDI1ODE0NDBhNmIyNmEwZTZjMTliZmNkZTFiNWU1OTM4ZWQxMDQzZDhmMjRkYjI2YmUyODc3Nzk2ZWY4ZSJ9"
+        },
+        {
+          "resource": "repo://tsconfig.json#L20-L21",
+          "version": "repo-lines-v1:sha256:2213337a70f06016396850b6f62ccc1e11d807f311c2c3f450bb18441d03717b:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWM0OTNjYzA0ZjljZGM4ZDYyMDlhNmEzZWVhNDZkZWIxODU1OWNmMGJhZjliMWM0YjE1MmVlYWQyOTg1NzRjZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWEyZDI4MzMwZGEwMjNlNGNjZmQ3ODRlMjQ5ZmJhYzYwNzU2YTUxMzYwYzBjOTA4MDJhODdkYjc5M2RiOTZlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e8397360b25542569287d12a7e153ca8",
+      "statement": "Vitest is listed as a devDependency and the test script exists, but the repository contains no test files.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L22-L22",
+          "version": "repo-lines-v1:sha256:6794035602a9c936080ef33f7fd9be9834ca88b84a477b59ee7c693c8ebc60ce:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjc5NDAzNTYwMmE5YzkzNjA4MGVmMzNmN2ZkOWJlOTgzNGNhODhiODRhNDc3YjU5ZWU3YzY5M2M4ZWJjNjBjZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjc5NDAzNTYwMmE5YzkzNjA4MGVmMzNmN2ZkOWJlOTgzNGNhODhiODRhNDc3YjU5ZWU3YzY5M2M4ZWJjNjBjZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDAwMTFmNWQzOTlmM2I1YTJkYTk3MTk1N2YzNmMwZWRiNjg1ZWY4MDZhM2E3MDU3ZTcxODYxMjg4NDgzN2ZjMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTE4NTJlZWE0ZWEzOWE5MTdiMDljZjlhOTZjY2ZlNjBiMTBjNjFhNjM2OWI1MDM5YzEwYzZkZTNkMTZiNWZjMyJ9"
+        },
+        {
+          "resource": "repo://package.json#L9-L9",
+          "version": "repo-lines-v1:sha256:184445a7cc61b5649c844812a5e39239917f2403cc43dcff6080d1e7a966220e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTg0NDQ1YTdjYzYxYjU2NDljODQ0ODEyYTVlMzkyMzk5MTdmMjQwM2NjNDNkY2ZmNjA4MGQxZTdhOTY2MjIwZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTg0NDQ1YTdjYzYxYjU2NDljODQ0ODEyYTVlMzkyMzk5MTdmMjQwM2NjNDNkY2ZmNjA4MGQxZTdhOTY2MjIwZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjcwZmJmNDNkZTA5N2VjNjUxMGRiY2Y0Njk3MmQwMDU0N2QxNDAyNGRhZjg1Y2MzN2QwMmU0OGRiZTM5ZWI0MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTUzZTgyM2Y0NTI5YmY0NTRhOTkyMDQyODRmZTk0NWRmZGE5OWM5NzIyYzBlZDI4NzM0MzAxZDA3OWMwNjMwMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_085b5ae5c818439690f91a2a6b1453fa",
+      "statement": "The no-service-url CI workflow prevents commits to main in the upstream starter repository from containing a real apiUrl in any environment file, protecting clones from pointing at a single developer's service.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/no-service-url.yml#L1-L31",
+          "version": "repo-lines-v1:sha256:3ba0f32760d8070c3ac7f74d8bd9f7169b7b4f21517dc51ed0c81420ebb46dfa:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZjUwMWFkMTY3NzJmYjY4OWVhMWQwZTBhZWFlMGNmZTQ2OGExOTg1MWQwN2FjY2YzYjExODk3YTk0NzJhYmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiYmEzMGE4M2NiMzk1MjgxOTgxMGI1OTMyNjg5ODMxYzdlYjAxM2ZiYmUwNTUyZmY2OWQxZmI4YmUyNzdkMWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/environments/environment.ts#L9-L9",
+          "version": "repo-lines-v1:sha256:f967c496f0a96484b55e0115de9ed91b2a6fdbca100b2c2b8156d08e9146e08a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjk2N2M0OTZmMGE5NjQ4NGI1NWUwMTE1ZGU5ZWQ5MWIyYTZmZGJjYTEwMGIyYzJiODE1NmQwOGU5MTQ2ZTA4YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjk2N2M0OTZmMGE5NjQ4NGI1NWUwMTE1ZGU5ZWQ5MWIyYTZmZGJjYTEwMGIyYzJiODE1NmQwOGU5MTQ2ZTA4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGU0YzE4MTVkYzFmZmM0ZjQ2MjU0ZGVmYjZlODdhNzVmYTAxMzQwM2Y2NTU3Zjc1NWVhYzg4YmI3OWZjMTA1OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzcyMmJjYTNjOGRiMjQ2NTAyOGY4YTRiODI3OTRmNjA0NThiZjMyNDI4NDNiYWQzN2YyODBjMzI5NjNhMWZmMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_33fc7c4e0d15427c8d022b6854091fee",
+      "statement": "The app mounts a ConfigPage with instructions when apiUrl is empty, rather than creating the router and auth store.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.ts#L36-L46",
+          "version": "repo-lines-v1:sha256:3322b2fba70af53c8c09555070d9632a1c25107eb89d7b5b833aedf36fb947fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MWM0YjllYzZkNTY0MzFiM2JkNDZjYjE3YTg5NTJjNGI1M2EwNjc2NzVjOTcwMjYyNjRkMzUyMTUwNzVmZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlMDYzZDk2YzM0YWI3ODRhYTQzMmI3NzgyYTk4YzU5N2MwOTg3YzY2NzNmNmUyZWEwYmFkMWRlNjNiYmIwNmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2YzA3NGFkYTcyODEzZTIwM2Y4NjQwYjcyZmU1NWU0MTE3OThhNDE5MjVjODQ3M2VlYjE4YWU0YmQ1ZWJjNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4NTZjZWI1NDUxMjI3NTIzMDQxMjM4ZDVkZTg0ZWU2YzEzMTZiZTliYzE5MWRiZjI0MWVlZmJkYzk0YTlmODkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_102388ccd62b458fabdc797cca9bf017",
+      "statement": "The environment file declares feature flags (emailRegistration, passwordReset, oauthLogin, teamInvitations) that gate UI and service behavior.",
+      "evidence": [
+        {
+          "resource": "repo://src/environments/environment.ts#L10-L15",
+          "version": "repo-lines-v1:sha256:9045955ad5092679d05cee3b17037fd9cf3f815b936903b91de1f4612ddb331c:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjRjNjE5ZmZkNmI5MjFjNTI3OTExZWRlMTQ3MWM5MTQ5YTFkZTg2NTUzNDE4NWIwOWY2Nzg1MGRjMzMwZDU2MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmMzNjI5NzgwNDgzMmJkZDg3NTRhMDU2ZTljZThmYTg0MjlhYTQxOTljZjc4ODY1NGMzMDM0NDQwYjkwZTJhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQwM2NhYjc3MGI2NjA0MzQ5Njg4YzAwNTk1ZmVmNWU0NjcwN2M1ZWVjZTU5NGMzYWIxM2RjMzY0NWRlMTdmMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTliMWJhMjNmOTI2MjU5OTg3MTFlODhmZDViMjkwNWRmYzUzZmIyOGM3NWQ1Y2FlZTI3NGQwNWUzYTU1Nzk0ZCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-12T10:21:41.724Z"
+  }
+}

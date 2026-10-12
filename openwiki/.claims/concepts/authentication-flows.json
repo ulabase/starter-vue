@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6fcb23677965e9528440c67c3e9a2e33008d3a5fffb0e59547e4e5fa913868f1",
+  "claims": [
+    {
+      "id": "claim_b34049e5ca27444a8021102dcd7f2344",
+      "statement": "The authentication system uses @ulabase/kit-vue which provides useAuth() composable with methods for registration, login, verification, password reset, and session management.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/auth/forgot-password/ForgotPassword.vue#L4-L5",
+          "version": "repo-lines-v1:sha256:e29a918f2e03b3ec8a5b543f86c82100a69241005390d46da6290eb9b06803de:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTU0MDU5OGY1NjA3YWJiYzU0MmMyYmQxMTg0Mjc3Y2QwZWU0YjJjNjE5NzllYjk1NDE2YzU5M2E5MTc0ZmE0OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjc0ODNkMDczMTZhZDQxMDVmMDcxMWRmMjRkMTQyZTYwYzNhZWYzMjM5NTZkZTYwNTQ2NDIwYTZjYTA0NmNmZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDBlNzNkNGEyNTI5MjdjYTRmYjZiZmM4MGU5OWZlN2U4MzlkYzZlNDJiOTY2M2ZhNzJkYWI3YjVlMWJmMGI0YyJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/login/Login.vue#L4-L5",
+          "version": "repo-lines-v1:sha256:668c07a36118a747137a53891a0a7480873a443c3ffc6ada7075ec36a79934e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTU0MDU5OGY1NjA3YWJiYzU0MmMyYmQxMTg0Mjc3Y2QwZWU0YjJjNjE5NzllYjk1NDE2YzU5M2E5MTc0ZmE0OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmZkMTIzY2E5Mjc4MTFkNWNiNWEyMWFmN2Y0MjM1MjZlNTAwZmRiYmI0NTU5NzM5MTU0YzBhZGE5OTA2NDE1NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTZkOWRmYmU1ODgwMzU4OWFhNmRhNjg4MmFiM2QyNDJiNTE2MWYzYWViYTgwNjJmNWE5ZmU3M2RmZWMzOGI5ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWU4OWQzMWFhYWJmMDA2YzNhNWI2MTVjODMyMzBkMTQ5NGUzZmYyNzkxZWQ2NDFkMjU4OGViMGRiYTNlMTdkYyJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/reset-password/ResetPassword.vue#L4-L5",
+          "version": "repo-lines-v1:sha256:9c46de5a2168236c6dd77507558acce1bcfd50d2d7963a9e343a2afaa49e8783:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTU0MDU5OGY1NjA3YWJiYzU0MmMyYmQxMTg0Mjc3Y2QwZWU0YjJjNjE5NzllYjk1NDE2YzU5M2E5MTc0ZmE0OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzJkZmY5YjhkYWUwNDkyNTE1Nzc3OGY2MTZmNzVlZTdiNmI0MGI3MmY4ZDhmZmVlNjFhZGMwMTJlNTNhNzRhNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2MyNzQyYzUxMDMzNjM1NzBkZjNjNWNjYjQyMTBhMDliMzUxZDVkZGE0OWY4Y2UxMWYzOTYyODY1NmQ4MGFlMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTkwNjQ2N2E2ZmUyNGM5ZDI5NGIzNzI0NDUwMTIyZTM5MWU2MWQ2ZGM4YTIzZjRhZWNjYTgxZGQ3MzQ2ZmVkMCJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/signup/Signup.vue#L4-L5",
+          "version": "repo-lines-v1:sha256:668c07a36118a747137a53891a0a7480873a443c3ffc6ada7075ec36a79934e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTU0MDU5OGY1NjA3YWJiYzU0MmMyYmQxMTg0Mjc3Y2QwZWU0YjJjNjE5NzllYjk1NDE2YzU5M2E5MTc0ZmE0OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmZkMTIzY2E5Mjc4MTFkNWNiNWEyMWFmN2Y0MjM1MjZlNTAwZmRiYmI0NTU5NzM5MTU0YzBhZGE5OTA2NDE1NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjg3OGQxM2E1YTc0YmJjZDRjYWNiMmIyNmE1YjAzNzQwNjQyMGM0NTUxMzEwZTY2YzhiOThhMDA0MDc5YWYzNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWU4OWQzMWFhYWJmMDA2YzNhNWI2MTVjODMyMzBkMTQ5NGUzZmYyNzkxZWQ2NDFkMjU4OGViMGRiYTNlMTdkYyJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/verify/Verify.vue#L4-L5",
+          "version": "repo-lines-v1:sha256:e29a918f2e03b3ec8a5b543f86c82100a69241005390d46da6290eb9b06803de:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTU0MDU5OGY1NjA3YWJiYzU0MmMyYmQxMTg0Mjc3Y2QwZWU0YjJjNjE5NzllYjk1NDE2YzU5M2E5MTc0ZmE0OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTVjNWEyMDQ4NWY5OWJiNGEzYjBmODQ3MDYxZDhjZGY2ZDNhZjY5OGQ4YTRkYzk2Mjg4Nzk3NDFkZTYxZmE1MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjIwNjg5Mjg3MDQ4NGE5NDgxZDgyY2YzZmQ1NzFjMDQ5OThlMjZkZTVhODUzMmY2MTg1ZTBmYzdlNzQxOGU0OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1702ba9369f841be9263fe44d565aa31",
+      "statement": "Email/password registration calls auth.register() with team name, first name, last name, email, and password, then shows verification email prompt.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/auth/signup/Signup.vue#L27-L60",
+          "version": "repo-lines-v1:sha256:0400abe77a1ff0d9c92645cb6b1351b158245daa197790cf6350e84245c34015:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkODI4MTFhYzhiNjM3YTFiNWU1MTJiZTFkZGJhYWVhNzliNzQ5OTVmOTg2MzcxMTYyZTU0YTUxMGRkMWQxMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmZDhmMDY2M2Q1NDk0N2YwZDY4M2VmYTc1NzI5NGJhNzQyNzdmOTkxZDRjOTNkZGFmZTQyOTRkYTNhYjE2NjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0ZTdhNjZlNTRkNjUwYmQwNzJhOGFkNDk0YjgwNTVlNzIyYmMxMmRhYjJhYzRkMDJiZDE3OTBiYTM4YmU4NDQifQ"
+        },
+        {
+          "resource": "repo://src/pages/auth/signup/Signup.vue#L64-L69",
+          "version": "repo-lines-v1:sha256:2ad1d85cde6241822acaf3a10caf8776267bf50ac2f63d199b249d3fbf606423:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjhmODViMDI3ZDVjOTc1YmJjNzUzNmVmNDg2ZjYyYjUwN2IwODkxNzhiYjMzNTJiMGNmNzEwYTg0MmVlYmRiYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzJjNzZiZGFkNWUxYjM3ZDk5NDY1MzMyODFjYTQ1ZGJmOGM1MTFlNDU0OTRlZDAxOGY0NjYwN2VmYjEyYTM3NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjRlN2E2NmU1NGQ2NTBiZDA3MmE4YWQ0OTRiODA1NWU3MjJiYzEyZGFiMmFjNGQwMmJkMTc5MGJhMzhiZTg0NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmIxNjZlZTY5MjYxOWE2OWU3NWMzNTBlNTgyZGZkN2Q0NjFhZjExMjA2MWQwYjY4Y2RmYjU3NzdjYmI3NjkzMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e5f688426ed44f16a80739a96c2666b8",
+      "statement": "Email verification calls auth.verify(email, token) which returns a redirect URL with access_token in the fragment, then redirects the user.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/auth/verify/Verify.vue#L14-L19",
+          "version": "repo-lines-v1:sha256:393e63cba7cb4fae5175910e9bfd1e8c32764110872334448d76c0dafebbbb55:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDUwNzQ3ODU3MTQzMjcyYTc0ODI2NWY0ZmM0NDQxM2EyNGFjZTRmMzJhMDI4NDY5NGM3ZTRlNDQ1NDc2ZjU1ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWIxMTBiZGVjNmUxYjY2MjdkYzFjMjc1Y2M2OWVlOWM1YzVlN2VjZTdhYjU1NWYyZTQ0MDM0OGFmMmJmOWJhNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGUzNTZiZWI2NDU2NjFmYjFiMGQzZTk0YWU4YjI3MzVmZWIzZjZjYWM2ZjE4ZGJlZjdlYTE1NjJmYmJiNGRlOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_820d3bce1e3a4c46beb5443f7cea7d5c",
+      "statement": "The consumeFragmentToken() function in main.ts extracts access_token from URL fragment, calls setToken() and scheduleRefresh(), and handles the just-signed-up flag from flow=signup query parameter.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.ts#L12-L34",
+          "version": "repo-lines-v1:sha256:8bdf5a6e8f2537e40e4711ac165e6796ca60ad417b5de47dba4f5fb781e123a5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjN2Q0ODQ4ODQ3OWQ4MWQ1NTg5NzhmZDk5MWM1M2Y3MjdhZTJhMzlmMGIxYjFiZTMzYTk5Y2IxMWM0YjY3ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3NmM0Yjc2YWJkMmVmMzU4ZDA1ZDlmYzMxZmU1MWRhODE4N2ZiMjhlOWExYjE3OTlmZGQ4MGQzOWQ5MThjYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4Yzc4MzAzYjE3YjQ2NTVmZGQyMzdmYjcyZDk2MjZhYmRlZTdjOWJjZjE3ZDdjMjliNWI4MjNkY2QzZjYwNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7597b578bff34f76a816436018b345d5",
+      "statement": "OAuth flow uses oauthUrl() which generates authorize URL pointing to Ulabase's /auth/oauth/authorize/{provider}?noauthchallenge endpoint.",
+      "evidence": [
+        {
+          "resource": "repo://src/oauth-url.ts#L1-L5",
+          "version": "repo-lines-v1:sha256:812f81c7665baaee10200873b65b415847736966aed02b2ede485e247b3fc3ba:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDNkYWMwZTYyOTVmYTBmMjI4OWY4OTU0MDg1MTMwOGJjYzdjZGI2Y2QxN2MwZDJmOWMzZGFkZjgyYWNlNjY0NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/oauth-buttons/OAuthButtons.vue#L16-L17",
+          "version": "repo-lines-v1:sha256:0934492a8c0183467522250be5ae8eb9c772adb1741e86960fbe4b406c134667:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDViYTFiZmRhZDUzN2QyZDJiMTEwZDM4YTAxMjNjNGYyOTQ0NzgzOWRiZjRjMDY1YTdjNWM0NDQ3MDcwMDhmMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGNiOGVmNDVmMzFlNjE4YzIyYzZmNzgzZGYwOTJhYWMyN2Q1YmQ0MWRiYzg5NzZhYjg3MGViMjRjMzI2MzdmYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTI3NDgxYjVlMjBkNWU2NTQ3MzQ2OTY4YWFlMTQwOTkzOGFmNjEyZTQ1NDQ2ZmYzNjM5ODhiNzU0MzZmOTUzZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjNhN2NiZmYwMmI2YjNhNGVkYjEzYjQ5OTc5MTc2ZTFkMTVlODViZTBmNTVjNjJhOTA3NmVmZjk0OGQ2YjNmNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_be29cf98d9454332b6e95a306cf00993",
+      "statement": "Login flow calls auth.login(email, password) and redirects to / on success, with 401 status mapping to 'Invalid email or password.' error message.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/auth/login/Login.vue#L30-L46",
+          "version": "repo-lines-v1:sha256:a9308a808ca28c602ab56d04dfb6ade52064749f3204ab69f76466abec485864:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkODI4MTFhYzhiNjM3YTFiNWU1MTJiZTFkZGJhYWVhNzliNzQ5OTVmOTg2MzcxMTYyZTU0YTUxMGRkMWQxMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwYTA5NWFhNTVjOGJmNDY1MWY1OTMwN2IzNTQ4MWM3M2IxNmYxNWEzZTFlOTdlMWMxYTA4NmNlZTE4ODg1NGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0ZTdhNjZlNTRkNjUwYmQwNzJhOGFkNDk0YjgwNTVlNzIyYmMxMmRhYjJhYzRkMDJiZDE3OTBiYTM4YmU4NDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_16383627bac048dba8c831a3d3039de2",
+      "statement": "Password reset flow calls auth.forgotPassword(email) which always returns 202 to prevent email enumeration, then auth.resetPassword({email, token, password}) to complete reset.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/auth/forgot-password/ForgotPassword.vue#L15-L28",
+          "version": "repo-lines-v1:sha256:a7fab68f5344efcfa2891616d7aa0008c1df88c8856a55a21aca8355d258492e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkODI4MTFhYzhiNjM3YTFiNWU1MTJiZTFkZGJhYWVhNzliNzQ5OTVmOTg2MzcxMTYyZTU0YTUxMGRkMWQxMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1M2UyNzRjMTc1YzEwYmRjYWYwODA2MTZmZjU4MjE2MGM4MDQ0YTM4MTIxMzM5MzkzNzJhYWE5Zjc3MjcwYjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0ZTdhNjZlNTRkNjUwYmQwNzJhOGFkNDk0YjgwNTVlNzIyYmMxMmRhYjJhYzRkMDJiZDE3OTBiYTM4YmU4NDQifQ"
+        },
+        {
+          "resource": "repo://src/pages/auth/reset-password/ResetPassword.vue#L25-L39",
+          "version": "repo-lines-v1:sha256:2e344606e89b7f5f0be8c2eaee6b21f9d87d294999a21d40e8bbf0ab24ec5d47:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkODI4MTFhYzhiNjM3YTFiNWU1MTJiZTFkZGJhYWVhNzliNzQ5OTVmOTg2MzcxMTYyZTU0YTUxMGRkMWQxMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzZGVjNGQ1NDBkZGNmNTlkZDBkMDBkMGEzODhlMmIyYzI2ZTU1NGFiNzI0MDc2M2EzYjBkOThlNWYxNjIyOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5NWEzNmZhMGE5NmI3ZDdjZjNlMDE1ZDc0YzE3MDZjODAwY2JlM2Q2MGVkMzNmOWZkOGJjNjI3OGMyMTY3OTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7871396dd1284ae89a43bafaa71572c2",
+      "statement": "The just-signed-up flag is set when flow=signup query parameter is present, read by Shell.vue to show welcome banner, then immediately cleared to prevent showing on subsequent navigations.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.ts#L24-L28",
+          "version": "repo-lines-v1:sha256:7d1b7400e8e0a6ea653cd8678535b5686b13d282ccaccf65d2887ef6aa616109:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDhjNTM3N2Y1YjJiMjlkZDQwZWNjNjQ4MTQ0ZDhjOWZjNTAyZmFmYWU1NzQ0ODA5NmRiODUwYThhMjlmZDQ1ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTdjMjY1ZTVkNDY0Zjc3YmI1ZDNmMzlmYTlkNzU0MjZhMmE4ODRhZGE2OTkxZDlkZjI3MTM1ODU0NjFlYjU1YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGFkOTMxMTA5NDFmMDg4YmVlNzY4NzI5YjEwYTNlYTdlMWM0OWZkMTQxZmQ1MmJmYTIyODM0ZjE3N2ViN2UwYSJ9"
+        },
+        {
+          "resource": "repo://src/pages/shell/Shell.vue#L187-L190",
+          "version": "repo-lines-v1:sha256:7d11282414af0b4fcc0536fdc72abe74cff55fabe6b5fcef39e9be54dfe84b15:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFhN2ZmYjQ5OWZjNWFmNTNlOWNmNTY2NjlhOWI2NTU3ZTAyMzg0NjNlMDcxNzhkODQ0MmUwMDdkN2Q3YTA0NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTA1NjMwNGIwZWVhYmQ4OGFkNGNiZGQ2MGJkZjQ2NjUxYWQ4NTdhZDFlMDEwNGU0MmFiZmY2YjA0M2FlOGVhMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGVkMTI5YjYzNWQxMjI1MWIxZDZlMDlkMzAyNmE4ZjE3MmQyODI4MmVmYWVkMDA1M2UzMjJjNjAxMzIzYjMxMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWZlNzA5ODliNjBhMDIzMzMyNGZmNjViN2Y2MWQ5ODNlMzQ1Y2JjN2QxMDlhZDhlMTg0NTM3ZDg0MzFjOTAxZSJ9"
+        },
+        {
+          "resource": "repo://src/pages/shell/Shell.vue#L30-L31",
+          "version": "repo-lines-v1:sha256:fe59e60e338b8f5a6fb86499e38f1ab0d6ad4d73a4607cd5a354f31bb43ed2b9:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTdlZTc4M2Y2ODA4Y2JhNjcyNTQwNDlmNTAxOWViOWFhODc3OGE2OGJiNzM0NmRiOGM5NGU1ZTljZDVmNmJhNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTk5ZWFiNTczZTUzNDY3OTU0NjRhODMxZmE2ZTM5ZjQ1ZTc4Y2Y1ZTZjYzkxZmViN2IzOWRjZTgwYTZhMzA5OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODA1ZWUyMzgwODRlYThlNTJkNjc3MDVjYTlkNDkzZjZkZDdlZGY2ZTBkMzBjNDQyMjA0YjY4NjU2MGNjZTZkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTNkZjgyZDYxNmMxY2I5OGUxYmRkZmY4OTVhYzUwNWQzOGVjYzUyYzIyOWM0MTdkZjI3MWY1MmE5NzUwZWJjZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2ad20dd45c4423ba8b50169978a2307",
+      "statement": "Authentication guards in main.ts use rhAuth.authGuard and rhAuth.publicGuard from @ulabase/kit-vue, with auth guard redirecting unauthenticated users to /auth/login and public guard redirecting authenticated users to /.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.ts#L57-L63",
+          "version": "repo-lines-v1:sha256:dc35076a3173bb1d2b33272830bf0c4a6f8dbdcc8aee9369209eb20014a05b71:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWMyMDY0MTJjMTk2MGRhZjk2Zjg1OTYzZGQ2NTA0MjgyM2E5NWI1ZTExNzVhYjk3Zjg4YmI2ZDNmMzBlZDRhMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzZTQ2Zjk0Mjc2YjZmNmY0ZWQxZjAyYWY3OGJlZjZhMmVlMWM0MzlkZDU1ODRiOTczOTQ4MzEzMjE0ZDJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTg4OTMwOGM0OTBjMzcwZjA1M2ZkZjU4NzgzZjdkZmUxNWQ0MjAxNDY5MTZlMzcyMGExODU4MjU3NGJmNDc3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQ5NjM2MDJkNGY2NGNkMDVkYmY1M2VhMTIzYjAyZmZmYzdmMmRjYjJhZWMxZjZmZmY4NjNjNGQ0OTQyYmE3YiJ9"
+        },
+        {
+          "resource": "repo://src/routes.ts#L23-L35",
+          "version": "repo-lines-v1:sha256:3fd09275ab545154bfa0ef2b12062cddf0ae5e461ae9c4051f5d731260d7fd67:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmMjk4MTM5NTBhODM0YjI4ZTBiOWU1NDJhODQ2M2NhZjMxMjU5YmExOGIyOTgxZDg4NjM5OGU5MzdlMzgwNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTFlMDg5MDA4OGYzMThmZTMzMGFiOGE2MThlYjRlOTI5NmNhN2RkYzA4NDY0NzFmM2I2ZTVkZjc2MWI4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgwNjdjNmQzMGU4MzhkNDIzZTZiYTg5NDZlZGUxNmU0OWExYmRmNzM5YmRlMjJiYWIyZjNlNzBlYmE0YjEyZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJiODFjYWFiOGYwZDRhZjQ4OWFmNjA1YWE0NjQ1M2RkNjI1YTQ5N2JmMjI3OTM3NTk5NDgxMmVhYzBhNzIzZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a48cfa1565f84b2aab4c25c0199ef387",
+      "statement": "Feature flags in environment.ts control which authentication routes are registered and which UI elements are displayed, with emailRegistration, passwordReset, oauthLogin, and oauthProviders flags.",
+      "evidence": [
+        {
+          "resource": "repo://src/environments/environment.ts#L10-L16",
+          "version": "repo-lines-v1:sha256:e0c09c50abf5287407f3a473d775c4b3d6aa5796cb202935980d529c1b428e51:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjRjNjE5ZmZkNmI5MjFjNTI3OTExZWRlMTQ3MWM5MTQ5YTFkZTg2NTUzNDE4NWIwOWY2Nzg1MGRjMzMwZDU2MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQwM2NhYjc3MGI2NjA0MzQ5Njg4YzAwNTk1ZmVmNWU0NjcwN2M1ZWVjZTU5NGMzYWIxM2RjMzY0NWRlMTdmMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCJ9"
+        },
+        {
+          "resource": "repo://src/routes.ts#L18-L35",
+          "version": "repo-lines-v1:sha256:a2011cf788742223aac43dec5ca076c2f75e63e671976d203872e93444df8ae2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0NjUzZmFjZmE0MjJhYTEwOGFjMzFhYTVhMDJhOTIwNzc5YTM2MDNiOTI4ZWJiNzAwMjRjOWVjYzU0YWE2NWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTFlMDg5MDA4OGYzMThmZTMzMGFiOGE2MThlYjRlOTI5NmNhN2RkYzA4NDY0NzFmM2I2ZTVkZjc2MWI4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViZmMzZGY0MmZjZjBhY2MzOWEwNzUyM2M5OGFjYTJhMjMzZmEwY2JmMjAzYzE1OTVmMGE1ODcwZGNjZTg2MmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJiODFjYWFiOGYwZDRhZjQ4OWFmNjA1YWE0NjQ1M2RkNjI1YTQ5N2JmMjI3OTM3NTk5NDgxMmVhYzBhNzIzZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_95ba0ad5691c4ad092e8cb518b395d93",
+      "statement": "The consents gate is positioned above authentication guards in App.vue to ensure blocked users see the consents overlay rather than being redirected to login.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L170-L176",
+          "version": "repo-lines-v1:sha256:4afe45e098af4413dc34a68175723cf70f6ff28250f7aab88b2f5f591205f597:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiODViNjQxNjEwYzBjYjU1MGM3ZWUxNzYyMzczYjFiMWFiZTkyNWUwMjY1OGM3M2QxMTg1ZDQwMGE4ODIwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjk3ODdkMGM0ZWU0ZTA1ZTNkODZhNWZiMTM1YTg1MTgyNzhjODUyNmNlMmNjN2VlYzc3NGI0NTJmMjRmNWNkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGE0M2E2YWJlMTRhYjExYTJmZDI2MGJjNjgwYmU3YjdhMjQ4M2FjNGRhYjMzODliOGFhZmRhNDVmMTk3ZjAxZCJ9"
+        },
+        {
+          "resource": "repo://src/App.vue#L1-L12",
+          "version": "repo-lines-v1:sha256:68ec96ce02a42a30d29a4f73caa586948d97c18f3d0bb35fa2b26be5e224fc64:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmNDMzNTYxNDJhMWEyMzRiMWEwMzE5ZmIyNzYzYmU3ZWQxMDhmYjgxYWM5YzNlNmQyNDQ5NmY5MmVhYjk2YWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1MjI4NDBlZDVlYzU4YTM2MmYyMGI3MWI4YWViNjc1ZDdlZmI5NzQzOWM5MGMzZjYxNTVhZmVjNjUyODU5NDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_29a9718403404b2b92ac2ba48ce75954",
+      "statement": "Registration with duplicate email returns 409 status which maps to 'An account with this email already exists.' error message.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/auth/signup/Signup.vue#L56-L58",
+          "version": "repo-lines-v1:sha256:2b8b5e60d0ad5764533615c6c6fb3ea8d5f58116256879e5922e83fed06c68ba:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWY5YTZlNjRhODI0MjRiMDE2ZTYxODkzZWQ0ZjdjOGRmYzVmMjFmNjczZjQ4ZDE0OWM5YmZhZjQ3OThjMGE3NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTJlYThiM2Y3MzQwYmE0MjY3YmVlMWJiOWZkOTFlODVlN2Y2ZDY2MDQ2NjU3ZTE4OTM3NzlhZDAwNWEzZWQyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjM1YWZhYmM4MDU3OTIzYTljMTAxMDk1MmRhNjU2ZDBlMTg0MjlmNzFhZDU2NTAwMjE1N2U3OTQxOWMzMTlhZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzAzOGVlMmUxNDdhYjRmODJmODIxMGZkYmFlMzE2MjNjZDgwYjY2YTA3YTdmMWZlMzI4NmQ2OWJmMDc4ZDgwNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a5ea5a15480946d7a39619d0f9e7b647",
+      "statement": "Verification page handles missing parameters and invalid/expired tokens with appropriate error messages, and calls auth.verify() only when parameters are valid.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/auth/verify/Verify.vue#L12-L19",
+          "version": "repo-lines-v1:sha256:2ed9d2001e73d9579af1ec02b1513322ad529b4b003b181edf01275913cacf14:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzYwY2U5MTRmYzA4MDI0ZmEwOTJlOGFiOGY3ZDM1N2FhM2ExMDlkYTUzYmMxNzFjM2ZmYWE1NWU5OGQ3MTFlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTE3YmUzMjg0MzBkNDBkMTIyZGJjNzQ3NWUzMTBmNTNlZDcwMGUyZmQ2YTg2YWJlOGJkYzQ1MDBmYzdhMzlmZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGUzNTZiZWI2NDU2NjFmYjFiMGQzZTk0YWU4YjI3MzVmZWIzZjZjYWM2ZjE4ZGJlZjdlYTE1NjJmYmJiNGRlOSJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/verify/Verify.vue#L24-L45",
+          "version": "repo-lines-v1:sha256:6824d23f237deaf11990209d47427f42b122c30edff1bb5bde1b127b17baeb38:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5YjZhOTdjZjczNjQxODM5ZDExNzg2ZDVkMzM5YWMzNzIyMzhkZGMxNTlhZTVhOWJiNmI4YTJkY2Y5NTQyZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyYzc2YmRhZDVlMWIzN2Q5OTQ2NTMzMjgxY2E0NWRiZjhjNTExZTQ1NDk0ZWQwMThmNDY2MDdlZmIxMmEzNzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0ZTdhNjZlNTRkNjUwYmQwNzJhOGFkNDk0YjgwNTVlNzIyYmMxMmRhYjJhYzRkMDJiZDE3OTBiYTM4YmU4NDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1MjI4NDBlZDVlYzU4YTM2MmYyMGI3MWI4YWViNjc1ZDdlZmI5NzQzOWM5MGMzZjYxNTVhZmVjNjUyODU5NDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_89f40eadb22a4fc19fefacb4a0a5f616",
+      "statement": "Password validation requires minimum 8 characters across all password fields in signup, login, and reset password forms.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/auth/reset-password/ResetPassword.vue#L21-L23",
+          "version": "repo-lines-v1:sha256:45ed7c7f5f905b2462a2ef1beecb9f7252358dc207eb844588092c51fa181f87:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzVlZjczNTQwNjEzOTQyNTZiZjNiZTQ2ZDQ5NWY4NWE1MWIzMDJjNWRmNTFjYzJjYmJhMTkwMzk1NmI2Yzg0ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk5NjdlYzFlZDM4MzZmOGViMTdhZmYxNzJiNWJmZWY3ZGU2MDQ4NWE0MzljNmNhMTFjNTkxZTE3NTU3MzlhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWY2NTcwOWVkMzgwYjgyMTVhNGI2MTJiNmEwMTlkYTc3NjhmM2U2YzhlYzdmNjY1MmJjMjA4MjA2ZjIyZDA0MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODM3ZDdmYTI3N2JhMzJkMDc3NzU3NDQxNGFiZTRkNDI4NzU5NGY5OTg3N2JhNzdkZDM1ZTVlYzk3YzE1ODljYSJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/reset-password/ResetPassword.vue#L73-L75",
+          "version": "repo-lines-v1:sha256:8e5cf5acd084d27e020542ee8636e64e758a56062b15a0880362155c0df7f63e:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTY3OGQ2MjgzZGU1MzI0OTg3ZjJjZWJhZGU3MjkyZTliYWQ0OGI0ZWJhMGU2ODgwNWM0ODEwNDlkNWFiM2U1NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDNiMjY1NWFkMzU3NjM0ODkxNzY5ZThkNmY1OGE3ZWUxMjcyZDhiNDA3M2QyYWFlNmM3MjNmYjNmNzBlMGVkMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjJiYThlMDdiMTlhNzYxZDIzMjhmODlhMzMzNDU2MTFmOWM5Njk4MDFiY2U5N2IwYjc2YjhiNGMxNWM2MWVhMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmM1ODA1YjQ5NzBlNzhiMDExMzhlZDQ3YWI1ZjhiMDM2MTY2MTM2NjBkZjczZjU2N2EwZTVjNTRlMDYyNzZiOCJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/signup/Signup.vue#L130-L132",
+          "version": "repo-lines-v1:sha256:ff4073cc9005aefbf8a03c63fbf4f8ed9971781c7d88391b987cc73b74458536:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODNlYWIxZmIwOWFhYzVlODY5YjVmNzI0YTA0NDY1N2QzY2U2YjQ1YjNlNjM5OTllMWFiODVjZDYwMDYzM2Q1YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTAwMGVkMjk0ZWQ4ZDU3MjYxYjJmNzQ1NzM1YmQxZGU4OGJjOWI3YjRlNzk0NGVkYTE5ZjAwMDBjMzQ1YzZkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjNjNzJhYTJlMWNkNTAxNGRmOTRkYzNmZjVmMjRkMWIyMDBmMjA0NTNkYzcwODE4NTA2ZjRkYjRkZGU2MTIxZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2RmYmVjYjNiN2ZkNWUyMzM0N2U4ZGYzOTFiYmY4NjhlOTRjZjE0NjQ0MjhjM2E1ODA5MWU1Zjc4YTdmMDhmMCJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/signup/Signup.vue#L23-L25",
+          "version": "repo-lines-v1:sha256:9ac01c3b8b01a794c7e9eead9d511e3b4786376455484fac79d90da25b4c5ca6:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzVlZjczNTQwNjEzOTQyNTZiZjNiZTQ2ZDQ5NWY4NWE1MWIzMDJjNWRmNTFjYzJjYmJhMTkwMzk1NmI2Yzg0ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk5NjdlYzFlZDM4MzZmOGViMTdhZmYxNzJiNWJmZWY3ZGU2MDQ4NWE0MzljNmNhMTFjNTkxZTE3NTU3MzlhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTJhNmI4MTFlM2UzYWI4ZTk3ZGMyMmZiNjhjNjJhNDIzNDg3ZDVkNzBiNWM3ZjE4OGIxNTY4MGZjOGZiZTg5ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzE4NTEzNTcxNmY1OWU5N2I4ZGJhYjE4Yzk2Y2QzMWE1ODlkZjMyY2E2YzE5ODE2MDk4MjhmNjc1ZDM0NjQ5ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_abbe6dbad2e04cada6cc2983e862a14b",
+      "statement": "The Shell component displays user initials, display name, email, and active team name computed from auth.user and auth.teams reactive properties.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shell/Shell.vue#L52-L75",
+          "version": "repo-lines-v1:sha256:1b7e8c7aacde48145e243e6cdb246067bb6e470be68076b4eed34d6f331940e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiYjgzMzQ0NDI3OTQ4MWM2ODE4ODIyZDI2ZjZhZmY2M2ZmNzc4ZTY2ZjEzMGRiMDk5MWE0MzU4MWQwOGRlMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAyMjE0NjZhMjg4YzdkNTk4MDI3MGE4ODE3NzNlNDAzNTViMGI0NjlhNzdhOGU3MzE5YTFiZWIxYjNmMGFjOGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxNWFkMzA0ZWU0YzYyNmRkZTc0MTM0ZGMwODk1YjE1MmIwNWI3MjEwZWJmMGMwNDU2Yjk0ZDI4MGYzMjY3MGMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-12T10:21:41.724Z"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:2df96f3387bffd4e677d4098e84a6711b725157c68ead499ccc6f38ee4e5bf23",
+  "claims": [
+    {
+      "id": "claim_8ffe8b08d3d14e65afa97f5ac127cdd5",
+      "statement": "The OAuth setup workflow requires three steps: creating an OAuth client in Google Cloud console, setting oauthLogin: true in environment.ts, and running ulabase setup with GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET environment variables.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L62-L72",
+          "version": "repo-lines-v1:sha256:36e2c939cc6faf9c6a8719367ad450099cd1bfc3bea5dded9f32cd84ed66e43f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkYTZkZDM5Yzc0YjIxZmQ4NmQ1ZmRlNDY0ZTZjYmRmNTIzYjM3ZWNhYmQ5NGI1Y2M0ODBjMTQ3NDlkZmQ1NDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2ZGI4ZmM0ZjczZmUxMzNiYjk2NThiOTI2NTkyZGU1OTk4ZjJjOGMxNWI5MzkxYTcyNmY0OTRkMzczNjZjMzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5ZTFkZTAyYTM5NjAwN2YxN2Q4YWEzMDJjMThmZDNkY2MxNmExMDQxNmIwOGNlZjU3YTdlMDAwMmQ4MTA4YWQifQ"
+        },
+        {
+          "resource": "repo://src/environments/environment.ts#L11-L16",
+          "version": "repo-lines-v1:sha256:8a64a4665ef6bcf2cba72654c82d3a623361c99568a394ede816ff0aedf82836:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2NjY2M0MjQ0NmI4OTAyM2MwYzA0NmUxOTNmZTAxYjRjODZmOTRiMzI2NjQ5ZTViNWE3NjJmZmM2MGJiMWUyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODlkYzE0NjhkMmEyY2M3NDQ0ODA3OTE0Y2IyMTQ0NDk5YTYzMzNlNmUxNzFmZmY5YjcyZjZhNDRhMmQzMTUwMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L150-L191",
+          "version": "repo-lines-v1:sha256:787953242686af4dc554d09ed5c529dfff97b9afd871bcc157fa8211a9af770f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkMDE0M2UyZjYyZWRhYzA3NThiOTBmZTY0ZmU2ZWUzOTJmMWZkMmRkMDA5NzA5N2FlNTZlZWUxODllYTc5NWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTFlMDg5MDA4OGYzMThmZTMzMGFiOGE2MThlYjRlOTI5NmNhN2RkYzA4NDY0NzFmM2I2ZTVkZjc2MWI4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiMDg2ZDQ2NjNhYmFiZGE5ZjJmZTIzZWU4NjAyM2UxNTQyMmQwOWU2YzI1ZTU3ODBkZDMyZGExNzNlYTI3NjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiNGI2MTAwNDcwMTgxOTY3MDM0NTAzMTNkZTdjZmNkMDNhNjIxZTA4NTQ4YjVhMGI0M2JhZmE2M2ZkN2Y4ZTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9dfcab42981c4dcbab37a66a32875916",
+      "statement": "OAuth credentials are stored on the Ulabase service, never in the application code or environment files.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L68-L72",
+          "version": "repo-lines-v1:sha256:acf82b82507c5df96851b4b643b95fae8ed4993b4d3d07bfecd821d94844bea2:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjA3MmMyNzNhMWY4NDgxYjExZDFjNTBiMjJkMzZiNjYwZWI0MmM3YzQ2NmMyNGU3NWVlNzc3M2I2OWI1NTkzOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzdiY2UyNjgzZmMzNWY5ZWYyMjAyZDQ3ZjUyMjJjZTlkMmM5NjA1OWEzMGI1NjQ1NWRhZTljMWY4MGY5ZTVhZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjllMWRlMDJhMzk2MDA3ZjE3ZDhhYTMwMmMxOGZkM2RjYzE2YTEwNDE2YjA4Y2VmNTdhN2UwMDAyZDgxMDhhZCJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L165-L188",
+          "version": "repo-lines-v1:sha256:dcab0b975c0a8d11519f5658339c3328a727240783b728d3c47844a39f18f96f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkNjAwNDdiZDdlZDRiMzI0MDgzZTNmM2VmMjcyNTRiODNjZGUzOTJiMWY4MzJkMjdjYjMzMjUxYWFiZjgzODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxMWUxZWQ4MGQyYTI1NDZkMDg5YTY2YjI2NDE1ZDBhMmM1ZTljYmI5MDg2NmZlZWZhMzJkNWNmZTljNjU3OTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU5ZmIwNzRkY2FjN2FjY2IxM2Y3Y2FlMzVkOGRlYTVmMjRkYjVkYmZkNWNjYmI2ZTU3MWI3NTdjYzJhNjdjNzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwNTk4MmU2NWY1N2U0NDY2NTBkZDA0YzE3NDE3MjUzYTU2MDFmMzljZDZlMzc4YTcwZjJhMTEzMjE2YjZlYTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1524a65e0671419da97e1ecd16360e49",
+      "statement": "The setup process checks if OAuth credentials are already stored using isRedacted() before requiring environment variables on re-runs.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L177-L184",
+          "version": "repo-lines-v1:sha256:058316cccb830bc69c56b708b11b1d57f2644981b3c78886dba731ce1f37f01d:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzAzYzFiOTM2ZjllMTAwOTQ5NDlhNjlhMTAxZWY2ZTc3ZTliYzNiYTdkMjFlMmY3MWU3OWYwNDhjYjdiMTRlMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWQ1ODlmZDc5YmUzMTMxYjFiMTM3NzEyM2FiYWZiMzlhYjYxNWU0MTExYjZkNTVjYjQ1MTgyZDdlMzQwMjNhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDBmOTQyZmUzNzUxNTQ0M2Y0ZTA2NDcxM2MyNjVlZmQ4MDNhZGVkNTAzYmE4Nzk4YTkxNmJiMmU5YTE4OWM1ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGNlYTc5NjAzNjNkMTIxOWM1NDZlYzY0ODU1NzhlOWRmZTNkNjgyMzY2NTY3NWVhYjEwNjM0NjM5NWYyMDBhMyJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L46-L48",
+          "version": "repo-lines-v1:sha256:881361b0650a600a2232ac0b68fed3acc33a05a7a6b12583622147837fcfeadf:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDk2ZTAxZDY4OWRhOTgwZjMyMDJjZmE5ZmI1ODJiN2I0N2QxMTdkODIwYjIzNjgzYTc5OWE2MzNjMTI3YTM4MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmMyM2RhYjJlOWU5YjA5OWMwN2E2YzI1M2U1MTgyNTkxNWI0MzY2ZWYyMDgxNzk2YTJmNTA2ZmM3MmE5OTRlYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWI1MTYyNjk1YmVlNDQxMzAyZWYwNjFkZDZlNGQzYTEyYmJkZmFjNDQ3YWNiMzhlYjBhYzMwMDFjOTZkNWQ1YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a9be74bd3b394732a07abc28e4c194cb",
+      "statement": "OAuthButtons.vue renders provider-specific buttons using the oauthUrl() function to construct authorization URLs.",
+      "evidence": [
+        {
+          "resource": "repo://src/oauth-url.ts#L1-L5",
+          "version": "repo-lines-v1:sha256:812f81c7665baaee10200873b65b415847736966aed02b2ede485e247b3fc3ba:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDNkYWMwZTYyOTVmYTBmMjI4OWY4OTU0MDg1MTMwOGJjYzdjZGI2Y2QxN2MwZDJmOWMzZGFkZjgyYWNlNjY0NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/oauth-buttons/OAuthButtons.vue#L1-L29",
+          "version": "repo-lines-v1:sha256:e0a6760a4d1fa6502ef212a299f36971772998483cda9dfd07db8e16d7f19918:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmNDMzNTYxNDJhMWEyMzRiMWEwMzE5ZmIyNzYzYmU3ZWQxMDhmYjgxYWM5YzNlNmQyNDQ5NmY5MmVhYjk2YWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1MjI4NDBlZDVlYzU4YTM2MmYyMGI3MWI4YWViNjc1ZDdlZmI5NzQzOWM5MGMzZjYxNTVhZmVjNjUyODU5NDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b1c1b0e28d5c4006b7351c037a274b25",
+      "statement": "The oauthLogin feature flag controls OAuth button visibility on login and signup pages, while oauthProviders specifies which providers are available.",
+      "evidence": [
+        {
+          "resource": "repo://src/environments/environment.ts#L11-L16",
+          "version": "repo-lines-v1:sha256:8a64a4665ef6bcf2cba72654c82d3a623361c99568a394ede816ff0aedf82836:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2NjY2M0MjQ0NmI4OTAyM2MwYzA0NmUxOTNmZTAxYjRjODZmOTRiMzI2NjQ5ZTViNWE3NjJmZmM2MGJiMWUyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODlkYzE0NjhkMmEyY2M3NDQ0ODA3OTE0Y2IyMTQ0NDk5YTYzMzNlNmUxNzFmZmY5YjcyZjZhNDRhMmQzMTUwMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/oauth-buttons/OAuthButtons.vue#L5-L7",
+          "version": "repo-lines-v1:sha256:9a0eb931ad8c1176b5322837d51de843a432b1465f42f782f68cec0c57a77406:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmU2M2I3YTdiMmZiMGU5ODJmOGE5ZGRlMDQzNGVjNGRiMDYyNmYxYjJiMzc5MjBkNzdmNDhjOGQzNmY4MjdiZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGQ2NmUyMDY5ZWZmYjc3NzI5YjFlMmI1NDc3N2UzMmFiYTMzMGFmNmZjNDNmNjVmMTgxZDlhMTMxOGFlYzlhNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmY4ZjQ4MGVjMTlkODI5YzczY2VmY2ZmMmQ3ZGU0MmUyMzFlY2NjZTgwMTBhNGY4MTBhYzJiZjIxNzQxNTcxNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmIwZTk3ZGFjY2MzYTY5YjU5MThlY2E4Y2JmMDU0NjNiYWE4ZjI5Y2MzNjkxOTkyYzQ2N2JjN2U1MDMxM2QyZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ed0923cfeaea4a3594a7baafe968b0a2",
+      "statement": "The OAuth flow redirects users to Google for authentication, then back to Ulabase with an authorization code, which is exchanged for tokens.",
+      "evidence": [
+        {
+          "resource": "repo://src/oauth-url.ts#L1-L5",
+          "version": "repo-lines-v1:sha256:812f81c7665baaee10200873b65b415847736966aed02b2ede485e247b3fc3ba:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDNkYWMwZTYyOTVmYTBmMjI4OWY4OTU0MDg1MTMwOGJjYzdjZGI2Y2QxN2MwZDJmOWMzZGFkZjgyYWNlNjY0NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/oauth-buttons/OAuthButtons.vue#L14-L28",
+          "version": "repo-lines-v1:sha256:29ed0942ec2d8686a1fd6f9b6506ceb6585a9bc003899bd2811cdaea4fa651c9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxMTRhMDdiNmQwNWQ3NmFiZmEwM2VkZTE5MjZjMWUyZTc0NzI3MzEyNzlkODU4OGU4YzYzYzU2ODliNTAwNzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiNDE2MzY3NmY2OWViOTE4NTRlNTgyODEyZTE5YTQ3MTE2ZTExNTgyNjBjNjI0YzFmNjJkNzQ0ZDAzOTg1M2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5NWEzNmZhMGE5NmI3ZDdjZjNlMDE1ZDc0YzE3MDZjODAwY2JlM2Q2MGVkMzNmOWZkOGJjNjI3OGMyMTY3OTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1MjI4NDBlZDVlYzU4YTM2MmYyMGI3MWI4YWViNjc1ZDdlZmI5NzQzOWM5MGMzZjYxNTVhZmVjNjUyODU5NDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8f59d048a3734d8f9d6556fdef1d8ea0",
+      "statement": "Feature flags in environment.ts control both client-side UI visibility and server-side service configuration, eliminating configuration drift.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L14-L30",
+          "version": "repo-lines-v1:sha256:486281615e50dad8a44920ef440bb6253c006cc719ac2575d3eafb8ecd1e9375:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzNGJiNzg0ODhjYTcyYTRkM2Y2YzQ3ODAxOGY2MmI2YjNlNmMwMzdiMmM4ODZlMzNjOGIyNzUxNzk3NTA1OWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1MTgzN2JjZDIzMDMwOTU3ODA3YTI0ODdjYTMyMzc4Nzc0OTg2ZWRmMmQ1OWE1ZmVmNzRjNWUwMzU0NmVkMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmNzYwNmU1NGEyMTU1ZTFkMWQxN2M5M2QxYTE4ODZlMGM1OGRkOTg0ZjEwNmQ2ZmZmMWYxZTkyNTVhMmI2YmYifQ"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L59-L65",
+          "version": "repo-lines-v1:sha256:685bf55d5cec1e11a0d85675b9f565d6cda8136fbbf7e0adaf0efd9c168f9e6b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQ4MmE4YTU3Mzk5ZjI1NjVkMzNmZWUwNjE1NmE1OTI4ZmRmMGMyNjQzNTMyZDg5ZDdjYTJjMTBhMWQ0MGJlMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmUwYjdjNjAyNTliNDVlOWZlOGZlNDczZDA0ZDM2OWY0MjU3NmQ4MTkyYWEyOGY5YWZhNDM1MTk4OGM3YmE3MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTIyYzFkNDI0YzhiZTNhNjU5MDQzNjIwZTQ3Nzg2Y2U0NDE5MjQ1NWYzMjZhNTI1MWViZjdmZGI2MDQ0MTQ3ZCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-12T10:21:41.724Z"
+  }
+}
