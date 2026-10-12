@@ -14,12 +14,11 @@ defineProps<{ apiUrl: string }>();
         at a Ulabase service.
       </p>
 
-      <div class="config-status">
-        <p v-if="apiUrl">
+      <div v-if="apiUrl" class="config-status">
+        <p>
           <code>apiUrl</code> is set to <code>{{ apiUrl }}</code>, which isn't a
-          Ulabase service — it must be an <code>https://</code> address.
+          Ulabase service: it must be an <code>https://</code> address.
         </p>
-        <p v-else><code>apiUrl</code> isn't set yet.</p>
       </div>
 
       <ol class="config-steps">
@@ -28,8 +27,8 @@ defineProps<{ apiUrl: string }>();
             <strong>Create a free service</strong>
             <p>
               At
-              <a href="https://ulabase.com" target="_blank" rel="noopener">ulabase.com</a>
-              — it takes less than a minute. Skip this if you already have one.
+              <a href="https://ulabase.com" target="_blank" rel="noopener">ulabase.com</a>, in less
+              than a minute. Skip this if you already have one.
             </p>
           </div>
         </li>
