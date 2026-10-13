@@ -3,9 +3,6 @@ type: guide
 title: Quickstart
 description: Entry point for the Ulabase Vue starter wiki, routing readers to the right pages by role and task.
 tags: [quickstart, guide, entry-point, navigation, onboarding]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-12T10:21:41.724Z
 sources:
   - id: openwiki-source-4e7cd7f381c92e8c5d89f5c1
     resource: repo://NOTES.md
@@ -21,7 +18,10 @@ sources:
     resource: repo://src/routes.ts
   - id: openwiki-source-c1d5327fe44e08cda82fcf83
     resource: repo://ulabase.setup.consents.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-12T10:21:41.724Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:12:04.743Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-13T10:12:04.743Z
 ---
 
 # Quickstart
@@ -110,7 +110,7 @@ The wiki is organized into five domains:
 | File | Purpose |
 |------|---------|
 | `src/environments/environment.ts` | API URL and feature flags |
-| `src/main.ts` | App entry point, auth setup, router creation |
+| `src/main.ts` | App entry point, auth setup with consents error handler, router creation |
 | `src/routes.ts` | Route map with feature-flag gating |
 | `src/styles.css` | Design tokens and disposable skin |
 | `ulabase.setup.ts` | Declarative service configuration |

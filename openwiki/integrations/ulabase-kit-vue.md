@@ -3,9 +3,6 @@ type: integration
 title: "@ulabase/kit-vue Integration"
 description: Documents the kit's API surface including createRhAuth, useAuth composable, authentication methods, types, and the session lifecycle.
 tags: [auth, vue, ulabase, composable, authentication, session, api]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-12T10:21:41.724Z
 sources:
   - id: openwiki-source-4e7cd7f381c92e8c5d89f5c1
     resource: repo://NOTES.md
@@ -31,7 +28,10 @@ sources:
     resource: repo://src/pages/teams/Teams.vue
   - id: openwiki-source-28ff6ab0b2c280a1e7f9575c
     resource: repo://src/routes.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-12T10:21:41.724Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:12:04.743Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-13T10:12:04.743Z
 ---
 
 # @ulabase/kit-vue Integration
@@ -175,7 +175,7 @@ const auth = useAuth();
 
 | Method | Parameters | Description |
 |--------|------------|-------------|
-| `acceptConsents()` | - | Accepts current Terms of Service and Privacy Policy |
+| `acceptConsents()` | - | Performs the Terms-of-Service and Privacy-Policy acceptance PATCH and triggers a token renewal; the caller is responsible for reloading the session with `checkSession()` afterward |
 
 #### API Method
 
@@ -336,9 +336,10 @@ The kit provides two router guards for route protection:
 
 ```typescript
 // In main.ts
+const noNext: NavigationGuardNext = () => undefined;
 router.beforeEach((to, from) => {
-  if (to.meta.guard === 'auth') return rhAuth.authGuard(to, from, noNext);
-  if (to.meta.guard === 'public') return rhAuth.publicGuard(to, from, noNext);
+  if (to.meta.guard === 'auth') return rhAuth.authGuard.call(undefined, to, from, noNext);
+  if (to.meta.guard === 'public') return rhAuth.publicGuard.call(undefined, to, from, noNext);
   return true;
 });
 ```
@@ -350,7 +351,40 @@ The kit integrates with the consents gate pattern through the `onError` handler:
 1. **451 Detection** - `onError` receives `ApiError` with status 451
 2. **Signal Propagation** - Error handler sets consents blocked flag
 3. **UI Response** - `ConsentsGate.vue` shows acceptance overlay
-4. **Acceptance Flow** - `auth.acceptConsents()` handles the acceptance
+4. **Acceptance Flow** - `auth.acceptConsents()` performs the acceptance PATCH and a token renewal, then `auth.checkSession()` is called explicitly to reload the user and teams with the new token
+
+### ConsentsGate accept() Flow
+
+The `ConsentsGate` component sits above the router view in the component tree so it can intercept 451-blocked users regardless of whether they have a valid session. Its `accept()` function handles the full sequence:
+
+```typescript
+async function accept(): Promise<void> {
+  busy.value = true;
+  error.value = null;
+  try {
+    // acceptConsents() performs the PATCH and token renewal — the fresh token
+    // is mandatory because the server-side guard keeps blocking for the
+    // lifetime of the old JWT.
+    await auth.acceptConsents();
+    // If the gate opened on the login page (login was refused with 451),
+    // redirect to home rather than staying on a page the user can't use.
+    if (window.location.pathname.startsWith('/auth')) {
+      window.location.assign('/');
+      return;
+    }
+    // The token is new and /users/me now answers: reload the session so the
+    // app starts with a user and their teams rather than a blank shell.
+    await auth.checkSession();
+    setBlocked(false);
+  } catch {
+    error.value = 'We could not record your acceptance. Please try again.';
+  } finally {
+    busy.value = false;
+  }
+}
+```
+
+When the acceptance succeeds while on an auth page, the component performs a full page navigation (`window.location.assign('/')`) rather than a router push, because the login page itself was blocked with 451 and there is no meaningful route to push to.
 
 ## Error Handling Patterns
 

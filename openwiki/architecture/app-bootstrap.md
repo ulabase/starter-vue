@@ -5,7 +5,7 @@ description: Explains how the Vue application initializes from index.html throug
 tags: [bootstrap, entry-point, initialization, main-ts, router, auth]
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-12T10:21:41.724Z
+    at: 2026-10-13T10:12:04.743Z
 sources:
   - id: openwiki-source-105c89f54607384be15e8d88
     resource: repo://src/App.vue
@@ -17,7 +17,7 @@ sources:
     resource: repo://src/main.ts
   - id: openwiki-source-28ff6ab0b2c280a1e7f9575c
     resource: repo://src/routes.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-12T10:21:41.724Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:12:04.743Z" }
 ---
 
 # App Bootstrap and Entry Point
@@ -32,11 +32,12 @@ flowchart TD
     B --> C{"apiUrl valid?"}
     C -->|No| D["Mount ConfigPage"]
     C -->|Yes| E["consumeFragmentToken()"]
-    E --> F["createRhAuth()"]
-    F --> G["createRouter()"]
+    E --> F["createRhAuth with onError: consentsOnError"]
+    F --> G["createRouter"]
     G --> H["Wire global beforeEach guard"]
-    H --> I["createApp(App).use(rhAuth).use(router).mount('#app')"]
-    I --> J["App.vue renders ConsentsGate + RouterView"]
+    H --> I["Watch rhAuth.store.user for logout redirect"]
+    I --> J["createApp(App).use(rhAuth).use(router).mount('#app')"]
+    J --> K["App.vue renders ConsentsGate + RouterView"]
 ```
 
 *Bootstrap sequence from page load to first render.*
@@ -63,7 +64,8 @@ When the API URL is valid, the full application bootstrap proceeds through these
 2. **Auth store creation** — `createRhAuth()` initializes the authentication store with the API base URL and error handler
 3. **Router creation** — `createRouter()` with `createWebHistory()` and the application routes
 4. **Guard wiring** — A single `beforeEach` guard dispatches to `authGuard` or `publicGuard` based on route meta
-5. **App mount** — `createApp(App).use(rhAuth).use(router).mount('#app')`
+5. **User watcher** — A `watch` on `rhAuth.store.user` detects session loss and redirects authenticated-route users to login
+6. **App mount** — `createApp(App).use(rhAuth).use(router).mount('#app')`
 
 ## Fragment Token Capture
 
@@ -102,6 +104,26 @@ router.beforeEach((to, from) => {
 - **No meta** — Route is unguarded (e.g., invitation acceptance page)
 
 The `noNext` function is a no-op because the kit's guards return their verdict rather than calling the traditional `next()` callback.
+
+## User Watcher
+
+Vue Router guards run only on navigation events. When a user's session ends while they are already on an authenticated page (token expiration, forced logout from another tab, server-side revocation), the `beforeEach` guard never fires and the user remains on a route they can no longer access.
+
+A `watch` on `rhAuth.store.user` closes this gap:
+
+```typescript
+watch(rhAuth.store.user, (user, previous) => {
+  if (user || !previous) return;
+  if (router.currentRoute.value.matched.some(r => r.meta.guard === 'auth'))
+    void router.push('/auth/login');
+});
+```
+
+- **`user` is truthy** — A session exists; no action needed.
+- **`previous` is falsy** — The store was never in a signed-in state; this is the initial session check finding no session, not a logout. The watcher skips the redirect.
+- **User becomes `null` while on an auth-guarded route** — The watcher redirects to `/auth/login`.
+
+Routes without `meta.guard` (e.g., invitation acceptance) are unaffected.
 
 ## App.vue Structure
 

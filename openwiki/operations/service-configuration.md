@@ -3,9 +3,6 @@ type: reference
 title: Service Configuration
 description: Declarative setup files that configure an Ulabase service to match the Vue starter app, using an idempotent step/check/apply pattern.
 tags: [ulabase, setup, configuration, idempotent, accounts, consents, guards]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-12T10:21:41.724Z
 sources:
   - id: openwiki-source-eaae96b81373abab97667f4f
     resource: repo://src/environments/environment.ts
@@ -14,6 +11,9 @@ sources:
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
 generated: { by: "openwiki/0.7.2", at: "2026-10-12T10:21:41.724Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-13T10:12:04.743Z
 ---
 
 # Service Configuration

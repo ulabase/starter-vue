@@ -3,9 +3,6 @@ type: workflow
 title: First-Run Setup
 description: Walkthrough of cloning, installing, creating a Ulabase service, running ulabase setup, and starting the development server.
 tags: [setup, onboarding, ulabase, cli, environment, service-configuration]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-12T10:21:41.724Z
 sources:
   - id: openwiki-source-5b54a58d1b51cd490b0e7162
     resource: repo://package.json
@@ -17,7 +14,10 @@ sources:
     resource: repo://ulabase.setup.consents.ts
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-12T10:21:41.724Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:12:04.743Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-13T10:12:04.743Z
 ---
 
 # First-Run Setup
@@ -185,8 +185,7 @@ The service only answers pages it has been told about. Re-run `ulabase setup` af
 The feature flags in `environment.ts` must match the service's *Sign-up Mgmt → Features* toggles. `ulabase setup` reads the flags from that same file and sets the service to match, so re-running it is usually the fix.
 
 ### `401` on a request you wrote yourself
-<!-- openwiki: broken internal link [../NOTES.md#reading-your-own-data] file "../NOTES.md" does not exist. Fix the href or restore the target, then delete this comment. -->
-A plain `fetch` carries no session. Use `auth.api()`, which attaches it — see [NOTES.md](../NOTES.md#reading-your-own-data).
+A plain `fetch` carries no session. Use `auth.api()`, which attaches it — see [auth.api() - Authenticated Fetch Wrapper](../integrations/ulabase-kit-vue.md#authapi---authenticated-fetch-wrapper).
 
 ### `ulabase` runs something about OpenShift
 A different, retired tool of the same name is first in your `PATH`. `type -a ulabase` shows both.
