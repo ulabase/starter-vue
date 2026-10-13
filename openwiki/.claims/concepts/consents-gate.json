@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:d41622c777f82b973cdfcaedcc90a60c2bfc14969c9bb21bf61549f5b570d34e",
+  "pageVersion": "sha256:5e7b99f3b6f8c26112581131c09b3a577f60177d898fdf004e7323c000f95418",
   "claims": [
     {
       "id": "claim_b1d0c716dcfe47c193e863dfdfd641d9",
@@ -8,14 +8,14 @@
       "evidence": [
         {
           "resource": "repo://src/ConsentsGate.vue",
-          "version": "repo-file-v1:sha256:408e9b9bd1cc05efb031f6c6bf7ebfdc21d3c4b76f91a2676bed0663cbb44dd3"
+          "version": "repo-file-v1:sha256:cd581b6dd659cc5c8133b1688558a8000b1c64a4c2f6cff04e4293a041412786"
         },
         {
           "resource": "repo://src/consents-signal.ts",
           "version": "repo-file-v1:sha256:bc2b92bb322966797a511a117d15e10bcd930f838c5ff75923a6e9d723cd3c1f"
         },
         {
-          "resource": "repo://ulabase.setup.consents.ts#L134-L160",
+          "resource": "repo://ulabase.setup.consents.ts#L135-L161",
           "version": "repo-lines-v1:sha256:152607e653da37f5f18e11d56b3e53c87e63a611c2dfc3bc59005995c4e38be8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5NTQ3N2VkYWI3MTU2NTFlZjNmZDBhOGE1ZjgzYzYwMTM1YTIwYjNhMmI3N2MxYTc5N2EwZjZjODM1MmFkYjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2ZjVhODU2NTdiOGU4NTQwZjZmNWYyZWM3YjY2YjY2YWNiNzc3ZmJlNjQyY2E5M2I5N2QyNWU4NjBlZDM4YjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmNjI4MGZjMDFmYzc1OWFhZGY4ODgwY2RmM2E4M2Q1YmIxYzZkNmNiYTJkNjdiZWEzOTRlZDUyMDI1ZWEzZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1MTM5YmE0ZDJjMmQ3MDhiZGE0MTA5ZmU3OGM2MWI0NjI3ZmExYTgxNTY1NGQxNmQzMTg0YmQxN2U0ZTRmODkifQ"
         }
       ]
@@ -36,15 +36,15 @@
     },
     {
       "id": "claim_2f51a2a26cf54e1a94d72c6e7d6171b7",
-      "statement": "The acceptance flow performs auth.acceptConsents() which does PATCH /users/{userId}, then GET /token?renew=true, then GET /users/me, then setBlocked(false).",
+      "statement": "The acceptance flow performs auth.acceptConsents() which does PATCH /users/{userId}, then if on /auth path redirects to /, otherwise calls auth.checkSession() which does GET /token?renew=true then GET /users/me, then setBlocked(false).",
       "evidence": [
         {
-          "resource": "repo://src/ConsentsGate.vue#L31-L49",
-          "version": "repo-lines-v1:sha256:b1ff02aa13941a88063c79c71d48bc47da811a30ccb12329221430d44c5a2f49:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYmJjOTU5MGFhMDhhYmU3MDg4ZTAxNjQyOTgyZWFlNzM3MWVjZmIyNjJjMDk2Mzg5M2YwZDU1ZmI0ZTMyMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjZGFjN2Q2OGZjYmEwNDVlMTZkYmMzNzkzYjk3NjRjOWRkODhmYTkyNmNkYTA5NDk0OWMwYzJlYzA2MjZlY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhYmJlZGE1YWI5MmYyNTM5MWFiMGIzMGQ4MzE0MWZlNTg2NTdjYTcwNzZmMjA3NGI3ZWVkMTkwMGZmNWUzN2MifQ"
+          "resource": "repo://src/ConsentsGate.vue#L31-L55",
+          "version": "repo-lines-v1:sha256:482228c2caf684660d041e593b5dfba0ecf4ae55ca0cdcfc2058fd843174d97f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYmJjOTU5MGFhMDhhYmU3MDg4ZTAxNjQyOTgyZWFlNzM3MWVjZmIyNjJjMDk2Mzg5M2YwZDU1ZmI0ZTMyMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjZGFjN2Q2OGZjYmEwNDVlMTZkYmMzNzkzYjk3NjRjOWRkODhmYTkyNmNkYTA5NDk0OWMwYzJlYzA2MjZlY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhYmJlZGE1YWI5MmYyNTM5MWFiMGIzMGQ4MzE0MWZlNTg2NTdjYTcwNzZmMjA3NGI3ZWVkMTkwMGZmNWUzN2MifQ"
         },
         {
           "resource": "repo://ulabase.setup.consents.ts#L207-L222",
-          "version": "repo-lines-v1:sha256:e62c9016a0a7d66ac5836306aad21a68726ec03607573ebfc23076130c4f163e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlZTNmNjFiYjA3MWY1OGFmZGFiMDY3ZDliMmFkNzNjNmYxOTA0OGNjMTBkZmQ1M2MwOGQ4MWZlYTQxZWU2MjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2NzdkMmYwMzFlOThiNWU5MTFjNWFkNGZiOWIyMTg2YTkzMjUyMmU4ZjQ2ZWU0MGJhYmZhZTNkYTAwZmMxMjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4ZDUzM2YwOTg1ZDQ1NzgwODdhOTBkMjcxNzBhMzNjYmYyNzdkNGVhZTc1NGVlYzU5ZGIyOTFlMmU3M2VjNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyMTIzNzI5N2Y0ZjQ0MGE2NWVjN2EyN2Y1YTBiYWUyYzMyMTRhN2U4MWIwNzFhMTRlNjZiMTBhYjMxMzljNjkifQ"
+          "version": "repo-lines-v1:sha256:861286d0a7802d9990f2d00992605a870a9ff1c509d0370a405c086b7f92c246:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3OTUyM2IyMmYzZmRjZWMyMTE1N2QzOTExYmVjN2U3ODYzNjI0MGY1NzNjZDg4YmMxYTYzZTQyZDczZjJkMTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlNjczYWJkNDU3YTk3ZWVhMTdhNjAwNjJlYjBmYWVhNmJkZjA5NDg2OGNjNmI4ZjhjMGViZGEyZjYxZWQ0MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4OGQ2YmFiYWUzMmRmMDU0YTMyN2IxYjIyMWY2N2IzZDdlZmU5YzYwMzVmOGZmN2JmMTZlNzQyZTg3OGQzMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0NDliNTZkYWQ2OTczMWRlYWFhMzc3NDFiYWUzNWM1NWVlMjY5YWI0ZWI4ZTRhZDM1ODQ4YTYwNWFkYTViNjEifQ"
         }
       ]
     },
@@ -71,7 +71,7 @@
       "statement": "The server setup includes userConsentsSchema, userCanPatchOwnConsents permission with bson-request-whitelist and mergeRequest, JWT claims, and the guard rule with its condition string.",
       "evidence": [
         {
-          "resource": "repo://ulabase.setup.consents.ts#L173-L298",
+          "resource": "repo://ulabase.setup.consents.ts#L174-L299",
           "version": "repo-lines-v1:sha256:6414fa72f20dd337d9e3c6afb2fe7a677d2a88aff0b9984d200544891e8d2f03:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI3NmZjNDMwY2NkYTQ2YWMzZWQ4NjVlYjYyNTEyZjI5Yjk4YWRlMGRlY2U1N2VhMzlkM2Q0YjRiYzA2NDBlMzc2IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1NWUyNmNkOTIzNjZmNjBkOGVkOTJkMDIzOWYwN2ZlZjc0Y2FjMTRhYTY5YWRkZjljMmNjMGQxMWViMDBhNDYzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1MDdmMTI1OGYxNDgwMDNmY2EzZGFhZDFiYzI3Y2RiYTUyZDVlNmIzOWM0Y2VjZDMzMTJlYTQ0NTE3YmEzOTNkIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
         }
       ]
@@ -81,11 +81,11 @@
       "statement": "The Guards rule blocks when either acceptance is missing (not both), excludes auth/token endpoints and the acceptance PATCH, but does NOT exclude /users/me to trigger the gate.",
       "evidence": [
         {
-          "resource": "repo://ulabase.setup.consents.ts#L119-L133",
+          "resource": "repo://ulabase.setup.consents.ts#L120-L134",
           "version": "repo-lines-v1:sha256:79970f1c12906702d48061a60898424119c2d1caee57819c6dc5fa0406bab262:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3Y2M4YWRkNmY4OGQzZmY4Mzc3MGY0OTY3ZjliYTdhOGJjODk3ZDM0YjUzYWMzN2VmY2E2Y2Y1ZGQzMTQ4ZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlZWNhOWFmY2U1ZjIwMzVkOTdjYjgwNGEwNjI4MmE0YTEyMjM5ZWM1YTI0YWJiNmFlZmVlNzAzZTQ4YjhjODIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwN2I3YmIwZjAxNjI2YTRhYTdhNjYxNDRjOWYyNzE4MGMxY2Y1NzBiZjNiMjY4ZTY3N2RjNzFiM2VmOGJmYjcifQ"
         },
         {
-          "resource": "repo://ulabase.setup.consents.ts#L134-L160",
+          "resource": "repo://ulabase.setup.consents.ts#L135-L161",
           "version": "repo-lines-v1:sha256:152607e653da37f5f18e11d56b3e53c87e63a611c2dfc3bc59005995c4e38be8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5NTQ3N2VkYWI3MTU2NTFlZjNmZDBhOGE1ZjgzYzYwMTM1YTIwYjNhMmI3N2MxYTc5N2EwZjZjODM1MmFkYjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2ZjVhODU2NTdiOGU4NTQwZjZmNWYyZWM3YjY2YjY2YWNiNzc3ZmJlNjQyY2E5M2I5N2QyNWU4NjBlZDM4YjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmNjI4MGZjMDFmYzc1OWFhZGY4ODgwY2RmM2E4M2Q1YmIxYzZkNmNiYTJkNjdiZWEzOTRlZDUyMDI1ZWEzZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1MTM5YmE0ZDJjMmQ3MDhiZGE0MTA5ZmU3OGM2MWI0NjI3ZmExYTgxNTY1NGQxNmQzMTg0YmQxN2U0ZTRmODkifQ"
         }
       ]
@@ -121,6 +121,6 @@
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-12T10:21:41.724Z"
+    "at": "2026-10-13T10:12:04.743Z"
   }
 }

@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:0d8d22322c2ff66f9c9565e9e4dd2e3caeae704b330bb9c89ebd839295f5aea5",
+  "pageVersion": "sha256:925dcca93f691c46d7ac53a5d789c984a8382c90f9eebe0215960fe34d6ca8ca",
   "claims": [
     {
       "id": "claim_0aa6916d5d1142fc85112520bb07a1bb",
-      "statement": "The application has two distinct bootstrap paths based on apiUrl validity: unconfigured path mounts only ConfigPage with no router/auth, while configured path initializes full app with router, auth store, and guards",
+      "statement": "The application has two distinct bootstrap paths based on apiUrl validity: unconfigured path mounts only ConfigPage with no router/auth, while configured path initializes full app with router, auth store, user watcher, and guards",
       "evidence": [
         {
-          "resource": "repo://src/main.ts#L36-L65",
-          "version": "repo-lines-v1:sha256:8c0a009caabf3aed8342a06baecc6938e51339816a6bba053b1a5faacbba8bca:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MWM0YjllYzZkNTY0MzFiM2JkNDZjYjE3YTg5NTJjNGI1M2EwNjc2NzVjOTcwMjYyNjRkMzUyMTUwNzVmZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyMzcxOTg1MmIxYmI3NGE4NDdlYTczZDNjODNkN2VjODkxZjRiYmU0YTkwNzE5M2JmODVjZjdjMjhjMjNmYjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2YzA3NGFkYTcyODEzZTIwM2Y4NjQwYjcyZmU1NWU0MTE3OThhNDE5MjVjODQ3M2VlYjE4YWU0YmQ1ZWJjNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+          "resource": "repo://src/main.ts#L36-L73",
+          "version": "repo-lines-v1:sha256:ee13884b68dd8f878bf946e42fc76e91c731df87f6984c4af9676cdb34667f3b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MWM0YjllYzZkNTY0MzFiM2JkNDZjYjE3YTg5NTJjNGI1M2EwNjc2NzVjOTcwMjYyNjRkMzUyMTUwNzVmZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2YzA3NGFkYTcyODEzZTIwM2Y4NjQwYjcyZmU1NWU0MTE3OThhNDE5MjVjODQ3M2VlYjE4YWU0YmQ1ZWJjNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
     },
@@ -67,10 +67,20 @@
           "version": "repo-lines-v1:sha256:9b0e881a0ff44dd51de5b473063d2a7774f78c65ccc5a72621896ceada915443:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWIwZTg4MWEwZmY0NGRkNTFkZTViNDczMDYzZDJhNzc3NGY3OGM2NWNjYzVhNzI2MjE4OTZjZWFkYTkxNTQ0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWIwZTg4MWEwZmY0NGRkNTFkZTViNDczMDYzZDJhNzc3NGY3OGM2NWNjYzVhNzI2MjE4OTZjZWFkYTkxNTQ0MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWIwMDc0ZTM1MGFlMWU3NGM4YmQ3NGY0ODM2N2IxMDAxMjhkNjg3MjRkZTM1ODIwZDdmZjcxMjcxM2I4ZDdiNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWQ2NjUyZWQyMDc2MDY0ZGIxMzAxZTJkOTM2OWY2YWQ0MmIzNmI1YTlkYzBiMDk0YWM2YmM3Y2E0M2QzOTM0OCJ9"
         }
       ]
+    },
+    {
+      "id": "claim_30631437d73e4cdea3888fde4d6e2305",
+      "statement": "A watch on rhAuth.store.user detects session loss during an active page visit (token expiration, forced logout) and redirects users on auth-guarded routes to the login page; Vue Router beforeEach guards only fire on navigation events so cannot handle mid-session logout",
+      "evidence": [
+        {
+          "resource": "repo://src/main.ts#L65-L70",
+          "version": "repo-lines-v1:sha256:ca6c41afcb9940c95573369ac69d639b7a01cea1f39c6585363379e4e8c602ef:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTgzYmFjNzMwZjFkODJlNGYyYWMzMjNlODc4NGJiZGMyYzRiOWVhYzQ1ZDJjNjhlNWFhYzBhNjlmNTM4MzlmZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzZTQ2Zjk0Mjc2YjZmNmY0ZWQxZjAyYWY3OGJlZjZhMmVlMWM0MzlkZDU1ODRiOTczOTQ4MzEzMjE0ZDJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDE1MTdiMjBjZTllMjIxMjkyYzI5NTMyMDg4MThlYTZmMzRmMGJiZmE0ZDZhZWM0YjExMzJlM2JmNTc4N2VlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQ5NjM2MDJkNGY2NGNkMDVkYmY1M2VhMTIzYjAyZmZmYzdmMmRjYjJhZWMxZjZmZmY4NjNjNGQ0OTQyYmE3YiJ9"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-12T10:21:41.724Z"
+    "at": "2026-10-13T10:12:04.743Z"
   }
 }

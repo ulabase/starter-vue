@@ -3,9 +3,6 @@ type: concept
 title: Feature Flags
 description: Explains the feature-flag system in environment.ts and how flags control both client routing/UI and server-side service configuration.
 tags: [feature-flags, configuration, routing, ulabase, environment, drift]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-12T10:21:41.724Z
 sources:
   - id: openwiki-source-eaae96b81373abab97667f4f
     resource: repo://src/environments/environment.ts
@@ -19,7 +16,10 @@ sources:
     resource: repo://src/routes.ts
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-12T10:21:41.724Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:12:04.743Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-13T10:12:04.743Z
 ---
 
 # Feature Flags
@@ -134,20 +134,19 @@ Because both client and server read from the same file, there is no separate con
 
 ## Diagram: Flag Propagation
 
-<!-- openwiki: mermaid parse failed and this diagram was converted to a text fence so it does not break rendering. Fix the diagram source and restore the mermaid fence. Parser error: Heuristic: an unescaped angle bracket inside a label breaks rendering; rephrase the label. -->
-```text
+```mermaid
 flowchart TD
-    A["environment.ts<br/>features object"] --> B["routes.ts"]
+    A["environment.ts features object"] --> B["routes.ts"]
     A --> C["Login.vue"]
     A --> D["Signup.vue"]
     A --> E["Home.vue"]
     A --> F["ulabase.setup.ts"]
-    F --> G["Ulabase service<br/>accounts config"]
+    F --> G["Ulabase service accounts config"]
     B --> H["Vue Router"]
     H --> I["Navigation guards"]
-    C --> J["OAuth buttons<br/>Forgot password link"]
-    D --> K["Registration form<br/>OAuth buttons"]
-    E --> L["Capability list<br/>on/off badges"]
+    C --> J["OAuth buttons & Forgot password link"]
+    D --> K["Registration form & OAuth buttons"]
+    E --> L["Capability list & on/off badges"]
 ```
 
 *Feature flags flow from the single source in `environment.ts` to both the client UI/routing and the server configuration.*

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:963f44ab831e239a3b381fc77a73215f37f00b3aa27ed0074ac95434a64346fa",
+  "pageVersion": "sha256:7c0a534c9103068887b920b16ee9d7d9f8be37f6b80ddf0d916e52d235b74668",
   "claims": [
     {
       "id": "claim_7b6f74ddeb864b87b45963d4c8156794",
@@ -11,8 +11,8 @@
           "version": "repo-lines-v1:sha256:283a9cf7920eb775e6885ef1242860d7c4ee8596fb2135a798f4ee78dbad8de4:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjkxODcyNmFhZmU4NWVkMGFjYjhjNTI3ZWFjYWMwMjhlMTAxZWE3NmI0ZTEwYWY4NWUyMTc4YjVmNGNkZmI1NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmVkM2ZiNDI2MTllNTMwYzliNGUxOGU1MjQxZTVkNGZhZjJiZjM0Nzk4YWY2ZGQ3MmUwYmE3MjFhNzE1MmVmMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTY0OWRlMTJjMzUzNzUzYjhkN2ZiOTk2NDM1ODVkNWJhNDRlNmQzY2U5NWQ0NjQ0NDgzNTFhOWY3MGIyYTY5YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDg1ZDZjMDYzMjdiMjNjMmVkNDJhMWE5MWNmN2ZlZmY3NDU4ZDQwYzU1NmVjMzRkZWI2MGQzYTcxMGRlYzQ4MSJ9"
         },
         {
-          "resource": "repo://src/main.ts#L36-L65",
-          "version": "repo-lines-v1:sha256:8c0a009caabf3aed8342a06baecc6938e51339816a6bba053b1a5faacbba8bca:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MWM0YjllYzZkNTY0MzFiM2JkNDZjYjE3YTg5NTJjNGI1M2EwNjc2NzVjOTcwMjYyNjRkMzUyMTUwNzVmZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyMzcxOTg1MmIxYmI3NGE4NDdlYTczZDNjODNkN2VjODkxZjRiYmU0YTkwNzE5M2JmODVjZjdjMjhjMjNmYjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2YzA3NGFkYTcyODEzZTIwM2Y4NjQwYjcyZmU1NWU0MTE3OThhNDE5MjVjODQ3M2VlYjE4YWU0YmQ1ZWJjNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+          "resource": "repo://src/main.ts#L36-L72",
+          "version": "repo-lines-v1:sha256:a27584ea765002a3ad4e242f21479a0d17065c6fe190c1aa29aab7649ac81998:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MWM0YjllYzZkNTY0MzFiM2JkNDZjYjE3YTg5NTJjNGI1M2EwNjc2NzVjOTcwMjYyNjRkMzUyMTUwNzVmZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyMzcxOTg1MmIxYmI3NGE4NDdlYTczZDNjODNkN2VjODkxZjRiYmU0YTkwNzE5M2JmODVjZjdjMjhjMjNmYjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2YzA3NGFkYTcyODEzZTIwM2Y4NjQwYjcyZmU1NWU0MTE3OThhNDE5MjVjODQ3M2VlYjE4YWU0YmQ1ZWJjNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
         }
       ]
     },
@@ -113,8 +113,8 @@
       "statement": "`auth.checkSession()` both restores the session on app start (absorbing failure) and is called explicitly after `acceptConsents()` to reload user and teams, and screens call it on mount to populate profile fields.",
       "evidence": [
         {
-          "resource": "repo://src/ConsentsGate.vue#L31-L49",
-          "version": "repo-lines-v1:sha256:b1ff02aa13941a88063c79c71d48bc47da811a30ccb12329221430d44c5a2f49:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYmJjOTU5MGFhMDhhYmU3MDg4ZTAxNjQyOTgyZWFlNzM3MWVjZmIyNjJjMDk2Mzg5M2YwZDU1ZmI0ZTMyMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjZGFjN2Q2OGZjYmEwNDVlMTZkYmMzNzkzYjk3NjRjOWRkODhmYTkyNmNkYTA5NDk0OWMwYzJlYzA2MjZlY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhYmJlZGE1YWI5MmYyNTM5MWFiMGIzMGQ4MzE0MWZlNTg2NTdjYTcwNzZmMjA3NGI3ZWVkMTkwMGZmNWUzN2MifQ"
+          "resource": "repo://src/ConsentsGate.vue#L31-L55",
+          "version": "repo-lines-v1:sha256:482228c2caf684660d041e593b5dfba0ecf4ae55ca0cdcfc2058fd843174d97f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYmJjOTU5MGFhMDhhYmU3MDg4ZTAxNjQyOTgyZWFlNzM3MWVjZmIyNjJjMDk2Mzg5M2YwZDU1ZmI0ZTMyMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjZGFjN2Q2OGZjYmEwNDVlMTZkYmMzNzkzYjk3NjRjOWRkODhmYTkyNmNkYTA5NDk0OWMwYzJlYzA2MjZlY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhYmJlZGE1YWI5MmYyNTM5MWFiMGIzMGQ4MzE0MWZlNTg2NTdjYTcwNzZmMjA3NGI3ZWVkMTkwMGZmNWUzN2MifQ"
         },
         {
           "resource": "repo://src/pages/account/Account.vue#L27-L35",
@@ -124,15 +124,15 @@
     },
     {
       "id": "claim_b9f978d4f8f846a58cc91ab281389579",
-      "statement": "`auth.acceptConsents()` performs the acceptance PATCH followed by a token renewal and a session reload, and the fresh token is mandatory because the server-side guard keeps blocking for the lifetime of the old JWT.",
+      "statement": "`auth.acceptConsents()` performs the acceptance PATCH and triggers a token renewal; the caller then explicitly calls `auth.checkSession()` to reload the session, and the fresh token is mandatory because the server-side guard keeps blocking for the lifetime of the old JWT.",
       "evidence": [
         {
           "resource": "repo://NOTES.md#L159-L162",
           "version": "repo-lines-v1:sha256:d776ed59e62df958f9af13ee1edf44a6f39ee6e121f67f5c1729088282423150:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODIwNjdjODA0ZDEzNDRlODExZDVmNWRiODdhMjk5ZDcyZjg5MjI0YzFiY2VmYjNjODg5M2JkMTRmZTg2OTc3NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmYxMjAyMGZhMjY5N2MzYzBkNTc0YTI1NDFiYTE4MWUxZWJmMjY2MmM4MWJjODVlNjVkYzFjNDE5MjZkM2U5YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDMxY2E3ZjI0MWU3YjBiNzA2ZTM0MWJiMjc4YWIxMDAzYWZkZTkwNGQyYTc0MzQwMmI1NTJiMDQ2MDI5ZGMyZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjAwYmVlMzZkMzVmZmExYTQ1ZjRlNzgxMTBjNzg3NjUwZGQ1YjgyYmM3M2IyNmJiOGFmNWNmNDM1NDcyZWUxNyJ9"
         },
         {
-          "resource": "repo://src/ConsentsGate.vue#L31-L49",
-          "version": "repo-lines-v1:sha256:b1ff02aa13941a88063c79c71d48bc47da811a30ccb12329221430d44c5a2f49:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYmJjOTU5MGFhMDhhYmU3MDg4ZTAxNjQyOTgyZWFlNzM3MWVjZmIyNjJjMDk2Mzg5M2YwZDU1ZmI0ZTMyMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjZGFjN2Q2OGZjYmEwNDVlMTZkYmMzNzkzYjk3NjRjOWRkODhmYTkyNmNkYTA5NDk0OWMwYzJlYzA2MjZlY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhYmJlZGE1YWI5MmYyNTM5MWFiMGIzMGQ4MzE0MWZlNTg2NTdjYTcwNzZmMjA3NGI3ZWVkMTkwMGZmNWUzN2MifQ"
+          "resource": "repo://src/ConsentsGate.vue#L31-L55",
+          "version": "repo-lines-v1:sha256:482228c2caf684660d041e593b5dfba0ecf4ae55ca0cdcfc2058fd843174d97f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYmJjOTU5MGFhMDhhYmU3MDg4ZTAxNjQyOTgyZWFlNzM3MWVjZmIyNjJjMDk2Mzg5M2YwZDU1ZmI0ZTMyMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjZGFjN2Q2OGZjYmEwNDVlMTZkYmMzNzkzYjk3NjRjOWRkODhmYTkyNmNkYTA5NDk0OWMwYzJlYzA2MjZlY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhYmJlZGE1YWI5MmYyNTM5MWFiMGIzMGQ4MzE0MWZlNTg2NTdjYTcwNzZmMjA3NGI3ZWVkMTkwMGZmNWUzN2MifQ"
         }
       ]
     },
@@ -155,7 +155,7 @@
           "version": "repo-lines-v1:sha256:8a43a6abe14ab11a2fd260bc680be7b7a2483ac4dab3389b8aafda45f197f01d:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGY4NGNiNzk5ODBkZjRlODAzOWVlMmIwMmNiYWQ3Njk2YWNhYmI4ZGFmY2Y4YzI3N2RiYWY2MGJhNWMwM2JjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTA1MTFiNTQ1NGFiMmM4ZjAyNjI5NDg0M2E5YmYxZDg0MDA5ZDM2MWVlNWRhMWQxMjdmZDZkODJmMTczY2ZiNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzlkZjgyM2FjM2EwNjMwNzk0NmE0ZTIyZDQ4ZWU3MDY3MmQ2ZDU4NzU0NTczMjczNjdjZjY4ZTE4ZGYyODgyMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDc3YjZhNjA2YTI5ZmVkNDczYjlmZmUyMWQxMjE1NGU4NzE1YWE1ZDc4YTdkMGQzYTczMmQ4ZDM0OGQ4MDcwMiJ9"
         },
         {
-          "resource": "repo://src/ConsentsGate.vue#L42-L43",
+          "resource": "repo://src/ConsentsGate.vue#L48-L49",
           "version": "repo-lines-v1:sha256:93cfd0556876e7480793f32ff397edde4911cf1619619d032a60636967e578bf:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzJjN2YyZThhNmI5MTdhMzE4N2JjN2E5NDhiMzM0NTIzMTk3MjY2M2MzZTFjYjk4ZWQ3MjRjZWM3MjlkZWJhZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzUzMTVlOWYwYmMzMTEzYWViYWNiNGUwNmFmM2NmYzAyOGFlZDA2Y2EyODIwODIzNDZlMjgyZGZlYTFjOTcwYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzVkMmVjNmY3MTFmMjJkYjVjNTZiZDA0NDk5YWNiOTRkYTRhNTdiYzE1NWEwMjk1ZWM4YTUzN2YzOTIyZmU3OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDBhNTQ1NmI1YTBkYThlMzAxYTMzMWE1N2QyNzk2YjE4OTljM2M0YmJjNDliMTlhOTc3YWUxMzE3YTJhMTBjYyJ9"
         }
       ]
@@ -201,6 +201,6 @@
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-12T10:21:41.724Z"
+    "at": "2026-10-13T10:12:04.743Z"
   }
 }

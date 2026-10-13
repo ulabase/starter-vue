@@ -1,10 +1,9 @@
 ---
 type: "Reference"
 title: "OAuth Provider Setup"
+description: "Workflow for enabling OAuth sign-in with Google in the Ulabase Vue starter app."
+tags: ["oauth", "setup", "google", "authentication", "feature-flags"]
 openwiki_generated: true
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-12T10:21:41.724Z
 sources:
   - id: openwiki-source-23775c3de52f3ab95a13cb8b
     resource: repo://README.md
@@ -16,7 +15,10 @@ sources:
     resource: repo://src/pages/auth/oauth-buttons/OAuthButtons.vue
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-12T10:21:41.724Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:12:04.743Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-13T10:12:04.743Z
 ---
 
 

@@ -4,7 +4,7 @@ title: "Consents Gate Pattern"
 openwiki_generated: true
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-12T10:21:41.724Z
+    at: 2026-10-13T10:12:04.743Z
 sources:
   - id: openwiki-source-85dc2a049a0943b56218c045
     resource: repo://public/privacy.html
@@ -20,7 +20,7 @@ sources:
     resource: repo://src/main.ts
   - id: openwiki-source-c1d5327fe44e08cda82fcf83
     resource: repo://ulabase.setup.consents.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-12T10:21:41.724Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:12:04.743Z" }
 ---
 
 
@@ -58,12 +58,17 @@ sequenceDiagram
     Gate->>Auth: auth.acceptConsents()
     Auth->>API: PATCH /users/{userId} (consents: [])
     API-->>Auth: 200 OK (versions stamped by mergeRequest)
-    Auth->>API: GET /token?renew=true
-    API-->>Auth: New JWT with latestConsents claims
-    Auth->>API: GET /users/me
-    API-->>Auth: 200 OK (user data)
-    Auth-->>Gate: Session restored
-    Gate->>Gate: setBlocked(false)
+    alt On /auth path
+        Gate->>Browser: Redirect to /
+    else Not on /auth path
+        Gate->>Auth: auth.checkSession()
+        Auth->>API: GET /token?renew=true
+        API-->>Auth: New JWT with latestConsents claims
+        Auth->>API: GET /users/me
+        API-->>Auth: 200 OK (user data)
+        Auth-->>Gate: Session restored
+        Gate->>Gate: setBlocked(false)
+    end
     Gate->>Browser: Show RouterView
 ```
 
@@ -185,11 +190,18 @@ When the user clicks "I accept":
 1. `auth.acceptConsents()` is called (kit ≥ 0.7.0)
 2. The kit performs `PATCH /users/{userId}` with `{"consents": []}`
 3. The server's `mergeRequest` stamps the versions and timestamp
-4. The kit performs `GET /token?renew=true` to get a fresh JWT with updated claims
-5. The kit performs `GET /users/me` to restore the session
+4. **If on `/auth` path**: `window.location.assign('/')` redirects to app root (gate usually opens on login page where the 451 blocked navigation)
+5. **Otherwise**: `auth.checkSession()` performs `GET /token?renew=true` then `GET /users/me` to restore the session
 6. The component calls `setBlocked(false)` to hide the overlay
 
 The token renewal is critical: a JWT is a snapshot, and without a fresh one the rule keeps blocking the user for the whole life of the token they hold.
+
+#### Sign-Out Functionality
+
+The component also provides a `signOut()` function that:
+1. Clears the blocked flag via `setBlocked(false)`
+2. Calls `auth.logout()` to clear the session
+3. Navigates to `/auth/login` via `router.push()` (Vue Router guards run on navigation, not session changes)
 
 ## Versioning Contract
 
