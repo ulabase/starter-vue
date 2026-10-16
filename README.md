@@ -1,5 +1,7 @@
 # Ulabase Starter — Vue
 
+[![CLA assistant](https://cla-assistant.io/readme/badge/ulabase/starter-vue)](https://cla-assistant.io/ulabase/starter-vue)
+
 A Vue app with sign-up, login, Google and GitHub sign-in, email verification, password reset,
 teams and invitations — working, not sketched. Clone it, point it at a free service, and you have
 the boring half of an application already done.
