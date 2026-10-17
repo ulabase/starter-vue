@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:738b17180d25a1c4073e11c3b90d583184e2dbcf3879874771ece471a8dd4f7a",
+  "pageVersion": "sha256:47cfeb76c3c81d1ebcf552a581a155429d82487cc2b777d0cb99d2cdb1b703f1",
   "claims": [
     {
       "id": "claim_0a88731b786b4c77ab6a19db288a6448",
       "statement": "The Ulabase Vue starter is a ready-made Vue application with authentication, teams, and invitations already implemented, requiring no custom server code.",
       "evidence": [
         {
-          "resource": "repo://README.md#L1-L8",
-          "version": "repo-lines-v1:sha256:209c0ba7a17d9d412dc3d7ef3daf4f877e78c6dc47b84883a285e3201016fd3b:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTNjMWYzNDkwZjAwMjk0ZTQzODI2NDNjMDdmMTA4NmE4ZmQwYTdjOTBmNTE1MDg0MTI0MmM1M2FhYjU2NDUyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTdkMWNiNmM2Y2RkZjBjYWMzYWNmM2QyZjYzZjRmZTUyODdjZWY4YTEyYjE3NTZiMTBmNzQyMzZiMzE5Njc4OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjA3ZjU4YjQ1Yzg0YTM2ZTFkYTRlYzgyYjFiM2M3YzhmMWM3YzdiZjA5NDlhM2JmYzkwY2ZlMGQ0NGZlYmVlZCJ9"
+          "resource": "repo://README.md#L1-L10",
+          "version": "repo-lines-v1:sha256:7a2eca287afded2618e02dcaea21be707d63178df65f75120f4a7f8eb1b668a0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzYzFmMzQ5MGYwMDI5NGU0MzgyNjQzYzA3ZjEwODZhOGZkMGE3YzkwZjUxNTA4NDEyNDJjNTNhYWI1NjQ1MmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3ZDFjYjZjNmNkZGYwY2FjM2FjZjNkMmY2M2Y0ZmU1Mjg3Y2VmOGExMmIxNzU2YjEwZjc0MjM2YjMxOTY3ODkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwN2Y1OGI0NWM4NGEzNmUxZGE0ZWM4MmIxYjNjN2M4ZjFjN2M3YmYwOTQ5YTNiZmM5MGNmZTBkNDRmZWJlZWQifQ"
         }
       ]
     },
@@ -17,8 +17,8 @@
       "statement": "The starter uses @ulabase/kit-vue for authentication, with createRhAuth initializing the auth store and providing guard functions that are wired into Vue Router.",
       "evidence": [
         {
-          "resource": "repo://package.json#L13-L15",
-          "version": "repo-lines-v1:sha256:5492f03753e434f7b6d277e63f4d9a057a576485f55f0e709c2c379835cca784:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWI5ODJjMDUzNmU3MzIyYWFlMTczZDM1ZGJmZDZkMTNlMTMyODU4YzBjNTYwMTJhNzk1NDM1NjllZTNmOTFiZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGU3MGY2ZjY0ZWVjZjZmZWUwMjJhMjQ0MzBiNTRhM2ZjZTBiZjI5OWZmNjdiYWIzZmMzNWM4NDk5Mjk4ZGZhOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTUzZTgyM2Y0NTI5YmY0NTRhOTkyMDQyODRmZTk0NWRmZGE5OWM5NzIyYzBlZDI4NzM0MzAxZDA3OWMwNjMwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGY2NTA3YjJhNDQ0NDkyN2VjYjkxODdlYzIyNDllOGY1ODFjOTYyNDM5MThkZDJiNmM3YjVlZDU2ODdkODU3MyJ9"
+          "resource": "repo://package.json#L12-L16",
+          "version": "repo-lines-v1:sha256:2adf366fa5bbd27dc876db1311b10b9413d0595cf81406609b6188a00ab90b87:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmEzYjQ2OWQ5ZTA5NzU3MjI0NjY2NzM0YzllZjdiMjU0ZDg4NTM0ZjVkNWJiNzA5ODk2MDgwNWM1NTNkYzMwNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjNlMGM2NzI5OWE5ZDI3ZTA4MjA2YzNmZDZhYTAzZTljOGU3NmNjNDVmYzE1MWMxMDg3NTQyNjgwYzMzYThmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjE2YTMxZTFhZmNjZmE0ZTQwNWRjZGM2Mzc3MTU4MzJlMjQ1ZjQyNmY3MjJkOTEzNDcwMjQzNTk4ZGRiNDYzMCJ9"
         },
         {
           "resource": "repo://src/main.ts#L52-L63",
@@ -77,6 +77,6 @@
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-13T10:12:04.743Z"
+    "at": "2026-10-17T07:34:48.741Z"
   }
 }

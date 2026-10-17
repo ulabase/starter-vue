@@ -18,10 +18,10 @@ sources:
     resource: repo://src/routes.ts
   - id: openwiki-source-c1d5327fe44e08cda82fcf83
     resource: repo://ulabase.setup.consents.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:12:04.743Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-17T07:34:48.741Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-13T10:12:04.743Z
+    at: 2026-10-17T07:34:48.741Z
 ---
 
 # Quickstart
@@ -30,15 +30,17 @@ Welcome to the Ulabase Vue starter documentation. This page is your entry point 
 
 ## What is this project?
 
-The Ulabase Vue starter is a ready-made Vue application with authentication, teams, and invitations already implemented. Clone it, point it at a free Ulabase service, and you have a working app with:
+A Vue app with sign-up, login, Google and GitHub sign-in, email verification, password reset, teams and invitations — working, not sketched. Clone it, point it at a free service, and you have the boring half of an application already done.
+
+It is a Vue app plus a Ulabase service. There is no server of yours to write, deploy or pay for.
+
+The starter uses [`@ulabase/kit-vue`](integrations/ulabase-kit-vue.md) for authentication and routing, with no custom server code required.
 
 - Email/password sign-up and login
-- Google OAuth sign-in (optional)
+- Google and GitHub sign-in (optional)
 - Email verification and password reset
 - Team management and invitations
 - Consents gate for terms and privacy policy acceptance
-
-The starter uses [`@ulabase/kit-vue`](integrations/ulabase-kit-vue.md) for authentication and routing, with no custom server code required.
 
 ## Task routing map
 
@@ -94,7 +96,7 @@ Find your task below and follow the link.
 
 ## Wiki structure
 
-The wiki is organized into five domains:
+The wiki is organized into six domains:
 
 | Domain | Purpose | Key pages |
 |--------|---------|-----------|
