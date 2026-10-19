@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:9fd2b92b8254caa42f6c948870b5063aa105bf4f7f92782eab53e4332de5da59",
+  "pageVersion": "sha256:beccc36cb9b2826ad1fd90b59c2c7fd6cbdf8595b7a70fc74a8dd9b9b6d0fe50",
   "claims": [
     {
       "id": "claim_cdd98e6665eb48f7a4db279053c279ff",
@@ -28,8 +28,12 @@
     },
     {
       "id": "claim_f0d59322163e4d839f34b9df50e10225",
-      "statement": "When client and server flags drift, the symptom is a HTTP 403 on a button the client rendered but the server rejects.",
+      "statement": "When client and server flags drift, two symptoms are common: a HTTP 403 on a button the client rendered but the server rejects, and a missing page with its link absent because the client flag is false while the server feature is still enabled.",
       "evidence": [
+        {
+          "resource": "repo://README.md#L99-L100",
+          "version": "repo-lines-v1:sha256:58155db883ef77e2591018621ceedba26c36ae1c7187385cd0ce54463f395c11:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjQ0NzVkNzE3ZThmZjQ4MDU4MTgzZGI0MTk1YzBiNTQwNmViZmY3MmUxYjVlOGMxNTIyNDQ3MmM5YThlNzIxNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzZhYTQ4MjVlNWU4Y2I3OTAwOWJmNThjOTEyYjY2YWM4YjcxZDk5YjFhZDBlNDNlODAyNGMxMDY5NzRkYzgxZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTc1YjdiMDA3MzE0MzkwYjNhZTA4YTNiM2UwOWZmZGZkZjE2NmM1ODRlODdjODk0MTgzMTI1N2RmNjRmOWQ3YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjdmMmJkODllMzlkMDRjNDE4ZmFhMWJjNTIzZWUzYWViZmVhZWQxZjEwMjgzOGFhZTFjMTIzNmZjYzJiNzM5MCJ9"
+        },
         {
           "resource": "repo://ulabase.setup.ts#L17-L23",
           "version": "repo-lines-v1:sha256:0dc7392a255e69f8148d4a81ac256e29ef65a4ca50f059246569b40892a05d5c:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2EwZjVmOTM4NmIzN2FiZjFhZGI5N2RmMWUxYTY3N2RjOTU0YjgzOTRkMmQ3YzU4ODI2N2EwYjMwMDRmZjcwMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjYxMDk0M2M1Njc2NzQ4NzgyNjQxMTJiMGMzMzdiOTIzNWJlZWY2ODVkOTk2ZmMxOWEwM2Y5MjA1ZTRlODBlZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODlhNGM1N2I2ZTdjZTJhNDFjYzQ4MWM1ZDY4MmY5NzQxMTY5NWI5YTU2Nzg4MDYxMTk0MzJiNDQwYTUyNzgyNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWVmNzc2MDE1NjVlNDllMWM4MTI3YWVhZGMwYjZiNDQ3NDEwNDlmYjU5YzI2MzI3YTFhOGIwNjYyZDc2MzBjOCJ9"
@@ -111,6 +115,6 @@
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-13T10:12:04.743Z"
+    "at": "2026-10-19T08:33:44.961Z"
   }
 }

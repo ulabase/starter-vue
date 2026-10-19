@@ -3,9 +3,6 @@ type: workflow
 title: Customizing the Visual Skin
 description: Explains the theming system with design tokens in styles.css, the disposable default skin, and the swap map for adopting UI frameworks.
 tags: [theming, css, design-tokens, dark-mode, swap-map, visual-skin]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-12T10:21:41.724Z
 sources:
   - id: openwiki-source-4e7cd7f381c92e8c5d89f5c1
     resource: repo://NOTES.md

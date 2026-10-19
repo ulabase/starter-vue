@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:9c52d3de698ad3bc14a722ee716e91dbc1e8d597cb91e434b5a1c1d52f908c70",
+  "pageVersion": "sha256:55b0fb357d56142fc0b7d951ab361705c21273548911608674393003fed68dec",
   "claims": [
     {
       "id": "claim_702abf73a7be40798af1182959a3d39f",
@@ -101,10 +101,60 @@
           "version": "repo-lines-v1:sha256:32d7ce9a88ac02b67f47e0dacf0511752550b6ca253308b204aeac2f4ad52886:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJkN2NlOWE4OGFjMDJiNjdmNDdlMGRhY2YwNTExNzUyNTUwYjZjYTI1MzMwOGIyMDRhZWFjMmY0YWQ1Mjg4NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJkN2NlOWE4OGFjMDJiNjdmNDdlMGRhY2YwNTExNzUyNTUwYjZjYTI1MzMwOGIyMDRhZWFjMmY0YWQ1Mjg4NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGM1MWVmYWNmMTBiNzYxYzgzMmYzZGIzY2ZmNGE1YTZkYjRjNDNmMzk5MDI5ZDMzOTExMzhiOGJlNWVjZjQwYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjAyZDJjMGQ2ZGM1ZTc0ZDkyZmExNGI5MWRiZWEyNjQwOTBiZWIzNWZkYjkxODhkOWIzNDExODFkY2U5ZjRjZSJ9"
         }
       ]
+    },
+    {
+      "id": "claim_11ab406b31754e88b2411b6243c69e2d",
+      "statement": "A watch on rhAuth.store.user in main.ts detects session loss while on auth-guarded routes and redirects to /auth/login, closing the gap where beforeEach guards don't fire on session changes.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.ts#L67-L70",
+          "version": "repo-lines-v1:sha256:c62dd90201c69ef3e1f289762a43259b80e29e326168b52fec23fa5f606bc7f7:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGU2NmM3MjU5MjEyOTdmMWQ3NjBhMDdkOTliY2ExYmJjYjZhZDZkOTk5YzgwMDdhNjBmMTEyMGY2NWI2Mzk0NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzZTQ2Zjk0Mjc2YjZmNmY0ZWQxZjAyYWY3OGJlZjZhMmVlMWM0MzlkZDU1ODRiOTczOTQ4MzEzMjE0ZDJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGIwYjIxMjZhY2ExODhiNWVhZjc5NGQ2NDU5NDQ0YTAxMGJkZWY1YWJkOGUxMDBmMWMwNTA2MGE3MzVmMjQ3MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQ5NjM2MDJkNGY2NGNkMDVkYmY1M2VhMTIzYjAyZmZmYzdmMmRjYjJhZWMxZjZmZmY4NjNjNGQ0OTQyYmE3YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_73a72b4d58d744d283fc1d8370c9f618",
+      "statement": "The ConsentsGate component wraps the entire RouterView in App.vue, ensuring blocked users (HTTP 451) see the acceptance overlay instead of being redirected to login by authGuard.",
+      "evidence": [
+        {
+          "resource": "repo://src/App.vue#L7-L11",
+          "version": "repo-lines-v1:sha256:8d2a7085d11036984cecd2d0c21ae196d7e74ba55f8cc43f6e03de8008dd1514:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTdkYjFiODRlOGIzNDUxZGY3ZTk3MWMzZDA0MzI0NDI5NmMzYjI1MmQ1YjgyOGJmOWExOTk4ODczN2UzMDcyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmM1NjhkZmJiNWE4YmE1MzI0MWE5NGFmMjQ3MDZiZWJhMjU2MjQyMjcwMGRjYTk5Zjk4ZDA2ZDliYWQxMTU5NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjRlN2E2NmU1NGQ2NTBiZDA3MmE4YWQ0OTRiODA1NWU3MjJiYzEyZGFiMmFjNGQwMmJkMTc5MGJhMzhiZTg0NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDUyMjg0MGVkNWVjNThhMzYyZjIwYjcxYjhhZWI2NzVkN2VmYjk3NDM5YzkwYzNmNjE1NWFmZWM2NTI4NTk0MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_35aa3d86ef4d486492d2198512821278",
+      "statement": "The noNext function is a no-op NavigationGuardNext adapter because the kit's guards return their verdict rather than calling the traditional next() callback.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.ts#L55-L63",
+          "version": "repo-lines-v1:sha256:554ea97c9b55301779a6915011f2ff18d4d79ce078194ab15a6047d0c2cedb65:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjcwODNjMjc5ZjFkNWM5ZTc4NGI2ZjRkMTI4YWQyZWQ0OTYyNTFlZWQ1Mzg0NTI2OGJkZTE4MzRmZDhmNzE3ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzZTQ2Zjk0Mjc2YjZmNmY0ZWQxZjAyYWY3OGJlZjZhMmVlMWM0MzlkZDU1ODRiOTczOTQ4MzEzMjE0ZDJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzEwYzM0ZDRmYzA2ODhlODYyMzlhMmI2OTZhNTYxNDU2OThiY2JiNDk1NTNlMDgyMTk1YmI0YjMwYTJjZThmMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGIwYjIxMjZhY2ExODhiNWVhZjc5NGQ2NDU5NDQ0YTAxMGJkZWY1YWJkOGUxMDBmMWMwNTA2MGE3MzVmMjQ3MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_83e4ee19262c4b8f959d103e2695a0f4",
+      "statement": "Vue Router's to.meta.guard accesses merged meta from all matched route records, so child routes inherit the parent's meta.guard value when they don't define their own.",
+      "evidence": [
+        {
+          "resource": "repo://src/routes.ts#L39-L51",
+          "version": "repo-lines-v1:sha256:0dcff6446d055697fd425d26638578291efda84e54e4d7ef25096062eccb28ef:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxMTFmMjM5YWM2NWM5ZmVjZDRmNzk3NWQ0ZWUwYzY3N2I1OGE4ZWE2Nzg1MmVhMjVkMjc5MjM5MjUxOGQyZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiODFjYWFiOGYwZDRhZjQ4OWFmNjA1YWE0NjQ1M2RkNjI1YTQ5N2JmMjI3OTM3NTk5NDgxMmVhYzBhNzIzZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1ODA2Njc4YTFjNDZjZTkwY2ExMDI4MTc5NjhiMzc5ZjlmNTEyZWVmOGUxZTc3OTZlNGUzODA2NzVlYTIzODIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc94dfcffbb54b35bd4e13a797fa68cf",
+      "statement": "The shell's navigation progress bar also handles router errors via router.onError to reset the navigating state.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shell/Shell.vue#L44-L46",
+          "version": "repo-lines-v1:sha256:5c3b3a80e7faa3c519272e6c37881b3d5cc9ab3c8dc66e2df7cb18d678f38b0d:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZjZTUwNjY5ZGYzMjE3NzlkNjdhZDIxZDRkOWU4MjM5N2Q5NDVlNGI2MzQ3Njk0YjU4MTc2MzU4YTNiYzljMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWM4OWQxZDc1YTY5Y2MxMGM5MzlhOTc3OTgwODExNTZjY2RlYmJmZmFkNzkwNzU5MjRhMzZjNjZiYTE4NzA4YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmI3N2NjNmJkODBkZmRlMzFjMDNlNjFkZDExYmQzMjkxOGI1MDUwODZjY2I3YTNiOGZhNDgxYTk4ZDk4MTUyNSJ9"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-12T10:21:41.724Z"
+    "at": "2026-10-19T08:33:44.961Z"
   }
 }

@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:83b88d82204684eeb25b9c223a0e7076976f7821604f83a8d000e89ca4d44fe9",
+  "pageVersion": "sha256:0d7b2bc18c64f3cf9a1267287727949b9ff980b747f798f5c7ba5e74324e2c23",
   "claims": [
     {
       "id": "claim_8ffe8b08d3d14e65afa97f5ac127cdd5",
       "statement": "The OAuth setup workflow requires three steps: creating an OAuth client in Google Cloud console, setting oauthLogin: true in environment.ts, and running ulabase setup with GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET environment variables.",
       "evidence": [
         {
-          "resource": "repo://README.md#L62-L72",
+          "resource": "repo://README.md#L64-L74",
           "version": "repo-lines-v1:sha256:36e2c939cc6faf9c6a8719367ad450099cd1bfc3bea5dded9f32cd84ed66e43f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkYTZkZDM5Yzc0YjIxZmQ4NmQ1ZmRlNDY0ZTZjYmRmNTIzYjM3ZWNhYmQ5NGI1Y2M0ODBjMTQ3NDlkZmQ1NDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2ZGI4ZmM0ZjczZmUxMzNiYjk2NThiOTI2NTkyZGU1OTk4ZjJjOGMxNWI5MzkxYTcyNmY0OTRkMzczNjZjMzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5ZTFkZTAyYTM5NjAwN2YxN2Q4YWEzMDJjMThmZDNkY2MxNmExMDQxNmIwOGNlZjU3YTdlMDAwMmQ4MTA4YWQifQ"
         },
         {
@@ -25,7 +25,7 @@
       "statement": "OAuth credentials are stored on the Ulabase service, never in the application code or environment files.",
       "evidence": [
         {
-          "resource": "repo://README.md#L68-L72",
+          "resource": "repo://README.md#L70-L74",
           "version": "repo-lines-v1:sha256:acf82b82507c5df96851b4b643b95fae8ed4993b4d3d07bfecd821d94844bea2:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjA3MmMyNzNhMWY4NDgxYjExZDFjNTBiMjJkMzZiNjYwZWI0MmM3YzQ2NmMyNGU3NWVlNzc3M2I2OWI1NTkzOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzdiY2UyNjgzZmMzNWY5ZWYyMjAyZDQ3ZjUyMjJjZTlkMmM5NjA1OWEzMGI1NjQ1NWRhZTljMWY4MGY5ZTVhZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjllMWRlMDJhMzk2MDA3ZjE3ZDhhYTMwMmMxOGZkM2RjYzE2YTEwNDE2YjA4Y2VmNTdhN2UwMDAyZDgxMDhhZCJ9"
         },
         {
@@ -103,10 +103,118 @@
           "version": "repo-lines-v1:sha256:685bf55d5cec1e11a0d85675b9f565d6cda8136fbbf7e0adaf0efd9c168f9e6b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQ4MmE4YTU3Mzk5ZjI1NjVkMzNmZWUwNjE1NmE1OTI4ZmRmMGMyNjQzNTMyZDg5ZDdjYTJjMTBhMWQ0MGJlMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmUwYjdjNjAyNTliNDVlOWZlOGZlNDczZDA0ZDM2OWY0MjU3NmQ4MTkyYWEyOGY5YWZhNDM1MTk4OGM3YmE3MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTIyYzFkNDI0YzhiZTNhNjU5MDQzNjIwZTQ3Nzg2Y2U0NDE5MjQ1NWYzMjZhNTI1MWViZjdmZGI2MDQ0MTQ3ZCJ9"
         }
       ]
+    },
+    {
+      "id": "claim_2242a643f32d4f558b4412b95fc9dbca",
+      "statement": "The Google OAuth setup step in ulabase.setup.ts is spliced into the step list only when oauthLogin is true and 'google' appears in oauthProviders, so a project with the flag off runs a setup with no Google step and passing GOOGLE_CLIENT_ID changes nothing.",
+      "evidence": [
+        {
+          "resource": "repo://src/environments/environment.ts#L6-L12",
+          "version": "repo-lines-v1:sha256:e0c09c50abf5287407f3a473d775c4b3d6aa5796cb202935980d529c1b428e51:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjRjNjE5ZmZkNmI5MjFjNTI3OTExZWRlMTQ3MWM5MTQ5YTFkZTg2NTUzNDE4NWIwOWY2Nzg1MGRjMzMwZDU2MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmExZGEzMDNkYjAyM2E0YWVlOGYzZjY2ZTQ2MmJhMGRjZjUzZDczOWVlMmRlMjlkOWE1M2E2MTQ0ZWIyZTFhNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L149-L190",
+          "version": "repo-lines-v1:sha256:787953242686af4dc554d09ed5c529dfff97b9afd871bcc157fa8211a9af770f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkMDE0M2UyZjYyZWRhYzA3NThiOTBmZTY0ZmU2ZWUzOTJmMWZkMmRkMDA5NzA5N2FlNTZlZWUxODllYTc5NWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTFlMDg5MDA4OGYzMThmZTMzMGFiOGE2MThlYjRlOTI5NmNhN2RkYzA4NDY0NzFmM2I2ZTVkZjc2MWI4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiMDg2ZDQ2NjNhYmFiZGE5ZjJmZTIzZWU4NjAyM2UxNTQyMmQwOWU2YzI1ZTU3ODBkZDMyZGExNzNlYTI3NjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiNGI2MTAwNDcwMTgxOTY3MDM0NTAzMTNkZTdjZmNkMDNhNjIxZTA4NTQ4YjVhMGI0M2JhZmE2M2ZkN2Y4ZTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7c4d017417bb4fc2a5bcbccb542e5840",
+      "statement": "The Google OAuth apply resolves GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET via fromEnv() only for fields not already stored, passing redacted stored values back untouched, so a re-run against a configured service needs no secrets in the environment.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L164-L187",
+          "version": "repo-lines-v1:sha256:dcab0b975c0a8d11519f5658339c3328a727240783b728d3c47844a39f18f96f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkNjAwNDdiZDdlZDRiMzI0MDgzZTNmM2VmMjcyNTRiODNjZGUzOTJiMWY4MzJkMjdjYjMzMjUxYWFiZjgzODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxMWUxZWQ4MGQyYTI1NDZkMDg5YTY2YjI2NDE1ZDBhMmM1ZTljYmI5MDg2NmZlZWZhMzJkNWNmZTljNjU3OTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU5ZmIwNzRkY2FjN2FjY2IxM2Y3Y2FlMzVkOGRlYTVmMjRkYjVkYmZkNWNjYmI2ZTU3MWI3NTdjYzJhNjdjNzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwNTk4MmU2NWY1N2U0NDY2NTBkZDA0YzE3NDE3MjUzYTU2MDFmMzljZDZlMzc4YTcwZjJhMTEzMjE2YjZlYTkifQ"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L44-L46",
+          "version": "repo-lines-v1:sha256:5b3952e13a85f032ab6c2e0e461b83867a2d9b3e006a04111f814cec884cb8cd:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjE4YThjNDVmZWJhMjFmYTMwNmNiY2IyNWI5Mjk4YTQ4ZWMzZjVmODBlOTYxMWYyYTY4Y2Q3NTRjNTU0Y2RhOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWY5ZjgyODYwZDJhZDgxZWFkZmJhZWIwNTc1Yzk2OGY2MWRmNjZkNTg3MDE3NDZmMTBhNDI3MjlmMWFlNzdkNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzU4Y2ZkNDU4Yzg4N2VkMzY3MjZiYTZjMTNlM2U3YzFmZWFhY2JkOGJiZjQyNTJjYzBkMDNkZmYwZjJkMTRlMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDlkMjNlN2YyYTlhYTAxZjI3YzFjZjg1YThhNzNlNWQ1OGJiMjZjMTRjZjgxOWIyYjdlMWQ4NzMwNzEzOTI3NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6ee2b46458f74073a3432f992eda9c33",
+      "statement": "The Google OAuth step is satisfied only when the provider's enabled flag is true and both client-id and client-secret read as configured, where configured() treats a redacted (masked) value or a non-empty string as stored and a blank as unset.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L155-L163",
+          "version": "repo-lines-v1:sha256:5fd16412cc7d6d42bee903e0cf8f9863086fb343a904801e6e9e277eb89da5c5:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTNiMjIyZjkwMzliN2NiODc3ZjI1MmU3ODA1NTk5MWNmMWNkMDU1ODBiMTE2N2FiNmZhYjBlYzI1YjVlZjA1ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzExZTFlZDgwZDJhMjU0NmQwODlhNjZiMjY0MTVkMGEyYzVlOWNiYjkwODY2ZmVlZmEzMmQ1Y2ZlOWM2NTc5MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTU5ODE1Yzc0ZWY4OGYzMmMzYzVkZGIzZWMxN2Y4ZTMxZTcyNGI3MmNkNmE5YjMxODVkZTYxZTg2ZDhhNDhkZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTNiM2U0MTBkZDZkY2MyMzc0NzgwN2E1ZDg0MWQ1NmEwNTg1NTYxMzBkOTQ1Y2Q3NjJiYWM0N2M2ZWJkYTc3YSJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L44-L46",
+          "version": "repo-lines-v1:sha256:5b3952e13a85f032ab6c2e0e461b83867a2d9b3e006a04111f814cec884cb8cd:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjE4YThjNDVmZWJhMjFmYTMwNmNiY2IyNWI5Mjk4YTQ4ZWMzZjVmODBlOTYxMWYyYTY4Y2Q3NTRjNTU0Y2RhOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWY5ZjgyODYwZDJhZDgxZWFkZmJhZWIwNTc1Yzk2OGY2MWRmNjZkNTg3MDE3NDZmMTBhNDI3MjlmMWFlNzdkNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzU4Y2ZkNDU4Yzg4N2VkMzY3MjZiYTZjMTNlM2U3YzFmZWFhY2JkOGJiZjQyNTJjYzBkMDNkZmYwZjJkMTRlMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDlkMjNlN2YyYTlhYTAxZjI3YzFjZjg1YThhNzNlNWQ1OGJiMjZjMTRjZjgxOWIyYjdlMWQ4NzMwNzEzOTI3NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1723885615f94654b2b0c134fd6c2ebf",
+      "statement": "The Google OAuth apply enables the provider and supplies both credentials in a single write, rather than enabling it alone, because a service with OAuth enabled and no credentials is worse than no button: the rendered button leads to a redirect the service answers with an error, whereas with the feature off no OAuth traffic exists at all.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.ts#L149-L190",
+          "version": "repo-lines-v1:sha256:787953242686af4dc554d09ed5c529dfff97b9afd871bcc157fa8211a9af770f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkMDE0M2UyZjYyZWRhYzA3NThiOTBmZTY0ZmU2ZWUzOTJmMWZkMmRkMDA5NzA5N2FlNTZlZWUxODllYTc5NWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTFlMDg5MDA4OGYzMThmZTMzMGFiOGE2MThlYjRlOTI5NmNhN2RkYzA4NDY0NzFmM2I2ZTVkZjc2MWI4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiMDg2ZDQ2NjNhYmFiZGE5ZjJmZTIzZWU4NjAyM2UxNTQyMmQwOWU2YzI1ZTU3ODBkZDMyZGExNzNlYTI3NjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiNGI2MTAwNDcwMTgxOTY3MDM0NTAzMTNkZTdjZmNkMDNhNjIxZTA4NTQ4YjVhMGI0M2JhZmE2M2ZkN2Y4ZTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2e2f2ebba9ee4d3f8fc376863d1bb33c",
+      "statement": "The Google OAuth redirect URI registered in the Google Cloud console is https://<srvId>.ulabase.app/auth/oauth/callback/google, hosted on the service domain because the service performs the token exchange and the app never receives the authorization code.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L64-L74",
+          "version": "repo-lines-v1:sha256:36e2c939cc6faf9c6a8719367ad450099cd1bfc3bea5dded9f32cd84ed66e43f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkYTZkZDM5Yzc0YjIxZmQ4NmQ1ZmRlNDY0ZTZjYmRmNTIzYjM3ZWNhYmQ5NGI1Y2M0ODBjMTQ3NDlkZmQ1NDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2ZGI4ZmM0ZjczZmUxMzNiYjk2NThiOTI2NTkyZGU1OTk4ZjJjOGMxNWI5MzkxYTcyNmY0OTRkMzczNjZjMzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5ZTFkZTAyYTM5NjAwN2YxN2Q4YWEzMDJjMThmZDNkY2MxNmExMDQxNmIwOGNlZjU3YTdlMDAwMmQ4MTA4YWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_357c47f00e1d4a6ea73cfa81c3912550",
+      "statement": "oauthUrl(provider) builds a plain link to ${environment.apiUrl}/auth/oauth/authorize/${provider}?noauthchallenge, so the href depends on the apiUrl that setup wrote into environment.ts.",
+      "evidence": [
+        {
+          "resource": "repo://src/environments/environment.ts#L1-L5",
+          "version": "repo-lines-v1:sha256:49ba2b3ed7e11df64672b896ee721a643c97dc2d1d3531d8a2fbe7f8d2d11c8d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTMyMzhkMTJiNGRkZmU5ODY2Yjc3YzRlNzhlZTc1YjhjZDNmOGVmYzYyNmIxMjZmZjQ3MzY5NTU0ZmVjY2U5OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjk2N2M0OTZmMGE5NjQ4NGI1NWUwMTE1ZGU5ZWQ5MWIyYTZmZGJjYTEwMGIyYzJiODE1NmQwOGU5MTQ2ZTA4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzcyMmJjYTNjOGRiMjQ2NTAyOGY4YTRiODI3OTRmNjA0NThiZjMyNDI4NDNiYWQzN2YyODBjMzI5NjNhMWZmMCJ9"
+        },
+        {
+          "resource": "repo://src/oauth-url.ts#L1-L5",
+          "version": "repo-lines-v1:sha256:812f81c7665baaee10200873b65b415847736966aed02b2ede485e247b3fc3ba:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDNkYWMwZTYyOTVmYTBmMjI4OWY4OTU0MDg1MTMwOGJjYzdjZGI2Y2QxN2MwZDJmOWMzZGFkZjgyYWNlNjY0NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_791923320d814a22a5334449b29060cd",
+      "statement": "Setting oauthLogin true makes Login.vue and Signup.vue render OAuthButtons from oauthProviders behind a v-if, with the signup OR divider gated separately on emailRegistration, and keeps /auth/signup registered because its route condition is emailRegistration || oauthLogin.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/auth/login/Login.vue#L56-L59",
+          "version": "repo-lines-v1:sha256:1806294ea7989419ca376ffa506b40d8288c839543d590c3d5b9012f3faa87ad:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFiYWE5ZWExMWUyYmIyYTJlNDU1ODJjZmI1MmQyMmRhZjhkMzE3MzhiZjU5NjBkNTRhZWNjZTE4OGY0MmUyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2M3YWYzYTIwNGIzNzZlMWE0Y2Q2YTNmOWY2ZDc2OTBlNTExYjVlZDBlMGM3YTNmOGE2OWRhZmIxMjM2ODhlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWEwNmNmYzY5NTYwMWU0OTIzMTZhMDdmZjgyYThmYjYxNzYwYmVmYzA0YzMxNDk3NzZkY2I0ODc4NmM1MDAzMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTAyYWM5NzE3OGRmNTNiZTE1MTg4MWI2YmVjMGM2NTZlMWU5YjU2YmE0NjY3ZGY1ZmM1NmI1MGUzNjhjODkwNiJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/signup/Signup.vue#L77-L80",
+          "version": "repo-lines-v1:sha256:83e122241954ee933b1bd6ab01701938e13edba7333eb97fccb7bd0703466259:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFiYWE5ZWExMWUyYmIyYTJlNDU1ODJjZmI1MmQyMmRhZjhkMzE3MzhiZjU5NjBkNTRhZWNjZTE4OGY0MmUyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2M3YWYzYTIwNGIzNzZlMWE0Y2Q2YTNmOWY2ZDc2OTBlNTExYjVlZDBlMGM3YTNmOGE2OWRhZmIxMjM2ODhlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWEwNmNmYzY5NTYwMWU0OTIzMTZhMDdmZjgyYThmYjYxNzYwYmVmYzA0YzMxNDk3NzZkY2I0ODc4NmM1MDAzMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGM1ZjM0MWJlYzg0MWNlMjY4Yzc5Y2M2MTA0MmU2YmU4NzRiNGMwMTQzMDQzYjk3ZmRmY2M4Yjk0YjZjZmY1NyJ9"
+        },
+        {
+          "resource": "repo://src/routes.ts#L18-L26",
+          "version": "repo-lines-v1:sha256:a906dcbfb184461ab85e44ca09313dec2591374bdb82d447614d99f5bdfae6c4:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQ2NTNmYWNmYTQyMmFhMTA4YWMzMWFhNWEwMmE5MjA3NzlhMzYwM2I5MjhlYmI3MDAyNGM5ZWNjNTRhYTY1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWExMWUwODkwMDg4ZjMxOGZlMzMwYWI4YTYxOGViNGU5Mjk2Y2E3ZGRjMDg0NjQ3MWYzYjZlNWRmNzYxYjg3YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWJmYzNkZjQyZmNmMGFjYzM5YTA3NTIzYzk4YWNhMmEyMzNmYTBjYmYyMDNjMTU5NWYwYTU4NzBkY2NlODYyZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGFkYzI1NjE5MDhhYTg2NWJmODM2YjkxMGQ4N2RkMjQxYjI1ZTFjOWFjYzQyOWI2YmRiZGNiMzIxMTBjZTU3MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1ea969c9fe40491c996dbbad45a1109b",
+      "statement": "After Google sign-in the service redirects to the app with access_token in the URL fragment, and main.ts calls consumeFragmentToken() before createRhAuth so the token is stored before the auth store's first session check, then clears the fragment with history.replaceState.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.ts#L12-L34",
+          "version": "repo-lines-v1:sha256:8bdf5a6e8f2537e40e4711ac165e6796ca60ad417b5de47dba4f5fb781e123a5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjN2Q0ODQ4ODQ3OWQ4MWQ1NTg5NzhmZDk5MWM1M2Y3MjdhZTJhMzlmMGIxYjFiZTMzYTk5Y2IxMWM0YjY3ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3NmM0Yjc2YWJkMmVmMzU4ZDA1ZDlmYzMxZmU1MWRhODE4N2ZiMjhlOWExYjE3OTlmZGQ4MGQzOWQ5MThjYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4Yzc4MzAzYjE3YjQ2NTVmZGQyMzdmYjcyZDk2MjZhYmRlZTdjOWJjZjE3ZDdjMjliNWI4MjNkY2QzZjYwNzgifQ"
+        },
+        {
+          "resource": "repo://src/main.ts#L47-L52",
+          "version": "repo-lines-v1:sha256:04ead0b0ef7765ce12b8e5dc451cb9bd349a65e7e07c135b33ef8da4c5ca7937:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTU4MGQ0ZDE2OTA4NzIyMjg0MTQ0Njc4YjExNThkMGYxYTk0ZTE5NTQ5OGYwZDI4NmE0Y2UxM2I4M2VlZDNjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWIwZTg4MWEwZmY0NGRkNTFkZTViNDczMDYzZDJhNzc3NGY3OGM2NWNjYzVhNzI2MjE4OTZjZWFkYTkxNTQ0MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTVmNzI4Y2ZjYTQ1OWQ2ZmE1NzBiZWI1ZmFjNzc3YmNhMThiYjgyMmYwNmY3NDBjYWZmOGVlMjNjMmM0MmIzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWQ2NjUyZWQyMDc2MDY0ZGIxMzAxZTJkOTM2OWY2YWQ0MmIzNmI1YTlkYzBiMDk0YWM2YmM3Y2E0M2QzOTM0OCJ9"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-13T10:12:04.743Z"
+    "at": "2026-10-19T08:33:44.961Z"
   }
 }

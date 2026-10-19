@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:6fcb23677965e9528440c67c3e9a2e33008d3a5fffb0e59547e4e5fa913868f1",
+  "pageVersion": "sha256:1e646f29563b61b8803eafcb39e50e8e186406e04e94c21a776394a69bda7eab",
   "claims": [
     {
       "id": "claim_b34049e5ca27444a8021102dcd7f2344",
@@ -137,7 +137,7 @@
       "statement": "Feature flags in environment.ts control which authentication routes are registered and which UI elements are displayed, with emailRegistration, passwordReset, oauthLogin, and oauthProviders flags.",
       "evidence": [
         {
-          "resource": "repo://src/environments/environment.ts#L10-L16",
+          "resource": "repo://src/environments/environment.ts#L6-L12",
           "version": "repo-lines-v1:sha256:e0c09c50abf5287407f3a473d775c4b3d6aa5796cb202935980d529c1b428e51:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjRjNjE5ZmZkNmI5MjFjNTI3OTExZWRlMTQ3MWM5MTQ5YTFkZTg2NTUzNDE4NWIwOWY2Nzg1MGRjMzMwZDU2MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQwM2NhYjc3MGI2NjA0MzQ5Njg4YzAwNTk1ZmVmNWU0NjcwN2M1ZWVjZTU5NGMzYWIxM2RjMzY0NWRlMTdmMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCJ9"
         },
         {
@@ -215,10 +215,116 @@
           "version": "repo-lines-v1:sha256:1b7e8c7aacde48145e243e6cdb246067bb6e470be68076b4eed34d6f331940e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiYjgzMzQ0NDI3OTQ4MWM2ODE4ODIyZDI2ZjZhZmY2M2ZmNzc4ZTY2ZjEzMGRiMDk5MWE0MzU4MWQwOGRlMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAyMjE0NjZhMjg4YzdkNTk4MDI3MGE4ODE3NzNlNDAzNTViMGI0NjlhNzdhOGU3MzE5YTFiZWIxYjNmMGFjOGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxNWFkMzA0ZWU0YzYyNmRkZTc0MTM0ZGMwODk1YjE1MmIwNWI3MjEwZWJmMGMwNDU2Yjk0ZDI4MGYzMjY3MGMifQ"
         }
       ]
+    },
+    {
+      "id": "claim_a223f8267c37450aa5ac24f3087d2db4",
+      "statement": "Account management allows authenticated users to update their profile (first name, last name) via auth.updateProfile() and change their password via auth.changePassword().",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/account/Account.vue#L42-L58",
+          "version": "repo-lines-v1:sha256:e9aafc8479f35508a2bfe3200e32467c9ef47fb36207a856abfa46e40691e05a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzODY3NWMzM2FhNjg3ZDNkMGUwN2RmYWU0OTdkZjg1MjJkNDUxNzUwMTU0NTRmMWMyMTc5NjY2ZjZlYmRiYWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5NzUyNTBiYTVmOThkY2RiODIyNGRhZjljMzljYzM3MDFkNmMzY2NjOTg4MmQ0ZjI0ZDkyYjA1NWQ1YjEzOTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU2MTc0N2M5ZTZkMDQwOGM0NzY4ZjNjNjBkNDNlNThiNmZkNTAyZDQzOWVkM2JhM2Y5OTQzYzczYzMwYmU2ODgifQ"
+        },
+        {
+          "resource": "repo://src/pages/account/Account.vue#L60-L77",
+          "version": "repo-lines-v1:sha256:7268f56a51c7038161789341d77926341805beb0281c447fff94d695a0ad711a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhNmNiNGQ4NTBiMjM2YzFhMDVmOWI0YzUzMzc4OWMzMDQ5Y2Y3MGE5Yjg2Y2U5ZmJmNGI5MWY3MjJhY2ZhMWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0ZTdhNjZlNTRkNjUwYmQwNzJhOGFkNDk0YjgwNTVlNzIyYmMxMmRhYjJhYzRkMDJiZDE3OTBiYTM4YmU4NDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2890307e7334f95aac4b8ab59ba61a2",
+      "statement": "The consents gate flow shows an overlay when a 451 response is received, requires acceptance of Terms of Service and Privacy Policy, and after acceptance renews the token to include consent claims.",
+      "evidence": [
+        {
+          "resource": "repo://src/ConsentsGate.vue#L31-L55",
+          "version": "repo-lines-v1:sha256:482228c2caf684660d041e593b5dfba0ecf4ae55ca0cdcfc2058fd843174d97f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYmJjOTU5MGFhMDhhYmU3MDg4ZTAxNjQyOTgyZWFlNzM3MWVjZmIyNjJjMDk2Mzg5M2YwZDU1ZmI0ZTMyMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjZGFjN2Q2OGZjYmEwNDVlMTZkYmMzNzkzYjk3NjRjOWRkODhmYTkyNmNkYTA5NDk0OWMwYzJlYzA2MjZlY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhYmJlZGE1YWI5MmYyNTM5MWFiMGIzMGQ4MzE0MWZlNTg2NTdjYTcwNzZmMjA3NGI3ZWVkMTkwMGZmNWUzN2MifQ"
+        },
+        {
+          "resource": "repo://src/consents-signal.ts#L39-L41",
+          "version": "repo-lines-v1:sha256:17ba753bdcee6043aaa18b206e08a8317a65acaca8aed450354ca817fa458543:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjVjZjc2YjZhOTQwZTk0ZmJkMGU0YjBjYmFiMzVmYzc0NTM3NGU2MDAxNDVkY2QxMmJlMDc4NGRiM2M3ZWY0NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDM5NmU0ZTM3MjU3NTEzYTk4ZWY4ODY1ZjA1ODFhOGMyMTAyYjhiM2JkODlmNGRkOGFkYTZjMzBmNGU1YWNhZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/main.ts#L52-L52",
+          "version": "repo-lines-v1:sha256:9b0e881a0ff44dd51de5b473063d2a7774f78c65ccc5a72621896ceada915443:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWIwZTg4MWEwZmY0NGRkNTFkZTViNDczMDYzZDJhNzc3NGY3OGM2NWNjYzVhNzI2MjE4OTZjZWFkYTkxNTQ0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWIwZTg4MWEwZmY0NGRkNTFkZTViNDczMDYzZDJhNzc3NGY3OGM2NWNjYzVhNzI2MjE4OTZjZWFkYTkxNTQ0MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWIwMDc0ZTM1MGFlMWU3NGM4YmQ3NGY0ODM2N2IxMDAxMjhkNjg3MjRkZTM1ODIwZDdmZjcxMjcxM2I4ZDdiNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWQ2NjUyZWQyMDc2MDY0ZGIxMzAxZTJkOTM2OWY2YWQ0MmIzNmI1YTlkYzBiMDk0YWM2YmM3Y2E0M2QzOTM0OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_55cde41a33fb4d708bb6a2bb0d49b198",
+      "statement": "OAuth URL construction uses oauthUrl() which generates /auth/oauth/authorize/{provider}?noauthchallenge to allow unauthenticated users to start OAuth flows.",
+      "evidence": [
+        {
+          "resource": "repo://src/oauth-url.ts#L3-L5",
+          "version": "repo-lines-v1:sha256:b1338b1971a24e0c34b66e228657816d6b1336c236170c68984af37e4ac792eb:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzI2ZjZiYjI4NTljNWUxMjg5MGUwMThkZjVkY2UzMTUwNDNjZmRjZjdiMDI5MDU5Y2NhOWU0ZGYxYTQzMWRjMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2VjODM5MmFjYjU2MWMyNzAzOWE2MDczOGY5OTU3ZDVjMGVjZTg2MWExZDBjMjFlZmViM2MxNzczMTRjNTcxOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/oauth-buttons/OAuthButtons.vue#L16-L17",
+          "version": "repo-lines-v1:sha256:0934492a8c0183467522250be5ae8eb9c772adb1741e86960fbe4b406c134667:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDViYTFiZmRhZDUzN2QyZDJiMTEwZDM4YTAxMjNjNGYyOTQ0NzgzOWRiZjRjMDY1YTdjNWM0NDQ3MDcwMDhmMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGNiOGVmNDVmMzFlNjE4YzIyYzZmNzgzZGYwOTJhYWMyN2Q1YmQ0MWRiYzg5NzZhYjg3MGViMjRjMzI2MzdmYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTI3NDgxYjVlMjBkNWU2NTQ3MzQ2OTY4YWFlMTQwOTkzOGFmNjEyZTQ1NDQ2ZmYzNjM5ODhiNzU0MzZmOTUzZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjNhN2NiZmYwMmI2YjNhNGVkYjEzYjQ5OTc5MTc2ZTFkMTVlODViZTBmNTVjNjJhOTA3NmVmZjk0OGQ2YjNmNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dace0e036b2f4ea48635b1da12067cf2",
+      "statement": "Password reset flow prevents email enumeration by always returning 202 and showing the same confirmation message regardless of whether the email exists.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/auth/forgot-password/ForgotPassword.vue#L20-L28",
+          "version": "repo-lines-v1:sha256:e78c175ff863c92507db4c6ac425725f35d2affbef60fb37156ef0eb9f5c673d:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTg5MTM5NmYwNGM3Y2U2NjNhZTg2ZmY0MGRlNjgzZWZlYzdlNzhkOGIwM2I2ZjYyZjkxNDg4YWEyNzM5NjNkYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGQ5ZTY1OTdhZThhZDU3MGMxOTA3ZDRhMmU0YzhkOGMwMTVmZDY5Y2EwYWE3OGU4NjE1YjAyNGMxMWY2ZDYxMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjRlN2E2NmU1NGQ2NTBiZDA3MmE4YWQ0OTRiODA1NWU3MjJiYzEyZGFiMmFjNGQwMmJkMTc5MGJhMzhiZTg0NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_88d30c67d41c4927bbe264d5c226a243",
+      "statement": "A session watcher in main.ts monitors user state and redirects to /auth/login when a session ends while on an authenticated page.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.ts#L67-L70",
+          "version": "repo-lines-v1:sha256:c62dd90201c69ef3e1f289762a43259b80e29e326168b52fec23fa5f606bc7f7:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGU2NmM3MjU5MjEyOTdmMWQ3NjBhMDdkOTliY2ExYmJjYjZhZDZkOTk5YzgwMDdhNjBmMTEyMGY2NWI2Mzk0NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzZTQ2Zjk0Mjc2YjZmNmY0ZWQxZjAyYWY3OGJlZjZhMmVlMWM0MzlkZDU1ODRiOTczOTQ4MzEzMjE0ZDJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGIwYjIxMjZhY2ExODhiNWVhZjc5NGQ2NDU5NDQ0YTAxMGJkZWY1YWJkOGUxMDBmMWMwNTA2MGE3MzVmMjQ3MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQ5NjM2MDJkNGY2NGNkMDVkYmY1M2VhMTIzYjAyZmZmYzdmMmRjYjJhZWMxZjZmZmY4NjNjNGQ0OTQyYmE3YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_78a0628f78d649389b755c75f5965d10",
+      "statement": "After accepting consents, the token is renewed via auth.checkSession() which calls /token?renew=true to get a new JWT with updated consent claims.",
+      "evidence": [
+        {
+          "resource": "repo://src/ConsentsGate.vue#L42-L45",
+          "version": "repo-lines-v1:sha256:f556fee9fd08a7a13d1770bf94b28650ed71e2d930db46618f537aa577e3c209:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWNkYWEwNWZlY2UzYmNjNzZhYTFjNzg2NjVjOWVmNzNiMjQ4Yjg1NzkxYzk4ZDhmNjk5ODZjY2ZlMDEwYWZlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjNmYjVlYjRjNzQyOGJlY2E1YzFiZTg3MDQ0MzU2OTE3YjM2MmFjNzIxZjg5MGJiMWVmMTQxZTBlMjQzNGEzZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2NmMzIwOGM1YzRkNWNjMDJkMmMxNmY2NzAxYWEzMGQ2NDBkZjgwNzdkMmJmNDgyYWM0MDhhZDcxN2I3NDMzZiJ9"
+        },
+        {
+          "resource": "repo://src/ConsentsGate.vue#L47-L49",
+          "version": "repo-lines-v1:sha256:4dbc7c0e8d11a2567dc527b12ffec2bd24fa4b72d53cbc5843511ddc3f255b4f:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODdlNTYxN2E5NTgyNjI5ZDIwZmI3YjY1NGVmZjIyYzE4ZWQzNGU0N2IxMmQ4YmVmZTEyYzYzYTQ3ZDI3MzViMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzUzMTVlOWYwYmMzMTEzYWViYWNiNGUwNmFmM2NmYzAyOGFlZDA2Y2EyODIwODIzNDZlMjgyZGZlYTFjOTcwYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGZlYTc5MjRkY2YxMTg4NDMzYzgwOTBmNGI0MzhjNDc0MGU5MGEzZTQ5MzQ4YWRmYzhjMGZhNGEzNWE0NTEyNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDBhNTQ1NmI1YTBkYThlMzAxYTMzMWE1N2QyNzk2YjE4OTljM2M0YmJjNDliMTlhOTc3YWUxMzE3YTJhMTBjYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_43b6e7bcdf3046c6971ab5f7b81f713c",
+      "statement": "Login page features include password visibility toggle, real-time validation, loading state, OAuth integration, and query parameter error handling.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/auth/login/Login.vue#L18-L24",
+          "version": "repo-lines-v1:sha256:4bae1e0ac2314a69829bb03a2b9f9fb665fa183e629a27a30373386df74b775e:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGE4YWYwZjJiYjBjNjM3YjA0MTM0YmFmMTBjOGNjYWJjMTUzMzc1OTgzMzkyODgxZmRlYTI2NzU0YTRmOWVjMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjM4OGE3MmM2OTMyNDQxOGY2YjU0NzI1MmFlODM0NjgwMmM5ZTgwMzA1YWRkYjI5ZmJlYmJhYmU1NjcxZjA2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGMxYjAzM2U1MDk4ZTVlYzE4NDEwMTFiMzJlYzFkNDQzZWE3MWY1NDI2OGE5YWQ5OTg2NTc3YmE3NTBhZDAwZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTg1NjNmMWY1ZWZlOTBkNjcxOWJkOTViYzY3MzY5ZGYwNjUxM2JmYTNlNTkwM2UyNzFmODM3N2I4YzNjNDYzYyJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/login/Login.vue#L27-L28",
+          "version": "repo-lines-v1:sha256:c9a339fe593cc5b7c82f7367c88351df62eee92c771b6c1c95f3eaa15d902a6f:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTdiMDA5YjQ1YTg1OGI3ZTllZDg4ZjI5ZGU0ODdiMDlkY2U2YWI3ZWNiODVlOThhMDQ3YTY4MGIyZmQ5MTkzNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmYxNzMwNTJlOGE1MWY4Nzc0MGI0NzUyYWVhMzRhYmZlM2YwNTQ1OTRhYmIyNmRkZmIyN2FhMjdhYTEwNGUyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmQ5YmUwNTk2Yjc1MzZkNDQyZGUwZWVhYTBmMmViYmI1MzE1N2MxMjRkZTczODlhODQzYTVlYmYyOTJiYmU0YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjEzOTdhNTA1YTc0NGIyZTM2MDc0YzA4YTlmNjI3MmE3MGI2ZWQzMmEyMzhlODFhNzNmMGI3ZTg5MmQ5YmU3MiJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/login/Login.vue#L56-L59",
+          "version": "repo-lines-v1:sha256:1806294ea7989419ca376ffa506b40d8288c839543d590c3d5b9012f3faa87ad:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFiYWE5ZWExMWUyYmIyYTJlNDU1ODJjZmI1MmQyMmRhZjhkMzE3MzhiZjU5NjBkNTRhZWNjZTE4OGY0MmUyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2M3YWYzYTIwNGIzNzZlMWE0Y2Q2YTNmOWY2ZDc2OTBlNTExYjVlZDBlMGM3YTNmOGE2OWRhZmIxMjM2ODhlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWEwNmNmYzY5NTYwMWU0OTIzMTZhMDdmZjgyYThmYjYxNzYwYmVmYzA0YzMxNDk3NzZkY2I0ODc4NmM1MDAzMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTAyYWM5NzE3OGRmNTNiZTE1MTg4MWI2YmVjMGM2NTZlMWU5YjU2YmE0NjY3ZGY1ZmM1NmI1MGUzNjhjODkwNiJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/login/Login.vue#L85-L88",
+          "version": "repo-lines-v1:sha256:5f333edccdd7f05d84c77727f56f2ccea650490a8c0ac2f80a34796798a8b78f:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTBhODRhOTBhN2M3ZDJlMzkxNzQ2YmI3YzkyNTAyNGRlNGExZDM2NjVjZTNhMjFkMDc4Y2JhNjg4M2U0ZTRmOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWYyMTVmZDAzY2ZjMmJlZWJmODA0YTE3YWM1ZTk0Nzk1MWY3Y2QyZGMwNTYwNTIyNDk5YzYwNmZkYmNkNzE4NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGJjMGFiYjVjMGE3ODFhZjUzOTgzY2Q3YTc1MDMzOGYwMDRjZGY3ZjNhN2VjMzYxMjNkYzdjYmY1NDdmN2VjNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGQ5NzUxZTNjZWVlNzU0YjllZGI4OGM3M2YzZTg2ZTEwMWMzOWUwZTNkZGQ2ZTAwOGI5OGUwYTZlN2UyNzUyMSJ9"
+        },
+        {
+          "resource": "repo://src/pages/auth/login/Login.vue#L91-L93",
+          "version": "repo-lines-v1:sha256:2ddd029436d4477284bdabe72b547c0abb845aa5080f69419e01631c113cd718:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTA5MzEzMTNmOWI0MzQzYjM0YWFhY2Q2ODhiNDNmMzc4NDc5MDQxMWIwMmRkNDVmNzI2MmNhZDJlYzkwNzEyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjk2NDdmZjU1YWYzNTQ1N2Q2NGRiZTE2ZTU3OGQ3ZTcxNGM3YmZkZjNjMjQyYmM0ZTE1OGZlYjU0ODAwOGNjMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGNjMjAwOTEzYWQ5NmQ1MDVjMWI0ZmMzOGI1OGRjMTM5NWExMTljZWFkZjQwNzNlOTI5OTM0ZjE3ZjkxNGI4ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGM5MmY3NGVlMTFjNmNmZDcxYTBkMTNlZDhjOTYwMDRjMGIyZmI4NTFkNzZlOTMzMmQ5OWUyMzMzZjY4YWNkMSJ9"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-12T10:21:41.724Z"
+    "at": "2026-10-19T08:33:44.961Z"
   }
 }

@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:7d67fb11668a9e1026ffb2566e70e65586797f0d26225ff4c29aca4da2359bbe",
+  "claims": [
+    {
+      "id": "claim_812eac3297494651aab3fc2217cda1a0",
+      "statement": "The Vue app communicates with the Ulabase service via HTTP endpoints, with the kit handling authentication and session management. The service is a managed backend that handles authentication, user management, permissions, and business rules.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.ts#L36-L73",
+          "version": "repo-lines-v1:sha256:ee13884b68dd8f878bf946e42fc76e91c731df87f6984c4af9676cdb34667f3b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MWM0YjllYzZkNTY0MzFiM2JkNDZjYjE3YTg5NTJjNGI1M2EwNjc2NzVjOTcwMjYyNjRkMzUyMTUwNzVmZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2YzA3NGFkYTcyODEzZTIwM2Y4NjQwYjcyZmU1NWU0MTE3OThhNDE5MjVjODQ3M2VlYjE4YWU0YmQ1ZWJjNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://ulabase.setup.consents.ts",
+          "version": "repo-file-v1:sha256:3a4d2916002fd1d09c00665160f268143fed3ec4c6beae8bcdf075d615a91c7e"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts",
+          "version": "repo-file-v1:sha256:c43d06b029a418ae0d991223dcd64aac8a0a0622253eb96ea6c136667af0f07f"
+        }
+      ]
+    },
+    {
+      "id": "claim_bb869f1189b84a318eeeae545c36daac",
+      "statement": "The accounts feature is the foundation of the service, providing user registration, authentication, and management. It's installed via the ulabase.setup.ts file and includes user registration with email/password or OAuth, email verification flows, password reset functionality, team invitations (when enabled), and session management via JWT tokens.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.consents.ts#L183-L187",
+          "version": "repo-lines-v1:sha256:8b9f53e318be4629929f132494f03b7946cf23a3cc6f04105ae55b3283fda039:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGYzZmI2ODcwM2JmOGI4ZTFiZWMxNjg5ZmE4ZmE1MWE1NTMwMTU2OGZhODI0ZDZlMTc3MmI5NTViY2YyYWU3MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDY3MWU3YWExMzQyZjEwOTNkOTA2Nzc0ZTU4M2I4ZGU4YTg2YjExYzllZjcwYmNhY2U4ODRiOTRlODQ3YjdjOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGMyYzc2MWMwYTIyMjFhYTc5YzcwNTk2NjVkNWRjMjc4NTFjZDkzYmFmNTg4N2QwZjNjNjcwMmI2YmZmYWIxYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTVlMWNkODMyNTAwODkyMzMyNWI3NTg1N2JhNmRkZWUyOTkxNjg0ZGIzZDMxNDU1MTUwYmI2YzQzNjJlMGFiMiJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L111-L148",
+          "version": "repo-lines-v1:sha256:0fe607b45c06da2a13eff8a9067e8d6f299f837e2f525ef9d3227e8f453976bf:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmYTZmZDZhNzkwYzg0Nzc4ZjU3NGJhNDFjNDM0YjE4NzA5Zjk1ZmY1M2RkNTE1YjQyZmVkNGUyOWQyM2IwOTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzODNhYzE5OThhZDg4Mjg4NDVjNzBlZGZmOWQyNWZjYzc4OTU3ZjU1MzBhNzk4MzhkNTE4NGExZTE3MGZlNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjYTlmMDA4ZDMxNjA1NzVjZTg2ZjE3MTYxMDMzOTNjMDg5MjE0N2IxMDc0YTZkNTg0MGFiMTNkZDQ0YjA3MTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bd6a04f656bb437faaee4509e2b2cef5",
+      "statement": "The service maintains a users collection that stores user documents with fields including _id, password, roles, profile, latestConsents, consents, socialAuths, teams, and team. The collection's schema is validated by a JSON Schema (userConsentsSchema when consents are enabled), which defines required fields and allowed structure.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.consents.ts#L189-L218",
+          "version": "repo-lines-v1:sha256:085be38d75c84e7159d44906ead70176328ff245623f0f097cee224f0a16e7ba:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2ZmM0MzBjY2RhNDZhYzNlZDg2NWViNjI1MTJmMjliOThhZGUwZGVjZTU3ZWEzOWQzZDRiNGJjMDY0MGUzNzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyZTZmY2RkNGQ3Mjc0ODdlOGI4ZDdhNDM3N2YwNjJjZDFiY2U1OTQ0NGQ2ZDczYWE4OGNhNTg0OGY5NGI0ZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwN2YxMjU4ZjE0ODAwM2ZjYTNkYWFkMWJjMjdjZGJhNTJkNWU2YjM5YzRjZWNkMzMxMmVhNDQ1MTdiYTM5M2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmODRhZDEwNmUwNjUyYzM4Mjc0YWNjYTNiNzAwYjA3NDBmNTk4Yzk4NjA4ZDY3MzlmZDliODVmYTdmNTU4ZGMifQ"
+        },
+        {
+          "resource": "repo://ulabase.setup.consents.ts#L85-L117",
+          "version": "repo-lines-v1:sha256:d7de05259b55c9c2ddba192979f9b4b262c3d2ed3816c7183aa7b41ef1e88676:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiM2IzMWZjM2FjZDY5Yzc0OGE5NmU5MTc3ZjBkZDU3N2NkMjJjMGU0MTNmYjllNTJlYjUyZDdlY2RjMmRhYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwOWNlNWRiN2Q5ZjhhN2FlNjVjYjhhYmI5YTU2ZDQyOTdhZDFjNjE0MWJlZDViMjEyNWQzMzk0ZDUwYWFiOGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiMDc1OTlkMDQxOTk2M2E1ZDcyZDc4OTFiYzk1YzlmOTEwYWE3MzE0MTRiYmYwOTYwNGZjNTIwOTZjMDBmODcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_31bb4c2f0ff24a8d8c6308790dda0e36",
+      "statement": "Access Control Lists (ACL) define what operations users can perform. The service enforces these permissions server-side for authentication endpoints (public access), user endpoints (protected by permissions), and data endpoints (protected by collection-specific permissions).",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L131-L136",
+          "version": "repo-lines-v1:sha256:d01767fa28ebfd79c69d12e11ce505415b941bbcee4f82db01a176db0cd3ea7c:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGQ3YjJhNWU0ZDFkYzhkMmRkZTg1ZTc1NzJiZjZiMDcyNjIzNmUzMzRjNmM0MTc5MDAyY2QwNDM0ZThmMmFlZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTE5YzU2OTQ0MDQ4NmQ1NTNlZTYzNTExMDEyMWYwN2QwZGNjZjJhNzk5YWU0NTA5N2U2NzIyYjY3Y2U0NjQ2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2M1OTZmNjMzM2VjNzRjNjA1ZTBhNjE5ODJhMmUzYTk2MDIwYjkyYWE3YjUwYzBiZGVhYjhlOGVhNzMyNmE3MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWM4NmIzZDI5YTgwYzE1YTExOWRjNWRjOTJjZGY0NGNhYTk5ZGE2NDVkZTRiZjY2YmE4NzBjYjdmZmY0MGZiZSJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.consents.ts#L220-L249",
+          "version": "repo-lines-v1:sha256:56499f2d0ad5eed28fb40c71ad06fe70a7a4e81e66811d8d67d473627ab1b050:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzNWM2MjE2YjNjYmQ1NDZkM2I2OTFhN2NiMjExNjZjZDA0Yzc5OTlmZGI1MzY5OWUwZGI3ODYwNjc0NDgwNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyZTZmY2RkNGQ3Mjc0ODdlOGI4ZDdhNDM3N2YwNjJjZDFiY2U1OTQ0NGQ2ZDczYWE4OGNhNTg0OGY5NGI0ZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0NDliNTZkYWQ2OTczMWRlYWFhMzc3NDFiYWUzNWM1NWVlMjY5YWI0ZWI4ZTRhZDM1ODQ4YTYwNWFkYTViNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4MGNkYWU4ZjEwZmY5MzFhMTg2NjYyODJhZTBkZTliOTQwZGYzZTQ0NDYyYTBjOWI1Y2Q2YjIwZTU3MzVkN2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9317ed520d65469dad4ecfbf8a8a7337",
+      "statement": "JSON Web Tokens (JWT) carry user information and are used for authentication. The service includes standard claims (sub, iat, exp, iss), user properties (profile, roles, teams), and consent claims (when enabled: latestConsents/tos, latestConsents/pp). These claims are configured in the service's auth-config.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.consents.ts#L135-L161",
+          "version": "repo-lines-v1:sha256:152607e653da37f5f18e11d56b3e53c87e63a611c2dfc3bc59005995c4e38be8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5NTQ3N2VkYWI3MTU2NTFlZjNmZDBhOGE1ZjgzYzYwMTM1YTIwYjNhMmI3N2MxYTc5N2EwZjZjODM1MmFkYjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2ZjVhODU2NTdiOGU4NTQwZjZmNWYyZWM3YjY2YjY2YWNiNzc3ZmJlNjQyY2E5M2I5N2QyNWU4NjBlZDM4YjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmNjI4MGZjMDFmYzc1OWFhZGY4ODgwY2RmM2E4M2Q1YmIxYzZkNmNiYTJkNjdiZWEzOTRlZDUyMDI1ZWEzZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1MTM5YmE0ZDJjMmQ3MDhiZGE0MTA5ZmU3OGM2MWI0NjI3ZmExYTgxNTY1NGQxNmQzMTg0YmQxN2U0ZTRmODkifQ"
+        },
+        {
+          "resource": "repo://ulabase.setup.consents.ts#L251-L278",
+          "version": "repo-lines-v1:sha256:9d37d3e6a363b91d369e72b52f1ab716d1c3963465c87f873099c950c0eb02b0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyMzBhYjg1ZDg0ZDViNzI1N2RhMDQzYmFhMzIxZDQ2ZDYxZTM2MmVlMDA5MWM2NDVlMjExZmNkMDUwMjJiZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyZTZmY2RkNGQ3Mjc0ODdlOGI4ZDdhNDM3N2YwNjJjZDFiY2U1OTQ0NGQ2ZDczYWE4OGNhNTg0OGY5NGI0ZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0NDliNTZkYWQ2OTczMWRlYWFhMzc3NDFiYWUzNWM1NWVlMjY5YWI0ZWI4ZTRhZDM1ODQ4YTYwNWFkYTViNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyMDQ3ZmQzNjk2Zjc1ZTVkNjA4Zjc0Y2M2OGFhNmQ5OGZmZGJlMjUzMWZhMDYxMzNiOGEyMzE5NGJmMjZjOWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_30cd17b589aa4d6dbd27a0d5fff2c5ca",
+      "statement": "Guards are server-side rules that block requests based on conditions. The consents gate uses a guard rule that blocks authenticated users who haven't accepted current Terms/Privacy Policy, returns HTTP 451, excludes anonymous callers/auth endpoints/acceptance request, and importantly does not exclude /users/me to make the gate work without client-side probing.",
+      "evidence": [
+        {
+          "resource": "repo://src/consents-signal.ts#L8-L15",
+          "version": "repo-lines-v1:sha256:07638b19f7240f900f536067815181f6a57b12d76cabbe3c9fd3e7e6a48cc582:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODJmMmFiNTljMDUyMzUzMTU2NGEyOWExNDA0Yjg0N2M1MDdhZjgyY2E3NmNlMDZiODc4MmY1YzAwNmNlNzdkMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ0YmU3ZGFkNzExYTA1NDE0YWQ4YWFkOTBjMWVhOGE1OGVhNDY2MDBiMWFhNzc3NjlhZWZlNjMxZTFiZWIyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDM3MjZlZDNhNDJhNmQyMGRhM2Y0ZmRmNzllNjBmMzYxZjFjMWFhOWFmMWI2MzU1YzY1OWQ4NzAzYmYwYjc3YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjg1ODJiNTQ3NjZkODQzZTI2NWJiMzg3N2QxZjI3MWE5ZGI2ODJjMTUwZjI2M2IzODI4MTBmNWMyYTViMTI0NCJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.consents.ts#L135-L161",
+          "version": "repo-lines-v1:sha256:152607e653da37f5f18e11d56b3e53c87e63a611c2dfc3bc59005995c4e38be8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5NTQ3N2VkYWI3MTU2NTFlZjNmZDBhOGE1ZjgzYzYwMTM1YTIwYjNhMmI3N2MxYTc5N2EwZjZjODM1MmFkYjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2ZjVhODU2NTdiOGU4NTQwZjZmNWYyZWM3YjY2YjY2YWNiNzc3ZmJlNjQyY2E5M2I5N2QyNWU4NjBlZDM4YjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmNjI4MGZjMDFmYzc1OWFhZGY4ODgwY2RmM2E4M2Q1YmIxYzZkNmNiYTJkNjdiZWEzOTRlZDUyMDI1ZWEzZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1MTM5YmE0ZDJjMmQ3MDhiZGE0MTA5ZmU3OGM2MWI0NjI3ZmExYTgxNTY1NGQxNmQzMTg0YmQxN2U0ZTRmODkifQ"
+        },
+        {
+          "resource": "repo://ulabase.setup.consents.ts#L285-L320",
+          "version": "repo-lines-v1:sha256:61bb3204eef5b835755b0b6f6ddeb8cd77fc51636fd8e642903f24bd6671900f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyNmE0MTQ1MmIwMTVkNzk5Y2ExMDkwNTI5YWQwYTI2MTk1MjcwZDFlOTdiMjMwZDY5N2E3NGNjMzEzYzZhNDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyZTZmY2RkNGQ3Mjc0ODdlOGI4ZDdhNDM3N2YwNjJjZDFiY2U1OTQ0NGQ2ZDczYWE4OGNhNTg0OGY5NGI0ZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmZjA4YjUzZGJiNWUzN2MzNTIxMDllODQzOGQxMmYyNzVmNWYwYTJkZjZiZWVhMWExYjYyNDYyNDI1N2ZiYzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVmNGEzZmFmOWFiNTRmOThiZDAxYmUwNjEzMDkyZWMzZmYyNTA5ZTkxMmFiOGQwNzVhNzdlY2MxZTY5NTA4ZjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_628a777c4f74491b9957b6eb7303ee75",
+      "statement": "The application communicates with the service through key endpoints: authentication endpoints (/auth/*), token endpoint (/token), user endpoints (/users/me, /users/{id}, /users/_meta), and configuration endpoints (/auth-config/{srvId}, /schemas/{id}).",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L108-L136",
+          "version": "repo-lines-v1:sha256:adf64cbd81e8e0196333b18c6d58fb095d7c0cdbc9dc2eb0edee8c8f7c9f69eb:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYzY4N2Q4NjM2YmU3NmViMmQ0MjA4MzRhM2VjYjFjNGEzZTZmMzRiNTM4ZGIxZmRmZjE3NWE1ZWQwOGMzODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxOWM1Njk0NDA0ODZkNTUzZWU2MzUxMTAxMjFmMDdkMGRjY2YyYTc5OWFlNDUwOTdlNjcyMmI2N2NlNDY0NjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNlZDg3NGZkYWUwZDFhMDdjZGE5ZTcxZDUzM2RlYjk0NGU4NDU0MzQ0ZTk3ZTg1OTNkY2Q5ZTZiOGVjMGFmMWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjODZiM2QyOWE4MGMxNWExMTlkYzVkYzkyY2RmNDRjYWE5OWRhNjQ1ZGU0YmY2NmJhODcwY2I3ZmZmNDBmYmUifQ"
+        },
+        {
+          "resource": "repo://README.md#L96-L104",
+          "version": "repo-lines-v1:sha256:004dcc4e241ef3763d8de8f66a590e06434ca4eba38cfcfcd8778f3d34f76266:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDYyM2FmYjE0MmVjOTBiYmQ0ODk1ZTg2NzkzYzllODY2ODU3M2QyNTBkOTBlZjI4YzY1NzdkMDZlN2FjNjBkNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTNiNDQ4N2U3M2ZkNTE0MmVlYTYwNWNiOWMzODM3MzZkMmUzYjNiM2NiZjQyZjNiYTNlNTFlOGQ2ODJkN2I0NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWRhMDFkMGU5NjYxOTMwYThkYjg2OTlhOTY0ZTJlZDk4ZTJiNGY4ODY1MzBjZDFhZTc1MTM3YTYzMzJmZDEyMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjI1NjM5ZTYxZTNkYWE2ZWFiMDg5Y2VjY2ZiNzg0NzFhNDk0NWE4Yjk1M2M4MzMxNGJlZWE1ZGM1OGY2NWQ0MyJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.consents.ts#L194-L218",
+          "version": "repo-lines-v1:sha256:011df20895aa7215c6e4221d9707e4ae801a02e624683d356fa714ea71175780:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyOTZmNzM2OWQ2NGU0MTFlNzE0ZDk1ZGY5MWE4NGU2ZDI0ZjhmNDQzYTJjYzM5OWZhZjdjMTk3NmEyMWI3ZjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyZTZmY2RkNGQ3Mjc0ODdlOGI4ZDdhNDM3N2YwNjJjZDFiY2U1OTQ0NGQ2ZDczYWE4OGNhNTg0OGY5NGI0ZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4ZDYxMTY5MGRkNmY2YzViMjQyNmFlYTFlMGMyNmYyNGExZDFlZjAyZjAwMzYwNmI2NDkyMDg0NTdlZWFiOWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmODRhZDEwNmUwNjUyYzM4Mjc0YWNjYTNiNzAwYjA3NDBmNTk4Yzk4NjA4ZDY3MzlmZDliODVmYTdmNTU4ZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c1e86cf41143404394795d02d22e26cc",
+      "statement": "The Vue application reacts to HTTP status codes rather than enforcing rules. Status codes 401 (logged out), 403 (not authorized), 404 (not found), 409 (conflict), and 451 (blocked by consents gate) trigger specific client-side actions.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L131-L136",
+          "version": "repo-lines-v1:sha256:d01767fa28ebfd79c69d12e11ce505415b941bbcee4f82db01a176db0cd3ea7c:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGQ3YjJhNWU0ZDFkYzhkMmRkZTg1ZTc1NzJiZjZiMDcyNjIzNmUzMzRjNmM0MTc5MDAyY2QwNDM0ZThmMmFlZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTE5YzU2OTQ0MDQ4NmQ1NTNlZTYzNTExMDEyMWYwN2QwZGNjZjJhNzk5YWU0NTA5N2U2NzIyYjY3Y2U0NjQ2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2M1OTZmNjMzM2VjNzRjNjA1ZTBhNjE5ODJhMmUzYTk2MDIwYjkyYWE3YjUwYzBiZGVhYjhlOGVhNzMyNmE3MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWM4NmIzZDI5YTgwYzE1YTExOWRjNWRjOTJjZGY0NGNhYTk5ZGE2NDVkZTRiZjY2YmE4NzBjYjdmZmY0MGZiZSJ9"
+        },
+        {
+          "resource": "repo://README.md#L103-L104",
+          "version": "repo-lines-v1:sha256:f74c1dae2bad53a9c38fce8bfecdcfa5335316af550091aaa79b3f4624d6bc26:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWViMzkwZDdhYWNiMzAwYWI5NGMxZjBkMzI1MWVjNjdiOWQ1MDc0Njg0NmY0NTI2Y2NkNDI0N2VmMzQ5NWI1ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTNiNDQ4N2U3M2ZkNTE0MmVlYTYwNWNiOWMzODM3MzZkMmUzYjNiM2NiZjQyZjNiYTNlNTFlOGQ2ODJkN2I0NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDI5Njk0NDhkNjczZGRmOGJjYzQyYTUyMDc2MmFmOWMwYTJkYjVmNzM3ODZiZDBlN2U5MjQxYTg4OGMxMzQ2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjI1NjM5ZTYxZTNkYWE2ZWFiMDg5Y2VjY2ZiNzg0NzFhNDk0NWE4Yjk1M2M4MzMxNGJlZWE1ZGM1OGY2NWQ0MyJ9"
+        },
+        {
+          "resource": "repo://src/consents-signal.ts#L39-L41",
+          "version": "repo-lines-v1:sha256:17ba753bdcee6043aaa18b206e08a8317a65acaca8aed450354ca817fa458543:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjVjZjc2YjZhOTQwZTk0ZmJkMGU0YjBjYmFiMzVmYzc0NTM3NGU2MDAxNDVkY2QxMmJlMDc4NGRiM2M3ZWY0NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDM5NmU0ZTM3MjU3NTEzYTk4ZWY4ODY1ZjA1ODFhOGMyMTAyYjhiM2JkODlmNGRkOGFkYTZjMzBmNGU1YWNhZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cbfda683cd654226a547dbb54d991270",
+      "statement": "The service is configured declaratively from ulabase.setup.ts (base configuration) and ulabase.setup.consents.ts (consents gate configuration). These files implement an idempotent step/check/apply pattern where each step checks if the desired state exists and applies it only if missing.",
+      "evidence": [
+        {
+          "resource": "repo://ulabase.setup.consents.ts#L1-L45",
+          "version": "repo-lines-v1:sha256:9d7d537b658b3ceb63d86185c2c6e0112a3f4e572d382e0152816c5b99532377:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkNzYzNTIxNjUwMDljNDVjNWYxODM2YmRjNWUwZDI1ZGUwZWNmYjViYmYzMzk2OGQ0M2M5M2ZhMjFlNWUxMGMifQ"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L1-L29",
+          "version": "repo-lines-v1:sha256:c247be50092d07ec5ea1747915a5b180ba7fbe3039a466d9ebb17c7f064e0cd6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmNzYwNmU1NGEyMTU1ZTFkMWQxN2M5M2QxYTE4ODZlMGM1OGRkOTg0ZjEwNmQ2ZmZmMWYxZTkyNTVhMmI2YmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9db07aa878264bac94f563232acd4282",
+      "statement": "Key architectural principles include server-side enforcement (all business rules happen on the service), client-side reaction (Vue app only reacts to HTTP status codes), declarative configuration (service configured from setup files), single source of truth (feature flags drive both client and server), idempotent setup (multiple runs produce same result), and no server code in repository (only client-side Vue code and setup files).",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L131-L136",
+          "version": "repo-lines-v1:sha256:d01767fa28ebfd79c69d12e11ce505415b941bbcee4f82db01a176db0cd3ea7c:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGQ3YjJhNWU0ZDFkYzhkMmRkZTg1ZTc1NzJiZjZiMDcyNjIzNmUzMzRjNmM0MTc5MDAyY2QwNDM0ZThmMmFlZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTE5YzU2OTQ0MDQ4NmQ1NTNlZTYzNTExMDEyMWYwN2QwZGNjZjJhNzk5YWU0NTA5N2U2NzIyYjY3Y2U0NjQ2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2M1OTZmNjMzM2VjNzRjNjA1ZTBhNjE5ODJhMmUzYTk2MDIwYjkyYWE3YjUwYzBiZGVhYjhlOGVhNzMyNmE3MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWM4NmIzZDI5YTgwYzE1YTExOWRjNWRjOTJjZGY0NGNhYTk5ZGE2NDVkZTRiZjY2YmE4NzBjYjdmZmY0MGZiZSJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.consents.ts#L41-L45",
+          "version": "repo-lines-v1:sha256:37af1f51f12fb40c8d0d4cae79fbc974aaf19965b37cb58840aface8c9273ecd:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmYxNWI5ZTYyZjQxMjEzYTQyOGQxZTA2NGJhMzcxMzY1MTc0ZTM5MDM5Y2M2MTBjZTI5YWY0OGRjMzk1NGE2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGQxM2Q5Y2MxOTE3MTM0OGU3NGVmMjQzZGRmZjA1OGI1ZDFjMmNhYzJiM2FkOGU3YTUwNmZhOGJiNGNmMWZkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGQ3NjM1MjE2NTAwOWM0NWM1ZjE4MzZiZGM1ZTBkMjVkZTBlY2ZiNWJiZjMzOTY4ZDQzYzkzZmEyMWU1ZTEwYyJ9"
+        },
+        {
+          "resource": "repo://ulabase.setup.ts#L14-L29",
+          "version": "repo-lines-v1:sha256:5ecf3a7be42c879df07939034104d24da66e9abbae5dc952307b475c160d48b2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzNGJiNzg0ODhjYTcyYTRkM2Y2YzQ3ODAxOGY2MmI2YjNlNmMwMzdiMmM4ODZlMzNjOGIyNzUxNzk3NTA1OWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1MTgzN2JjZDIzMDMwOTU3ODA3YTI0ODdjYTMyMzc4Nzc0OTg2ZWRmMmQ1OWE1ZmVmNzRjNWUwMzU0NmVkMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmNzYwNmU1NGEyMTU1ZTFkMWQxN2M5M2QxYTE4ODZlMGM1OGRkOTg0ZjEwNmQ2ZmZmMWYxZTkyNTVhMmI2YmYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-19T08:33:44.961Z"
+  }
+}

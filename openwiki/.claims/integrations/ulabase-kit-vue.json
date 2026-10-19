@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:7c0a534c9103068887b920b16ee9d7d9f8be37f6b80ddf0d916e52d235b74668",
+  "pageVersion": "sha256:f69d65721798af3db53fd9a47edb99c52dd52f3ebe065f57ba88fad995d98588",
   "claims": [
     {
       "id": "claim_7b6f74ddeb864b87b45963d4c8156794",
@@ -197,10 +197,206 @@
           "version": "repo-lines-v1:sha256:1b0c275ff8875da75a347cc0d9ecc00d98b8b713e70c50d61253a5810eed4399:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTk2NTMzYTZmYzQwYTliNDgwNjMyYTVmNDJlZjhmM2VjMDkzZmI5YWQxOGEzYmJjNTNlNzMxYmRkZTc3NzA4MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzIxNWE1ZjJhY2FkNWZjNjUxMzdkYTYyM2M4Y2RiNGJhZDRkMjAxYTgzMzFiNzYyNjExOWFhY2Y1MDRmYTI2MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMThhOTE3NTk3MmZlMTVlMmE5NjQxYWIxMzFmNTcxZTZjN2NhYmNhMDY4Mzc2MmViYTVmMjM1M2U0ODNjM2Q1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjRlN2E2NmU1NGQ2NTBiZDA3MmE4YWQ0OTRiODA1NWU3MjJiYzEyZGFiMmFjNGQwMmJkMTc5MGJhMzhiZTg0NCJ9"
         }
       ]
+    },
+    {
+      "id": "claim_452348a043674b2293a42d79c1565aee",
+      "statement": "The starter consumes @ulabase/kit-vue (pinned to ^0.13.6 in package.json, matching @ulabase/cli ^0.13.6) for all auth behavior: the Vue plugin, useAuth() composable, router guards, authenticated fetch wrapper, and TypeScript types, while the app itself contains no server code.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L236-L239",
+          "version": "repo-lines-v1:sha256:df8ab3fb326ddcb9c95e2e434b2b620d9ebd2170ec11d9d621582260e0fdad75:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJjMzg5ODczZTgyMmVkZTY2OTg5M2Q4M2Y2YTUzNzYxZjUwODQ5ZDk3NzhiNDM5OThmZjM0OGEwM2Y0ODdhNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTRiNWJiODg3MzE0MzZmMTQxNjI3NDQwZTNkYmRiODczYzQzMGU5YTA3NjkxZWE2NTk2NjBkZWEyOGNkZDI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2M4ZWQ0OTRlYTNkMWU4MTgzMzRhNTUzYmE1Y2UxMWU0MGI1YjgyNWY5ZGMwNGM3ZjAzZWFhNTRkZThjZTJmZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://package.json#L12-L18",
+          "version": "repo-lines-v1:sha256:d8b3c02652d0d18be54a893917b5af7a5d706e842217287c93f6755cf9755fa5:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmEzYjQ2OWQ5ZTA5NzU3MjI0NjY2NzM0YzllZjdiMjU0ZDg4NTM0ZjVkNWJiNzA5ODk2MDgwNWM1NTNkYzMwNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmE1YTk5NjM4NDEzMTQ1ZjllNTQ2Y2U5Y2RhMDZiMWZlMjI5ZDIwYzYzOTg1YjIzZGQ2ZDhkMWU2MjZlY2U1MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjNlMGM2NzI5OWE5ZDI3ZTA4MjA2YzNmZDZhYTAzZTljOGU3NmNjNDVmYzE1MWMxMDg3NTQyNjgwYzMzYThmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDAwMTFmNWQzOTlmM2I1YTJkYTk3MTk1N2YzNmMwZWRiNjg1ZWY4MDZhM2E3MDU3ZTcxODYxMjg4NDgzN2ZjMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b47518d93cb54499950be267658bac5d",
+      "statement": "createRhAuth({ apiBaseUrl, onError }) returns an installable Vue plugin exposing the auth store plus authGuard/publicGuard, and the starter passes consentsOnError as onError.",
+      "evidence": [
+        {
+          "resource": "repo://src/consents-signal.ts#L39-L41",
+          "version": "repo-lines-v1:sha256:17ba753bdcee6043aaa18b206e08a8317a65acaca8aed450354ca817fa458543:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjVjZjc2YjZhOTQwZTk0ZmJkMGU0YjBjYmFiMzVmYzc0NTM3NGU2MDAxNDVkY2QxMmJlMDc4NGRiM2M3ZWY0NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDM5NmU0ZTM3MjU3NTEzYTk4ZWY4ODY1ZjA1ODFhOGMyMTAyYjhiM2JkODlmNGRkOGFkYTZjMzBmNGU1YWNhZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/main.ts#L52-L72",
+          "version": "repo-lines-v1:sha256:a2d7a15a75a52fcae85cbb19345594abc6eb4a636662ded4396e42abe090bb3d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliMGU4ODFhMGZmNDRkZDUxZGU1YjQ3MzA2M2QyYTc3NzRmNzhjNjVjY2M1YTcyNjIxODk2Y2VhZGE5MTU0NDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyMzcxOTg1MmIxYmI3NGE4NDdlYTczZDNjODNkN2VjODkxZjRiYmU0YTkwNzE5M2JmODVjZjdjMjhjMjNmYjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiMDA3NGUzNTBhZTFlNzRjOGJkNzRmNDgzNjdiMTAwMTI4ZDY4NzI0ZGUzNTgyMGQ3ZmY3MTI3MTNiOGQ3YjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6ab7163eb0eb48418b69fa993dc58d62",
+      "statement": "Bootstrap order is constrained twice: consumeFragmentToken() must run before createRhAuth() because the store checks the session the moment it is created, and the whole auth bootstrap is skipped entirely when isValidApiBaseUrl(environment.apiUrl) fails, mounting a bare ConfigPage with no router or auth store.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.ts#L12-L52",
+          "version": "repo-lines-v1:sha256:eadf625cce2bdf4cffa9a11fdaf0a25f387fce2152ebd77b388183478da208ea:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjN2Q0ODQ4ODQ3OWQ4MWQ1NTg5NzhmZDk5MWM1M2Y3MjdhZTJhMzlmMGIxYjFiZTMzYTk5Y2IxMWM0YjY3ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliMGU4ODFhMGZmNDRkZDUxZGU1YjQ3MzA2M2QyYTc3NzRmNzhjNjVjY2M1YTcyNjIxODk2Y2VhZGE5MTU0NDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3NmM0Yjc2YWJkMmVmMzU4ZDA1ZDlmYzMxZmU1MWRhODE4N2ZiMjhlOWExYjE3OTlmZGQ4MGQzOWQ5MThjYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkNjY1MmVkMjA3NjA2NGRiMTMwMWUyZDkzNjlmNmFkNDJiMzZiNWE5ZGMwYjA5NGFjNmJjN2NhNDNkMzkzNDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_038bc192c611443fbcad37bb80d33ccc",
+      "statement": "Tokens arriving in the URL fragment are applied with the standalone kit exports setToken(accessToken) and scheduleRefresh({ apiBaseUrl }), after which the fragment is scrubbed from the browser URL via history.replaceState.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.ts#L12-L34",
+          "version": "repo-lines-v1:sha256:8bdf5a6e8f2537e40e4711ac165e6796ca60ad417b5de47dba4f5fb781e123a5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjN2Q0ODQ4ODQ3OWQ4MWQ1NTg5NzhmZDk5MWM1M2Y3MjdhZTJhMzlmMGIxYjFiZTMzYTk5Y2IxMWM0YjY3ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3NmM0Yjc2YWJkMmVmMzU4ZDA1ZDlmYzMxZmU1MWRhODE4N2ZiMjhlOWExYjE3OTlmZGQ4MGQzOWQ5MThjYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4Yzc4MzAzYjE3YjQ2NTVmZGQyMzdmYjcyZDk2MjZhYmRlZTdjOWJjZjE3ZDdjMjliNWI4MjNkY2QzZjYwNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d2490c6917e040df84f8202ee69c4fec",
+      "statement": "The app relies on two kit guard behaviors: guards ignore the `next` argument and return a verdict, so main.ts passes a no-op NavigationGuardNext; and guards only run on navigation, so main.ts separately watches rhAuth.store.user to redirect to /auth/login when a user disappears on an auth-guarded route.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.ts#L55-L70",
+          "version": "repo-lines-v1:sha256:e43ad5c722a69966169f69aff18daa27f18a34cc0906db69bcad051042161ee9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3MDgzYzI3OWYxZDVjOWU3ODRiNmY0ZDEyOGFkMmVkNDk2MjUxZWVkNTM4NDUyNjhiZGUxODM0ZmQ4ZjcxN2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxMGMzNGQ0ZmMwNjg4ZTg2MjM5YTJiNjk2YTU2MTQ1Njk4YmNiYjQ5NTUzZTA4MjE5NWJiNGIzMGEyY2U4ZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkOTYzNjAyZDRmNjRjZDA1ZGJmNTNlYTEyM2IwMmZmZmM3ZjJkY2IyYWVjMWY2ZmZmODYzYzRkNDk0MmJhN2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e829b9e5679e4197849483536e3213d0",
+      "statement": "The useAuth() surface splits into: session (checkSession, logout), registration/verification (register, verify, activate, forgotPassword, resetPassword), login, invitations (getInvitation, acceptInvite), teams (loadTeams, createTeam, switchTeam, listTeamMembers, invite, removeMember, resendInvite, updateMemberRole, listInvitations, updateTeam, deleteTeam), consents (acceptConsents), profile (updateProfile, changePassword), and raw API access (api).",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/account/Account.vue#L27-L77",
+          "version": "repo-lines-v1:sha256:8238d7b464146806ff7cba633d61550ce67348f9d5be85e37f25d2673f28dc17:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1MDc0Nzg1NzE0MzI3MmE3NDgyNjVmNGZjNDQ0MTNhMjRhY2U0ZjMyYTAyODQ2OTRjN2U0ZTQ0NTQ3NmY1NWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxYjAwN2M5OTA5YjExYWJkM2FjOTc4ZWQ2YmFhNzRhYjM1N2ZjYzE2YThiMTA5N2Q0MjBhYmQ5ODY1MWMzNzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0ZTdhNjZlNTRkNjUwYmQwNzJhOGFkNDk0YjgwNTVlNzIyYmMxMmRhYjJhYzRkMDJiZDE3OTBiYTM4YmU4NDQifQ"
+        },
+        {
+          "resource": "repo://src/pages/invitations/accept/Accept.vue#L33-L77",
+          "version": "repo-lines-v1:sha256:016fef4d156dd94f446867dfbae189c700d38c4ef6c32483a904abd25cfe20e1:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyMWY0MmI2NzY5Zjk2MGViYjBkMzE2NzA1MTlmMzNlNTAwYzkyOWNkZGU5ZDY3MTExNmIwNWJkZjA2MjM4YzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllYjQ5YjJjODU0ZDM5NTUwZDhiZGE1ZTEyMDBjODJmMTcyMWM2YzU4OThkMWZhMjIyM2EyYjUyNmViYmU3YjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU5NThiM2VjMzdmNWQyZDYyYzc2ZDAyNjg2YWI3NTBiMjZmYWFlMTMxZjYxZGQ4Y2ZiMGQ3NjU0ZThhYjdjZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwMWUwY2MzNmRkYmZlMDIxZWM3YWFlNDMyMGRmOWJhMjQxZGQzZTU5OWI1YzlkNDI3ZDI1NTgwMzAxMTRlMzMifQ"
+        },
+        {
+          "resource": "repo://src/pages/teams/Teams.vue#L14-L23",
+          "version": "repo-lines-v1:sha256:a8e5e8a915c5a93e71fad5129163b3d11c64056ebb040b29d30b1199acb15959:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1ODI0NzdkN2JmZDM5Y2RmNWM0OThjY2YwNWVjMmI5NDg4NDc1MjM4ZjQxMGYxOTQ3MGRmY2I5MGNmODcwMTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjNTgyNjY0ZTkwNWQyOGZmYzI3MDc4NGVhNzFkNTI5ZWIyZjhlZWQyNWUzZTVlY2Y4MDg4ZWIwMjE4ZTgzZjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5OGU2OWRiNTNmNmRkZGRlNjcwNjQ4MjMwOThlOGEyYjdkMzAzYjRjYjZiOWNhZDY4ZDE1MDExMWQ0NDUyMWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlNzVkNWMyYmMyYTU3MDZkZGZkZDQwMWRmMDNiMTJlNjM5Y2I3YzliYWRiMTc1ZDEyMjc4ODRjYjVmNWNjZGQifQ"
+        },
+        {
+          "resource": "repo://src/pages/teams/detail/TeamDetail.vue#L58-L116",
+          "version": "repo-lines-v1:sha256:ed0c8272dfc171733be5634b85475990568c6dbd43ddcd00313f4a9068cf7b52:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNmIyZTczMDA3YjIxZTJkYTMxMjA1MTI1NjVmOTY1YWIxN2U5Y2RkM2U5NGVmM2IyZGJhOWMwOGYwMGEyY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5MzY5YTcxMzRiZGQ3MWQ3Nzk3NGFkNmQ0NGRlZmVkY2FkZmEwOTk0NzQ2MWJiYzFhMDAzODJlOTM2ZjZhODkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4OTg2NGQxY2Y2NWM2NzMxODk2NjUwYTE1YmM3YzBhNjEzZmRkNWVkMjk0ZTI5NTMyODc4M2JjZWYxODU0YWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhYTRhZGFmNTViOWVhMjg2MTcxZDg1NmUxZTE1OTc5Zjk3YzliNzcyNDZmNGI3ZGJhYThhNTY4MTEwNmZmZmQifQ"
+        },
+        {
+          "resource": "repo://src/pages/teams/new/NewTeam.vue#L21-L21",
+          "version": "repo-lines-v1:sha256:f1fca04a349ac7328693ccf06a3c6ac4c8596df63ac966f5c7022a56be5791c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjFmY2EwNGEzNDlhYzczMjg2OTNjY2YwNmEzYzZhYzRjODU5NmRmNjNhYzk2NmY1YzcwMjJhNTZiZTU3OTFjMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjFmY2EwNGEzNDlhYzczMjg2OTNjY2YwNmEzYzZhYzRjODU5NmRmNjNhYzk2NmY1YzcwMjJhNTZiZTU3OTFjMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzRiNTE3ZGJmY2RhM2IwMTdmMTUwMDg3NGEzNTU2NDUzNTJkMzZjZWYxOTczZjIxNDdkOGUzMzQ3Mjc4MjhlOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmQ5ZWEzNDJhYzk3YWViMzg3Yzg3YjczMjY2MzZkMjhkYzk0OTVkNWJiODQ1NTliNzg1ZGMzMmZiMjcwOGQxNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_239b2e889aca472bba4bcff68553227d",
+      "statement": "auth.api(path, options?) applies the session to outgoing requests; callers pass a path rather than an absolute URL, and a plain fetch to the same URL is unauthenticated and answers 401, which reads as logged out rather than a missing header.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L106-L136",
+          "version": "repo-lines-v1:sha256:bee97ac5924439db8eac079c5f71371edb57c18928c5e9a8d140fcb37948f32e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljNGJhM2RlODVmZTQyYzRkOGE4ZGJjZjZlMzUzM2E5MjA5ZmYwYjYzNTk4OGJkZGZjYmI2NThlNzY2ZjM0YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxOWM1Njk0NDA0ODZkNTUzZWU2MzUxMTAxMjFmMDdkMGRjY2YyYTc5OWFlNDUwOTdlNjcyMmI2N2NlNDY0NjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3YWUzNjJkNDczYTNjMDBiODYwNjg1YjhkNDJiMTg3NzVjZmQzYjk0MTBjYjVjNDRhNmY5MzRmMDFhOGM2MzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjODZiM2QyOWE4MGMxNWExMTlkYzVkYzkyY2RmNDRjYWE5OWRhNjQ1ZGU0YmY2NmJhODcwY2I3ZmZmNDBmYmUifQ"
+        },
+        {
+          "resource": "repo://src/pages/home/Home.vue#L22-L36",
+          "version": "repo-lines-v1:sha256:1d1888059ed730ea973cdfe5451c83189228326f6a0166339b55d493274a0e4d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2ZmYwZjg2MzE2MmRiOWExMTcwYzU1N2I1MTRlY2EwOTg0Y2E2MDU0MDJhNzUzOTk5ZWQ5NWQwMTc0NmZjYzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2ZTMxMTQ4OTY5YTU0YTg3M2M3YjQ4YjYwYThjZjdlZjg1YzAxYjQ4NDRlZWEwYWJhNTM3ZTI1ODNmNWEwMzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwNWZkNjcyZjhjNTI5MDVjOTQyNWNlZjcyZjMwYTM5NzEwNGQ3YjY2NjRmZGQ4NGZlMjRjY2I0YjBmNTIzODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c0d28befa3c4fe5bee9c1da0c6cee4e",
+      "statement": "Any non-2xx response from auth.api rejects with ApiError ({ status, message }), so app code branches on status codes rather than parsing bodies: 401 for an expired or invalid session, 403 for ACL/permission refusals, 409 for conflicts such as already-a-member, and 451 for the consents gate.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L131-L132",
+          "version": "repo-lines-v1:sha256:3c457e0b6b92b0a63bfec7d4d081d6252f62e29ef640018f7d0f723ab7dca45f:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGQ3YjJhNWU0ZDFkYzhkMmRkZTg1ZTc1NzJiZjZiMDcyNjIzNmUzMzRjNmM0MTc5MDAyY2QwNDM0ZThmMmFlZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmQyODQwM2M2NTRhZTdiMDQwMGY2NjY3OGU0ZGY2YTdhMjUxMDMwZWU5MWY0YmM0OGE0NmE3MzM4NGUxODgwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2M1OTZmNjMzM2VjNzRjNjA1ZTBhNjE5ODJhMmUzYTk2MDIwYjkyYWE3YjUwYzBiZGVhYjhlOGVhNzMyNmE3MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTIwNjMzMDAwMWVlM2ExMzlkZmVjYWNiNTNiNDk2ZTMzMGJkNjIwZTIzMDU4ZDQxNzAxM2JkNWE0MGEwMGRlZSJ9"
+        },
+        {
+          "resource": "repo://src/pages/home/Home.vue#L30-L33",
+          "version": "repo-lines-v1:sha256:e6bde4e91395b2954586be03206ae962cc501f8cbce614e72061ab5889df499f:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTUzNzgxMGU3MGJiY2YyNWY1ZWEyMjFkNmJlNjcyNDIwNjA1NjMxZjNhMzg4YzI5NmE1Y2RmYzBjZWQ0MjczMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZiOWFiZjBiYTJlMWI5MWM3ZDg3YTI4MzY0MTcxNTU3NTY2MjJiMGVmOWNjMTM2YWVhNjg1ZTc0YjNiMTgyMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWM2YzU0MGYzOTNmZTE0YzIxMGVlZjVmMDFlNDdmMDhiYzU1Y2Y4OWYwMDY3YWZlMmU1ODE2ZGExN2E2ODNlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTliYjQzMTMwMmFhMDFhM2ExODlmMThiYzY2ZGJiMTNjZWE4NmVkODcwZGVmN2MxNWU1MTBlZGUyY2IxNTBkNSJ9"
+        },
+        {
+          "resource": "repo://src/pages/teams/detail/TeamDetail.vue#L121-L128",
+          "version": "repo-lines-v1:sha256:99b70ec48621e09c8ce6b4aad36a94b006f5842da25acf90ab61c527deaa70b8:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTUzNzgxMGU3MGJiY2YyNWY1ZWEyMjFkNmJlNjcyNDIwNjA1NjMxZjNhMzg4YzI5NmE1Y2RmYzBjZWQ0MjczMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzg0ZTI2NDk0NTk5MzE2YTkxZjZmMmIyMDI3YWIxYmI0ZWY2N2UwZmE0YThiMjc3ZWRiZjg3MjFlYThlYzNiNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjk3ZGNlZGZjOTVmY2JhOWMwMDhmM2MwOTdiMzEyMGY2YTBjM2NiODYwNmRkMWRjYzE1MDhhNTQ0ODMyY2ExMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_807243a2f9d5448e9b6ba5693452faa5",
+      "statement": "The kit's auth store restores the session as createRhAuth() creates it and swallows the failure (checkSession().catch(() => null)) to keep the app usable, making onError the only observer of why session restoration failed; without it a blocked user and a signed-out user are indistinguishable.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L167-L179",
+          "version": "repo-lines-v1:sha256:cfef039174d5a0380523b5bce738af543e2197dec3fa2b147b415c1af3845ea8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhOTFiMmM3MDZkOGY1N2I5YzhjMWM5M2ZlODcxZDRhNDNhMjZkODkxYmNkNzc1YTA2OWM0NDM3MzE0ZWU2MjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwNTExYjU0NTRhYjJjOGYwMjYyOTQ4NDNhOWJmMWQ4NDAwOWQzNjFlZTVkYTFkMTI3ZmQ2ZDgyZjE3M2NmYjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkzMmQ4MmI4MzdmNjMwMjBkYzc2MzUwZDM2Mzc5OTlmNDc3YTA5OWYzOGNmZDUwNTE1NWJjODQzYTFlYjEwZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3N2I2YTYwNmEyOWZlZDQ3M2I5ZmZlMjFkMTIxNTRlODcxNWFhNWQ3OGE3ZDBkM2E3MzJkOGQzNDhkODA3MDIifQ"
+        },
+        {
+          "resource": "repo://src/consents-signal.ts#L31-L41",
+          "version": "repo-lines-v1:sha256:2cee9957c53b10281f6c5a4cd4b7f2f642c51e33c20d54d403c63f6d72a9c187:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzOGJiZDE5YmU1Nzg3M2ViYjg0Y2JhODI3YTIxMTg3OGZjZjg2YWRlMjgxOThlMTQ2ODFhMWViNDUwYWQ2N2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_115845230ed64f0d82b8cf49eba0e14c",
+      "statement": "acceptConsents() performs the acceptance PATCH, renews the token with GET /token?renew=true, refreshes /users/me, and updates user (kit >= 0.7.0); the renewal is mandatory because the server-side Guards rule keeps blocking for the lifetime of the old JWT.",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L159-L162",
+          "version": "repo-lines-v1:sha256:d776ed59e62df958f9af13ee1edf44a6f39ee6e121f67f5c1729088282423150:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODIwNjdjODA0ZDEzNDRlODExZDVmNWRiODdhMjk5ZDcyZjg5MjI0YzFiY2VmYjNjODg5M2JkMTRmZTg2OTc3NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmYxMjAyMGZhMjY5N2MzYzBkNTc0YTI1NDFiYTE4MWUxZWJmMjY2MmM4MWJjODVlNjVkYzFjNDE5MjZkM2U5YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDMxY2E3ZjI0MWU3YjBiNzA2ZTM0MWJiMjc4YWIxMDAzYWZkZTkwNGQyYTc0MzQwMmI1NTJiMDQ2MDI5ZGMyZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjAwYmVlMzZkMzVmZmExYTQ1ZjRlNzgxMTBjNzg3NjUwZGQ1YjgyYmM3M2IyNmJiOGFmNWNmNDM1NDcyZWUxNyJ9"
+        },
+        {
+          "resource": "repo://src/ConsentsGate.vue#L31-L49",
+          "version": "repo-lines-v1:sha256:fc2347b29114dbcf9bdad842df468e6428861621ec4d480f495d9c2bd33a2df2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYmJjOTU5MGFhMDhhYmU3MDg4ZTAxNjQyOTgyZWFlNzM3MWVjZmIyNjJjMDk2Mzg5M2YwZDU1ZmI0ZTMyMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1MzE1ZTlmMGJjMzExM2FlYmFjYjRlMDZhZjNjZmMwMjhhZWQwNmNhMjgyMDgyMzQ2ZTI4MmRmZWExYzk3MGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjZGFjN2Q2OGZjYmEwNDVlMTZkYmMzNzkzYjk3NjRjOWRkODhmYTkyNmNkYTA5NDk0OWMwYzJlYzA2MjZlY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwYTU0NTZiNWEwZGE4ZTMwMWEzMzFhNTdkMjc5NmIxODk5YzNjNGJiYzQ5YjE5YTk3N2FlMTMxN2EyYTEwY2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_108c7612f818488abde259e455e157bb",
+      "statement": "Routes declare meta.guard ('auth' or 'public') in routes.ts with children inheriting the shell's guard, and the invitation-acceptance route is deliberately left unguarded so it works signed-out, signed-in, and accountless.",
+      "evidence": [
+        {
+          "resource": "repo://src/routes.ts#L20-L52",
+          "version": "repo-lines-v1:sha256:631723ac372b408d33abbc6c2d10465c458f0a6ad5e135cb9961f57274304b74:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlZDQ4ZTc1Zjk4M2FiY2U1ZWZkYjA4NWVjNWYxYTU5MDYzOTRmODdiZjAxOTE3YTQ1ZGU5ZmQ2ZjhlODJhZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyZDdjZTlhODhhYzAyYjY3ZjQ3ZTBkYWNmMDUxMTc1MjU1MGI2Y2EyNTMzMDhiMjA0YWVhYzJmNGFkNTI4ODYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4ZDhiNjIxNGYzNzBiYTI2MzRjYWU1ODEwMWRjYTk5YTkzN2EzYjg4ODc1OTExYWI0YWM0M2YyNWZkMWZmNjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwMmQyYzBkNmRjNWU3NGQ5MmZhMTRiOTFkYmVhMjY0MDkwYmViMzVmZGI5MTg4ZDliMzQxMTgxZGNlOWY0Y2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3e9eec045a7541ae9d73adc55c382952",
+      "statement": "The kit exports the entity types the app types its own state with: ApiError ({ status, message }), TeamMembership ({ id: { $oid }, name, description?, role, active }), TeamMember ({ email, role, joinedAt }), and PendingInvitation ({ email, role, sentAt, expiresAt }).",
+      "evidence": [
+        {
+          "resource": "repo://NOTES.md#L116-L116",
+          "version": "repo-lines-v1:sha256:c9be5ad0b562ebe54c0f21c40cc8e011472d27f1cb6b157c1e0ab23cd8b12b58:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzliZTVhZDBiNTYyZWJlNTRjMGYyMWM0MGNjOGUwMTE0NzJkMjdmMWNiNmIxNTdjMWUwYWIyM2NkOGIxMmI1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzliZTVhZDBiNTYyZWJlNTRjMGYyMWM0MGNjOGUwMTE0NzJkMjdmMWNiNmIxNTdjMWUwYWIyM2NkOGIxMmI1OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMThmNGJmMGUyMjM4YjI5NzI2NDE0YmNlYTBmYjQzNGVlZGE3NDUxNmIyNTBmM2NjNDkyYzgxYTU1NDQ1ZjQ5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWVjZTAzNjQ1NjUzNDZjZTQ3NGJkNTY1MjdiNDM2YTQzZTFiMWUwMzZmZDQ3ZjZlMGM5NDFiMzkxODFhODUwYyJ9"
+        },
+        {
+          "resource": "repo://src/pages/home/Home.vue#L74-L80",
+          "version": "repo-lines-v1:sha256:1b0c275ff8875da75a347cc0d9ecc00d98b8b713e70c50d61253a5810eed4399:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTk2NTMzYTZmYzQwYTliNDgwNjMyYTVmNDJlZjhmM2VjMDkzZmI5YWQxOGEzYmJjNTNlNzMxYmRkZTc3NzA4MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzIxNWE1ZjJhY2FkNWZjNjUxMzdkYTYyM2M4Y2RiNGJhZDRkMjAxYTgzMzFiNzYyNjExOWFhY2Y1MDRmYTI2MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMThhOTE3NTk3MmZlMTVlMmE5NjQxYWIxMzFmNTcxZTZjN2NhYmNhMDY4Mzc2MmViYTVmMjM1M2U0ODNjM2Q1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjRlN2E2NmU1NGQ2NTBiZDA3MmE4YWQ0OTRiODA1NWU3MjJiYzEyZGFiMmFjNGQwMmJkMTc5MGJhMzhiZTg0NCJ9"
+        },
+        {
+          "resource": "repo://src/pages/teams/detail/TeamDetail.vue#L5-L29",
+          "version": "repo-lines-v1:sha256:8f8e98d164a80e7ecbcb4c2e56f061cb082e78355773c7cf4819f2f56fa92868:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0OGY2OTQ1MWVmYzEwY2Q1OTAyZmIwOWMxMjUyZDNmNTAwNjU2MjY4ZDQxZDQ0NTg5NGVkODdmMzczM2Y1MWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1NWJjMzg1MjBlODg2NmFhMTZiMzUwOTI4YWIyMzkxNDFjMjQzOTliMWVmOWU2Y2FhMGNjOTAyMDUzNjk5MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3NzlhOWZjODg4YmZlYTMwYzNhNWFkYjA1MjQyZDBiOWE0MDE0OTZkODhkNTFhODUyZWFlNDlhNjA5MThjZmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhjYjliNzBlNDUzZjYxMzFiMWUwMzczMjY4ZTgwNjE2ZWI5ODE5M2YyNzY5N2JlNWExYjQ4Mzg4NGQ0YjFlY2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca5f7f622a9e40cf917ad7457219d4af",
+      "statement": "Account.vue calls checkSession() on mount to read the current user's profile into its form state and disables editing until that call resolves.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/account/Account.vue#L27-L35",
+          "version": "repo-lines-v1:sha256:7d37b8112ea1addfb54b37e7deb503e733e3cbb3d48289bc011e9b782690ab82:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDUwNzQ3ODU3MTQzMjcyYTc0ODI2NWY0ZmM0NDQxM2EyNGFjZTRmMzJhMDI4NDY5NGM3ZTRlNDQ1NDc2ZjU1ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjFiMDA3Yzk5MDliMTFhYmQzYWM5NzhlZDZiYWE3NGFiMzU3ZmNjMTZhOGIxMDk3ZDQyMGFiZDk4NjUxYzM3NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDgxOTc4MGU3Y2YwYzM4ZTY4NTk4ZWZmOWMxNGRmNzdkYmYxZWUxZDhlZGUzZGNjYmRjYTJhNWM2MjVkZjNjNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_175a8152f4b64e0abc5c59e405fbdf94",
+      "statement": "TeamDetail.vue reloads team data on the :id route param (not once on mount) because the same component instance is reused, calling loadTeams(), listTeamMembers(), and listInvitations() through the composable; after deleteTeam() it re-loads teams and switches to a remaining one only if none is active.",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/teams/detail/TeamDetail.vue#L200-L216",
+          "version": "repo-lines-v1:sha256:5d5bc027170c71fff64ebf871261d6b38024d1cf59da096b3959424152bfedb6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzMTljNDMyNGY1ZGQzMGRjMDk0NDg2MTBlYTYwZTE2MDhjZTZiYTI5MGM1N2ZiZDM5MDQ0NzRkNzA0MGI0YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwNzI1NzY0MzZlZjMzOWRjNDQ1MDlmYjNiYjgyYzU5NjJiYTAxNGI3MzYxOTQ2NzhlYmIwZDFhYjU0Y2NmMDkifQ"
+        },
+        {
+          "resource": "repo://src/pages/teams/detail/TeamDetail.vue#L58-L93",
+          "version": "repo-lines-v1:sha256:c8a17f68d300f9420ca8e7f6c246b238611c96964df188f985a61f6075498159:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNmIyZTczMDA3YjIxZTJkYTMxMjA1MTI1NjVmOTY1YWIxN2U5Y2RkM2U5NGVmM2IyZGJhOWMwOGYwMGEyY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5OTY3ZWMxZWQzODM2ZjhlYjE3YWZmMTcyYjViZmVmN2RlNjA0ODVhNDM5YzZjYTExYzU5MWUxNzU1NzM5YWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4OTg2NGQxY2Y2NWM2NzMxODk2NjUwYTE1YmM3YzBhNjEzZmRkNWVkMjk0ZTI5NTMyODc4M2JjZWYxODU0YWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5MTI1ODc4ZDkwODVkYjI1YWU1YjQwMTZlNjAwM2Q5MDE1MTY1NmZiYTBmZGUyMDc1ZWZmZGRkMDQ0NjE1ZmMifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-13T10:12:04.743Z"
+    "at": "2026-10-19T08:33:44.961Z"
   }
 }

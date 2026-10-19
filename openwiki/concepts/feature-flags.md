@@ -4,6 +4,8 @@ title: Feature Flags
 description: Explains the feature-flag system in environment.ts and how flags control both client routing/UI and server-side service configuration.
 tags: [feature-flags, configuration, routing, ulabase, environment, drift]
 sources:
+  - id: openwiki-source-23775c3de52f3ab95a13cb8b
+    resource: repo://README.md
   - id: openwiki-source-eaae96b81373abab97667f4f
     resource: repo://src/environments/environment.ts
   - id: openwiki-source-827d5d84d48395514aefe965
@@ -16,10 +18,10 @@ sources:
     resource: repo://src/routes.ts
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:12:04.743Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-19T08:33:44.961Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-13T10:12:04.743Z
+    at: 2026-10-19T08:33:44.961Z
 ---
 
 # Feature Flags
@@ -44,7 +46,10 @@ These flags are imported by every component and route file that needs to conditi
 
 The flags must agree with the corresponding toggles on the Ulabase service. If the client enables a feature (e.g., `passwordReset: true`) but the server disables it, the server will respond with `403 Forbidden` when the user submits the reset form. Conversely, if the client disables a feature but the server enables it, the UI hides the button but the server still accepts the operation—wasting resources and potentially confusing administrators.
 
-Historically, the two lists were maintained manually in separate repositories, with no automated check that they matched. The symptom of drift was a `403` on a button the app had rendered, leaving users confused and developers debugging a mismatch that could have been prevented.
+Historically, the two lists were maintained manually in separate repositories, with no automated check that they matched. Two symptoms of drift are common:
+
+- **403 on a rendered button** – The client shows a "Forgot password?" link, but the server has the feature off, so the form submission returns `403 Forbidden`. Users are confused; developers debug a mismatch that could have been prevented.
+- **A missing page and its link** – The client has a flag set to `false` (e.g., `teamInvitations: false`), so the route is never registered and the corresponding link does not appear. If the server still has the feature on, administrators may wonder why invitations never arrive.
 
 ## Bidirectional Contract
 
@@ -127,7 +132,7 @@ When `oauthLogin` is `true` **and** `'google'` is listed in `oauthProviders`, th
 ## How to Toggle Flags
 
 1. Edit `src/environments/environment.ts` and set the desired flag to `true` or `false`.
-2. If you changed a flag that affects the server (all except `oauthProviders`), re‑run `ulabase setup --srv <srvId>` (or `ulabase setup --srv <srvId> --dry-run` to preview changes).
+2. If you changed a flag that affects the server (all except `oauthProviders`), re‑run `ulabase setup --srv <srvId>` (or `ulabase setup --srv <srvId> --dry-run` to preview changes). See [Service Configuration](../operations/service-configuration.md) for the full setup workflow and the mechanics of `ulabase setup`.
 3. Restart the dev server (`npm run dev`) to pick up the new flag values.
 
 Because both client and server read from the same file, there is no separate configuration step for the service—running the setup script is enough.

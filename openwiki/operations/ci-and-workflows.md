@@ -2,15 +2,19 @@
 type: "Reference"
 title: "CI and GitHub Actions Workflows"
 openwiki_generated: true
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-12T10:21:41.724Z
 sources:
   - id: openwiki-source-47f38fcb8c1752310057a5c1
     resource: repo://.github/workflows/no-service-url.yml
   - id: openwiki-source-6d4b4e707b8d60b6ccfa3425
     resource: repo://.github/workflows/openwiki-update.yml
-generated: { by: "openwiki/0.7.2", at: "2026-10-12T10:21:41.724Z" }
+  - id: openwiki-source-23775c3de52f3ab95a13cb8b
+    resource: repo://README.md
+  - id: openwiki-source-eaae96b81373abab97667f4f
+    resource: repo://src/environments/environment.ts
+generated: { by: "openwiki/0.7.2", at: "2026-10-19T08:33:44.961Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-19T08:33:44.961Z
 ---
 
 
@@ -70,6 +74,14 @@ found=$(grep -nE "^\s*apiUrl:\s*'[^']+'" src/environments/*.ts || true)
 
 If any match is found, the workflow fails with instructions to set `apiUrl` back to empty string (`''`).
 
+### Why the Check Is Scoped to ulabase/starter-vue
+
+The `if: github.repository == 'ulabase/starter-vue'` condition sits on the **job**, not on the workflow's triggers, so pushes and PRs still register in forks but the check job itself is skipped. This is deliberate: `ulabase setup` writes the service URL into the environment file, which is exactly what a developer wants in their own copy (and commits when they publish their app). A fork renamed to `me/starter-vue` is a real app with a real service URL, and the empty-`apiUrl` invariant should not apply there.
+
+### apiUrl Is a Local Change, Not a Committed One
+
+On this repository (`ulabase/starter-vue`), the committed `src/environments/environment.ts` keeps `apiUrl: ''`. Running `ulabase setup --srv <srvId>` rewrites the file **locally only**; as long as the developer does not commit and push that change to `main`, the workflow passes. Developers should treat the filled-in `apiUrl` as an uncommitted local configuration and be careful never to push it to `main` (committing it is only expected when publishing their own forked app).
+
 ### Why This Matters
 
 A real service URL committed to main would become the service that every new clone communicates with, creating a shared state problem and potential security issue. The empty value forces each developer to configure their own service instance.
@@ -125,7 +137,7 @@ When changes are detected:
 
 1. **Checkout**: Always checks out the `main` branch (even when triggered by a tag)
 2. **Environment setup**: Installs Node.js 22 and the `openwiki` npm package
-3. **Mode selection**: Uses `--update` for incremental updates, `--init` if no wiki exists yet
+3. **Mode selection**: Uses `--update` when an `openwiki/` directory already exists (incremental update of existing pages), and `--init` when it does not (first-generation run). Both modes run `openwiki code --print`; a manually supplied `message` is appended as a run-specific instruction that an incremental update would not infer on its own (for example, a rename to apply throughout the wiki)
 4. **Execution**: Runs `openwiki code --update` (or `--init`) with optional message from manual dispatch
 5. **Pull request creation**: Uses `peter-evans/create-pull-request` to create/update a PR on the `openwiki/update` branch
 6. **Auto-merge**: Immediately merges the PR using `gh pr merge --squash --delete-branch --auto`
@@ -151,7 +163,7 @@ Both workflows serve different purposes but work together to maintain repository
 
 | Workflow | Trigger | Purpose | Repository Scope |
 |----------|---------|---------|------------------|
-| No service URL | Push/PR to main | Prevent real URLs in starter | ulabase/starter-vue only |
+| No service URL | Push/PR to main | Prevent real URLs in starter | ulabase/starter-vue only (job-level `if`; forks skip it) |
 | OpenWiki Update | Schedule/Tag/Manual | Keep docs in sync with code | All repositories |
 
 ## Troubleshooting
@@ -207,3 +219,9 @@ When manually triggering the OpenWiki Update workflow, you can provide a message
 3. Click "Run workflow"
 
 The message will be passed as `--print "$MESSAGE"` to the `openwiki code` command.
+
+## Relationships
+
+- [Service Configuration](service-configuration.md) — the setup files and environment file that the no-service-url check guards.
+- [Validation and Testing](../testing/validation-and-testing.md) — how changes are validated before they reach these pipelines.
+- [First-Run Setup](../workflows/first-run-setup.md) — the developer flow that writes `apiUrl` locally.
