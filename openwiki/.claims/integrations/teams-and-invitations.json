@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:a1445532b5d7f172144ed8ce24d8157255f4dbec840efe9e21c724af59e5b046",
+  "pageVersion": "sha256:56a0e3d722fdd55b1dd9bb7f5aa037fbc78269eac7cc0b822051945f250b3acc",
   "claims": [
     {
       "id": "claim_ca23267697b74729bb460fb8ff2d39b4",
@@ -41,7 +41,7 @@
       "statement": "The Accept.vue component implements three distinct flows: new users set password and activate account, logged-in users accept directly, and existing non-logged-in users login then accept",
       "evidence": [
         {
-          "resource": "repo://src/pages/invitations/accept/Accept.vue#L107-L179",
+          "resource": "repo://src/pages/invitations/accept/Accept.vue#L115-L187",
           "version": "repo-lines-v1:sha256:5e516e69d9df5aeb96d7cb823dc57d3b0ea0c5567b702b82c86a33e209bfbc69:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiN2Y4MTQwMjFlZjBmMTFmYjRhOWUxYmJlNjliNWE0OTM5NzYxY2U5OTY1NmQ2YzhkY2ViZDdkNzUwOGViM2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1MjI4NDBlZDVlYzU4YTM2MmYyMGI3MWI4YWViNjc1ZDdlZmI5NzQzOWM5MGMzZjYxNTVhZmVjNjUyODU5NDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmOWI3MmM0MGZlOWY1ZGJiODU3MjZjYWI3ZGMzM2Y4ZjU0NWQ4NWY4Y2IwMDhkMzdmNDEzODRhNDVkZjcwYjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         },
         {
@@ -65,7 +65,7 @@
       "statement": "The teamInvitations feature flag controls registration of the /invitations/accept route and related invitation UI components",
       "evidence": [
         {
-          "resource": "repo://src/environments/environment.ts#L10-L16",
+          "resource": "repo://src/environments/environment.ts#L6-L12",
           "version": "repo-lines-v1:sha256:e0c09c50abf5287407f3a473d775c4b3d6aa5796cb202935980d529c1b428e51:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjRjNjE5ZmZkNmI5MjFjNTI3OTExZWRlMTQ3MWM5MTQ5YTFkZTg2NTUzNDE4NWIwOWY2Nzg1MGRjMzMwZDU2MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQwM2NhYjc3MGI2NjA0MzQ5Njg4YzAwNTk1ZmVmNWU0NjcwN2M1ZWVjZTU5NGMzYWIxM2RjMzY0NWRlMTdmMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCJ9"
         },
         {
@@ -105,10 +105,68 @@
           "version": "repo-lines-v1:sha256:1a56d621cf8db34f5389e93fb95ef9e8ddbc9180ceb9e963c5bb0264eb6d5dae:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhODEwZGViOGIzNjcyYzZlNzUwMzE2YTU2MWUxNmZkODM3OWE0NDI3ZDMxMzAyYzIyOThkZGViZTcyOWYzMmYyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwNTIyODQwZWQ1ZWM1OGEzNjJmMjBiNzFiOGFlYjY3NWQ3ZWZiOTc0MzljOTBjM2Y2MTU1YWZlYzY1Mjg1OTQzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJjOWYxMzZlMTc0YTdhNzgwNWE0MDkwNTAwNTJmYWRhZTA1ODllNzA0NTM4OTU5NTIzMzBjNzJkZjU3Njc2Mjk4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
         }
       ]
+    },
+    {
+      "id": "claim_166108bd7c1d4a06975b3ecebee8b460",
+      "statement": "The Shell component displays the active team name in the user dropdown menu with a 'Team:' prefix, computed from auth.teams.value where team.active is true",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/shell/Shell.vue#L174-L174",
+          "version": "repo-lines-v1:sha256:b3506773480986a9fedf251bdf39d31005fae3badaee39332bb861bd8a85dc09:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjM1MDY3NzM0ODA5ODZhOWZlZGYyNTFiZGYzOWQzMTAwNWZhZTNiYWRhZWUzOTMzMmJiODYxYmQ4YTg1ZGMwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjM1MDY3NzM0ODA5ODZhOWZlZGYyNTFiZGYzOWQzMTAwNWZhZTNiYWRhZWUzOTMzMmJiODYxYmQ4YTg1ZGMwOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2NkZTUyZDU5OTk0YzQxOWU0MjNiNWUyMTExZjFjZDQ2NzE5OWMwNGZiODhiM2VhNjI3ZTdkNWNkMGI5NjcwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODVlZTEzMTczNWYzYmY1NDg0YjllODg4MDBjZDlkMTIyZDUxMWEzNWZiNjU3MzEwZDk1ZjRhMGFhM2EwYjJlYiJ9"
+        },
+        {
+          "resource": "repo://src/pages/shell/Shell.vue#L72-L75",
+          "version": "repo-lines-v1:sha256:e015c724d82dddee77aea9588034e8061f8bdca1490c0a1b8718e4f0a280dc9f:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2IyMjI4YzU2YTM1ZjYwM2Y0N2E1NDAyMjhiMmQ0NjY4OGZkNDZmZjU2OTczMTllY2RhOWUyYzcwODkzODQ1ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjk5MTUyOGQ4NDAyYjI5ZDE4MmFjMzZkOGNhNDIxNzU0YzFjZGUwM2NjNWQzNTY4MjMwNjY3OTg4YmJmMDQ5ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzE1YWQzMDRlZTRjNjI2ZGRlNzQxMzRkYzA4OTViMTUyYjA1YjcyMTBlYmYwYzA0NTZiOTRkMjgwZjMyNjcwYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf0066a98f5b459686f5388dd3a7b467",
+      "statement": "TeamDetail.vue makes parallel API calls on load: auth.loadTeams() for team details, auth.listTeamMembers() for members, and auth.listInvitations() for pending invitations",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/teams/detail/TeamDetail.vue#L58-L83",
+          "version": "repo-lines-v1:sha256:62ffba964e2b8bd7ebfd0c9553e9ec6240908431b2c9dab663f92ad1eaf7e6e2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNmIyZTczMDA3YjIxZTJkYTMxMjA1MTI1NjVmOTY1YWIxN2U5Y2RkM2U5NGVmM2IyZGJhOWMwOGYwMGEyY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4OTg2NGQxY2Y2NWM2NzMxODk2NjUwYTE1YmM3YzBhNjEzZmRkNWVkMjk0ZTI5NTMyODc4M2JjZWYxODU0YWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg4ZDlhZWY3ZTQxNDRiODBkZjVjODNlNGExNTdjOTNjM2E5ZTFmYmJjMjk2MWVjMTRkNDFhMDMyZTI1OTA5NDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e6f9b35473a4208ae25087e18fa709c",
+      "statement": "After team deletion, TeamDetail loads remaining teams via auth.loadTeams(), switches to first remaining team if none are active, then redirects to /teams",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/teams/detail/TeamDetail.vue#L200-L216",
+          "version": "repo-lines-v1:sha256:5d5bc027170c71fff64ebf871261d6b38024d1cf59da096b3959424152bfedb6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzMTljNDMyNGY1ZGQzMGRjMDk0NDg2MTBlYTYwZTE2MDhjZTZiYTI5MGM1N2ZiZDM5MDQ0NzRkNzA0MGI0YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwNzI1NzY0MzZlZjMzOWRjNDQ1MDlmYjNiYjgyYzU5NjJiYTAxNGI3MzYxOTQ2NzhlYmIwZDFhYjU0Y2NmMDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_026a3d0056bc432ca8e2fb9b468ba467",
+      "statement": "Accept.vue maps API errors to user-friendly messages: 404 status maps to 'This invitation is invalid or has expired.', 401 status maps to 'Invalid password.'",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/invitations/accept/Accept.vue#L47-L52",
+          "version": "repo-lines-v1:sha256:3eca05707c9f92fc64c31ea43e18c7d02e149f151f4e2bc50bb1c6c66c0bde18:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTRhMGVlMDlhMjY2OTllYmY5ODA0YzFkZjUwMmY4NTVhMTU3ZWE4MDE4ODVkMjJiMzhkMDFjMDc2N2Q3MjMxNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjgwZDJkZDRmMjg5ZDI2ZGM3NTdjMmI2NWEwNmMzOTIyN2E2NzE3YzRiNDhiNWEzOTc5MmM5ZjExZTQxYWVhNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjNkZDM4MDQzMWE0MWIyNWU5NzdkMGQ2NGI0YzlmNjQxMDQyOTAwZTdmYjkzZjJlNDA3ZmVjZjBlMmNkYTc4NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f6dbc38738714b3c96c8964464fdc8be",
+      "statement": "The invitation acceptance page requires email and token query parameters; missing either shows an 'Invalid invitation link' error",
+      "evidence": [
+        {
+          "resource": "repo://src/pages/invitations/accept/Accept.vue#L11-L14",
+          "version": "repo-lines-v1:sha256:b8359b9113f63c34f121861195ac3e1fb3b90d1d251b1bd8d53d2d3fdeb135dd:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2ViMWI1ZTRjZDY4ZmFkN2YyYzQwZjc5YmIxOWRlMGNkZGQ1ZWY5ZTg1Y2EyZmQzMWFiMDQ3Y2ZiZGY5MDM3ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTE5ZGEzZWZlZmMwNTZjMWUzOWJiNmNlY2RkNTYzYjAzZDdiMDg4NzYxMTQ1MTQxZWQzMjYxOTJhYzgzZWViMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2E1N2Q3MWMwYWMzNTJkZjM5NTAxN2Y4YjViNTc2ZGU0YTFmMjA1NzMwOWRkY2ZjYjRmYjJmMTNkOGQ0ZmVkYyJ9"
+        },
+        {
+          "resource": "repo://src/pages/invitations/accept/Accept.vue#L87-L92",
+          "version": "repo-lines-v1:sha256:3070d793b8f710df8d221e69452e8bc1488e37e499a9da68a0d31381d07df4a1:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDliNmE5N2NmNzM2NDE4MzlkMTE3ODZkNWQzMzlhYzM3MjIzOGRkYzE1OWFlNWE5YmI2YjhhMmRjZjk1NDJmOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzJjNzZiZGFkNWUxYjM3ZDk5NDY1MzMyODFjYTQ1ZGJmOGM1MTFlNDU0OTRlZDAxOGY0NjYwN2VmYjEyYTM3NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjRlN2E2NmU1NGQ2NTBiZDA3MmE4YWQ0OTRiODA1NWU3MjJiYzEyZGFiMmFjNGQwMmJkMTc5MGJhMzhiZTg0NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGI3N2NjM2NlNmE0NDkyNTQ2MDM3OGI3YTVkYmQzOWRmYTViN2FmNDM3NDk0MGU5MTczYTYyYTMwODYwNjlmMCJ9"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-12T10:21:41.724Z"
+    "at": "2026-10-19T08:33:44.961Z"
   }
 }

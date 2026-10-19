@@ -1,11 +1,11 @@
 ---
 type: architecture
-title: App Bootstrap and Entry Point
-description: Explains how the Vue application initializes from index.html through main.ts to first render, covering both configured and unconfigured paths.
+title: App Bootstrap and Entrypoints
+description: How src/main.ts decides between the ConfigPage fallback and the full application, the fragment-token capture before createRhAuth, guard wiring, user watcher, and the ConsentsGate root wrapper.
 tags: [bootstrap, entry-point, initialization, main-ts, router, auth]
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-13T10:12:04.743Z
+    at: 2026-10-19T08:33:44.961Z
 sources:
   - id: openwiki-source-105c89f54607384be15e8d88
     resource: repo://src/App.vue
@@ -17,10 +17,10 @@ sources:
     resource: repo://src/main.ts
   - id: openwiki-source-28ff6ab0b2c280a1e7f9575c
     resource: repo://src/routes.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:12:04.743Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-19T08:33:44.961Z" }
 ---
 
-# App Bootstrap and Entry Point
+# App Bootstrap and Entrypoints
 
 This page documents the startup sequence of the Ulabase Vue starter application, from the HTML entry point through token capture, authentication setup, router creation, guard wiring, and final mount.
 

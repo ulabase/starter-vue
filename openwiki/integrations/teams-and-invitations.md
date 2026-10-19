@@ -5,19 +5,21 @@ description: Documents the team management system including team listing, detail
 tags: [teams, invitations, team-management, auth, vue, ulabase]
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-12T10:21:41.724Z
+    at: 2026-10-19T08:33:44.961Z
 sources:
   - id: openwiki-source-eaae96b81373abab97667f4f
     resource: repo://src/environments/environment.ts
   - id: openwiki-source-9408c4c89f61215fb6824f35
     resource: repo://src/pages/invitations/accept/Accept.vue
+  - id: openwiki-source-ee9a644578aeccba70142314
+    resource: repo://src/pages/shell/Shell.vue
   - id: openwiki-source-62425128907268db5ad0b7c6
     resource: repo://src/pages/teams/detail/TeamDetail.vue
   - id: openwiki-source-d5c61aa40058a82d210db604
     resource: repo://src/pages/teams/Teams.vue
   - id: openwiki-source-28ff6ab0b2c280a1e7f9575c
     resource: repo://src/routes.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-12T10:21:41.724Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-19T08:33:44.961Z" }
 ---
 
 # Teams and Invitations
@@ -45,6 +47,31 @@ flowchart TD
     B -->|Manage members| I[Member Management]
     B -->|Team settings| J[Team Configuration]
 ```
+
+## Active Team Session and Shell Header
+
+The application maintains an active team context on the session, which is reflected in the Shell header. The Shell component (`src/pages/shell/Shell.vue`) displays the active team name in the user dropdown menu.
+
+### Active Team Detection
+
+The Shell component computes the active team name by finding the team where `team.active` is true:
+
+```typescript
+const activeTeamName = computed((): string => {
+  const active = auth.teams.value.find(t => t.active);
+  return active?.name ?? '';
+});
+```
+
+### Header Display
+
+The active team name is displayed in the user dropdown menu with a "Team:" prefix:
+
+```html
+<span v-if="activeTeamName" class="dropdown-team">Team: {{ activeTeamName }}</span>
+```
+
+This provides visual feedback about which team context the user is currently operating in.
 
 ## Team List Page
 
@@ -106,6 +133,66 @@ The `load()` function orchestrates three parallel data fetches:
 1. `auth.loadTeams()` - Gets team details and sets local state
 2. `auth.listTeamMembers()` - Retrieves team members
 3. `auth.listInvitations()` - Retrieves pending invitations
+
+### TeamDetail.vue API Calls
+
+The TeamDetail component makes the following API calls:
+
+1. **Data Loading**:
+   - `auth.loadTeams()` - Loads team details and updates local state
+   - `auth.listTeamMembers()` - Retrieves team members list
+   - `auth.listInvitations()` - Retrieves pending invitations
+
+2. **Member Management**:
+   - `auth.updateMemberRole(email, role)` - Changes a member's role
+   - `auth.removeMember(email)` - Removes a member from the team
+
+3. **Invitation Management**:
+   - `auth.invite(email, role)` - Sends a new invitation
+   - `auth.resendInvite(email)` - Resends an existing invitation
+
+4. **Team Management**:
+   - `auth.updateTeam({ name, description })` - Updates team settings
+   - `auth.deleteTeam()` - Deletes the team
+   - `auth.switchTeam(teamId)` - Switches active team after deletion
+
+### Reload and Redirect Behavior
+
+After destructive actions, the component implements specific reload and redirect behaviors:
+
+**After Team Deletion**:
+1. Calls `auth.deleteTeam()` to delete the current team
+2. Loads remaining teams via `auth.loadTeams()`
+3. If remaining teams exist but none are active, switches to the first remaining team
+4. Redirects to `/teams` list page
+
+```typescript
+async function deleteTeam(): Promise<void> {
+  if (!team.value) return;
+  deleting.value = true;
+  deleteError.value = null;
+  try {
+    await auth.deleteTeam();
+    const remaining = await auth.loadTeams();
+    if (remaining.length > 0 && !remaining.some(t => t.active)) {
+      await auth.switchTeam(remaining[0].id);
+    }
+    await router.push('/teams');
+  } catch (err: unknown) {
+    deleting.value = false;
+    const e = err as { message?: string };
+    deleteError.value = e?.message ?? 'Could not delete the team.';
+  }
+}
+```
+
+**After Member Removal**:
+- Removes the member from the local `members` array immediately
+- No page reload required as the UI updates reactively
+
+**After Role Change**:
+- Updates the member's role in the local `members` array
+- If the API call fails, the select element is reverted to the original role
 
 ### Role-Based Visibility
 
@@ -247,20 +334,30 @@ The new team route is protected by the `auth` guard through the Shell layout:
 
 The invitation acceptance system at `/invitations/accept` handles the complete invitation workflow for all user states. This page is **unguarded** - it must work for signed-out invitees, signed-in users, and people without an account.
 
+### Query Contract
+
+The invitation acceptance page expects two query parameters:
+- `email` - The email address the invitation was sent to
+- `token` - The invitation token for validation
+
+If either parameter is missing, the page displays an "Invalid invitation link" error.
+
 ### Three-State Acceptance Flow
 
 The Accept.vue component implements a sophisticated state machine that handles three distinct user scenarios:
 
 ```mermaid
 stateDiagram-v2
-    [*] --> LoadInvitation
-    LoadInvitation --> InvalidLink: Missing email/token
-    LoadInvitation --> Loading: Valid params
-    LoadInvitation --> InvitationError: 404 or error
+    [*] --> CheckParams
+    CheckParams --> InvalidLink: Missing email or token
+    CheckParams --> LoadInvitation: Valid params
     
-    Loading --> NewUser: isNewUser = true
-    Loading --> LoggedInUser: isAuthenticated = true
-    Loading --> ExistingUserNotLoggedIn: isAuthenticated = false
+    LoadInvitation --> InvitationError: 404 or API error
+    LoadInvitation --> DetermineState: Success
+    
+    DetermineState --> NewUser: isNewUser = true
+    DetermineState --> LoggedInUser: isAuthenticated = true
+    DetermineState --> ExistingUserNotLoggedIn: isAuthenticated = false
     
     NewUser --> SetPassword: Show password form
     SetPassword --> ActivateAccount: Submit password
@@ -278,6 +375,22 @@ stateDiagram-v2
     
     Success --> [*]
     Error --> [*]
+```
+
+### Error Message Mapping
+
+The component maps API errors to user-friendly messages:
+- **404 status**: "This invitation is invalid or has expired."
+- **401 status**: "Invalid password."
+- **Other errors**: Displays the error message from the API or a generic fallback
+
+```typescript
+function messageFor(err: unknown): string {
+  const e = err as { status?: number; message?: string };
+  if (e?.status === 404) return 'This invitation is invalid or has expired.';
+  if (e?.status === 401) return 'Invalid password.';
+  return e?.message ?? 'Something went wrong. Please try again.';
+}
 ```
 
 ### State Detection Logic

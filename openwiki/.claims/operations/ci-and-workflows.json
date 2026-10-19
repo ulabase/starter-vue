@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:74ed540a27c6f611b96d4ddd0562a8d67dd71f9282a91d851d079861f60754ad",
+  "pageVersion": "sha256:f2a939271b74cd51c35541e6b8346d9a4bb338d9ab449c815736a1ceda648841",
   "claims": [
     {
       "id": "claim_3e2309d2d09e4bad844a4750b5d64f64",
@@ -95,10 +95,126 @@
           "version": "repo-lines-v1:sha256:6fb26052ecdb1328b0f2647b304c0dee86c5f53e719409c6febe6b5b27711a08:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmE5NjJlN2U5YjhhZjcxZDU0OGM5NmFkMjY1NmZlYTg1YzQ0ODUyNDYwOWU1NTBhZjVjZWIwOWVkOTJkYWZhMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWMyOTJhY2RkN2FlMGIxYWFhNmUwNDZkOWYzMmFmMDQwZWQ2MDBhMjQ2ZDQ5NWE2Y2FkMWE0M2I3NDk1MmIwYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTMzYWFlZWZmY2M1N2UyZWI3MzI3YzIxY2ZiZWQwYTRlZmQ2ZWIzMWU4OGUyYjg5MjFhZGE1MjM3N2U4MDJlYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDVjZmI5YjNjYmE1MjgxNTZlZjFmMmJlZGE0YWMzZTUxODYxZjViOWM5NmE4OTE0OWVkNTQ4YmYyMDU5MWFiNiJ9"
         }
       ]
+    },
+    {
+      "id": "claim_7632ee0dd86b49168649f0d55262823f",
+      "statement": "The No service URL workflow triggers on push and pull_request targeting main, and its job greps all src/environments/*.ts files for a non-empty apiUrl; any match fails the job with instructions to set apiUrl back to ''.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/no-service-url.yml#L16-L31",
+          "version": "repo-lines-v1:sha256:e783bcdd04b85e7cb311463df18cb9bb399ee2f745fa06e4ebb0cf6728b5ab99:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5ZDgwMTU0ZWQ0MmZjNWM3NzliMTMzMTU3OGI1OGI4OWM4MDFlYWNlNzRmMjRjZDQ4ZWI0YTIzNTc5NDBhOTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiYmEzMGE4M2NiMzk1MjgxOTgxMGI1OTMyNjg5ODMxYzdlYjAxM2ZiYmUwNTUyZmY2OWQxZmI4YmUyNzdkMWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMmM3MjFiM2RjMjBmZjczNGQ5N2NmNWI5OWU1NWU4ZDRjNzJmOThiZWYzYjk5ZjkwM2NjMWYyYzRjZGM2ZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ddbf76032b0448e2a5049b893a81ed17",
+      "statement": "The empty-apiUrl check is gated at the job level by `if: github.repository == 'ulabase/starter-vue'`, so forks and copies with a different repository name register the trigger but skip the check entirely — by design, because `ulabase setup` writes a real service URL that fork owners are expected to commit to their own app.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/no-service-url.yml#L16-L18",
+          "version": "repo-lines-v1:sha256:1e629c1b9cbb3090e2a09c6fc442eebf9ee0d5f38fe7dd0ddc33bfc60f1fe24a:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTlkODAxNTRlZDQyZmM1Yzc3OWIxMzMxNTc4YjU4Yjg5YzgwMWVhY2U3NGYyNGNkNDhlYjRhMjM1Nzk0MGE5NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2MzNTRjM2MwZTBkMGMyZWRhMWU5MDNjYTA0MzBhOWE5Nzg4ZTM1ZTc2Mjg2ZTU4MDg2ZTY4ZTY0YzdlNTMxNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWUyYzcyMWIzZGMyMGZmNzM0ZDk3Y2Y1Yjk5ZTU1ZThkNGM3MmY5OGJlZjNiOTlmOTAzY2MxZjJjNGNkYzZkZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzU4MmVhYjhhNTk3YTg3MDg0YzY0MTEyMTgxM2IwZGU2ZjYyODdkOGQ1ZWIxNzhmMzM0N2Y4MDBjNDk4NzllZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4c596402da574dceabbe4efa22c4f1fc",
+      "statement": "In this repository, `apiUrl` in src/environments/environment.ts is committed as an empty string; running `ulabase setup --srv <srvId>` fills it in as a local, uncommitted change, and pushing that change to main is what the No service URL workflow exists to prevent.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/no-service-url.yml#L1-L7",
+          "version": "repo-lines-v1:sha256:7be837cbb4f85eb75d6d6c6682d98973e77fc647eed926c6ae75d8d81c65bde6:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTVmNTAxYWQxNjc3MmZiNjg5ZWExZDBlMGFlYWUwY2ZlNDY4YTE5ODUxZDA3YWNjZjNiMTE4OTdhOTQ3MmFiYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWY3ZTNmOTU5YjA4Y2U5Y2Q4YzBjNjYyMjMyMDhmYjBiZjU1NDM4MmE5ZjZiMzc4NTlkYjkzYjgzYWZhZWY5YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzc3MGI0MzU5ZTUxZjVhNzk4MmM0YzJkNWJmZWVmMGUxNzk4NTliY2U3OWMxYWY3Y2Q2ZWU0ZDQ0ZWQ3ZmU0MiJ9"
+        },
+        {
+          "resource": "repo://src/environments/environment.ts#L1-L5",
+          "version": "repo-lines-v1:sha256:49ba2b3ed7e11df64672b896ee721a643c97dc2d1d3531d8a2fbe7f8d2d11c8d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTMyMzhkMTJiNGRkZmU5ODY2Yjc3YzRlNzhlZTc1YjhjZDNmOGVmYzYyNmIxMjZmZjQ3MzY5NTU0ZmVjY2U5OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjk2N2M0OTZmMGE5NjQ4NGI1NWUwMTE1ZGU5ZWQ5MWIyYTZmZGJjYTEwMGIyYzJiODE1NmQwOGU5MTQ2ZTA4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzcyMmJjYTNjOGRiMjQ2NTAyOGY4YTRiODI3OTRmNjA0NThiZjMyNDI4NDNiYWQzN2YyODBjMzI5NjNhMWZmMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4eeb1c7a813b41ce895e74df90214179",
+      "statement": "The OpenWiki Update workflow runs on a nightly cron at 03:00 UTC, on pushes of semver tags matching [0-9]+.[0-9]+.[0-9]+, and on manual workflow_dispatch with an optional `message` input that is passed to openwiki as a run-specific instruction.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L5-L17",
+          "version": "repo-lines-v1:sha256:3b9089f19b3979ac4f7c93854799db1b6e665889ce52e573f565e5ccf5a64144:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NmRjNDgxNDlmNWE4M2QxZWQ2ZGJiMzliYmM3ZTJiOTAyYWEzZDM0ZDZiZDVhZTRiMjkxYjY4ZGYwY2E3OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwZmU3M2MyYmNlMjI1MGJiZWZlOGRmNmU0Mzc5NzZlMjE1YzMyYjdhODE4MmUzNTI0YmE1ZmRiMzVkYWMxOTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjYzRiYjc5ZjZlYmM4NTU1OTc1Zjg3YzFiYmZhZGI0NDgxZjcwYjAzYzFhN2IwYzljY2I0ZWUzZGFjNzdkNjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b21684fab4c7499a97b954a0c381c2ff",
+      "statement": "Scheduled OpenWiki runs perform change detection against the last commit that touched openwiki/, diffing to HEAD while excluding openwiki/, AGENTS.md, and CLAUDE.md; the run proceeds only if at least one source file changed, whereas tag and manual dispatches always proceed.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L40-L52",
+          "version": "repo-lines-v1:sha256:7bc5d0e3d46a2ed3037230a42fb5a5b58eaf55cc4da39b4e9d1b9dc2263c80d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3NDRlZWQ4YzQ1Zjk4ZjQyZDM1NjQ0ZWNmN2I4YzFhNmI2NTA4MDQ0MDVjZTBlMjlmNjA0MDY2OGQxMGFhOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1YTUyMTIwYjJhNTY5NjIzZjdmOTIwMjY3NmM2ZThhNjBmZWIxZjNkOWU1YjMxZTkzMWFhYTk1ZjU4YzE0ZjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4ZmVlNjMyNWI0ZjhlMjY3OTgxOWFhMjM3ZDgxMDkzZmU1OGI1Mjc3ZjM0YmM0ZDQwM2RlZDMyM2UzNmNiNTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFlNWVjNWJkNGRiY2QxMDY2YzU4MDljNTBkYjAxN2Y1ZmVjMTJkOWY5MzNkMDUyOTZiMTRlOGU5Y2M0NzVmZDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_883620c266394bb88ef40d0ddf813564",
+      "statement": "The workflow selects its mode by filesystem state: `--init` when no openwiki/ directory exists yet (first generation), `--update` for incremental regeneration otherwise; the optional manual message is appended via --print as an instruction for that run.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L64-L76",
+          "version": "repo-lines-v1:sha256:2d2d096cd1cdb0c0a618bdbed8eadf3a8b432b26d74059971fc35d20c2ebc7d0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwZThmOWZhNDBlN2JkMDQ5OWQxYzBkODNmZDc1OGFhODViMzA4NDJkYmQ2MWYwZWE2YjdhZTEwZWZlYzc2ZDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2Y2RiNjYzYWVkMTNlM2ZmNzAyMjI0NjViYTIzNmFjOGI2ZDc2ODUyMmMyNDE2ZmE1MTdiZWRlOGI5OGE2NmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2ZTBmNGNiYWU0NThkMmIyMGM1NDRkZjc1ZDVlODBmNGNhYWQ0YTE1NDE0ZTgzMjIwYzNlMWQ3ODZmYWUwNDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyMGM1YjAyMDQyYzViNWQ0NzE0M2M0YTYwZjUxZWVjMDYxZDAyYjM3Mzc5YTQ5MGI5OWU4NzFiMTIxMjY1YTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1944822008884ed9bf7ef3894a46b131",
+      "statement": "The workflow always checks out `main` (even when triggered by a release tag) with full history, because a tag checkout is a detached HEAD from which no pull request can be opened and the wiki describes main.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L30-L36",
+          "version": "repo-lines-v1:sha256:50686e7f9be1a2b8762b26209ddc4bb9856acee5d6267dbfe9225f5cb156ce5e:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDdhNmFmODY0YTk2NzM2NzFhOTM1ZTY3NWNjMTlhZjYwNTIxMThkZWE4M2NiMWU3N2QwODI1MGFmMTUyZDMzOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTMwOTc1YzdlMjBlYmE4ODU3ZWZkMzFlNjJiNjY1Zjc4N2U1MTY0MTk1MWE2NjA3ODlmYmE5MzNhNjM0NzIxNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWM1YTg5Mjc3MGFlNGY1MzMzZmQ3YzllMTJlMGE2YmM0NWIyNmI1YmI3NzUzZTAzOWRmOGVkNDljOTdiOTYwNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNThmZWU2MzI1YjRmOGUyNjc5ODE5YWEyMzdkODEwOTNmZTU4YjUyNzdmMzRiYzRkNDAzZGVkMzIzZTM2Y2I1MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0d8f31f58f1c4240aa3d712d365c9e5c",
+      "statement": "A concurrency group (openwiki-update, cancel-in-progress: false) serializes runs so overlapping executions wait rather than cancel; the created PR on the openwiki/update branch is auto-merged with `gh pr merge --squash --delete-branch --auto`, falling back to a plain merge, which requires 'Allow auto-merge' to be enabled on the repository.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L22-L24",
+          "version": "repo-lines-v1:sha256:5b5128337484d378a11aaf08aebe2a5a395c7c36614ed7b4626c44a8a44083f7:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODRhZmUyNGRhZjM0ZDFiNWNmODNmY2FhM2Y1NmFhNGMxMDdjMDU4MDM5Yzg1N2JjYjZkNTE2ZDYyMTk0N2YwNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjRhMDFmMjhiNmIwNGQ0NWNhZDBmZTZiODYyZDFhODAyZDdjMWJjNWU3N2ViODg1ODAwYjhkOTFjZjdmNDQ4MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTZmN2QzN2ZiMjk3Mzk5ZmVhMmE1Y2VmMWNjNDAyOGM4OTk3OWE5MDUwYTkyODU2ZjBkOTZlMWMxOGJhMTlhNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2JhNWFmZmQ4MjMxYzBlODFiYmNkNDIxNTRhMWNjOTBlODZlZmY2NjM1NWMwNDhjZTU1YjMyMzdiZGFjM2ExZCJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L78-L105",
+          "version": "repo-lines-v1:sha256:dc1a4e6c371de65fe669669c0f42887bb38033dde9ea424b8f63aa03c828b922:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxY2ZmNGFkMzNiYTkxYjE0OGUxYjFiODI5MGI4ZmZmMjdiMjAzZmFiZmVlNTg3MDI4MmRlMzY3MzgzYjFiZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmM2QxYjFiMzAyOGYwYTQ5NTM0YzBmMTcyYjkxY2VmYTAxZmQ3MjMyZmY2NDM0ZTU3NWVjZDUzOWUzMGM2MDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU5MGFkOTI3N2FjMGYxZWU2ZmEyNjdhMzA4Zjc0ZTUyZTJhY2RkZGI1ODBkZTczMDJhY2Q1OWRhNjM3MTI4ZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a831aa81391c453fae0bf64f4da40e63",
+      "statement": "OpenWiki runs are configured with provider openrouter, model xiaomi/mimo-v2.5-pro, an OPENROUTER_API_KEY repository secret, and tracing disabled; the PR adds only the openwiki/, AGENTS.md, and CLAUDE.md paths.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L71-L76",
+          "version": "repo-lines-v1:sha256:aced17a09bdc17d31d63525a7f2fb49d2ed69595b0aed5afac2215a7b819afb9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2IwNzg0OGE0MzY2NjU2YjJiYTYxOTdiZTAyYjkyMDgxNDU0NmY5ZDlhZDBiNTMzOWU0YzI2YTJjOTQ2NTExNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDZjZGI2NjNhZWQxM2UzZmY3MDIyMjQ2NWJhMjM2YWM4YjZkNzY4NTIyYzI0MTZmYTUxN2JlZGU4Yjk4YTY2ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWJkMDgwMTgyYjM4ZDk1NmExYzI1ODliYTRmOGJmY2Y1MzY3Y2Q0YTgwMTcyMjk3ZDQwMTRlZjE4NzBjNGZjMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTIwYzViMDIwNDJjNWI1ZDQ3MTQzYzRhNjBmNTFlZWMwNjFkMDJiMzczNzlhNDkwYjk5ZTg3MWIxMjEyNjVhNyJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L83-L89",
+          "version": "repo-lines-v1:sha256:c7a47595de38042fef57fe49381b5d06e944099fc7a0ce7731e067d344f88784:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmE5NjJlN2U5YjhhZjcxZDU0OGM5NmFkMjY1NmZlYTg1YzQ0ODUyNDYwOWU1NTBhZjVjZWIwOWVkOTJkYWZhMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzlhN2I5ODEzNWNhYWY1YTIxOGE2MDI2Y2RlZmVjYjgzMmQ0OWI5YzgzMTQ0ZDExYzkwNTg4NmVkY2FiZDYyMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTMzYWFlZWZmY2M1N2UyZWI3MzI3YzIxY2ZiZWQwYTRlZmQ2ZWIzMWU4OGUyYjg5MjFhZGE1MjM3N2U4MDJlYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmExYzE0MTcyNTM5OTExN2JkMTBhOWJhMGQ3MzBhYzExNjkwM2I5OTlmZTM2NjA4YjYyMDZiNmVjNmMxZmJjYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ace3e9b957b34cd5b4d2d216ffa941ff",
+      "statement": "The empty apiUrl invariant matters because a URL committed to main on the starter would become the service every new clone talks to; the committed environment.ts keeps apiUrl empty so each clone shows the 'configure your service' screen and configures its own service locally.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/no-service-url.yml#L1-L7",
+          "version": "repo-lines-v1:sha256:7be837cbb4f85eb75d6d6c6682d98973e77fc647eed926c6ae75d8d81c65bde6:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTVmNTAxYWQxNjc3MmZiNjg5ZWExZDBlMGFlYWUwY2ZlNDY4YTE5ODUxZDA3YWNjZjNiMTE4OTdhOTQ3MmFiYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWY3ZTNmOTU5YjA4Y2U5Y2Q4YzBjNjYyMjMyMDhmYjBiZjU1NDM4MmE5ZjZiMzc4NTlkYjkzYjgzYWZhZWY5YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzc3MGI0MzU5ZTUxZjVhNzk4MmM0YzJkNWJmZWVmMGUxNzk4NTliY2U3OWMxYWY3Y2Q2ZWU0ZDQ0ZWQ3ZmU0MiJ9"
+        },
+        {
+          "resource": "repo://README.md#L44-L45",
+          "version": "repo-lines-v1:sha256:4c3154c90e240f3dbbdea2fb2cdebd48e7e30f7841d98a71517bba985f23b939:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGEwZjU5MzVmOWIxN2UyNmI1MmQ2NjBhMTQ3MTk2MzQzYzI1ZGViMGI3MmIyNGViYmQxYzlhMmY1MDA4MjIxMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2FhOWNjYjEzMjM3YzI3OWU4MTY1YWUzOThhNDVlYTljOGRmYjQzYmM3YTdmNzY1MmFiN2NiZWUyNGU1MTExZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWRlMGQ4NmI2NmQ4Y2ViNDc0OTFkOWIwYTUyNjZmYTc5NDU4YWU2OTI3N2JmNmYwOTMyMjE0OWVhNjRmN2MxZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjJmMmRlNGRjNDViYTA2NTBjNzllMGVjMjA1NjYwY2ZjZDQ3M2MyMGRhOTg2MzYyYzFmNmVkMjE2OTA5MWU2OSJ9"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-12T10:21:41.724Z"
+    "at": "2026-10-19T08:33:44.961Z"
   }
 }

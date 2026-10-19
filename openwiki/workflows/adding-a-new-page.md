@@ -3,9 +3,6 @@ type: workflow
 title: Adding a New Page
 description: Step-by-step guide for creating and registering a new page component in the Ulabase Vue starter application.
 tags: [workflow, pages, vue, routing, navigation, components]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-12T10:21:41.724Z
 sources:
   - id: openwiki-source-eaae96b81373abab97667f4f
     resource: repo://src/environments/environment.ts

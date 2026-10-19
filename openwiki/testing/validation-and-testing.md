@@ -3,9 +3,6 @@ type: "Guide"
 title: "Validation and Testing"
 description: "Describes the testing setup, TypeScript strict mode, vue-tsc build step, CI guard against committing real service URLs, and recommended validation strategies for the starter."
 tags: ["testing", "validation", "typescript", "ci", "vitest", "vue-tsc"]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-12T10:21:41.724Z
 sources:
   - id: openwiki-source-47f38fcb8c1752310057a5c1
     resource: repo://.github/workflows/no-service-url.yml

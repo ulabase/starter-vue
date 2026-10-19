@@ -1,59 +1,65 @@
 ---
-type: "Reference"
-title: "OAuth Provider Setup"
-description: "Workflow for enabling OAuth sign-in with Google in the Ulabase Vue starter app."
-tags: ["oauth", "setup", "google", "authentication", "feature-flags"]
-openwiki_generated: true
+type: workflow
+title: Adding Google OAuth Sign-In
+description: The coordinated change across layers to enable Google sign-in in the Ulabase Vue starter — creating the OAuth client with the service callback, flipping oauthLogin, re-running setup so credentials land on the service, and what the UI then renders.
+tags: [oauth, google, setup, authentication, feature-flags, ulabase-cli]
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-19T08:33:44.961Z
 sources:
   - id: openwiki-source-23775c3de52f3ab95a13cb8b
     resource: repo://README.md
   - id: openwiki-source-eaae96b81373abab97667f4f
     resource: repo://src/environments/environment.ts
+  - id: openwiki-source-d4189bbeecb62806cb297b5a
+    resource: repo://src/main.ts
   - id: openwiki-source-62327449da47479a80c27d31
     resource: repo://src/oauth-url.ts
+  - id: openwiki-source-827d5d84d48395514aefe965
+    resource: repo://src/pages/auth/login/Login.vue
   - id: openwiki-source-4bfb88ae8d72e2f1cd9cfaff
     resource: repo://src/pages/auth/oauth-buttons/OAuthButtons.vue
+  - id: openwiki-source-cd28083aae4eaeb9d943568f
+    resource: repo://src/pages/auth/signup/Signup.vue
+  - id: openwiki-source-28ff6ab0b2c280a1e7f9575c
+    resource: repo://src/routes.ts
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:12:04.743Z" }
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-13T10:12:04.743Z
+generated: { by: "openwiki/0.7.2", at: "2026-10-19T08:33:44.961Z" }
 ---
 
+# Adding Google OAuth Sign-In
 
-# OAuth Provider Setup
+The starter ships with email and password authentication working and Google sign-in off. Turning Google on is not a single edit: it is a coordinated change across three places that must agree — the Google Cloud OAuth client, the `oauthLogin` flag in `src/environments/environment.ts`, and the `accounts` feature configuration on the Ulabase service. The reason it is coordinated is that the flag alone is not enough to make sign-in work, and the credentials alone are not enough to make the button appear.
 
-This workflow walks through enabling OAuth sign-in for the Ulabase Vue starter app. The app starts with email and password authentication by default; adding Google OAuth requires three steps: creating an OAuth client in Google Cloud, enabling the feature flag, and running setup with credentials.
+This page covers the order to do it in, what each step actually changes, and the failure modes that appear when one layer lags behind the others.
 
-## Overview
+## Why the three layers must move together
 
-The OAuth system is designed with security and maintainability in mind:
+The flag `oauthLogin` does two independent jobs at once:
 
-1. **Credentials never touch the app** - OAuth client secrets are stored on the Ulabase service, never in the application code or environment
-2. **Feature flags control visibility** - The app only shows OAuth buttons when the feature is enabled
-3. **Idempotent setup** - Running `ulabase setup` multiple times is safe; it checks what's already configured
-4. **Bidirectional contract** - The same feature flags control both client UI and server behavior, eliminating drift
+- **On the client**, it controls whether OAuth UI exists at all — the buttons on the login and signup pages, and whether the signup route is registered.
+- **On the service**, `ulabase.setup.ts` derives the server's `oauth` toggle from the same flag (`oauth: f.oauthLogin`) when it configures the `accounts` feature.
 
-## Step 1: Create OAuth Client in Google Cloud Console
+Because the setup file imports the *same* `environment.ts` the app imports, flipping one boolean changes both sides the next time setup runs. What setup cannot supply by itself is the Google client credentials; those come from the Google Cloud console, and the setup only knows to look for them when the flag is on.
 
-Before enabling OAuth in the app, you need to create an OAuth client ID in the Google Cloud Console:
+The ordering consequence: enabling the flag before creating the Google client is safe (setup will fail its check and report a missing step), while creating the client and never running setup again leaves the service with the feature enabled but no credentials. That second state is the dangerous one — see [the invariant below](#why-a-service-with-the-feature-on-and-no-credentials-is-worse-than-no-button).
 
-1. Go to the [Google Cloud Console](https://console.cloud.google.com/)
-2. Navigate to **APIs & Services** → **Credentials**
-3. Click **Create Credentials** → **OAuth client ID**
-4. Select **Web application** as the application type
-5. Add an authorized redirect URI with this pattern:
-   ```
-   https://<srvId>.ulabase.app/auth/oauth/callback/google
-   ```
-   Replace `<srvId>` with your Ulabase service's six-character ID (the first label of its URL)
+## Step 1: Create the OAuth client in Google Cloud
 
-6. Note the generated **Client ID** and **Client Secret** - you'll need these in Step 3
+In the [Google Cloud console](https://console.cloud.google.com/), go to **APIs & Services** → **Credentials** → **Create Credentials** → **OAuth client ID**, choose **Web application**, and register this authorized redirect URI:
 
-## Step 2: Enable OAuth Feature Flag
+```
+https://<srvId>.ulabase.app/auth/oauth/callback/google
+```
 
-Edit `src/environments/environment.ts` to enable OAuth login:
+`<srvId>` is the six-character id of your Ulabase service — the first label of its URL (`https://abc123.ulabase.app` has id `abc123`). The callback is hosted on the **service** domain, not on the app's domain, because the service is the party that talks to Google; the app never sees the authorization code.
+
+Note the generated **Client ID** and **Client Secret**. They are needed in [Step 3](#step-3-re-run-setup-with-the-credentials), and they go to the service only.
+
+## Step 2: Flip the flag in environment.ts
+
+Set `oauthLogin: true` in `src/environments/environment.ts`. The file as shipped:
 
 ```typescript
 export const environment = {
@@ -61,177 +67,158 @@ export const environment = {
   features: {
     emailRegistration: true,
     passwordReset: true,
-    oauthLogin: true, // Change from false to true
-    oauthProviders: ['google'] as const, // Already configured
+    oauthLogin: false, // Google sign-in: off until you create its OAuth client
+    oauthProviders: ['google'] as const,
     teamInvitations: true,
   },
 };
 ```
 
-**Key points:**
-- `oauthLogin: true` enables OAuth buttons on login and signup pages
-- `oauthProviders` already lists `'google'` by default
-- The app will only show OAuth buttons when both conditions are met
+`oauthProviders` already lists `'google'`, so the only edit is the boolean. Changing it has three client-side effects:
 
-## Step 3: Run Setup with OAuth Credentials
+1. `Login.vue` and `Signup.vue` render `<OAuthButtons :providers="features.oauthProviders" />` behind `v-if="features.oauthLogin"`. On signup the "OR" divider is gated separately on `emailRegistration`, so the page stays coherent when only OAuth is on.
+2. `/auth/signup` is registered in `src/routes.ts` when `emailRegistration || oauthLogin`, so the route survives even with email registration disabled.
+3. The home page capability list shows "Social login" as enabled, describing it via `features.oauthProviders.join(', ')`.
 
-Run `ulabase setup` with your Google OAuth credentials as environment variables:
+Restart the dev server afterwards; the flag is read once at module load.
+
+## Step 3: Re-run setup with the credentials
 
 ```bash
 GOOGLE_CLIENT_ID=<your-client-id> GOOGLE_CLIENT_SECRET=<your-client-secret> ulabase setup --srv <srvId>
 ```
 
-**Important security notes:**
-- Credentials go to the Ulabase service, never into the app
-- The setup stores credentials securely on the server
-- On re-runs, `isRedacted()` checks if credentials are already stored before requiring env vars
-- You don't need to provide credentials again once they're configured
+Preview first if you want to see the change without making it:
 
-## How OAuth Works
+```bash
+ulabase setup --srv <srvId> --dry-run
+```
 
-### OAuth Flow Diagram
+Credentials are passed as environment variables to the CLI run. They are written into the service's `accounts` configuration and are never written to the app's source, `environment.ts`, or any file in this repository — the app has no knowledge of them at all.
+
+## The conditional setup step
+
+The Google step in `ulabase.setup.ts` is not always present. It is spliced into the step list only when both conditions hold:
+
+```typescript
+...(f.oauthLogin && (f.oauthProviders as readonly string[]).includes('google')
+  ? [ step('google oauth credentials', { /* check + apply */ }) ]
+  : []),
+```
+
+So a project that leaves `oauthLogin: false` runs a setup with no Google step at all, and providing `GOOGLE_CLIENT_ID` to such a run changes nothing. The step exists exactly when the app claims to offer Google — which keeps the two layers from drifting apart in the direction that matters.
+
+When present, the step's check is satisfied only when all three of `oauth['google'].enabled === true`, `client-id` is configured, and `client-secret` is configured. A dry run therefore answers, directly, "is my Google client fully wired up on the service?"
+
+## Secrets, re-runs, and redaction
+
+The apply path is a read-modify-write of the whole `accounts` feature document, and it treats stored secrets carefully:
+
+```typescript
+'client-id': configured(google['client-id'])
+  ? google['client-id']
+  : fromEnv('GOOGLE_CLIENT_ID'),
+'client-secret': configured(google['client-secret'])
+  ? google['client-secret']
+  : fromEnv('GOOGLE_CLIENT_SECRET'),
+```
+
+Two mechanisms combine here:
+
+- **`fromEnv()` is called only when a value is not already stored.** The environment variable is named, not captured at import time; it is resolved at apply time, and only for the fields that are still blank. A re-run against an already-configured service therefore needs no secrets in the environment at all — plain `ulabase setup --srv <srvId>` continues to report the step satisfied.
+- **Redacted stored values are passed back untouched.** The API returns stored secrets masked, and the server restores the real value for any field returned still holding the mask. The helper
+
+  ```typescript
+  /** A stored secret reads back as bullets; one never set reads back blank. */
+  const configured = (value: unknown) =>
+    isRedacted(value) || (typeof value === 'string' && value.length > 0);
+  ```
+
+  is what lets the apply distinguish "bullets, i.e. already stored" from "blank, i.e. never set", and re-send the bullets verbatim. Diffing the document or stripping "empty-looking" fields would write bullets over a real secret and silently break sign-in.
+
+The same read-modify-write discipline applies to the `accounts` step's other fields, which is why setup is safe to run repeatedly.
+
+## Why a service with the feature on and no credentials is worse than no button
+
+The two failure directions are not symmetric.
+
+With `oauthLogin: false`, there is no button and no `/auth/oauth/authorize/google` traffic — the app simply does not offer Google. Nothing is broken.
+
+With the feature on at the service but no credentials stored, the app renders "Continue with Google", the user clicks it, the browser navigates to the service's authorize endpoint, and the service answers the redirect with an error. The user is now stuck somewhere they cannot fix, on a flow they were invited into. That is why the setup file's comment is blunt about it, and why the Google step forces `enabled: true` *and* both credentials in the same apply rather than enabling the provider alone.
+
+The setup's ordering reflects the same caution more broadly: the `appPointsAtService` step runs last on purpose, so a setup that stops partway leaves the "connect your service" screen rather than a sign-in page that fails.
+
+## What the UI renders once it is wired
 
 ```mermaid
 sequenceDiagram
     participant U as User
-    participant OAuth as OAuthButtons.vue
-    participant App as main.ts
-    participant Ulabase as Ulabase API
-    participant Google as Google OAuth
+    participant B as OAuthButtons.vue
+    participant S as Ulabase service
+    participant G as Google
+    participant M as main.ts
 
-    U->>OAuth: Click "Continue with Google"
-    OAuth->>OAuth: Generate oauthUrl()
-    OAuth->>U: Redirect to Ulabase OAuth endpoint
-    
-    U->>Ulabase: GET /auth/oauth/authorize/google?noauthchallenge
-    Ulabase->>Google: Redirect to Google OAuth
-    
-    U->>Google: Authenticate with Google
-    Google->>Ulabase: Redirect back with authorization code
-    
-    Ulabase->>Ulabase: Exchange code for tokens
-    Ulabase->>U: Redirect to /#access_token=...
-    
-    U->>App: Navigate with fragment token
-    App->>App: consumeFragmentToken()
-    App->>App: setToken(accessToken)
-    App->>App: scheduleRefresh()
-    App->>U: Redirect to application
+    U->>B: Click Continue with Google
+    B->>U: Navigate to oauthUrl google
+    U->>S: GET /auth/oauth/authorize/google
+    S->>U: Redirect to Google consent
+    U->>G: Authenticate and approve
+    G->>S: Callback to /auth/oauth/callback/google with code
+    S->>S: Exchange code for tokens
+    S->>U: Redirect to the app with access_token in the URL fragment
+    U->>M: App boots on that URL
+    M->>M: consumeFragmentToken before createRhAuth
+    M->>U: Session established, router continues
 ```
 
-*OAuth flow from button click through Google authentication to session establishment.*
+The button click through Google to a session established in the app. The service holds the client secret and does the code exchange; the app only ever receives the resulting token.
 
-### Key Components
-
-1. **`src/pages/auth/oauth-buttons/OAuthButtons.vue`** - Renders provider-specific buttons with proper styling
-2. **`src/oauth-url.ts`** - Constructs the OAuth authorization URL
-3. **`src/environments/environment.ts`** - Contains feature flags controlling OAuth availability
-4. **`ulabase.setup.ts`** - Handles OAuth credential configuration on the server
-
-### OAuth Button Rendering
-
-The `OAuthButtons.vue` component dynamically renders buttons for each provider in the `oauthProviders` array:
+The button list is generated from `oauthProviders`, so it stays correct without further edits:
 
 ```vue
-<script setup lang="ts">
-import { oauthUrl } from '../../../oauth-url';
-
-type Provider = 'google' | 'github' | (string & {});
-
-defineProps<{ providers: readonly Provider[] }>();
-
-function label(provider: Provider): string {
-  return provider === 'github' ? 'GitHub' : provider.charAt(0).toUpperCase() + provider.slice(1);
-}
-</script>
-
-<template>
-  <div class="oauth-buttons">
-    <a v-for="provider in providers" :key="provider" class="oauth-button" :href="oauthUrl(provider)">
-      <!-- SVG icons for Google and GitHub -->
-      <span>Continue with {{ label(provider) }}</span>
-    </a>
-  </div>
-</template>
+<a v-for="provider in providers" :key="provider" class="oauth-button" :href="oauthUrl(provider)">
+  <svg v-if="provider === 'google'" class="oauth-icon" viewBox="0 0 24 24" aria-hidden="true">…</svg>
+  <span>Continue with {{ label(provider) }}</span>
+</a>
 ```
 
-### OAuth URL Construction
-
-The `oauthUrl()` function builds the authorization URL pointing to Ulabase's OAuth endpoint:
+Each anchor's href comes from `oauthUrl()`:
 
 ```typescript
-import { environment } from './environments/environment';
-
 export function oauthUrl(provider: string): string {
   return `${environment.apiUrl}/auth/oauth/authorize/${provider}?noauthchallenge`;
 }
 ```
 
-This URL includes `?noauthchallenge` to indicate this is an OAuth flow, not a standard authentication request.
+It is a plain link against `environment.apiUrl` — the same base URL setup wrote into `apiUrl`. If `apiUrl` is empty or wrong, the href is wrong, which is one more reason the service URL step is part of the same setup run.
 
-## Credential Storage Security
+On return, `main.ts` calls `consumeFragmentToken()` **before** `createRhAuth`, deliberately: the auth store checks the session the moment it is created, so the token from the fragment must already be stored by then or the first check finds no session. The function then clears the fragment with `history.replaceState` so the token does not linger in the address bar.
 
-OAuth credentials are stored securely on the Ulabase service with these protections:
+## Verifying the result
 
-1. **Never in application code** - Credentials are only passed via environment variables during setup
-2. **Redaction masking** - When retrieved, stored credentials are masked as `••••••••`
-3. **Read-modify-write pattern** - Setup reads current config, applies changes, and writes back
-4. **Conditional updates** - Only updates credentials when they're not already configured
-
-The `configured()` helper in `ulabase.setup.ts` checks if credentials are already stored:
-
-```typescript
-/** A stored secret reads back as bullets; one never set reads back blank. */
-const configured = (value: unknown) =>
-  isRedacted(value) || (typeof value === 'string' && value.length > 0);
-```
-
-## Feature Flag Integration
-
-The OAuth setup integrates with the broader feature flag system:
-
-- **Client-side**: `oauthLogin` and `oauthProviders` control button visibility
-- **Server-side**: `ulabase.setup.ts` derives `oauth: f.oauthLogin` for server configuration
-- **Bidirectional contract**: Both client and server use the same source of truth in `environment.ts`
-
-This eliminates the "drift problem" where client and server configurations could diverge, causing 403 errors or hidden functionality.
+1. Run `ulabase setup --srv <srvId> --dry-run` — the `google oauth credentials` step should report satisfied, and all other steps should too.
+2. Open `/auth/login` — the "Continue with Google" button and the "OR" divider should appear above the email form.
+3. Click through once with a Google account that is not yet registered; the account is created by the OAuth flow and you land in the app signed in.
 
 ## Troubleshooting
 
-### OAuth button not appearing
-1. Verify `oauthLogin: true` in `src/environments/environment.ts`
-2. Check that `'google'` is in the `oauthProviders` array
-3. Ensure you've run `ulabase setup` after enabling the feature
+**The button does not appear.** `oauthLogin` is `false`, or the dev server was not restarted after the edit. `oauthProviders` already contains `'google'`, so an empty array is the only other way to lose the button.
 
-### "Invalid redirect URI" error
-1. Verify the redirect URI in Google Cloud Console matches exactly:
-   ```
-   https://<srvId>.ulabase.app/auth/oauth/callback/google
-   ```
-2. Ensure there are no trailing slashes or extra characters
+**The dry run does not mention the Google step at all.** The step is only spliced in when `oauthLogin` is `true` *and* `'google'` is in `oauthProviders`. Check both before assuming the CLI is at fault.
 
-### 403 error on OAuth redirect
-1. Run `ulabase setup --dry-run` to check if credentials are configured
-2. Verify OAuth credentials were stored correctly on the service
-3. Check that the service's OAuth feature is enabled
+**`Invalid redirect URI` from Google.** The URI in the Google client must match exactly: `https://<srvId>.ulabase.app/auth/oauth/callback/google`, with no trailing slash, and `<srvId>` must be the service the app's `apiUrl` points at — not a different service you also own.
 
-### Credentials not being accepted
-1. Ensure you're providing both `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`
-2. Check that the credentials are from a "Web application" type OAuth client
-3. Verify the credentials haven't been revoked in Google Cloud Console
+**The button appears, then the redirect errors.** The provider is enabled but credentials are missing or revoked. Re-run setup with `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` (they are only read when the stored values are blank), or check that the client secret was not rotated in Google Cloud.
 
-## Next Steps
+**A `403` on the callback.** The app's origin is not allowed to call the service, or the flag has drifted. Re-run `ulabase setup`, which both re-derives the server toggles and adds `APP_URL` to the origin allowlist.
 
-After setting up OAuth:
-
-1. **Test the flow** - Try signing in with Google on the login page
-2. **Add more providers** - Extend `oauthProviders` array and create additional OAuth clients
-3. **Customize styling** - Modify `src/pages/auth/oauth-buttons/OAuthButtons.css` for button appearance
-4. **Review security** - Understand how OAuth tokens are handled in `src/main.ts`
+**Setup demands credentials you know are stored.** `configured()` treats a masked value as stored and a blank as unset. A secret that reads back blank means it genuinely is not on the service — usually the sign that an earlier run wrote the mask over a real value, so set it again from the Google console.
 
 ## Related Pages
 
-- [Authentication Flows](../concepts/authentication-flows.md) - Complete authentication system documentation
-- [Feature Flags](../concepts/feature-flags.md) - How feature flags control client and server behavior
-- [Service Configuration](../operations/service-configuration.md) - Declarative setup process details
-- [First Run Setup](first-run-setup.md) - Initial application setup workflow
+- [Authentication Flows](../concepts/authentication-flows.md) — the full set of sign-in, verification and reset flows this plugs into
+- [Feature Flags](../concepts/feature-flags.md) — how `oauthLogin` and `oauthProviders` reach both client and server
+- [First Run Setup](first-run-setup.md) — the base setup run this page extends
+- [Service Configuration](../operations/service-configuration.md) — the check/apply model, `--dry-run`, and the `accounts` feature document
+- [Routing and Guards](../architecture/routing-and-guards.md) — why `/auth/signup` survives on `emailRegistration || oauthLogin`
+- [App Bootstrap and Entry Point](../architecture/app-bootstrap.md) — fragment token capture relative to `createRhAuth`

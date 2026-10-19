@@ -1,10 +1,9 @@
 ---
-type: "Reference"
-title: "Consents Gate Pattern"
+type: "Concept"
+title: "Consents Gate (Terms and Privacy Acceptance)"
+description: "How the consents gate blocks authenticated requests with 451 until the user accepts the current ToS and Privacy Policy: the four server documents, the client signal, and the root-mounted overlay."
+tags: [consents, terms-of-service, privacy-policy, guards, access-control, vue]
 openwiki_generated: true
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-13T10:12:04.743Z
 sources:
   - id: openwiki-source-85dc2a049a0943b56218c045
     resource: repo://public/privacy.html
@@ -20,11 +19,13 @@ sources:
     resource: repo://src/main.ts
   - id: openwiki-source-c1d5327fe44e08cda82fcf83
     resource: repo://ulabase.setup.consents.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:12:04.743Z" }
+generated: { by: "openwiki/0.7.2", at: "2026-10-19T08:33:44.961Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-19T08:33:44.961Z
 ---
 
-
-# Consents Gate Pattern
+# Consents Gate (Terms and Privacy Acceptance)
 
 The consents gate ensures every user must accept the current Terms of Service and Privacy Policy before using the application. This pattern spans three layers: a server-side Guards rule that blocks with HTTP 451, a client-side signal that detects the blockage, and a Vue component that presents the acceptance overlay.
 
@@ -124,11 +125,11 @@ The `userCanPatchOwnConsents` permission allows users to update their own consen
 }
 ```
 
-The `mergeRequest` stamps the versions and timestamp server-side. The client sends `{"consents": []}` and states nothing about what is accepted—this prevents users from accepting terms they were never shown or backdating acceptances.
+The `mergeRequest` stamps the versions and timestamp server-side; `_$push` (escaped, unescaped before the merge) grows the `consents` history instead of overwriting it, and `latestConsents` is a nested object rather than dotted keys (a request setting both a field and a path inside it would be refused by MongoDB with `ConflictingUpdateOperators`). The client sends `{"consents": []}` and states nothing about what is accepted—this prevents users from accepting terms they were never shown or backdating acceptances.
 
 ### JWT Claims
 
-Two claims must travel in the JWT token: `latestConsents/tos` and `latestConsents/pp`. Without these claims, the condition would compare false for every token-authenticated user and block them permanently.
+Two claims must travel in the JWT token: `latestConsents/tos` and `latestConsents/pp`. The guard reads the token, not the database, so without these claims the condition would compare false for every token-authenticated user and block them permanently—including users who just accepted.
 
 ## Client-Side Implementation
 
@@ -136,8 +137,8 @@ Two claims must travel in the JWT token: `latestConsents/tos` and `latestConsent
 
 The signal module (`src/consents-signal.ts`) provides:
 
-- **`consentsBlocked`** — Read-only reactive flag that components can watch
-- **`setBlocked()`** — Function to set the blocked state
+- **`consentsBlocked`** — Read-only reactive ref that components can watch
+- **`isBlocked()` / `setBlocked()`** — Read and set the blocked state
 - **`consentsOnError`** — Callback passed to `createRhAuth` that watches for 451 responses
 
 ```typescript
@@ -205,11 +206,9 @@ The component also provides a `signOut()` function that:
 
 ## Versioning Contract
 
-The versioning must be consistent across three places:
+### Single Source and Remaining Manual Places
 
-1. **`ulabase.setup.consents.ts`** — `TOS_VERSION` and `PP_VERSION` constants
-2. **`public/terms.html`** — "Version 2026-07-01" displayed at the top
-3. **`public/privacy.html`** — "Version 2026-07-01" displayed at the top
+`TOS_VERSION` and `PP_VERSION` in `ulabase.setup.consents.ts` are the single source: the permission's `mergeRequest` and the guard condition are both derived from the `accepted` object, so publishing new terms becomes editing two strings and re-running the setup. What remains manual is the human-readable version line in the two static documents: `public/terms.html` and `public/privacy.html` each display `Version 2026-07-01` and must be edited by hand alongside the constants.
 
 ### Current Versions
 
@@ -229,7 +228,7 @@ Every user meets the acceptance form again on their next request; the acceptance
 
 ### Failure Mode
 
-If versions don't agree across the three places, users will accept one version while the server records another. The failure is quiet—a user accepts, the acceptance is stamped with one version, the rule compares against another, and they are blocked forever by a form that says it worked.
+If versions don't agree between the setup constants and the two static documents, users will accept one version while the server records another. The failure is quiet—a user accepts, the acceptance is stamped with one version, the rule compares against another, and they are blocked forever by a form that says it worked.
 
 ## Legal Document Hosting
 
@@ -237,6 +236,8 @@ The legal documents are hosted as static files in `public/`:
 
 - **`public/terms.html`** — Terms of Service
 - **`public/privacy.html`** — Privacy Policy
+
+The setup deliberately does not write these documents—they are yours; it only decides which versions the service demands.
 
 ### Why Static Files, Not App Routes
 
@@ -247,16 +248,24 @@ Static files rather than app routes on purpose:
 
 ## Server Setup
 
-The complete server setup is in `ulabase.setup.consents.ts`, which imports `ulabase.setup.ts` and appends four documents:
+The complete server setup is in `ulabase.setup.consents.ts`, which imports the accounts setup `ulabase.setup.ts` and runs in order:
 
-1. **User schema** (`userConsentsSchema`) — Allows `latestConsents` and `consents` fields on the user document
-2. **Permission** (`userCanPatchOwnConsents`) — Allows `PATCH /users/{userId}` with consents whitelist
-3. **JWT claims** — `latestConsents/tos` and `latestConsents/pp` in the token
-4. **Guards rule** (`consentsGate`) — Blocks with 451 when consents don't match
+0. **Accounts steps** — `accounts.steps.filter(s => s !== appPointsAtService)` runs first: a gate that blocks users the service cannot create has nothing to block, and the permission below is written against the `users` collection the accounts feature owns
+1. **User schema** (`userConsentsSchema`) — `putSchema(SCHEMA_ID, USER_SCHEMA)`; the check compares a canonicalized stored schema, so a service with an older schema is reported as outstanding
+2. **Users collection binding** — a `PATCH /users` writes `jsonSchema: { schemaId: SCHEMA_ID }` after checking `/users/_meta` (the collection's own properties are at `_meta`; listing documents would never reveal the binding)
+3. **Permission** (`userCanPatchOwnConsents`) — `putPermission`; without it the acceptance is a 403, since no out-of-the-box permission allows `PATCH /users/{userId}` and a guard never gets a say on a request the ACL already refused
+4. **JWT claims** — `account-properties-claims` read from `/auth-config/{srvId}` and PATCHed to add `latestConsents/tos` and `latestConsents/pp` (merged, not replaced, so a service may carry claims of its own). Only these two claims are added: the `consents` history would grow at every acceptance inside a base64-readable token
+5. **Guards feature** — `isFeatureInstalled` / `installFeature(srvId, 'guards')`
+6. **Gate rule** (`consentsGate`) — written into the guards feature config with the CONDITION string, `action: 'block'`, `status_code: 451`, and `on_error: 'allow'`; the check compares the condition string and status, so bumping a version shows up as work outstanding
+7. **`appPointsAtService`** — last, as in the plain setup: the app is pointed at the service once the gate is in place too
+
+### `on_error: 'allow'`
+
+The rule sets `on_error: 'allow'` explicitly: a rule that cannot be evaluated must not lock everyone out. The rule's message ("You must accept the current Terms of Service and Privacy Policy") is what the service returns with the 451.
 
 ### Schema Design
 
-The user schema allows consent fields but doesn't require them (since registration doesn't write them):
+The user schema allows consent fields but doesn't require them (since registration doesn't write them and the document is validated at insert, before the team is attached):
 
 ```typescript
 {
@@ -273,7 +282,7 @@ The user schema allows consent fields but doesn't require them (since registrati
 }
 ```
 
-Note `_$date` with the underscore: `acceptedAt` is a BSON date, and the type keys are escaped inside a schema document so the parser doesn't read them as values.
+The full schema still requires `_id` and `roles`, keeps `password`, `profile`, `socialAuths`, `teams` and `team` as optional properties, and is titled "User with consents". Note `_$date` with the underscore: `acceptedAt` is a BSON date, and the type keys are escaped inside a schema document so the parser doesn't read them as values. Declared as a plain string, every acceptance is rejected.
 
 ## Extending the Gate
 
@@ -288,6 +297,7 @@ Set up the service with `ulabase.setup.ts` instead of `ulabase.setup.consents.ts
 ## Related Pages
 
 - [App Bootstrap and Entry Point](../architecture/app-bootstrap.md) — How the app initializes and mounts ConsentsGate
-- [Routing and Navigation Guards](../architecture/routing-and-guards.md) — Guard system that ConsentsGate bypasses
+- [Service Model](../architecture/service-model.md) — The Ulabase service the gate guards
 - [Authentication Flows](./authentication-flows.md) — Auth flows that interact with consents
 - [Service Configuration](../operations/service-configuration.md) — Setting up the Ulabase service URL
+- [OAuth Setup](../workflows/oauth-setup.md) — OAuth flows whose endpoints are excluded from the gate

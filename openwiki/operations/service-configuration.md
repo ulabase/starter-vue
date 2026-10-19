@@ -11,9 +11,6 @@ sources:
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
 generated: { by: "openwiki/0.7.2", at: "2026-10-12T10:21:41.724Z" }
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-13T10:12:04.743Z
 ---
 
 # Service Configuration
