@@ -3,9 +3,6 @@ type: architecture
 title: Routing and Navigation Guards
 description: Documents the route map, feature-flag gating, lazy loading, guard semantics, and the shell layout that wraps authenticated children.
 tags: [routing, guards, vue-router, navigation, shell, feature-flags]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-19T08:33:44.961Z
 sources:
   - id: openwiki-source-105c89f54607384be15e8d88
     resource: repo://src/App.vue

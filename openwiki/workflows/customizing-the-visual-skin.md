@@ -13,6 +13,9 @@ sources:
   - id: openwiki-source-b8c028d1d8f7920e8191bbe2
     resource: repo://src/ui/alert/Alert.vue
 generated: { by: "openwiki/0.7.2", at: "2026-10-12T10:21:41.724Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-12T10:21:41.724Z
 ---
 
 # Customizing the Visual Skin

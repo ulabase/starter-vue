@@ -3,9 +3,6 @@ type: architecture
 title: App Bootstrap and Entrypoints
 description: How src/main.ts decides between the ConfigPage fallback and the full application, the fragment-token capture before createRhAuth, guard wiring, user watcher, and the ConsentsGate root wrapper.
 tags: [bootstrap, entry-point, initialization, main-ts, router, auth]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-19T08:33:44.961Z
 sources:
   - id: openwiki-source-105c89f54607384be15e8d88
     resource: repo://src/App.vue

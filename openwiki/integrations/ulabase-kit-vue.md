@@ -31,9 +31,6 @@ sources:
   - id: openwiki-source-28ff6ab0b2c280a1e7f9575c
     resource: repo://src/routes.ts
 generated: { by: "openwiki/0.7.2", at: "2026-10-19T08:33:44.961Z" }
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-19T08:33:44.961Z
 ---
 
 # The @ulabase/kit-vue Integration

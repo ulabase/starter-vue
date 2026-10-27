@@ -12,9 +12,6 @@ sources:
   - id: openwiki-source-eaae96b81373abab97667f4f
     resource: repo://src/environments/environment.ts
 generated: { by: "openwiki/0.7.2", at: "2026-10-19T08:33:44.961Z" }
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-19T08:33:44.961Z
 ---
 
 

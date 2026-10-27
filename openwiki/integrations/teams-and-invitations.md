@@ -3,9 +3,6 @@ type: integration
 title: Teams and Invitations
 description: Documents the team management system including team listing, detail views with members/invitations/settings tabs, team creation, invitation flows, and the three-state invitation acceptance page.
 tags: [teams, invitations, team-management, auth, vue, ulabase]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-19T08:33:44.961Z
 sources:
   - id: openwiki-source-eaae96b81373abab97667f4f
     resource: repo://src/environments/environment.ts

@@ -21,9 +21,6 @@ sources:
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
 generated: { by: "openwiki/0.7.2", at: "2026-10-19T08:33:44.961Z" }
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-19T08:33:44.961Z
 ---
 
 # Quickstart

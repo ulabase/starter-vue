@@ -2,9 +2,6 @@
 type: "Reference"
 title: "Service Model"
 openwiki_generated: true
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-19T08:33:44.961Z
 sources:
   - id: openwiki-source-4e7cd7f381c92e8c5d89f5c1
     resource: repo://NOTES.md

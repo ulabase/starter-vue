@@ -3,9 +3,6 @@ type: concept
 title: Authentication, Session, and Account Flows
 description: End-to-end client flows for register, login, email verification, password reset, OAuth redirect, session restoration/renewal, and profile/password changes, including the token-in-fragment landing and how failures surface as Alert messages.
 tags: [authentication, session, oauth, registration, verification, password-reset, consents-gate, ulabase-kit]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-19T08:33:44.961Z
 sources:
   - id: openwiki-source-4e7cd7f381c92e8c5d89f5c1
     resource: repo://NOTES.md
