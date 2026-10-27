@@ -15,6 +15,9 @@ sources:
   - id: openwiki-source-98d5ddb014a0fd4d678f6f2a
     resource: repo://tsconfig.json
 generated: { by: "openwiki/0.7.2", at: "2026-10-12T10:21:41.724Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-12T10:21:41.724Z
 ---
 
 # Validation and Testing

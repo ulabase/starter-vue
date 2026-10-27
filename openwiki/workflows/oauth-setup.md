@@ -3,9 +3,6 @@ type: workflow
 title: Adding Google OAuth Sign-In
 description: The coordinated change across layers to enable Google sign-in in the Ulabase Vue starter — creating the OAuth client with the service callback, flipping oauthLogin, re-running setup so credentials land on the service, and what the UI then renders.
 tags: [oauth, google, setup, authentication, feature-flags, ulabase-cli]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-19T08:33:44.961Z
 sources:
   - id: openwiki-source-23775c3de52f3ab95a13cb8b
     resource: repo://README.md

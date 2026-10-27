@@ -20,9 +20,6 @@ sources:
   - id: openwiki-source-c1d5327fe44e08cda82fcf83
     resource: repo://ulabase.setup.consents.ts
 generated: { by: "openwiki/0.7.2", at: "2026-10-19T08:33:44.961Z" }
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-19T08:33:44.961Z
 ---
 
 # Consents Gate (Terms and Privacy Acceptance)
