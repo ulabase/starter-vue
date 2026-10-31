@@ -33,6 +33,7 @@ onMounted(() => {
     <div class="auth-card">
       <h1>Verification failed</h1>
       <p>The verification link is invalid or has expired.</p>
+      <p>Use <RouterLink to="/auth/forgot-password">Forgot password?</RouterLink> to get a new link: it also verifies your email.</p>
       <p class="auth-links"><RouterLink to="/auth/login">Back to log in</RouterLink></p>
     </div>
   </main>
