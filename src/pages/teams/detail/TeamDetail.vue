@@ -26,6 +26,8 @@ const invitations = ref<PendingInvitation[]>([]);
 const invitationsLoading = ref(true);
 const resendingEmail = ref<string | null>(null);
 const resendSuccessEmail = ref<string | null>(null);
+// the server's reason when it refuses a resend: too many for this invitation, or too soon
+const resendError = ref<string | null>(null);
 const resendCooldowns = ref<Record<string, number>>({});
 const now = ref(Date.now());
 
@@ -75,6 +77,9 @@ function load(teamId: string): void {
   invitationsLoading.value = true;
   auth.listInvitations().then(
     inv => {
+      // the last send of each pending invitation, so the resend button counts down from it: the service
+      // refuses a resend within 5 minutes of it
+      resendCooldowns.value = withLastSends(resendCooldowns.value, inv);
       invitations.value = inv;
       invitationsLoading.value = false;
     },
@@ -143,6 +148,7 @@ async function removeMember(member: TeamMember): Promise<void> {
 async function resendInvite(invite: PendingInvitation): Promise<void> {
   resendingEmail.value = invite.email;
   resendSuccessEmail.value = null;
+  resendError.value = null;
   try {
     await auth.resendInvite(invite.email);
     const at = Date.now();
@@ -150,8 +156,10 @@ async function resendInvite(invite: PendingInvitation): Promise<void> {
     resendSuccessEmail.value = invite.email;
     resendCooldowns.value = { ...resendCooldowns.value, [invite.email]: at };
     now.value = at;
-  } catch {
+  } catch (err: unknown) {
     resendingEmail.value = null;
+    const e = err as { message?: string };
+    resendError.value = e?.message ?? 'Something went wrong. Please try again.';
   }
 }
 
@@ -227,6 +235,15 @@ function formatDate(date: string | undefined): string {
     month: 'short',
     day: 'numeric',
   });
+}
+/** The cooldowns with each pending invitation's last send, when later than the one already known. */
+function withLastSends(cooldowns: Record<string, number>, invitations: PendingInvitation[]): Record<string, number> {
+  const next = { ...cooldowns };
+  for (const invite of invitations) {
+    const at = invite.createdAt && !invite.expired ? Date.parse(invite.createdAt) : NaN;
+    if (!Number.isNaN(at) && at > (next[invite.email] ?? 0)) next[invite.email] = at;
+  }
+  return next;
 }
 </script>
 
@@ -331,6 +348,7 @@ function formatDate(date: string | undefined): string {
       <Alert v-if="resendSuccessEmail" type="success" @close="resendSuccessEmail = null">
         Invitation resent to {{ resendSuccessEmail }}!
       </Alert>
+      <Alert v-if="resendError" type="error" @close="resendError = null">{{ resendError }}</Alert>
       <ul class="member-list">
         <li
           v-for="invite in invitations"
