@@ -36,7 +36,10 @@ sources:
     resource: repo://src/pages/shell/Shell.vue
   - id: openwiki-source-28ff6ab0b2c280a1e7f9575c
     resource: repo://src/routes.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-19T08:33:44.961Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-15T14:44:51.529Z" }
+verified:
+  - by: openwiki/0.9.0
+    at: 2026-11-15T14:44:51.529Z
 ---
 
 
@@ -117,7 +120,7 @@ sequenceDiagram
 The verification page (`Verify.vue`) handles multiple scenarios:
 
 1. **Missing parameters**: Shows "This verification link is missing required information." if email or token is missing
-2. **Error query parameter**: Shows "The verification link is invalid or has expired." if `?error` is present
+2. **Error query parameter**: Shows "The verification link is invalid or has expired." with a "Forgot password?" link (which also verifies the email) if `?error` is present
 3. **Valid parameters**: Calls `auth.verify(email, token)` and redirects to the returned URL
 4. **Loading state**: Shows "Verifying your email…" while the verification is in progress
 
@@ -126,8 +129,8 @@ The verification page is protected by the `public` guard, so authenticated users
 ### Error Handling
 
 - **Duplicate email (409)**: "An account with this email already exists."
-- **Invalid/expired token**: "This verification link is missing required information." or "The verification link is invalid or has expired."
 - **Missing parameters**: "This verification link is missing required information."
+- **Invalid/expired token (`?error` query parameter)**: "The verification link is invalid or has expired." with a "Forgot password?" link that also verifies the email
 
 ## Login Flow
 
@@ -178,12 +181,13 @@ The login page includes several user experience features:
 4. **Error handling**: 401 errors map to "Invalid email or password." message
 5. **OAuth integration**: OAuth buttons appear when `oauthLogin` feature is enabled
 6. **Navigation links**: Forgot password and create account links appear based on feature flags
-7. **Query parameter handling**: `?error=invalid_token` shows appropriate error message
+7. **Query parameter handling**: `?error=invalid_token` and `?error=token_expired` map to specific error messages via `ERROR_MESSAGES`
 
 ### Error Handling
 
 - **Invalid credentials (401)**: "Invalid email or password."
 - **Invalid token error**: "This link is invalid or has expired." (when `?error=invalid_token` query parameter present)
+- **Expired verification token**: "This verification link has expired. Use \"Forgot password?\" below to get a new link: it also verifies your email." (when `?error=token_expired` query parameter present)
 
 ## OAuth Flow (Google)
 
@@ -471,12 +475,13 @@ Authentication errors follow consistent patterns across all flows:
 
 **Verification (Verify.vue):**
 - Missing parameters: "This verification link is missing required information."
-- Invalid/expired token: "The verification link is invalid or has expired."
+- Invalid/expired token (`?error` query parameter): "The verification link is invalid or has expired." with a "Forgot password?" link that also verifies the email
 - Error query parameter: Handled by URL parameter
 
 **Login (Login.vue):**
 - 401: "Invalid email or password."
 - `?error=invalid_token`: "This link is invalid or has expired."
+- `?error=token_expired`: "This verification link has expired. Use \"Forgot password?\" below to get a new link: it also verifies your email."
 
 **Password Reset (ForgotPassword.vue):**
 - Always shows "Check your email" regardless of email existence (202 response)
