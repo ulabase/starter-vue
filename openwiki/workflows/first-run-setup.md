@@ -1,7 +1,7 @@
 ---
 type: workflow
 title: First-Run Setup
-description: Walkthrough of cloning, installing, creating a Ulabase service, running ulabase setup, and starting the development server.
+description: Walkthrough of cloning, installing, creating a Ulabase service, running ulabase setup, and starting the development server. Covers the setup script's ordered steps — accounts, branding, OAuth, origin allowlist — plus the pinned tool versions and the consents variant.
 tags: [setup, onboarding, ulabase, cli, environment, service-configuration]
 sources:
   - id: openwiki-source-5b54a58d1b51cd490b0e7162
@@ -14,7 +14,10 @@ sources:
     resource: repo://ulabase.setup.consents.ts
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-13T10:12:04.743Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-19T17:45:00.496Z" }
+verified:
+  - by: openwiki/0.9.0
+    at: 2026-11-19T17:45:00.496Z
 ---
 
 # First-Run Setup
@@ -29,6 +32,22 @@ Before beginning, ensure you have:
 - **A free Ulabase account** — sign up at [ulabase.com](https://ulabase.com) (free tier available)
 - **Git** — for cloning the repository
 
+The toolchain itself is pinned in `package.json`, so `npm install` yields a known-good combination:
+
+| Package | Version | Role |
+|---------|---------|------|
+| `@ulabase/kit-vue` | `^0.14.0` | runtime library the app is built on (`dependencies`) |
+| `@ulabase/cli` | `^0.14.0` | provides the `ulabase` command used for setup (`devDependencies`) |
+| `vue` | `^3.5.0` | framework |
+| `vue-router` | `^4.4.0` | routing |
+| `vite` | `^6.0.0` | dev server and bundler |
+| `typescript` | `~5.6.0` | types |
+| `vue-tsc` | `^2.2.0` | type-check before build |
+| `vitest` | `^2.0.0` | tests |
+| `@vitejs/plugin-vue` | `^5.2.0` | Vite plugin for single-file components |
+
+`npm run dev` runs `vite`, `npm run build` runs `vue-tsc -b && vite build`, and `npm run test` runs `vitest`.
+
 ## Step 1: Clone and Install
 
 ```bash
@@ -37,7 +56,7 @@ cd starter-vue
 npm install
 ```
 
-This installs the Vue application dependencies and the `@ulabase/cli` development dependency (listed in `devDependencies` in `package.json`).
+This installs the Vue application dependencies and the `@ulabase/cli` development dependency (listed in `devDependencies` in `package.json`). Because that CLI is installed locally, the `npx ulabase …` commands shown by the app's configuration screen work in this folder without a global install.
 
 ## Step 2: Create a Ulabase Service
 
@@ -74,13 +93,38 @@ The setup performs these steps in order:
 
 1. **Accounts feature installed** — Installs the `accounts` plugin if not present. Treats HTTP 409 ("already installed") as success.
 
-2. **Accounts configured to match the app** — Sets `app-name`, `frontend-url`, `frontend-app-url`, and the derived `features` block. Uses a read-modify-write pattern that preserves redacted secrets.
+2. **Branding carries the app name** — Writes `APP_NAME` into the Branding feature's `name`. The step reads the current branding document first and merges into it (`{ ...current, name: APP_NAME }`), so a color or logo set in the console survives. The name is what appears on the sign-in page and in every email the service sends.
 
-3. **Google OAuth credentials** *(conditional)* — Only included when `oauthLogin` is `true` and `'google'` is in `oauthProviders`. Ensures `enabled: true` and that `client-id` and `client-secret` are configured.
+3. **Accounts configured to match the app** — Sets `frontend-url`, `frontend-app-url`, and the derived `features` block. Uses a read-modify-write pattern that preserves redacted secrets.
 
-4. **The app origin may call the service** — Installs `origin-allowlist` if needed, then adds `APP_URL` to the allowed origins. Origins are added, never replaced, so a service reached from multiple origins (localhost and deployed app) keeps both.
+4. **Google OAuth credentials** *(conditional)* — Only included when `oauthLogin` is `true` and `'google'` is in `oauthProviders`. Ensures `enabled: true` and that `client-id` and `client-secret` are configured. Secrets are read from `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` only when not already stored, so a re-run against a configured service needs no secrets in the environment.
 
-5. **The app points at this service** — The `appPointsAtService` step, exported separately and always placed **last**. Writes the service's URL into `environment.ts`'s `apiUrl` field using regex replacement that preserves comments and other lines. Placed last so that a partial setup leaves the "configure your service" screen visible rather than a sign-up page that fails.
+5. **The app origin may call the service** — Installs `origin-allowlist` if needed, then adds `APP_URL` to the allowed origins. Origins are added, never replaced, so a service reached from multiple origins (localhost and deployed app) keeps both.
+
+6. **The app points at this service** — The `appPointsAtService` step, exported separately and always placed **last**. Writes the service's URL into `environment.ts`'s `apiUrl` field using regex replacement that preserves comments and other lines. Placed last so that a partial setup leaves the "Connect your service" screen visible rather than a sign-up page that fails.
+
+```mermaid
+flowchart TD
+  S["ulabase setup --srv srvId"] --> F{"--file given"}
+  F -->|no| A["ulabase.setup.ts"]
+  F -->|yes| B["ulabase.setup.consents.ts"]
+  A --> A1["accounts feature installed"]
+  A1 --> A2["branding carries the app name"]
+  A2 --> A3["accounts configured to match the app"]
+  A3 --> A4["google oauth credentials when enabled"]
+  A4 --> A5["the app origin may call the service"]
+  A5 --> Z["the app points at this service"]
+  B --> B1["accounts steps from ulabase.setup.ts"]
+  B1 --> B2["user schema stored"]
+  B2 --> B3["users collection validated by it"]
+  B3 --> B4["the acceptance is permitted"]
+  B4 --> B5["the two claims travel in the token"]
+  B5 --> B6["guards feature installed"]
+  B6 --> B7["the gate blocks users who have not accepted"]
+  B7 --> Z
+```
+
+*Both setup files run the accounts steps first and point the app at the service last; only the consents file adds the gate's documents in between.*
 
 ### Feature Flag Derivation
 
@@ -121,9 +165,21 @@ To set up the service with the **consents gate** (requiring users to accept Term
 ulabase setup --srv <srvId> --file ulabase.setup.consents.ts
 ```
 
-This uses `ulabase.setup.consents.ts` instead of the default `ulabase.setup.ts`. The consents setup extends the base accounts setup by importing its steps and appending additional steps for the consents gate. The gate blocks users who haven't accepted the current versions of your legal documents.
+This uses `ulabase.setup.consents.ts` instead of the default `ulabase.setup.ts`. The consents setup does not restate the accounts configuration: it imports the base setup's steps, filters out `appPointsAtService` so it can stay last, and appends the gate's documents:
 
-**Important:** Replace the placeholder `public/terms.html` and `public/privacy.html` files with your actual legal documents.
+1. **User schema stored** — Stores the `userConsentsSchema` document. The check does not merely test that a schema exists: it compares the stored schema with the desired one in canonical form (store-added `_id`, `_etag`, `$schema` and `$id` dropped, `_$date` unescaped to `$date`), so a service carrying an older schema is detected and rewritten rather than left refusing what this one allows.
+
+2. **Users collection validated by it** — Attaches that schema to the `users` collection, verified through `/users/_meta` (listing `/users` shows documents, not the collection's own metadata).
+
+3. **The acceptance is permitted, and nothing else is** — A permission that lets a user PATCH their own `consents`. The server stamps `latestConsents` with the current `TOS_VERSION` / `PP_VERSION` and appends to the `consents` history; the client sends `{"consents": []}` and states nothing.
+
+4. **The two claims travel in the token** — `latestConsents/tos` and `latestConsents/pp` are added to the **auth** feature's `account-properties-claims` (merged with any claims the service already carries, never replacing them). The guard then compares consent versions straight from the JWT instead of reading the database.
+
+5. **Guards feature installed** and **the gate blocks users who have not accepted** — A `guards` rule (`consentsGate`) that answers `451` when either acceptance is missing or out of date. Bumping `TOS_VERSION` or `PP_VERSION` makes the rule's condition disagree with what users hold, which the check reports as outstanding work.
+
+The gate lives on the server, so it holds for a mobile client and for `curl` too — not just for this app. Skip the file and nobody is ever asked: the acceptance screen waits for a refusal that never comes.
+
+**Important:** Replace the placeholder `public/terms.html` and `public/privacy.html` files with your actual legal documents. Publishing new terms means bumping `TOS_VERSION` / `PP_VERSION` in the setup file and re-running the setup.
 
 ### Environment Variables
 
@@ -132,7 +188,7 @@ The setup uses these environment variables:
 | Variable | Default | Purpose |
 |----------|---------|---------|
 | `APP_URL` | `http://localhost:5173` | Where the app is served from. Used for email links, OAuth redirects, and the origin allowlist. Trailing slash is stripped. |
-| `APP_NAME` | `Ulabase Starter` | Shown in verification, reset, and invitation emails. |
+| `APP_NAME` | `Ulabase Starter` | Written to the service's Branding: shown on the sign-in page and in verification, reset, and invitation emails. |
 
 Both can be overridden via environment variables before running setup.
 
@@ -182,6 +238,7 @@ The service only answers pages it has been told about. Re-run `ulabase setup` af
 The feature flags in `environment.ts` must match the service's *Sign-up Mgmt → Features* toggles. `ulabase setup` reads the flags from that same file and sets the service to match, so re-running it is usually the fix.
 
 ### `401` on a request you wrote yourself
+<!-- openwiki: broken internal link [../integrations/ulabase-kit-vue.md#authapi---authenticated-fetch-wrapper] heading anchor "authapi---authenticated-fetch-wrapper" does not exist in "../integrations/ulabase-kit-vue.md". Fix the href or restore the target, then delete this comment. -->
 A plain `fetch` carries no session. Use `auth.api()`, which attaches it — see [auth.api() - Authenticated Fetch Wrapper](../integrations/ulabase-kit-vue.md#authapi---authenticated-fetch-wrapper).
 
 ### `ulabase` runs something about OpenShift
@@ -196,3 +253,4 @@ After completing the first-run setup:
 3. **Understand the architecture** — See [App Bootstrap and Entry Point](../architecture/app-bootstrap.md) for how the application initializes
 4. **Learn about feature flags** — See [Feature Flags](../concepts/feature-flags.md) for how flags control both client and server behavior
 5. **Deep dive into service configuration** — See [Service Configuration](../operations/service-configuration.md) for complete details on the setup process
+6. **Understand the consents gate** — See [Consents Gate](../concepts/consents-gate.md) for what the gate does once the service has it

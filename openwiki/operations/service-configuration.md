@@ -10,7 +10,10 @@ sources:
     resource: repo://ulabase.setup.consents.ts
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-12T10:21:41.724Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-19T17:45:00.496Z" }
+verified:
+  - by: openwiki/0.9.0
+    at: 2026-11-19T17:45:00.496Z
 ---
 
 # Service Configuration
@@ -26,7 +29,7 @@ The `defineSetup` and `step` helpers from `@ulabase/cli` implement an idempotent
 - Running `ulabase setup --dry-run` executes only the checks, answering "what is this service missing?"
 - Running `ulabase setup` executes checks first, then applies only the missing steps.
 
-This makes the setup safe to run repeatedly: a fully-configured service is a no-op, and a partially-configured service picks up where it left off.
+This makes the setup safe to run repeatedly: a fully-configured service is a no-op, and a partially-configured service picks up where it left off. Feature installation is likewise idempotent—the `install` helper treats HTTP 409 ("already installed") as success, so even a forced apply against an installed feature does not fail.
 
 ```mermaid
 flowchart TD
@@ -46,14 +49,14 @@ flowchart TD
 
 ## ulabase.setup.ts
 
-The base setup file configures the **accounts** feature and related service settings. It imports the app's `environment.ts` to derive server-side feature toggles from the client's single source of truth, eliminating the drift problem where client and server configurations diverge silently.
+The base setup file configures the **accounts** feature, **branding**, and related service settings. It imports the app's `environment.ts` to derive server-side feature toggles from the client's single source of truth, eliminating the drift problem where client and server configurations diverge silently.
 
 ### Environment Variables
 
 | Variable | Default | Purpose |
 |----------|---------|---------|
 | `APP_URL` | `http://localhost:5173` | Where the app is served from. Used for email links, OAuth redirects, and the origin allowlist. Trailing slash is stripped. |
-| `APP_NAME` | `Ulabase Starter` | Shown in verification, reset, and invitation emails. |
+| `APP_NAME` | `Ulabase Starter` | Shown in verification, reset, and invitation emails, and on the sign-in page. |
 
 Both can be overridden via environment variables before running setup.
 
@@ -79,13 +82,15 @@ const features = {
 
 1. **Accounts feature installed** — Installs the `accounts` plugin if not present. Treats HTTP 409 ("already installed") as success.
 
-2. **Accounts configured to match the app** — Sets `app-name`, `frontend-url`, `frontend-app-url`, and the derived `features` block. Uses a read-modify-write pattern that preserves redacted secrets (the server replaces the whole document and restores stored values for any field still holding a redaction placeholder).
+2. **Branding carries the app name** — Sets the Branding feature's `name` to `APP_NAME` by merging into the current branding document (read with `getFeatureConfig`, written with `updateFeatureConfig` as `{ ...current, name: APP_NAME }`), preserving console-set color and logo. The Branding feature is always on and is configured like every other feature; the app name appears on the sign-in page and in every email the service sends.
 
-3. **Google OAuth credentials** *(conditional)* — Only included when `oauthLogin` is `true` and `'google'` is in `oauthProviders`. Ensures `enabled: true` and that `client-id` and `client-secret` are configured. Secrets are resolved via `fromEnv()` only when not already stored, so a re-run against a configured service needs no secrets in the environment.
+3. **Accounts configured to match the app** — Sets `frontend-url`, `frontend-app-url`, and the derived `features` block. Uses a read-modify-write pattern that preserves redacted secrets (the server replaces the whole document and restores stored values for any field still holding a redaction placeholder).
 
-4. **The app origin may call the service** — Installs `origin-allowlist` if needed, then adds `APP_URL` to the allowed origins. Origins are added, never replaced, so a service reached from multiple origins (localhost and deployed app) keeps both.
+4. **Google OAuth credentials** *(conditional)* — Only included when `oauthLogin` is `true` and `'google'` is in `oauthProviders`. Ensures `enabled: true` and that `client-id` and `client-secret` are configured. Secrets are resolved via `fromEnv()` only when not already stored, so a re-run against a configured service needs no secrets in the environment.
 
-5. **The app points at this service** — The `appPointsAtService` step, exported separately and always placed **last**. Writes the service's URL into `environment.ts`'s `apiUrl` field using regex replacement that preserves comments and other lines. Placed last so that a partial setup leaves the "configure your service" screen visible rather than a sign-up page that fails.
+5. **The app origin may call the service** — Installs `origin-allowlist` if needed, then adds `APP_URL` to the allowed origins. Origins are added, never replaced, so a service reached from multiple origins (localhost and deployed app) keeps both.
+
+6. **The app points at this service** — The `appPointsAtService` step, exported separately and always placed **last**. Writes the service's URL into `environment.ts`'s `apiUrl` field using regex replacement that preserves comments and other lines. Placed last so that a partial setup leaves the "configure your service" screen visible rather than a sign-up page that fails.
 
 ### The apiUrl Write Mechanism
 
@@ -122,13 +127,13 @@ Every other value—permission `mergeRequest`, guard rule condition—is derived
 
 The file imports the accounts steps from `ulabase.setup.ts`, filters out `appPointsAtService` (to keep it last), then appends:
 
-1. **User schema stored** — Creates a JSON Schema (`userConsentsSchema`) defining the user document shape, including `latestConsents` and `consents` fields. Note `_$date` (escaped BSON date type key) and that `latestConsents` and `consents` are **not** required—the schema validates documents at insertion time, before the initial team is attached, so requiring those fields would reject every registration.
+1. **User schema stored** — Creates a JSON Schema (`userConsentsSchema`) defining the user document shape, including `latestConsents` and `consents` fields. Note `_$date` (escaped BSON date type key) and that `latestConsents` and `consents` are **not** required—the schema validates documents at insertion time, before the initial team is attached, so requiring those fields would reject every registration. The check does not merely test for existence: it compares the canonicalized stored schema against the desired one, ignoring store-added metadata (`_id`, `_etag`, `$schema`, `$id`) and unescaping `_$` BSON type keys so both sides read `$date`. A service set up with an older schema is therefore detected and rewritten.
 
 2. **Users collection validated by it** — Attaches the schema to the `/users` collection via its `_meta` endpoint. Reads `/users/_meta` (not `/users`) to check current attachment.
 
 3. **The acceptance is permitted** — Creates the `userCanPatchOwnConsents` permission allowing users to PATCH their own consents. The server-side `mergeRequest` stamps `latestConsents` with current versions and `$push`es to the `consents` history array. The client sends `{"consents": []}` and states nothing—the server decides what is accepted.
 
-4. **The two claims travel in the token** — Adds `latestConsents/tos` and `latestConsents/pp` to the service's `account-properties-claims` so the guard can read them from the JWT without a database lookup. Claims are added, not replaced.
+4. **The two claims travel in the token** — Adds `latestConsents/tos` and `latestConsents/pp` to the **auth** feature's `account-properties-claims` via `getFeatureConfig`/`updateFeatureConfig`, so the guard can read them from the JWT without a database lookup. Claims are added to any the service already carries, not replaced.
 
 5. **Guards feature installed** — Installs the `guards` plugin if not present.
 

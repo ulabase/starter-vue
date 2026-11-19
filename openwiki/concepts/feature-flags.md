@@ -1,6 +1,6 @@
 ---
 type: concept
-title: Feature Flags
+title: Feature Flags and Client/Server Consistency
 description: Explains the feature-flag system in environment.ts and how flags control both client routing/UI and server-side service configuration.
 tags: [feature-flags, configuration, routing, ulabase, environment, drift]
 sources:
@@ -18,10 +18,10 @@ sources:
     resource: repo://src/routes.ts
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-19T08:33:44.961Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-19T17:45:00.496Z" }
 verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-19T08:33:44.961Z
+  - by: openwiki/0.9.0
+    at: 2026-11-19T17:45:00.496Z
 ---
 
 # Feature Flags
@@ -38,7 +38,7 @@ The `features` object in `environment.ts` contains five flags:
 | `passwordReset` | `boolean` | `true` | Enables forgot-password and reset-password forms. |
 | `oauthLogin` | `boolean` | `false` | Enables OAuth social login (e.g., Google). |
 | `oauthProviders` | `readonly string[]` | `['google']` | Lists which OAuth providers are available when `oauthLogin` is `true`. |
-| `teamInvitations` | `boolean` | `true` | Enables the invitation acceptance page for new and existing users. |
+| `teamInvitations` | `boolean` | `true` | Enables the invitation acceptance page at `/auth/activate` (new users) and `/invitations/accept` (existing users). |
 
 These flags are imported by every component and route file that needs to conditionally render or register functionality.
 
@@ -95,6 +95,8 @@ export const routes: RouteRecordRaw[] = [
         { path: '/auth/reset-password', component: ResetPassword, meta: { guard: 'public' as const } },
       ]
     : []),
+  // One page, two paths: the service's invitation email links a new user to
+  // /auth/activate and an existing one to /invitations/accept.
   ...(teamInvitations
     ? ['/auth/activate', '/invitations/accept'].map(path => ({ path, component: Accept }))
     : []),
@@ -122,7 +124,7 @@ The `meta.guard` property (`'auth'` or `'public'`) is read by the global `before
 |-------------|---------------|-------|
 | `emailRegistration` | `registration`, `verification` | Both are enabled together because a sign‑up flow without verification is undesirable. |
 | `passwordReset` | `password-reset` | Direct mapping. |
-| `teamInvitations` | `invitations` | Direct mapping. |
+| `teamInvitations` | `invitations` | Direct mapping. Client serves `/auth/activate` (new users) and `/invitations/accept` (existing users) from one Accept component. |
 | `oauthLogin` | `oauth` | When enabled, the setup also checks for Google OAuth credentials (`client-id`, `client-secret`). |
 
 The setup script performs a read‑modify‑write on the service’s `accounts` feature configuration, preserving any redacted secrets (stored as bullet characters) that the admin UI masks.
@@ -161,4 +163,6 @@ flowchart TD
 ## Related Pages
 
 - [Routing and Navigation Guards](../architecture/routing-and-guards.md) – Full route map and guard semantics.
+- [Teams and Invitations](../integrations/teams-and-invitations.md) – How invitation emails link to the two Accept paths.
+- [Service Configuration](../operations/service-configuration.md) – Full `ulabase setup` workflow and step mechanics.
 - [Consents Gate Pattern](./consents-gate.md) – Server‑side enforcement that complements feature gating.

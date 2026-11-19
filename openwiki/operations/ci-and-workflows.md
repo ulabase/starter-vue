@@ -1,8 +1,14 @@
 ---
-type: "Reference"
-title: "CI and GitHub Actions Workflows"
-openwiki_generated: true
+type: reference
+title: CI and GitHub Actions Workflows
+description: The two GitHub Actions workflows that keep code quality and docs in sync — the no-service-url guard for the starter's main branch, and the OpenWiki update pipeline with its schedule, model/provider choice, and 429 retry policy.
+tags: [ci, github-actions, workflows, openwiki, automation, documentation]
+verified:
+  - by: openwiki/0.9.0
+    at: 2026-11-19T17:45:00.496Z
 sources:
+  - id: openwiki-source-da4c48207f961ff0d7aa1fff
+    resource: repo://.github/openwiki-retry.mjs
   - id: openwiki-source-47f38fcb8c1752310057a5c1
     resource: repo://.github/workflows/no-service-url.yml
   - id: openwiki-source-6d4b4e707b8d60b6ccfa3425
@@ -11,9 +17,8 @@ sources:
     resource: repo://README.md
   - id: openwiki-source-eaae96b81373abab97667f4f
     resource: repo://src/environments/environment.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-19T08:33:44.961Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-19T17:45:00.496Z" }
 ---
-
 
 # CI and GitHub Actions Workflows
 
@@ -22,21 +27,23 @@ This repository uses two GitHub Actions workflows to maintain code quality and k
 ## Workflow Overview
 
 ```mermaid
-graph TD
-    A[Push/PR to main] --> B{Is it ulabase/starter-vue?}
-    B -->|Yes| C[No service URL workflow]
-    B -->|No| D[Skip]
-    C --> E{apiUrl empty in environment files?}
-    E -->|Yes| F[✓ Pass]
-    E -->|No| G[✗ Fail]
-    
-    H[Nightly cron / Release tag / Manual] --> I[OpenWiki Update workflow]
-    I --> J{Changes since last wiki update?}
-    J -->|Yes| K[Run openwiki code --update]
-    J -->|No| L[Skip]
-    K --> M[Create PR]
-    M --> N[Auto-merge]
+flowchart TD
+    A["Push or PR to main"] --> B{"ulabase/starter-vue?"}
+    B -->|Yes| C["No service URL check"]
+    B -->|No| D["Skip"]
+    C --> E{"apiUrl empty everywhere?"}
+    E -->|Yes| F["Pass"]
+    E -->|No| G["Fail"]
+
+    H["Nightly 07:17 UTC or release tag or manual"] --> I["OpenWiki Update"]
+    I --> J{"Source changed since last wiki update?"}
+    J -->|Yes| K["openwiki code via OpenRouter deepinfra with 429 retry"]
+    J -->|No| L["Skip"]
+    K --> M["Create PR"]
+    M --> N["Auto-merge"]
 ```
+
+*The two workflows: the no-service-url guard on pushes and PRs, and the self-merging OpenWiki update pipeline.*
 
 ## No Service URL Workflow
 
@@ -95,9 +102,11 @@ This workflow automatically regenerates the OpenWiki documentation when source c
 
 The workflow runs under three circumstances:
 
-1. **Nightly schedule**: Every day at 03:00 UTC (`cron: "0 3 * * *"`)
-2. **Release tags**: When a semantic version tag (e.g., `1.2.3`) is pushed
-3. **Manual dispatch**: With an optional message parameter for special instructions
+1. **Nightly schedule**: Every day at 07:17 UTC (`cron: "17 7 * * *"`)
+2. **Release tags**: When a semantic version tag (e.g., `1.2.3`) is pushed, matching `[0-9]+.[0-9]+.[0-9]+`
+3. **Manual dispatch**: With an optional `message` input for special instructions
+
+The schedule sits at 07:17 UTC — night across the US for DeepInfra's shared pool, and off the hour because GitHub had been delaying the earlier `0 3` schedule by several hours.
 
 ### Change Detection Logic
 
@@ -132,20 +141,42 @@ This ensures that if a new run starts while a previous one is still executing, t
 
 When changes are detected:
 
-1. **Checkout**: Always checks out the `main` branch (even when triggered by a tag)
+1. **Checkout**: Always checks out the `main` branch with full history (even when triggered by a tag — a tag checkout is a detached HEAD from which no pull request can be opened, and the wiki describes main)
 2. **Environment setup**: Installs Node.js 22 and the `openwiki` npm package
 3. **Mode selection**: Uses `--update` when an `openwiki/` directory already exists (incremental update of existing pages), and `--init` when it does not (first-generation run). Both modes run `openwiki code --print`; a manually supplied `message` is appended as a run-specific instruction that an incremental update would not infer on its own (for example, a rename to apply throughout the wiki)
-4. **Execution**: Runs `openwiki code --update` (or `--init`) with optional message from manual dispatch
-5. **Pull request creation**: Uses `peter-evans/create-pull-request` to create/update a PR on the `openwiki/update` branch
-6. **Auto-merge**: Immediately merges the PR using `gh pr merge --squash --delete-branch --auto`
+4. **Execution**: Runs `openwiki code` with the selected mode, restricted to the deepinfra provider and protected against 429s by the retry hook (see below)
+5. **Pull request creation**: Uses `peter-evans/create-pull-request` to create/update a PR on the `openwiki/update` branch, adding only the `openwiki/`, `AGENTS.md`, and `CLAUDE.md` paths
+6. **Auto-merge**: Immediately merges the PR using `gh pr merge --squash --delete-branch --auto`, falling back to a plain merge if auto-merge is unavailable
 
-### Environment Variables
+### Model and Provider Configuration
 
 The workflow configures OpenWiki with:
-- **Provider**: OpenRouter (`openrouter`)
+
+- **Provider**: OpenRouter (`OPENWIKI_PROVIDER: openrouter`)
 - **API Key**: Stored in repository secrets (`OPENROUTER_API_KEY`)
-- **Model**: `xiaomi/mimo-v2.5-pro`
+- **Model**: `xiaomi/mimo-v2.6-pro` (`OPENWIKI_MODEL_ID`)
+- **Provider restriction**: `OPENWIKI_OPENROUTER_PROVIDER_ONLY: deepinfra` — only DeepInfra serves this model for OpenWiki. The workflow comment records why the others are excluded: Xiaomi and Novita mis-parse the model's parallel tool calls (XML leaks into the content and the worker ends "without submit_plan"), and AtlasCloud answers with a 400
 - **Tracing**: Disabled (`LANGCHAIN_TRACING_V2: "false"`)
+
+### 429 Retry Policy
+
+DeepInfra's shared pool answers `429 engine_overloaded` at busy hours, without a `Retry-After` header. LangChain does not retry such responses, and OpenWiki treats the error as fatal in the planner and as a skip in a page. To absorb these transient failures, the workflow preloads `.github/openwiki-retry.mjs` into the Node process:
+
+```yaml
+NODE_OPTIONS: --import=${{ github.workspace }}/.github/openwiki-retry.mjs
+```
+
+The retry hook wraps `globalThis.fetch` and, for OpenRouter chat-completion requests whose body can be replayed (a string body only — a stream or `Request` object is consumed by the first attempt), retries every `429` response with fixed backoff:
+
+| Attempt | Delay before retry |
+|---------|--------------------|
+| 1       | 30 seconds         |
+| 2       | 60 seconds         |
+| 3       | 120 seconds        |
+| 4       | 240 seconds        |
+| 5       | 480 seconds        |
+
+After the fifth attempt (480 seconds), the `429` is returned to the caller. Non-429 responses and non-replayable requests pass through unchanged.
 
 ### Generated Files
 
@@ -186,6 +217,7 @@ If the workflow skips with "files changed since [hash]: 0":
 Common failure points:
 - **Missing API key**: Ensure `OPENROUTER_API_KEY` is set in repository secrets
 - **Model errors**: Check OpenRouter status or try a different model
+- **Persistent 429s**: The retry hook absorbs up to five backoff waits (30–480s). If the run still fails, DeepInfra's pool may be saturated for longer — re-run the workflow later
 - **Permission issues**: Verify the repository has "Allow auto-merge" enabled
 
 ## Configuration
@@ -204,7 +236,7 @@ To change the nightly schedule, modify the cron expression in `.github/workflows
 
 ```yaml
 schedule:
-  - cron: "0 3 * * *"  # Current: 03:00 UTC daily
+  - cron: "17 7 * * *"  # Current: 07:17 UTC daily
 ```
 
 ### Adding Manual Instructions
@@ -220,5 +252,6 @@ The message will be passed as `--print "$MESSAGE"` to the `openwiki code` comman
 ## Relationships
 
 - [Service Configuration](service-configuration.md) — the setup files and environment file that the no-service-url check guards.
+- [Quickstart](../quickstart.md) — the developer flow that writes `apiUrl` locally and expects the starter's empty URL to show the "configure your service" screen.
 - [Validation and Testing](../testing/validation-and-testing.md) — how changes are validated before they reach these pipelines.
 - [First-Run Setup](../workflows/first-run-setup.md) — the developer flow that writes `apiUrl` locally.

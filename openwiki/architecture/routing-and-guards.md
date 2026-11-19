@@ -8,14 +8,18 @@ sources:
     resource: repo://src/App.vue
   - id: openwiki-source-d4189bbeecb62806cb297b5a
     resource: repo://src/main.ts
+  - id: openwiki-source-9408c4c89f61215fb6824f35
+    resource: repo://src/pages/invitations/accept/Accept.vue
   - id: openwiki-source-ee9a644578aeccba70142314
     resource: repo://src/pages/shell/Shell.vue
   - id: openwiki-source-28ff6ab0b2c280a1e7f9575c
     resource: repo://src/routes.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-19T08:33:44.961Z" }
+  - id: openwiki-source-5a1184d12353a609489e1296
+    resource: repo://src/vite-env.d.ts
+generated: { by: "openwiki/0.9.0", at: "2026-11-19T17:45:00.496Z" }
 verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-19T08:33:44.961Z
+  - by: openwiki/0.9.0
+    at: 2026-11-19T17:45:00.496Z
 ---
 
 # Routing and Navigation Guards
@@ -97,6 +101,8 @@ The global `beforeEach` guard in `main.ts` reads `to.meta.guard` and dispatches 
 - **`auth` guard** — Redirects unauthenticated users to `/auth/login`; allows authenticated users through
 - **`public` guard** — Redirects authenticated users to `/`; allows unauthenticated users through
 - **No meta** — Route is unguarded (e.g., invitation acceptance, catch-all)
+
+The allowed values are declared by the `RouteMeta` augmentation in `src/vite-env.d.ts` (`guard?: 'auth' | 'public'`). Omitting the field is the explicit opt-out used by the invitation routes and the catch-all.
 
 ### Implementation Details
 
@@ -189,7 +195,7 @@ flowchart TD
 - Light/dark mode toggle using `useTheme()` composable
 - Persists preference in localStorage with key `rh-theme`
 - Toggles `dark` class on `document.documentElement`
-- Default: system preference or light mode
+- Default: light mode when no stored preference exists
 - Includes SSR safety check (`typeof window !== 'undefined'`)
 
 #### Welcome Banner

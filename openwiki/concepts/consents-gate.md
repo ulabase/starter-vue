@@ -19,7 +19,10 @@ sources:
     resource: repo://src/main.ts
   - id: openwiki-source-c1d5327fe44e08cda82fcf83
     resource: repo://ulabase.setup.consents.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-19T08:33:44.961Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-19T17:45:00.496Z" }
+verified:
+  - by: openwiki/0.9.0
+    at: 2026-11-19T17:45:00.496Z
 ---
 
 # Consents Gate (Terms and Privacy Acceptance)
@@ -126,7 +129,7 @@ The `mergeRequest` stamps the versions and timestamp server-side; `_$push` (esca
 
 ### JWT Claims
 
-Two claims must travel in the JWT token: `latestConsents/tos` and `latestConsents/pp`. The guard reads the token, not the database, so without these claims the condition would compare false for every token-authenticated user and block them permanently—including users who just accepted.
+Two claims must travel in the JWT token: `latestConsents/tos` and `latestConsents/pp`. They are entries in the `auth` feature's `account-properties-claims` list—the auth feature is always on and configured like every other feature. The setup reads that list with `admin.getFeatureConfig(srvId, 'auth')` and writes it back with `admin.updateFeatureConfig(srvId, 'auth', ...)`, merging the two new entries into whatever the service already carries; there is no `/auth-config` endpoint. The guard reads the token, not the database, so without these claims the condition would compare false for every token-authenticated user and block them permanently—including users who just accepted.
 
 ## Client-Side Implementation
 
@@ -248,10 +251,10 @@ Static files rather than app routes on purpose:
 The complete server setup is in `ulabase.setup.consents.ts`, which imports the accounts setup `ulabase.setup.ts` and runs in order:
 
 0. **Accounts steps** — `accounts.steps.filter(s => s !== appPointsAtService)` runs first: a gate that blocks users the service cannot create has nothing to block, and the permission below is written against the `users` collection the accounts feature owns
-1. **User schema** (`userConsentsSchema`) — `putSchema(SCHEMA_ID, USER_SCHEMA)`; the check compares a canonicalized stored schema, so a service with an older schema is reported as outstanding
+1. **User schema** (`userConsentsSchema`) — `putSchema(SCHEMA_ID, USER_SCHEMA)`; the check fetches the stored schema and compares it with this one after canonicalizing both sides: the store's `$id`/`id` (along with `_id`, `_etag`, `$schema`) is ignored, and `_$` keys are read unescaped exactly as the store returns them (`_$date` in the submitted schema compares equal to `$date` on the way back). A service carrying an older copy is therefore reported as outstanding and rewritten by the apply step
 2. **Users collection binding** — a `PATCH /users` writes `jsonSchema: { schemaId: SCHEMA_ID }` after checking `/users/_meta` (the collection's own properties are at `_meta`; listing documents would never reveal the binding)
 3. **Permission** (`userCanPatchOwnConsents`) — `putPermission`; without it the acceptance is a 403, since no out-of-the-box permission allows `PATCH /users/{userId}` and a guard never gets a say on a request the ACL already refused
-4. **JWT claims** — `account-properties-claims` read from `/auth-config/{srvId}` and PATCHed to add `latestConsents/tos` and `latestConsents/pp` (merged, not replaced, so a service may carry claims of its own). Only these two claims are added: the `consents` history would grow at every acceptance inside a base64-readable token
+4. **JWT claims** — the `auth` feature's `account-properties-claims` list, read and written with `admin.getFeatureConfig`/`admin.updateFeatureConfig` (merged, not replaced, so a service may carry claims of its own; there is no `/auth-config` endpoint). Only `latestConsents/tos` and `latestConsents/pp` are added: the `consents` history would grow at every acceptance inside a base64-readable token
 5. **Guards feature** — `isFeatureInstalled` / `installFeature(srvId, 'guards')`
 6. **Gate rule** (`consentsGate`) — written into the guards feature config with the CONDITION string, `action: 'block'`, `status_code: 451`, and `on_error: 'allow'`; the check compares the condition string and status, so bumping a version shows up as work outstanding
 7. **`appPointsAtService`** — last, as in the plain setup: the app is pointed at the service once the gate is in place too
@@ -280,6 +283,8 @@ The user schema allows consent fields but doesn't require them (since registrati
 ```
 
 The full schema still requires `_id` and `roles`, keeps `password`, `profile`, `socialAuths`, `teams` and `team` as optional properties, and is titled "User with consents". Note `_$date` with the underscore: `acceptedAt` is a BSON date, and the type keys are escaped inside a schema document so the parser doesn't read them as values. Declared as a plain string, every acceptance is rejected.
+
+The setup's schema check compares the stored schema through a `canonical` form: keys are sorted, the store's `$id`/`id`, `_id`, `_etag` and `$schema` are dropped, and `_$` prefixes are unescaped so the `_$date` you submit matches the `$date` the store returns. Because the comparison is against the stored copy, a service that still holds an older schema is reported as outstanding and rewritten by the apply step.
 
 ## Extending the Gate
 

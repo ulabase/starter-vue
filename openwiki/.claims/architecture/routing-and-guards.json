@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:e56ff6728aa7b6c96db0f4d35614ebc7f26440cdc245eb31da6b22bfbc74d6da",
+  "pageVersion": "sha256:63af0d41daefe0196919cd899bac566c64fe79e14a0f29058e2b055633166ac1",
   "claims": [
     {
       "id": "claim_702abf73a7be40798af1182959a3d39f",
       "statement": "Routes are defined in src/routes.ts with feature-flag gating using conditional spreads based on environment.features flags.",
       "evidence": [
         {
-          "resource": "repo://src/routes.ts#L1-L53",
-          "version": "repo-lines-v1:sha256:96dfe6b67b8bfcf65f304f975d21c672d9aa3a21944cf58a987d7a07d5bcbff3:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5YjgzOWYzOWRlZDJhYzFiNjk1ZWYzYmQ0OWZjMGE4NjcwYjQzMjM5YTlmMTFiZGQyODNhYTZiYWQ3MmQ2ZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwMmQyYzBkNmRjNWU3NGQ5MmZhMTRiOTFkYmVhMjY0MDkwYmViMzVmZGI5MTg4ZDliMzQxMTgxZGNlOWY0Y2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+          "resource": "repo://src/routes.ts#L18-L57",
+          "version": "repo-lines-v1:sha256:30f320ededc11d603bf04fd17877f43f707f129310ba2ddfe00bc82e6da24aec:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0NjUzZmFjZmE0MjJhYTEwOGFjMzFhYTVhMDJhOTIwNzc5YTM2MDNiOTI4ZWJiNzAwMjRjOWVjYzU0YWE2NWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwMmQyYzBkNmRjNWU3NGQ5MmZhMTRiOTFkYmVhMjY0MDkwYmViMzVmZGI5MTg4ZDliMzQxMTgxZGNlOWY0Y2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViZmMzZGY0MmZjZjBhY2MzOWEwNzUyM2M5OGFjYTJhMjMzZmEwY2JmMjAzYzE1OTVmMGE1ODcwZGNjZTg2MmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
     },
@@ -44,11 +44,15 @@
     },
     {
       "id": "claim_f619451a4e4e4fd7ae10c490ecdc09e9",
-      "statement": "The /invitations/accept route has no guard and must work for signed-out invitees, signed-in users, and people without accounts.",
+      "statement": "The invitation page is registered at both /auth/activate (email link for a new user) and /invitations/accept (email link for an existing user); both routes share Accept.vue, intentionally carry no meta.guard, and must work for signed-out invitees, signed-in users, and people without accounts.",
       "evidence": [
         {
-          "resource": "repo://src/routes.ts#L36-L38",
-          "version": "repo-lines-v1:sha256:2b81caab8f0d4af489af605aa46453dd625a497bf2279375994812eac0a723e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjVkMmY4ZTY1YjQzMDg5NjA0MGM4MDQ1ZTM0NGJlZWFmMGQ5M2E2M2JlYmVmZDc5OTNiNjIxODhiYTM3YzhjMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWE2YTE2Y2NkYmJiZTI3ZmYzYzc2YTlhYzZmY2VkNjZkOThlOGQ1YzI1MzIzMDJiN2JmMzkwY2VmNzMzNDk3ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDEzZjdlNjcwMGE0NzQyYjQyODk2ODNhNTk2ODA2ZmU3ODFiZDM4YzE3MzVhM2ZkMzliNzNlNTQzYTk1MGI1MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzFlYWRkZGYyMWM3ZmE5ZDhkOWU3ZGU4ZmQ4M2U2YWYwNDIxNDhlZTdjMzBmYmY1Njg5ODY4YjhhYTI3NzcxYSJ9"
+          "resource": "repo://src/pages/invitations/accept/Accept.vue#L115-L186",
+          "version": "repo-lines-v1:sha256:e59ee44f37d195ba5dac8a630e2a731238f52c453749aee08848de627721553e:eyJzZWxlY3RlZExpbmVDb3VudCI6NzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiN2Y4MTQwMjFlZjBmMTFmYjRhOWUxYmJlNjliNWE0OTM5NzYxY2U5OTY1NmQ2YzhkY2ViZDdkNzUwOGViM2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyYzc2YmRhZDVlMWIzN2Q5OTQ2NTMzMjgxY2E0NWRiZjhjNTExZTQ1NDk0ZWQwMThmNDY2MDdlZmIxMmEzNzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmOWI3MmM0MGZlOWY1ZGJiODU3MjZjYWI3ZGMzM2Y4ZjU0NWQ4NWY4Y2IwMDhkMzdmNDEzODRhNDVkZjcwYjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1MjI4NDBlZDVlYzU4YTM2MmYyMGI3MWI4YWViNjc1ZDdlZmI5NzQzOWM5MGMzZjYxNTVhZmVjNjUyODU5NDMifQ"
+        },
+        {
+          "resource": "repo://src/routes.ts#L35-L42",
+          "version": "repo-lines-v1:sha256:6ac8f25b0034e93c9f1bbca1e55c47b54b34409e20a7494a20f9eac20c6d37f1:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWExMWUwODkwMDg4ZjMxOGZlMzMwYWI4YTYxOGViNGU5Mjk2Y2E3ZGRjMDg0NjQ3MWYzYjZlNWRmNzYxYjg3YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWExMWUwODkwMDg4ZjMxOGZlMzMwYWI4YTYxOGViNGU5Mjk2Y2E3ZGRjMDg0NjQ3MWYzYjZlNWRmNzYxYjg3YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWE3NmQ3ODVjMmMyYWZjYzExYzE4MWJkMThhN2I1ZDRlZmUxYzc2OGNjZmMzOTllMzY4NTJiZTgzMDEzM2U4MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzFlYWRkZGYyMWM3ZmE5ZDhkOWU3ZGU4ZmQ4M2U2YWYwNDIxNDhlZTdjMzBmYmY1Njg5ODY4YjhhYTI3NzcxYSJ9"
         }
       ]
     },
@@ -87,7 +91,7 @@
       "statement": "Child routes of the Shell inherit the auth guard from their parent route.",
       "evidence": [
         {
-          "resource": "repo://src/routes.ts#L39-L51",
+          "resource": "repo://src/routes.ts#L43-L55",
           "version": "repo-lines-v1:sha256:0dcff6446d055697fd425d26638578291efda84e54e4d7ef25096062eccb28ef:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxMTFmMjM5YWM2NWM5ZmVjZDRmNzk3NWQ0ZWUwYzY3N2I1OGE4ZWE2Nzg1MmVhMjVkMjc5MjM5MjUxOGQyZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiODFjYWFiOGYwZDRhZjQ4OWFmNjA1YWE0NjQ1M2RkNjI1YTQ5N2JmMjI3OTM3NTk5NDgxMmVhYzBhNzIzZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1ODA2Njc4YTFjNDZjZTkwY2ExMDI4MTc5NjhiMzc5ZjlmNTEyZWVmOGUxZTc3OTZlNGUzODA2NzVlYTIzODIifQ"
         }
       ]
@@ -97,7 +101,7 @@
       "statement": "A catch-all route redirects any unmatched paths to the Home component without a guard.",
       "evidence": [
         {
-          "resource": "repo://src/routes.ts#L52-L52",
+          "resource": "repo://src/routes.ts#L56-L56",
           "version": "repo-lines-v1:sha256:32d7ce9a88ac02b67f47e0dacf0511752550b6ca253308b204aeac2f4ad52886:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJkN2NlOWE4OGFjMDJiNjdmNDdlMGRhY2YwNTExNzUyNTUwYjZjYTI1MzMwOGIyMDRhZWFjMmY0YWQ1Mjg4NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJkN2NlOWE4OGFjMDJiNjdmNDdlMGRhY2YwNTExNzUyNTUwYjZjYTI1MzMwOGIyMDRhZWFjMmY0YWQ1Mjg4NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGM1MWVmYWNmMTBiNzYxYzgzMmYzZGIzY2ZmNGE1YTZkYjRjNDNmMzk5MDI5ZDMzOTExMzhiOGJlNWVjZjQwYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjAyZDJjMGQ2ZGM1ZTc0ZDkyZmExNGI5MWRiZWEyNjQwOTBiZWIzNWZkYjkxODhkOWIzNDExODFkY2U5ZjRjZSJ9"
         }
       ]
@@ -137,7 +141,7 @@
       "statement": "Vue Router's to.meta.guard accesses merged meta from all matched route records, so child routes inherit the parent's meta.guard value when they don't define their own.",
       "evidence": [
         {
-          "resource": "repo://src/routes.ts#L39-L51",
+          "resource": "repo://src/routes.ts#L43-L55",
           "version": "repo-lines-v1:sha256:0dcff6446d055697fd425d26638578291efda84e54e4d7ef25096062eccb28ef:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxMTFmMjM5YWM2NWM5ZmVjZDRmNzk3NWQ0ZWUwYzY3N2I1OGE4ZWE2Nzg1MmVhMjVkMjc5MjM5MjUxOGQyZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiODFjYWFiOGYwZDRhZjQ4OWFmNjA1YWE0NjQ1M2RkNjI1YTQ5N2JmMjI3OTM3NTk5NDgxMmVhYzBhNzIzZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1ODA2Njc4YTFjNDZjZTkwY2ExMDI4MTc5NjhiMzc5ZjlmNTEyZWVmOGUxZTc3OTZlNGUzODA2NzVlYTIzODIifQ"
         }
       ]
@@ -151,10 +155,20 @@
           "version": "repo-lines-v1:sha256:5c3b3a80e7faa3c519272e6c37881b3d5cc9ab3c8dc66e2df7cb18d678f38b0d:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZjZTUwNjY5ZGYzMjE3NzlkNjdhZDIxZDRkOWU4MjM5N2Q5NDVlNGI2MzQ3Njk0YjU4MTc2MzU4YTNiYzljMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWM4OWQxZDc1YTY5Y2MxMGM5MzlhOTc3OTgwODExNTZjY2RlYmJmZmFkNzkwNzU5MjRhMzZjNjZiYTE4NzA4YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmI3N2NjNmJkODBkZmRlMzFjMDNlNjFkZDExYmQzMjkxOGI1MDUwODZjY2I3YTNiOGZhNDgxYTk4ZDk4MTUyNSJ9"
         }
       ]
+    },
+    {
+      "id": "claim_ee2fd2df6a7b4dea8d1340f29e6ef425",
+      "statement": "The RouteMeta augmentation in src/vite-env.d.ts types meta.guard as 'auth' | 'public' and documents that an absent value means no guard, with children inheriting the parent record's value.",
+      "evidence": [
+        {
+          "resource": "repo://src/vite-env.d.ts#L5-L14",
+          "version": "repo-lines-v1:sha256:76f1dcebdf616b598bc986b7557300fa5e5ad48f7f2577b12da813e5aab4924a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0ZjA3NjVhYTVjMGU0MTkyZmJiZGU2NjliNmVlZDYxM2ZhYjgyZWE1YThjYzE3ODA1ODVlNDA5MTYwMDliNDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzODUyMTA5OGY0ZTJmMzI1ZGMxMjdlOTAzOWM4ZTIxMzJlNmM5ZTRkNzhiODdkOWI2NTkwZDU5NmE3YWYwOGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
     }
   ],
   "verification": {
-    "by": "openwiki/0.7.2",
-    "at": "2026-10-19T08:33:44.961Z"
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-19T17:45:00.496Z"
   }
 }
