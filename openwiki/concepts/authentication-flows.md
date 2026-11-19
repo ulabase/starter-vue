@@ -417,7 +417,7 @@ Authentication flows are controlled by feature flags in `src/environments/enviro
 | `passwordReset` | `true` | `/auth/forgot-password`, `/auth/reset-password` | Forgot password link, reset password forms |
 | `oauthLogin` | `false` | `/auth/signup` (with `emailRegistration`) | OAuth buttons on login and signup pages |
 | `oauthProviders` | `['google']` | N/A | Available OAuth provider buttons |
-| `teamInvitations` | `true` | `/invitations/accept` | Invitation acceptance page |
+| `teamInvitations` | `true` | `/auth/activate`, `/invitations/accept` | Invitation acceptance page |
 
 ### Feature Flag Logic
 

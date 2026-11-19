@@ -38,7 +38,7 @@ The light/dark toggle, persisted, is the `useTheme` composable in `pages/shell/S
 | `/auth/signup` | `publicGuard` | `emailRegistration \|\| oauthLogin` |
 | `/auth/verify` | `publicGuard` | `emailRegistration` |
 | `/auth/forgot-password`, `/auth/reset-password` | `publicGuard` | `passwordReset` |
-| `/invitations/accept` | **none** — works signed-in or out | `teamInvitations` |
+| `/auth/activate`, `/invitations/accept` | **none** — works signed-in or out | `teamInvitations` |
 | `/home`, `/teams`, `/teams/new`, `/teams/:id`, `/account` | `authGuard` | always |
 
 A route names its guard in `meta.guard` (`'public'` or `'auth'`; children inherit it from the

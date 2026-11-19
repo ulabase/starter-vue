@@ -95,7 +95,9 @@ export const routes: RouteRecordRaw[] = [
         { path: '/auth/reset-password', component: ResetPassword, meta: { guard: 'public' as const } },
       ]
     : []),
-  ...(teamInvitations ? [{ path: '/invitations/accept', component: Accept }] : []),
+  ...(teamInvitations
+    ? ['/auth/activate', '/invitations/accept'].map(path => ({ path, component: Accept }))
+    : []),
   // ... authenticated routes inside Shell
 ];
 ```

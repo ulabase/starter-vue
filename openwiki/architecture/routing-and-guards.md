@@ -39,7 +39,7 @@ Routes are conditionally included based on feature flags from `src/environments/
 | `emailRegistration \|\| oauthLogin` | `/auth/signup` | `public` |
 | `emailRegistration` | `/auth/verify` | `public` |
 | `passwordReset` | `/auth/forgot-password`, `/auth/reset-password` | `public` |
-| `teamInvitations` | `/invitations/accept` | none |
+| `teamInvitations` | `/auth/activate`, `/invitations/accept` | none |
 
 ### Complete Route Map
 
@@ -50,7 +50,7 @@ Routes are conditionally included based on feature flags from `src/environments/
 | `/auth/verify` | Verify.vue | `public` | `emailRegistration` | Email verification |
 | `/auth/forgot-password` | ForgotPassword.vue | `public` | `passwordReset` | Password reset request |
 | `/auth/reset-password` | ResetPassword.vue | `public` | `passwordReset` | Password reset form |
-| `/invitations/accept` | Accept.vue | **none** | `teamInvitations` | Invitation acceptance (intentionally unguarded) |
+| `/auth/activate`, `/invitations/accept` | Accept.vue | **none** | `teamInvitations` | Invitation acceptance: the email links a new user to the first path, an existing one to the second (intentionally unguarded) |
 | `/` | Shell.vue | `auth` | always | App shell with children |
 | `/home` | Home.vue | `auth` (inherited) | always | Home page |
 | `/teams` | Teams.vue | `auth` (inherited) | always | Team list |
@@ -113,7 +113,7 @@ The `noNext` function is a no-op because the kit's guards return their verdict r
 
 ### Special Case: Invitation Acceptance
 
-The `/invitations/accept` route intentionally has **no guard** — it must work for:
+The invitation page is served at `/auth/activate` (where the service's invitation email links a new user) and `/invitations/accept` (an existing user). Both routes intentionally have **no guard** — the page must work for:
 - Signed-out invitees without accounts (new users)
 - Signed-out invitees with accounts (existing users)
 - Signed-in users (already authenticated)

@@ -30,7 +30,7 @@ The team management system consists of four main components:
 1. **Team List Page** (`/teams`) - Displays all teams the user belongs to
 2. **Team Detail Page** (`/teams/:id`) - Manages team members, invitations, and settings
 3. **New Team Page** (`/teams/new`) - Creates new teams
-4. **Invitation Acceptance Page** (`/invitations/accept`) - Handles invitation acceptance for various user states
+4. **Invitation Acceptance Page** (`/auth/activate` for a new user, `/invitations/accept` for an existing one) - Handles invitation acceptance for various user states
 
 ```mermaid
 flowchart TD
@@ -329,7 +329,7 @@ The new team route is protected by the `auth` guard through the Shell layout:
 
 ## Invitation Acceptance System
 
-The invitation acceptance system at `/invitations/accept` handles the complete invitation workflow for all user states. This page is **unguarded** - it must work for signed-out invitees, signed-in users, and people without an account.
+The invitation acceptance page is served at two paths: the service's invitation email links a new user to `/auth/activate` and an existing user to `/invitations/accept`. It handles the complete invitation workflow for all user states. This page is **unguarded** - it must work for signed-out invitees, signed-in users, and people without an account.
 
 ### Query Contract
 
@@ -442,9 +442,13 @@ The invitation acceptance route is **unguarded** to work for all auth states:
 
 ```typescript
 // From src/routes.ts
-// No guard: it must work for signed-out invitees, signed-in users, and
-// people without an account.
-...(teamInvitations ? [{ path: '/invitations/accept', component: Accept }] : [])
+// One page, two paths: the service's invitation email links a new user to
+// /auth/activate and an existing one to /invitations/accept. No guard on
+// either: it must work for signed-out invitees, signed-in users, and people
+// without an account.
+...(teamInvitations
+  ? ['/auth/activate', '/invitations/accept'].map(path => ({ path, component: Accept }))
+  : [])
 ```
 
 This route is also feature-flagged behind `teamInvitations` to allow disabling the entire invitation system.
@@ -460,7 +464,7 @@ The team management system integrates with the application's feature flag system
 | `oauthLogin` | May affect invitation flow for OAuth users |
 
 The `teamInvitations` flag controls:
-- Route registration for `/invitations/accept`
+- Route registration for `/auth/activate` and `/invitations/accept`
 - Invitation-related UI components in team detail
 - Backend API endpoints for invitations
 

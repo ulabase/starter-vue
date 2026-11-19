@@ -33,9 +33,13 @@ export const routes: RouteRecordRaw[] = [
         { path: '/auth/reset-password', component: ResetPassword, meta: { guard: 'public' as const } },
       ]
     : []),
-  // No guard: it must work for signed-out invitees, signed-in users, and
-  // people without an account.
-  ...(teamInvitations ? [{ path: '/invitations/accept', component: Accept }] : []),
+  // One page, two paths: the service's invitation email links a new user to
+  // /auth/activate and an existing one to /invitations/accept. No guard on
+  // either: it must work for signed-out invitees, signed-in users, and people
+  // without an account.
+  ...(teamInvitations
+    ? ['/auth/activate', '/invitations/accept'].map(path => ({ path, component: Accept }))
+    : []),
   {
     path: '/',
     component: Shell,
