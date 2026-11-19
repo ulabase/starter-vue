@@ -30,14 +30,17 @@ sources:
     resource: repo://src/pages/teams/Teams.vue
   - id: openwiki-source-28ff6ab0b2c280a1e7f9575c
     resource: repo://src/routes.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-19T08:33:44.961Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-19T17:45:00.496Z" }
+verified:
+  - by: openwiki/0.9.0
+    at: 2026-11-19T17:45:00.496Z
 ---
 
 # The @ulabase/kit-vue Integration
 
 The starter has no server code of its own: everything authentication-related is delegated to the `@ulabase/kit-vue` package, which supplies a Vue plugin, the `useAuth()` composable, router guards, an authenticated fetch wrapper, and TypeScript types. The app's own code only calls into the kit and reacts to its errors.
 
-The starter pins [`@ulabase/kit-vue` `^0.13.6`](https://ulabase.com/docs/kit) in `package.json` (matched by `@ulabase/cli ^0.13.6`); the kit itself builds on the framework-agnostic `@ulabase/kit` package.
+The starter pins [`@ulabase/kit-vue` `^0.14.0`](https://ulabase.com/docs/kit) in `package.json` (matched by `@ulabase/cli ^0.14.0`); the kit itself builds on the framework-agnostic `@ulabase/kit` package.
 
 ```mermaid
 flowchart TD
@@ -80,10 +83,12 @@ Everything below is reached via `const auth = useAuth()`. The reactive refs are 
 | **Invitations** | `getInvitation(email, token)`, `acceptInvite(token)` | Inspecting and accepting an invite (`Accept.vue`) |
 | **Teams** | `loadTeams()`, `createTeam(name)`, `switchTeam(teamId)` | Team list, creation, and active-team switching (`Teams.vue`, `NewTeam.vue`) |
 | **Teams** | `listTeamMembers()`, `invite(email, role)`, `removeMember(email)`, `resendInvite(email)`, `updateMemberRole(email, role)`, `listInvitations()` | Member and invitation management (`TeamDetail.vue`) |
-| **Teams** | `updateTeam({ name, description })`, `deleteTeam()` | Team settings and deletion (`TeamDetail.vue`; after deleting, the app re-loads teams and switches to a remaining one) |
+| **Teams** | `updateTeam({ name, description })`, `deleteTeam()` | Team settings and deletion (`TeamDetail.vue`) |
 | **Consents** | `acceptConsents()` | PATCHes the acceptance, renews the token (`GET /token?renew=true`), refreshes `/users/me`, and updates `user` — kit ≥ 0.7.0 |
 | **Profile** | `updateProfile({ firstName, lastName })`, `changePassword(current, new)` | Account page |
 | **Raw API** | `api(path, options?)` | Authenticated fetch wrapper for any collection (`Home.vue` fetches `/demo`) |
+
+One component serves every team: `TeamDetail.vue` watches the `:id` route param and reloads through `loadTeams()`, `listTeamMembers()`, and `listInvitations()` on each change, because the same instance is reused when only the param moves. After `deleteTeam()` it re-loads teams and switches to a remaining one only if none is active.
 
 ## auth.api(): authenticated fetch, not plain fetch
 
@@ -110,7 +115,7 @@ router.beforeEach((to, from) => {
 Two kit behaviors the app relies on:
 
 - **The guards ignore `next` and return their verdict**, so a no-op `noNext` stands in for the Vue-Router signature and the returned value drives the navigation.
-- **Guards only run on navigation.** When the session ends while a signed-in page is open (logout, an expired or refused token), nothing redirects by itself — `main.ts` watches `rhAuth.store.user` and pushes to `/auth/login` when a user turns from present to absent on an auth-guarded route. The invitation-acceptance route is deliberately unguarded so it works signed-out, signed-in, and accountless.
+- **Guards only run on navigation.** When the session ends while a signed-in page is open (logout, an expired or refused token), nothing redirects by itself — `main.ts` watches `rhAuth.store.user` and pushes to `/auth/login` when a user turns from present to absent on an auth-guarded route. The invitation-acceptance page is deliberately unguarded at both of its paths — `/auth/activate` for a new user and `/invitations/accept` for an existing user — so it works signed-out, signed-in, and accountless.
 
 ## Session lifecycle and token handling
 
@@ -141,7 +146,7 @@ Key behaviors:
 
 ## Types
 
-The kit exports the entity types the app types its state with: `ApiError` (`{ status: number; message: string }`), `TeamMembership` (`{ id: { $oid }, name, description?, role: 'owner' | 'member', active }`), `TeamMember` (`{ email, role, joinedAt }`), and `PendingInvitation` (`{ email, role, sentAt, expiresAt }`) — all imported in `TeamDetail.vue`, for example.
+The kit exports the entity types the app types its state with: `ApiError` (`{ status, message }`), `TeamMembership` (whose entries the starter reads as `id.$oid`, `name`, `description`, `role`, and `active`), `TeamMember` (`email`, `name`, `role`), and `PendingInvitation` (`email`, `role`, `createdAt`, and an `expired` flag) — all imported in `TeamDetail.vue`, for example.
 
 ## Related Pages
 

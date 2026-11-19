@@ -20,7 +20,10 @@ sources:
     resource: repo://ulabase.setup.consents.ts
   - id: openwiki-source-34f568b222540eb11aa44859
     resource: repo://ulabase.setup.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-19T08:33:44.961Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-19T17:45:00.496Z" }
+verified:
+  - by: openwiki/0.9.0
+    at: 2026-11-19T17:45:00.496Z
 ---
 
 # Quickstart
@@ -37,26 +40,27 @@ It is a Vue app plus a Ulabase service. There is no server of yours to write, de
 
 Every decision in this repository follows from one fact: **there is no server in this repo**. The application is the Vue app in `src/`; the backend is a Ulabase service that exists outside the repository and is shaped entirely by the two declarative setup files, `ulabase.setup.ts` and `ulabase.setup.consents.ts`.
 
-<!-- openwiki: mermaid parse failed and this diagram was converted to a text fence so it does not break rendering. Fix the diagram source and restore the mermaid fence. Parser error: Heuristic: an unescaped angle bracket inside a label breaks rendering; rephrase the label. -->
-```text
+```mermaid
 flowchart LR
     subgraph Repo["This repository"]
-        Env["src/environments/environment.ts<br/>apiUrl + features"]
-        App["Vue app<br/>src/main.ts, src/routes.ts"]
-        Setup["ulabase.setup.ts<br/>ulabase.setup.consents.ts"]
+        Env["src/environments/environment.ts: apiUrl + features"]
+        App["Vue app: src/main.ts and src/routes.ts"]
+        Setup["ulabase.setup.ts and ulabase.setup.consents.ts"]
     end
-    subgraph Service["Ulabase service (external)"]
-        Accounts["accounts feature<br/>registration, verification, reset, invitations, oauth"]
+    subgraph Service["Ulabase service, external"]
+        Accounts["accounts feature: registration, verification, reset, invitations, oauth"]
         Users["users collection + ACL"]
-        Guards["Guards rule -> 451"]
+        Guards["Guards rule answers 451"]
     end
-    Setup -- "imports environment.features<br/>derives toggles" --> Env
+    Setup -- "imports environment.features and derives toggles" --> Env
     Setup -- "installs and configures" --> Accounts
     Setup -- "writes apiUrl back" --> Env
     App -- "HTTP via @ulabase/kit-vue" --> Accounts
-    App -- "auth.api() with session" --> Users
+    App -- "auth.api with session" --> Users
     Guards -- "blocks requests" --> App
 ```
+
+What this shows: how this repository's app and setup files connect to the external Ulabase service — setup derives the service's feature toggles from `environment.ts` and writes `apiUrl` back, while the app sends authenticated requests and reacts when the Guards rule answers `451`.
 
 Three consequences worth holding onto:
 
@@ -64,12 +68,12 @@ Three consequences worth holding onto:
 - The app reacts to status codes; it does not enforce business rules. A `403` from an ACL, a `451` from a Guards rule and a `401` from a missing session are all branch conditions on `ApiError`.
 - The last setup step writes the service URL into `apiUrl`. Until it does, the app mounts only the "Connect your service" screen — no router, no auth store, nothing to talk to.
 
-The starter uses [`@ulabase/kit-vue`](integrations/ulabase-kit-vue.md) for authentication, the `useAuth()` composable and router guards, with no custom server code required.
+The starter uses [`@ulabase/kit-vue`](integrations/ulabase-kit-vue.md) (`^0.14.0`) for authentication — the `useAuth()` composable and router guards — with no custom server code required. The setup scripts import `defineSetup` and `step` from `@ulabase/cli` (`^0.14.0`), as described in [Service Configuration](operations/service-configuration.md).
 
 - Email/password sign-up and login
 - Google and GitHub sign-in (optional, off by default)
 - Email verification and password reset
-- Team management and invitations
+- Team management and invitations, with the acceptance page at `/auth/activate` and `/invitations/accept`
 - Consents gate for terms and privacy policy acceptance (optional, enabled by the second setup file)
 
 ## Task routing map
@@ -84,7 +88,7 @@ Find your situation in the left column and follow the link.
 ### Architecture
 
 - **Understanding how the app starts** → [App Bootstrap and Entrypoints](architecture/app-bootstrap.md) — the ConfigPage-vs-app branch in `src/main.ts`, fragment token capture, `createRhAuth`, and the global `beforeEach`.
-- **Understanding routes and guards** → [Routing, Guards, and Feature-Gated Routes](architecture/routing-and-guards.md) — the route table, `meta.guard` semantics, flag-conditional route arrays, and the catch-all.
+- **Understanding routes and guards** → [Routing, Guards, and Feature-Gated Routes](architecture/routing-and-guards.md) — the route table, including the invitation page at both `/auth/activate` and `/invitations/accept`, `meta.guard` semantics, flag-conditional route registration, and the catch-all.
 - **Asking "where is the backend?"** → [Service Model: What Lives Outside This Repo](architecture/service-model.md) — the accounts feature, users collection, ACL permissions, JWT claims, and which concerns are enforced server-side.
 
 ### Concepts
@@ -101,14 +105,13 @@ Find your situation in the left column and follow the link.
 
 ### Integrations
 
-- **Working with teams** → [Teams, Members, and Invitations](integrations/teams-and-invitations.md) — team switching, team detail, and the single invitation-acceptance route that serves new users, existing users, and signed-out invitees.
-- **Calling your own data endpoints** → [The @ulabase/kit-vue Integration](integrations/ulabase-kit-vue.md) — `useAuth()`, `auth.api()`, `ApiError`, and the `setToken`/`scheduleRefresh` pair.
+- **Working with teams** → [Teams and Invitations](integrations/teams-and-invitations.md) — team switching, team detail, and the invitation acceptance page at `/auth/activate` (a new user) and `/invitations/accept` (an existing user), left unguarded so it also works for signed-out invitees.
+- **Calling your own data endpoints** → [@ulabase/kit-vue Integration](integrations/ulabase-kit-vue.md) — `useAuth()`, `auth.api()`, `ApiError`, and the `setToken`/`scheduleRefresh` pair.
 
 ### Operations
 
-<!-- openwiki: broken internal link [operations/troubleshooting.md] file "operations/troubleshooting.md" does not exist. Fix the href or restore the target, then delete this comment. -->
-- **Something is broken right now** → [Troubleshooting and Failure Modes](operations/troubleshooting.md) — origin not allowed, a page missing because of flag drift, `401` on a hand-written `fetch`, the wrong `ulabase` on `PATH`, and the ConfigPage appearing unexpectedly.
-- **CI pipelines** → [CI and Repository Workflows](operations/ci-and-workflows.md) — the no-service-URL check on `main` and the scheduled documentation workflow.
+- **Something is broken right now** → [Common issues](#common-issues) below, or the troubleshooting notes in [First-Run Setup](workflows/first-run-setup.md#troubleshooting) — origin not allowed, a page missing because of flag drift, `401` on a hand-written `fetch`, the wrong `ulabase` on `PATH`, and the ConfigPage appearing unexpectedly.
+- **CI pipelines** → [CI and GitHub Actions Workflows](operations/ci-and-workflows.md) — the no-service-URL check on `main` and the scheduled documentation workflow.
 
 ### Testing
 
@@ -124,8 +127,7 @@ The wiki is organized into six domains:
 | **Concepts** | Cross-cutting mechanisms | [Authentication Flows](concepts/authentication-flows.md), [Consents Gate](concepts/consents-gate.md), [Feature Flags](concepts/feature-flags.md) |
 | **Workflows** | Step-by-step guides | [First-Run Setup](workflows/first-run-setup.md), [Customizing the Visual Skin](workflows/customizing-the-visual-skin.md), [Adding a New Page](workflows/adding-a-new-page.md), [OAuth Setup](workflows/oauth-setup.md) |
 | **Integrations** | The kit and the multi-tenant feature | [Ulabase Kit Vue](integrations/ulabase-kit-vue.md), [Teams and Invitations](integrations/teams-and-invitations.md) |
-<!-- openwiki: broken internal link [operations/troubleshooting.md] file "operations/troubleshooting.md" does not exist. Fix the href or restore the target, then delete this comment. -->
-| **Operations** | Service configuration, CI, and failure modes | [Service Configuration](operations/service-configuration.md), [CI and Workflows](operations/ci-and-workflows.md), [Troubleshooting](operations/troubleshooting.md) |
+| **Operations** | Service configuration and CI | [Service Configuration](operations/service-configuration.md), [CI and GitHub Actions Workflows](operations/ci-and-workflows.md) |
 | **Testing** | Validation and testing | [Validation and Testing](testing/validation-and-testing.md) |
 
 ## Key files
@@ -134,11 +136,12 @@ The wiki is organized into six domains:
 |------|---------|
 | `src/environments/environment.ts` | `apiUrl` plus the feature flags; empty `apiUrl` in the starter's own repository |
 | `src/main.ts` | Entry point: ConfigPage branch, fragment token capture, `createRhAuth({ apiBaseUrl, onError: consentsOnError })`, router and the single `beforeEach` |
-| `src/routes.ts` | Route map: lazy page chunks, flag-conditional entries, `meta.guard` |
+| `src/routes.ts` | Route map: lazy page chunks, flag-conditional entries (including the `/auth/activate` and `/invitations/accept` pair), `meta.guard` |
 | `src/consents-signal.ts` / `src/ConsentsGate.vue` | The `451` flag raised by `onError` and the blocking overlay wrapped around the router view |
 | `src/styles.css` | Design tokens and the disposable default skin |
 | `ulabase.setup.ts` | Declarative service configuration: accounts feature, feature toggles, optional Google credentials, origin allowlist, `apiUrl` write-back |
 | `ulabase.setup.consents.ts` | Imports the file above and appends the gate's four documents |
+| `package.json` | `@ulabase/kit-vue` `^0.14.0` for the app's auth and `@ulabase/cli` `^0.14.0` for the setup scripts |
 
 ## Next steps
 
@@ -155,5 +158,4 @@ The wiki is organized into six domains:
 - **`ulabase` runs something unexpected** → A retired tool of the same name is earlier in `PATH`; `type -a ulabase` shows both.
 - **Consents accepted but still blocked** → The gate needs a fresh token; see the renewal path in [Consents Gate](concepts/consents-gate.md).
 
-<!-- openwiki: broken internal link [operations/troubleshooting.md] file "operations/troubleshooting.md" does not exist. Fix the href or restore the target, then delete this comment. -->
-For a symptom-oriented reference, see [Troubleshooting and Failure Modes](operations/troubleshooting.md).
+For the same symptoms with setup-side fixes, see the troubleshooting notes in [First-Run Setup](workflows/first-run-setup.md#troubleshooting).

@@ -16,7 +16,10 @@ sources:
     resource: repo://src/pages/teams/Teams.vue
   - id: openwiki-source-28ff6ab0b2c280a1e7f9575c
     resource: repo://src/routes.ts
-generated: { by: "openwiki/0.7.2", at: "2026-10-19T08:33:44.961Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-19T17:45:00.496Z" }
+verified:
+  - by: openwiki/0.9.0
+    at: 2026-11-19T17:45:00.496Z
 ---
 
 # Teams and Invitations
@@ -44,6 +47,8 @@ flowchart TD
     B -->|Manage members| I[Member Management]
     B -->|Team settings| J[Team Configuration]
 ```
+
+Team management pages and the invitation flow connecting them.
 
 ## Active Team Session and Shell Header
 
@@ -243,13 +248,24 @@ The invitations tab manages pending invitations and provides the invitation send
 - Automatic form reset after successful invite
 
 **Invitation Resending**:
-- **Cooldown System**: 5-minute cooldown between resends to prevent spam
-- **Cooldown Display**: Shows remaining time in minutes (e.g., "Wait 3m")
-- **Success Feedback**: Shows confirmation when invitation is resent
+- **Countdown from last send**: The resend button counts down from each pending invitation's last send. The service refuses a resend within 5 minutes of that send.
+- **Cooldown Display**: While cooling down, the button is disabled and shows remaining time in minutes (e.g., "Wait 3m")
+- **Refused Resend**: If the service refuses a resend, the service's reason is shown in an error alert
+- **Success Feedback**: Shows confirmation when invitation is resent and restarts the countdown locally
 
-**Resend Cooldown Implementation**:
+**Resend Countdown Implementation**:
 ```typescript
 const RESEND_COOLDOWN_MS = 5 * 60 * 1000; // 5 minutes
+
+/** The cooldowns with each pending invitation's last send, when later than the one already known. */
+function withLastSends(cooldowns: Record<string, number>, invitations: PendingInvitation[]): Record<string, number> {
+  const next = { ...cooldowns };
+  for (const invite of invitations) {
+    const at = invite.createdAt && !invite.expired ? Date.parse(invite.createdAt) : NaN;
+    if (!Number.isNaN(at) && at > (next[invite.email] ?? 0)) next[invite.email] = at;
+  }
+  return next;
+}
 
 function canResend(email: string): boolean {
   const since = resendCooldowns.value[email];
@@ -258,7 +274,7 @@ function canResend(email: string): boolean {
 }
 ```
 
-The cooldown system uses a reactive `now` value that updates every 30 seconds via `setInterval`, ensuring the UI stays current without excessive re-renders.
+The countdown is anchored to each pending invitation's last send (`createdAt`), which `load()` seeds via `withLastSends` when listing invitations. A successful resend re-stamps the cooldown locally with the current time. When the service refuses a resend, its reason is captured into `resendError` and shown in an error alert. A reactive `now` value updates every 30 seconds via `setInterval`, keeping the UI current without excessive re-renders.
 
 ### Settings Tab
 
@@ -374,6 +390,8 @@ stateDiagram-v2
     Error --> [*]
 ```
 
+The three invitation acceptance flows branching from invitation state and authentication state.
+
 ### Error Message Mapping
 
 The component maps API errors to user-friendly messages:
@@ -438,7 +456,7 @@ The component provides comprehensive error handling for all flows:
 
 ### Route Configuration
 
-The invitation acceptance route is **unguarded** to work for all auth states:
+The invitation acceptance routes are **unguarded** to work for all auth states:
 
 ```typescript
 // From src/routes.ts
@@ -455,18 +473,13 @@ This route is also feature-flagged behind `teamInvitations` to allow disabling t
 
 ## Feature Flag Integration
 
-The team management system integrates with the application's feature flag system:
+The team management system integrates with the application's feature flag system defined in `src/environments/environment.ts`:
 
 | Feature Flag | Impact on Teams |
 |--------------|-----------------|
-| `teamInvitations` | Enables/disables invitation acceptance page and related UI |
-| `emailRegistration` | Affects user creation flow during invitation acceptance |
-| `oauthLogin` | May affect invitation flow for OAuth users |
+| `teamInvitations` | Enables/disables registration of the invitation acceptance routes (`/auth/activate`, `/invitations/accept`) |
 
-The `teamInvitations` flag controls:
-- Route registration for `/auth/activate` and `/invitations/accept`
-- Invitation-related UI components in team detail
-- Backend API endpoints for invitations
+The `teamInvitations` flag controls route registration for the invitation acceptance page. When disabled, neither path is registered and the invitation flow is unreachable. Team detail member/invitation management is not gated by this flag in the client.
 
 ## API Integration
 
@@ -502,7 +515,7 @@ The team management system uses the `useAuth()` composable from `@ulabase/kit-vu
 ### Invitation Security
 - Tokens are time-limited (backend enforced)
 - Email validation prevents invalid invitations
-- Rate limiting via resend cooldown (5 minutes)
+- Rate limiting via the resend countdown (5 minutes from each invitation's last send)
 - Backend validates invitation ownership before acceptance
 
 ### Route Protection
@@ -516,7 +529,7 @@ The team management system uses the `useAuth()` composable from `@ulabase/kit-vu
 1. **Team Creation**: Verify team creation flow and redirect
 2. **Member Management**: Test role changes, member removal, and self-protection
 3. **Invitation Flow**: Test all three acceptance states
-4. **Resend Cooldown**: Verify 5-minute cooldown enforcement
+4. **Resend Countdown**: Verify the button counts down from each invitation's last send and that a refused resend surfaces the service's reason
 5. **Team Deletion**: Test deletion constraints and cleanup
 6. **Feature Flags**: Verify behavior when `teamInvitations` is disabled
 

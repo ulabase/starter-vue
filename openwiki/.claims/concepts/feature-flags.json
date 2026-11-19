@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:beccc36cb9b2826ad1fd90b59c2c7fd6cbdf8595b7a70fc74a8dd9b9b6d0fe50",
+  "pageVersion": "sha256:ccfad78a73a445016258e929cc0e7d1ee6771399892246b3c1a851af86de3ecf",
   "claims": [
     {
       "id": "claim_cdd98e6665eb48f7a4db279053c279ff",
@@ -59,8 +59,8 @@
       "statement": "Routes are conditionally included in `src/routes.ts` using the spread operator on arrays, so disabled features do not register their routes.",
       "evidence": [
         {
-          "resource": "repo://src/routes.ts#L24-L38",
-          "version": "repo-lines-v1:sha256:7fd12ba704cbadd936059236810ecaa1e476ad32b5df508340c10a742230be03:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkYTU4MWRkZWUxZGY2ZmY4OGI4NTI0MmI4NjUyMWNjOTc0NWZmODZkYzAyZmVjYWNmMGVjZTAxZTg2OGNmNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhNmExNmNjZGJiYmUyN2ZmM2M3NmE5YWM2ZmNlZDY2ZDk4ZThkNWMyNTMyMzAyYjdiZjM5MGNlZjczMzQ5N2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzZjcyNGZkMmUyYTYzOWY0MmNjZmNjZGJkNTc3MjQyYWEwNTJjYzU4OGQxMDNiN2I3YjY0NmQ5YzFhY2NkOWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxZWFkZGRmMjFjN2ZhOWQ4ZDllN2RlOGZkODNlNmFmMDQyMTQ4ZWU3YzMwZmJmNTY4OTg2OGI4YWEyNzc3MWEifQ"
+          "resource": "repo://src/routes.ts#L24-L42",
+          "version": "repo-lines-v1:sha256:7089f8894aa30652404ea7004d58cec4cb5e0ceab4cbb1ecbc28401c4756b411:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkYTU4MWRkZWUxZGY2ZmY4OGI4NTI0MmI4NjUyMWNjOTc0NWZmODZkYzAyZmVjYWNmMGVjZTAxZTg2OGNmNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTFlMDg5MDA4OGYzMThmZTMzMGFiOGE2MThlYjRlOTI5NmNhN2RkYzA4NDY0NzFmM2I2ZTVkZjc2MWI4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzZjcyNGZkMmUyYTYzOWY0MmNjZmNjZGJkNTc3MjQyYWEwNTJjYzU4OGQxMDNiN2I3YjY0NmQ5YzFhY2NkOWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxZWFkZGRmMjFjN2ZhOWQ4ZDllN2RlOGZkODNlNmFmMDQyMTQ4ZWU3YzMwZmJmNTY4OTg2OGI4YWEyNzc3MWEifQ"
         }
       ]
     },
@@ -69,7 +69,7 @@
       "statement": "Vue components (`Login.vue`, `Signup.vue`, `Home.vue`) conditionally render UI elements based on the same `environment.features` flags.",
       "evidence": [
         {
-          "resource": "repo://src/pages/auth/login/Login.vue#L56-L59",
+          "resource": "repo://src/pages/auth/login/Login.vue#L58-L61",
           "version": "repo-lines-v1:sha256:1806294ea7989419ca376ffa506b40d8288c839543d590c3d5b9012f3faa87ad:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFiYWE5ZWExMWUyYmIyYTJlNDU1ODJjZmI1MmQyMmRhZjhkMzE3MzhiZjU5NjBkNTRhZWNjZTE4OGY0MmUyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2M3YWYzYTIwNGIzNzZlMWE0Y2Q2YTNmOWY2ZDc2OTBlNTExYjVlZDBlMGM3YTNmOGE2OWRhZmIxMjM2ODhlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWEwNmNmYzY5NTYwMWU0OTIzMTZhMDdmZjgyYThmYjYxNzYwYmVmYzA0YzMxNDk3NzZkY2I0ODc4NmM1MDAzMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTAyYWM5NzE3OGRmNTNiZTE1MTg4MWI2YmVjMGM2NTZlMWU5YjU2YmE0NjY3ZGY1ZmM1NmI1MGUzNjhjODkwNiJ9"
         },
         {
@@ -97,7 +97,7 @@
       "statement": "When `oauthLogin` is true and `'google'` is in `oauthProviders`, the setup script checks for Google OAuth credentials and writes them from environment variables if missing.",
       "evidence": [
         {
-          "resource": "repo://ulabase.setup.ts#L152-L190",
+          "resource": "repo://ulabase.setup.ts#L164-L202",
           "version": "repo-lines-v1:sha256:7a42d20be64ddb20adda339b6c911f6137027bd3510c465b3b302fc9610743cc:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ODU4ODM2MjU4YmYzMzkyOWQwNjMwYWU0YWVkM2YwMTYyNGU1NzkxZWRhYzE2ZmVhZmE2ZWViMzUxN2I2MTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTFlMDg5MDA4OGYzMThmZTMzMGFiOGE2MThlYjRlOTI5NmNhN2RkYzA4NDY0NzFmM2I2ZTVkZjc2MWI4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjYTlmMDA4ZDMxNjA1NzVjZTg2ZjE3MTYxMDMzOTNjMDg5MjE0N2IxMDc0YTZkNTg0MGFiMTNkZDQ0YjA3MTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiNGI2MTAwNDcwMTgxOTY3MDM0NTAzMTNkZTdjZmNkMDNhNjIxZTA4NTQ4YjVhMGI0M2JhZmE2M2ZkN2Y4ZTQifQ"
         }
       ]
@@ -111,10 +111,20 @@
           "version": "repo-lines-v1:sha256:ca1d2dd032ad4f5083fb21afae6d392c29a6cd1c56e4d2b68ae3b901c67bcb23:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkZDZkZjU0NjhkYzNkNDAwNTAwN2U5NDFhYjgyNmIyZWQ5ZTQxNzRmYjg4ODlkODQ0NzY1NzA4NWRkNjY0NDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1MTgzN2JjZDIzMDMwOTU3ODA3YTI0ODdjYTMyMzc4Nzc0OTg2ZWRmMmQ1OWE1ZmVmNzRjNWUwMzU0NmVkMzcifQ"
         }
       ]
+    },
+    {
+      "id": "claim_351ec3122c584bd7b71c23e1856b668a",
+      "statement": "The `teamInvitations` flag registers one Accept component at two paths: `/auth/activate` for new users and `/invitations/accept` for existing users; neither path carries a guard, so the page works for signed-out invitees, signed-in users, and people without an account.",
+      "evidence": [
+        {
+          "resource": "repo://src/routes.ts#L36-L42",
+          "version": "repo-lines-v1:sha256:8c1399e21ff1cec89f986676d1d4f978e5bec4e59d1e97d520b4447dc94049ca:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWUzNDVkOTFlMzAwMjliODQ5YjFkZWYyODY3MzE1OTkxYzQxZjIyYmI3MzM0MTUzZTA4ODE4ZWQ5NjA5YjM4YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWExMWUwODkwMDg4ZjMxOGZlMzMwYWI4YTYxOGViNGU5Mjk2Y2E3ZGRjMDg0NjQ3MWYzYjZlNWRmNzYxYjg3YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDEzZjdlNjcwMGE0NzQyYjQyODk2ODNhNTk2ODA2ZmU3ODFiZDM4YzE3MzVhM2ZkMzliNzNlNTQzYTk1MGI1MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzFlYWRkZGYyMWM3ZmE5ZDhkOWU3ZGU4ZmQ4M2U2YWYwNDIxNDhlZTdjMzBmYmY1Njg5ODY4YjhhYTI3NzcxYSJ9"
+        }
+      ]
     }
   ],
   "verification": {
-    "by": "openwiki/0.7.2",
-    "at": "2026-10-19T08:33:44.961Z"
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-19T17:45:00.496Z"
   }
 }
