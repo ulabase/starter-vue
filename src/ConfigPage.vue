@@ -16,7 +16,7 @@ defineProps<{ apiUrl: string }>();
 
       <div v-if="apiUrl" class="config-status">
         <p>
-          <code>apiUrl</code> is set to <code>{{ apiUrl }}</code>, which isn't a
+          <code>VITE_API_URL</code> is set to <code>{{ apiUrl }}</code>, which isn't a
           Ulabase service: it must be an <code>https://</code> address.
         </p>
       </div>
@@ -39,7 +39,7 @@ defineProps<{ apiUrl: string }>();
             <pre class="config-command">npx ulabase login
 npx ulabase setup --srv &lt;your service id&gt;</pre>
             <p>
-              It configures the service for this app and writes its URL into <code>src/environments/environment.ts</code>.
+              It configures the service for this app and writes its URL into <code>.env.development</code>.
             </p>
           </div>
         </li>
