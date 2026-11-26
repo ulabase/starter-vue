@@ -130,13 +130,28 @@ const firstName = computed(() => auth.user.value?.profile?.name?.trim() ?? '');
           <span class="step-title">Point the app at your Ulabase service</span>
           <p class="muted">
             Done — you're signed in. Configured in
-            <code>src/environments/environment.ts</code>.
+            <code>.env.development</code>.
           </p>
         </div>
       </li>
 
       <li class="step">
         <span class="step-mark" aria-hidden="true">2</span>
+        <div class="step-body">
+          <span class="step-title">Connect your coding agent to the Ulabase docs</span>
+          <p class="muted">
+            Add the docs MCP server to Claude Code, Cursor or another agent. The agent reads the
+            Ulabase documentation while it makes the changes below. In Claude Code:
+          </p>
+          <pre class="code-block">claude mcp add --transport http ulabase-docs https://d0c5a1.ulabase.app/mcp</pre>
+          <p class="muted">
+            Any other agent takes the address <code>https://d0c5a1.ulabase.app/mcp</code> as an MCP server over HTTP.
+          </p>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="step-mark" aria-hidden="true">3</span>
         <div class="step-body">
           <span class="step-title">Make it yours visually</span>
           <p class="muted">
@@ -149,7 +164,7 @@ const firstName = computed(() => auth.user.value?.profile?.name?.trim() ?? '');
       </li>
 
       <li class="step">
-        <span class="step-mark" aria-hidden="true">3</span>
+        <span class="step-mark" aria-hidden="true">4</span>
         <div class="step-body">
           <span class="step-title">Design your navigation and menu</span>
           <p class="muted">
@@ -160,7 +175,7 @@ const firstName = computed(() => auth.user.value?.profile?.name?.trim() ?? '');
       </li>
 
       <li class="step">
-        <span class="step-mark" aria-hidden="true">4</span>
+        <span class="step-mark" aria-hidden="true">5</span>
         <div class="step-body">
           <span class="step-title">Replace this page</span>
           <p class="muted">
@@ -170,7 +185,7 @@ const firstName = computed(() => auth.user.value?.profile?.name?.trim() ?? '');
       </li>
 
       <li class="step">
-        <span class="step-mark" aria-hidden="true">5</span>
+        <span class="step-mark" aria-hidden="true">6</span>
         <div class="step-body">
           <span class="step-title">Build your first feature screen</span>
           <p class="muted">
