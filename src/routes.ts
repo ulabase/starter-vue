@@ -10,6 +10,7 @@ const ResetPassword = () => import('./pages/auth/reset-password/ResetPassword.vu
 const Accept = () => import('./pages/invitations/accept/Accept.vue');
 const Shell = () => import('./pages/shell/Shell.vue');
 const Home = () => import('./pages/home/Home.vue');
+const Welcome = () => import('./pages/welcome/Welcome.vue');
 const Teams = () => import('./pages/teams/Teams.vue');
 const NewTeam = () => import('./pages/teams/new/NewTeam.vue');
 const TeamDetail = () => import('./pages/teams/detail/TeamDetail.vue');
@@ -40,12 +41,14 @@ export const routes: RouteRecordRaw[] = [
   ...(teamInvitations
     ? ['/auth/activate', '/invitations/accept'].map(path => ({ path, component: Accept }))
     : []),
+  // The public first page: what the app is and the service it runs on. A signed-in user who
+  // lands here goes on to /home. Before the frame below, which has no page of its own at "/".
+  { path: '/', component: Welcome },
   {
     path: '/',
     component: Shell,
     meta: { guard: 'auth' },
     children: [
-      { path: '', component: Home },
       { path: 'home', component: Home },
       { path: 'teams', component: Teams },
       { path: 'teams/new', component: NewTeam },
@@ -53,5 +56,5 @@ export const routes: RouteRecordRaw[] = [
       { path: 'account', component: Account },
     ],
   },
-  { path: '/:pathMatch(.*)*', component: Home },
+  { path: '/:pathMatch(.*)*', component: Welcome },
 ];

@@ -117,7 +117,8 @@ onUnmounted(() => {
 async function logout(): Promise<void> {
   closeMenu();
   await auth.logout();
-  await router.push('/auth/login');
+  // back to the public first page
+  await router.push('/');
 }
 </script>
 
