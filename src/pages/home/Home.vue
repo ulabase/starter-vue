@@ -86,7 +86,8 @@ const firstName = computed(() => auth.user.value?.profile?.name?.trim() ?? '');
     <h1>{{ firstName ? `Welcome, ${firstName}.` : 'Welcome.' }}</h1>
     <p class="hero-pitch">
       Sign-up, login, email verification, password reset, invitations and team
-      management are already built and wired up. Now make it yours.
+      management are already built and wired up. This page is <code>src/pages/home/</code>: put your
+      app's first screen in its place.
     </p>
   </section>
 
@@ -116,85 +117,6 @@ const firstName = computed(() => auth.user.value?.profile?.name?.trim() ?? '');
       Toggle these in <code>src/environments/environment.ts</code> to match the
       Features settings of your Ulabase service.
     </p>
-  </section>
-
-  <section class="card">
-    <div class="card-header">
-      <h2>Make it yours</h2>
-    </div>
-
-    <ol class="steps">
-      <li class="step step-done">
-        <span class="step-mark" aria-hidden="true">&#10003;</span>
-        <div class="step-body">
-          <span class="step-title">Point the app at your Ulabase service</span>
-          <p class="muted">
-            Done — you're signed in. Configured in
-            <code>.env.development</code>.
-          </p>
-        </div>
-      </li>
-
-      <li class="step">
-        <span class="step-mark" aria-hidden="true">2</span>
-        <div class="step-body">
-          <span class="step-title">Connect your coding agent to the Ulabase docs</span>
-          <p class="muted">
-            Add the docs MCP server to Claude Code, Cursor or another agent. The agent reads the
-            Ulabase documentation while it makes the changes below. In Claude Code:
-          </p>
-          <pre class="code-block">claude mcp add --transport http ulabase-docs https://d0c5a1.ulabase.app/mcp</pre>
-          <p class="muted">
-            Any other agent takes the address <code>https://d0c5a1.ulabase.app/mcp</code> as an MCP server over HTTP.
-          </p>
-        </div>
-      </li>
-
-      <li class="step">
-        <span class="step-mark" aria-hidden="true">3</span>
-        <div class="step-body">
-          <span class="step-title">Make it yours visually</span>
-          <p class="muted">
-            Either tweak the default skin — the tokens and skin classes in
-            <code>src/styles.css</code> — or delete that skin entirely and adopt
-            Vuetify, Tailwind, PrimeVue or your own, following the swap map in
-            <code>NOTES.md</code>.
-          </p>
-        </div>
-      </li>
-
-      <li class="step">
-        <span class="step-mark" aria-hidden="true">4</span>
-        <div class="step-body">
-          <span class="step-title">Design your navigation and menu</span>
-          <p class="muted">
-            The app frame lives in <code>src/pages/shell/</code> — the header
-            has a marked slot for your section links.
-          </p>
-        </div>
-      </li>
-
-      <li class="step">
-        <span class="step-mark" aria-hidden="true">5</span>
-        <div class="step-body">
-          <span class="step-title">Replace this page</span>
-          <p class="muted">
-            Swap <code>src/pages/home/</code> for your app's landing content.
-          </p>
-        </div>
-      </li>
-
-      <li class="step">
-        <span class="step-mark" aria-hidden="true">6</span>
-        <div class="step-body">
-          <span class="step-title">Build your first feature screen</span>
-          <p class="muted">
-            Add the component under <code>src/pages/</code> and register its
-            route inside the authenticated shell in <code>src/routes.ts</code>.
-          </p>
-        </div>
-      </li>
-    </ol>
   </section>
 
   <section class="card">
